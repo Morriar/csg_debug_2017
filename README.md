@@ -79,3 +79,43 @@ Minimal files and directory are:
 * `.gitignore` git ignored files for the challenge repository.
 
 TODO: Do we need to pre-initialize the git repository? See with @AlexLeblanc.
+
+### `PRIVATE` directory
+
+The `PRIVATE` directory contains the private files related to the challenge.
+This directory SHOULD NOT be given to the particpants!
+
+Minimal files are:
+
+* `README.md`: Everything we need to know about your challenge should be there.
+
+  Think about description, initialization, running, bug list and explanation,
+  dependencies for installation (compilers, libs...).
+  Also give some input and output examples.
+
+* `src/` directory that contains the **fixed** version of the program.
+  That version MUST be working correctly as it will be used to validate the
+  private test files.
+  It will also be helpful for the team submission review.
+
+* `Makefile`: A link to `PUBLIC/Makefile`.
+  You can use a different one here if you need more complex things for the
+  development of the challenge.
+  In this case, just make sure to keep the public one up to date.
+
+* `tests.sh` the script used to check all input files from the `tests/` directory.
+  Basically it's just a link to the PUBLIC one so we ensure that the private and public
+  tests are checked in the same condition.
+
+* `tests/` the private tests that will be used during the competition and the
+  scoring. Tests follow the same format than in the `PUBLIC/tests/` directory.
+
+  During the competition, the inputs for the team version will be choosen from
+  this directory. Every challenge will be tested every 5 minutes for 3 hours.
+  You will need ~36 inputs to fit the 3 hours but remenber that the tests will
+  be selected randomly during the competition (so the teams can't predict what's
+  comment next). So ~15 inputs should do the trick.
+
+  It can also be a good idea to link the `PUBLIC/tests/` tests into the
+  `PRIVATE/tests/` so they will also be checked in the process (and passed as
+  input during the competition).
