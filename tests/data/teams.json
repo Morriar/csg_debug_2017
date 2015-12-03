@@ -1,0 +1,27 @@
+[
+	{
+		"id": "t01",
+		"name": "Team1",
+		"url": "http://localhost",
+		"score": 0,
+		"oxygen": 100,
+		"energy": 100,
+		"fixed": []
+	}, {
+		"id": "t02",
+		"name": "Team2",
+		"url": "http://127.0.0.1",
+		"score": 0,
+		"oxygen": 100,
+		"energy": 100,
+		"fixed": []
+	}, {
+		"id": "t03",
+		"name": "Team3",
+		"url": "http://127.0.0.2",
+		"score": 0,
+		"oxygen": 100,
+		"energy": 100,
+		"fixed": []
+	}
+]
