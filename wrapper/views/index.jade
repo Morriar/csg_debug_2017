@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= config.title
-  p= config.description
+	.tab-list
+		ul(class="nav nav-pills" role="tablist")
+			li(role="presentation" class="active")
+				a(href="#private" aria-controls="private" role="tab" data-toggle="pill") Private
+
+			li(role="presentation")
+				a(href="#public" aria-controls="public" role="tab" data-toggle="pill") Public
+
+	.tab-content
+		div(role="tabpanel" class="tab-pane fade in active" id="private")!= private
+		div(role="tabpanel" class="tab-pane fade" id="public")!= public
