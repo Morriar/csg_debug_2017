@@ -115,4 +115,33 @@ router.get('/check/:version/:test', function(req, res, next) {
   });
 });
 
+/* GET check for public version. */
+router.get('/', function(req, res, next) {
+  // Build
+  var build_url = req.protocol + '://' + req.get('host') + '/json/build/PUBLIC/';
+  request.get(build_url , function (err, resp, body) {
+    if(err) {
+		res.json({error: err.message, resp: resp, body: body});
+	} else {
+		var response = {
+			build: JSON.parse(body)
+		}
+	    // Run check
+		if(response.build.status == "success") {
+          var check_url = req.protocol + '://' + req.get('host') + '/json/check/PUBLIC/';
+          request.get(check_url , function (err, resp, body) {
+            if(err) {
+              res.json({error: err.message, resp: resp, body: body});
+            } else {
+			  response.check = JSON.parse(body);
+			  res.json(response);
+			}
+		  });
+		} else {
+			res.json(response);
+		}
+	}
+  });
+});
+
 module.exports = router;
