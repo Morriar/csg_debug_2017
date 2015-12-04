@@ -1,5 +1,27 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+	.container
+
+		h1= title
+		p Keep the dome systems up and running to survive!
+
+		h2 Teams
+		table.table.table-hover
+			tr
+				th(style='width: 50px')= '#'
+				th= 'Team'
+				th= ' '
+				th= ' '
+				th= ' '
+			each team, index in teams
+				tr
+					th= index + 1
+					th
+						a(href='/team/' + team.id)= team.name
+					td
+						+resource-bar(o2_icon, team.oxygen, "info")
+					td
+						+resource-bar(zz_icon,  team.energy, "warning")
+					th.text-muted= team.score
