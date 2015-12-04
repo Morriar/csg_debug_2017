@@ -27,7 +27,75 @@ If a resource hits 0 for more than one round, people under the dome die and the 
 
 To counterbalance the dome consumption effect, teams must fix bugs in the main systems.
 An up and running system produces a small amount of resources each turn its up.
-### Bug challenges
+
+## Architecture
+
+**All files MUST be UTF-8 encoded!**
+
+## Wrappers
+
+The wrapper provides a web interface against a bug challenge (see next section).
+
+With the html api, the wrapper can be used to review and test the bug challenge.
+With the json api the wrapper can act as a launcher for the bug challenge.
+
+### HTML API
+
+THe HTML API has for only goal to help the competition manager to review the status
+of each bug mannually.
+
+### JSON API
+
+The JSON API is used by the CRON task and the score board to launch and access
+bug challenge data.
+
+Interface:
+
+* `GET /json` pull, build and test the big challenge with a randomly selected test.
+
+	Response:
+		{
+			build: {
+				status: "success",
+				message: ""
+			},
+			check: {
+				name: "test1",
+				status: "success",
+				message: ""
+			}
+		}
+
+* `GET /json/pull/` pull the public sources (version is always `PUBLIC`.
+
+	Response:
+		{
+			status: "success",
+			message: ""
+		}
+
+* `GET /json/build/:version` build the version requested.
+	`:version` is one of `PUBLIC` or `PRIVATE`.
+
+	Response:
+		{
+			status: "success",
+			message: ""
+		}
+
+* `GET /json/check/:version/:test` run the test `:test` against the built `:version`.
+
+	Response:
+		{
+			name: "test1",
+			status: "success",
+			message: ""
+		}
+
+## Bug challenges
+
+Bug challenges are programs that represent the main systems of the dome.
+These programs are bugged and must be fixed by the teams to keep everyone alive.
 
 ### `PUBLIC` directory
 
