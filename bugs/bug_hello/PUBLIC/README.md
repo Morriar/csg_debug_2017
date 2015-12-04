@@ -8,46 +8,37 @@ The program takes a simple argument `name` and displays `Hello <name>!`.
 
 ## Usage
 
-~~~sh
 	hello <name>
-~~~
 
 ## Input / Output examples
 
 Input:
-~~~
-<empty>
-~~~
+
+	<empty>
 
 Output:
-~~~
-Hello !
-~~~
+
+	Hello !
 
 Input:
-~~~
-Alex
-~~~
+
+	Alex
 
 Output:
-~~~
-Hello Alex!
-~~~
+
+	Hello Alex!
 
 Input:
-~~~
-!@#$%^&*()_+
-~~~
+
+	!@#$%^&*()_+
 
 Output:
-~~~
-Hello !@#$%^&*()_+!
-~~~
+
+	Hello !@#$%^&*()_+!
 
 ## Developers
 
 Usefull commands:
-~~
-make compile
-make test
-~~
+
+	make compile
+	make test

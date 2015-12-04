@@ -6,41 +6,33 @@ This bug is an example of how to debug a challenge.
 
 The program takes a simple argument `name` and displays `Hello <name>!`.
 
-~~~sh
 	hello <name>
-~~~
 
 ## Input / Output examples
 
 Input:
-~~~
-<empty>
-~~~
+
+	<empty>
 
 Output:
-~~~
-Hello !
-~~~
+
+	Hello !
 
 Input:
-~~~
-Alex
-~~~
+
+	Alex
 
 Output:
-~~~
-Hello Alex!
-~~~
+
+	Hello Alex!
 
 Input:
-~~~
-!@#$%^&*()_+
-~~~
+
+	!@#$%^&*()_+
 
 Output:
-~~~
-Hello !@#$%^&*()_+!
-~~~
+
+	Hello !@#$%^&*()_+!
 
 ## Bugs List
 
