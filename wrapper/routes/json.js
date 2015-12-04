@@ -6,8 +6,7 @@ var router = express.Router();
 var md = require('node-markdown').Markdown;
 var request = require('request');
 
-var bug_dir = '../bugs/bug_hello/'
-var out_dir = 'logs/'
+var out_dir = 'logs/';
 
 function loadTestFiles(version, dir) {
   var res = [];
@@ -27,19 +26,21 @@ function loadTestFiles(version, dir) {
 
 /* GET tests page. */
 router.get('/tests/:version/', function(req, res, next) {
+  var bug_dir = req.app.get('bug_dir');
   var version = req.params.version
-  var tests = loadTestFiles(version, bug_dir + version + '/tests/');
+  var tests = loadTestFiles(version, bug_dir + "/" + version + '/tests/');
   res.json(tests);
 });
 
 /* GET tests/:test_name page. */
 router.get('/tests/:version/:test', function(req, res, next) {
+  var bug_dir = req.app.get('bug_dir');
   var vis = req.params.version;
   var test_name = req.params.test;
   var obj = {
     name: test_name,
-    input: fs.readFileSync(bug_dir + vis + '/tests/' + test_name + '.in', 'UTF-8'),
-    exp: fs.readFileSync(bug_dir + vis + '/tests/' + test_name + '.res', 'UTF-8')
+    input: fs.readFileSync(bug_dir + "/" + vis + '/tests/' + test_name + '.in', 'UTF-8'),
+    exp: fs.readFileSync(bug_dir + "/" + vis + '/tests/' + test_name + '.res', 'UTF-8')
   }
   res.json(obj);
 });
@@ -48,8 +49,9 @@ router.get('/tests/:version/:test', function(req, res, next) {
 
 /* GET build version. */
 router.get('/build/:version', function(req, res, next) {
+  var bug_dir = req.app.get('bug_dir');
   var version = req.params.version
-  child_process.exec('make -C ' + bug_dir + version, function(err, stdout, stderr) {
+  child_process.exec('make -C ' + bug_dir + "/" + version, function(err, stdout, stderr) {
 	  var obj = {}
 	  if(err) {
 		  obj.status = 'failure',
@@ -63,8 +65,9 @@ router.get('/build/:version', function(req, res, next) {
 
 /* GET build version. */
 router.get('/check/:version/', function(req, res, next) {
+  var bug_dir = req.app.get('bug_dir');
   var version = req.params.version
-  var tests = loadTestFiles(version, bug_dir + version + '/tests/');
+  var tests = loadTestFiles(version, bug_dir + "/" + version + '/tests/');
   var rand = tests[Math.floor(Math.random() * tests.length)];
   var url = req.protocol + '://' + req.get('host') + '/json/check/' + version + '/' + rand.name;
   request.get(url , function (err, resp, body) {
@@ -78,13 +81,14 @@ router.get('/check/:version/', function(req, res, next) {
 
 /* GET build version. */
 router.get('/check/:version/:test', function(req, res, next) {
+  var bug_dir = req.app.get('bug_dir');
   var version = req.params.version;
   var test = req.params.test;
-  var exp_file = bug_dir + version + '/tests/' + test + '.res';
+  var exp_file = bug_dir + "/" + version + '/tests/' + test + '.res';
   var exp = fs.readFileSync(exp_file, 'UTF-8');
-  var input_file = bug_dir + version + '/tests/' + test + '.in';
+  var input_file = bug_dir + "/" + version + '/tests/' + test + '.in';
   var input = fs.readFileSync(input_file, 'UTF-8');
-  child_process.exec(bug_dir + version + '/bin/hello $(cat ' + input_file +' )', function(err, stdout, stderr) {
+  child_process.exec(bug_dir + "/" + version + '/bin/hello $(cat ' + input_file +' )', function(err, stdout, stderr) {
 	  var obj = {
 		  name: test,
 		  input: input,

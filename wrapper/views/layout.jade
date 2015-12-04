@@ -14,7 +14,10 @@ html
 						span.icon-bar
 						span.icon-bar
 						span.icon-bar
-					a.navbar-brand(href="/")= config.title
+					if config
+						a.navbar-brand(href="/")= config.title
+					else
+						a.navbar-brand(href="/") Bug Challenge
 
 				.collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
 					ul.nav.navbar-nav

@@ -4,11 +4,27 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fs = require('fs');
+
+var argv = process.argv
+if(argv.length != 3) {
+	console.log("usage:\n");
+	console.log("node bin/www path/to/challenge/bug.json")
+	process.exit(1);
+}
+
+var config_file = argv[2];
+var config = JSON.parse(fs.readFileSync(config_file, 'UTF-8'));
+var bug_dir = path.dirname(config_file);
 
 var routes = require('./routes/index');
 var json = require('./routes/json');
 
 var app = express();
+
+app.set('config_file', config_file);
+app.set('config', config);
+app.set('bug_dir', bug_dir);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
