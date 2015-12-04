@@ -9,7 +9,7 @@ var config = JSON.parse(fs.readFileSync(bug_dir + 'bug.json', 'UTF-8'));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { config: config, title: 'Bug Challenge Wrapper'});
 });
 
 /* GET README page. */
