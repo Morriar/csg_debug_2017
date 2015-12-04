@@ -1,7 +1,25 @@
+-var o2_icon = '<span><b>O<sup>2</sup></b></span>'
+-var zz_icon = '<span class="glyphicon glyphicon-flash"></span>'
+
+mixin resource-bar(icon, value, color)
+	dl.dl-horizontal.dl-short
+		dt| !{icon}
+		dd
+			div.progress
+				div(class='progress-bar progress-bar-#{color} progress-bar-striped active', role='progressbar', aria-valuenow=value, aria-valuemin='0', aria-valuemax='100', style='width: #{value}%')
+					| #{value}%
+
+
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		title= title
+		link(rel='stylesheet' href='/vendors/bootstrap-3.3.5-dist/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/stylesheets/style.css')
+
+	body
+		block content
+
+		script(src='/vendors/jquery-2.1.4-min/jquery.js')
+		script(src='/vendors/bootstrap-3.3.5-dist/js/bootstrap.min.js')
+		script(src='/javascripts/script.js')
