@@ -1,0 +1,32 @@
+extends layout
+
+mixin table(tests)
+	table.table
+		thead
+			tr
+				th Test Name
+		tbody
+			each test in tests
+				tr
+					td
+						a(href='/tests/#{test.version}/#{test.name}')= test.name
+		tfoot
+			tr
+				th Count #{tests.length}
+
+block content
+	h1= title
+
+	.tab-list
+		ul(class="nav nav-pills" role="tablist")
+			li(role="presentation" class="active")
+				a(href="#private" aria-controls="private" role="tab" data-toggle="pill") Private
+
+			li(role="presentation")
+				a(href="#public" aria-controls="public" role="tab" data-toggle="pill") Public
+
+	.tab-content
+		div(role="tabpanel" class="tab-pane fade in active" id="private")
+			+table(private)
+		div(role="tabpanel" class="tab-pane fade" id="public")
+			+table(public)
