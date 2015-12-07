@@ -30,9 +30,64 @@ An up and running system produces a small amount of resources each turn its up.
 
 ## Architecture
 
-**All files MUST be UTF-8 encoded!**
+The next figure shows the general architecture and communication between components.
+Each component is reviewed in details in de the next sections.
 
-## Wrappers
+				                       read
+				       MONGO DB     <---------    SCOREBOARD
+				    (game status)                (html views)
+				          ^
+				          |
+				          | update
+				          |
+				        CRON
+				(game logic, rounds)
+                 /                \
+		        /                  \
+	           |    exec wrapper    |
+	           |       (json)       |
+			   |                    |
+	           v                    v
+	     TEAM_1 WRAPPER       TEAM_2 WRAPPER
+        (wrapper, bugs)      (wrapper, bugs)
+	  (origin, priv tests) (origin, priv tests)
+	           ^                    ^
+               |                    |
+               | git push           |  git push
+               |                    |
+               |                    |
+		TEAM_1 COMPUTER      TEAM_2 COMPUTER
+		  (git repos)          (git repos)
+
+## MongoDB
+
+The MongoDB databased is used to store the game status and events.
+
+The main database is `csg_debug`, this is the one that will be used for the competition.
+Please use any other batabase name for tests.
+
+Collections of the `csg_debug` database are:
+
+* `game` the started game (only one item in the collection)
+* `teams` the list of registered teams for the game
+* `bugs` the list of registered bugs for the game
+* `status` the resulting bug status for each team for each round
+
+## Scoreboard
+
+The score board is used to display the list of teams and their remaining ressources
+during the competition.
+
+There is two public pages:
+
+* `/` teams ranking page that displays all teams and their levels of Oxygen,
+  Energy and Score.
+
+* `/team/:team` team page that shows the status of one team. It displays its ressources
+  and each bugs with the last ping results.
+
+
+## Team Wrappers
 
 The wrapper provides a web interface against a bug challenge (see next section).
 
