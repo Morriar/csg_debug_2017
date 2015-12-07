@@ -139,7 +139,7 @@ router.get('/bugs/:bug/test/:version/:test', function(req, res, next) {
   var exp = fs.readFileSync(exp_file, 'UTF-8');
   var input_file = tests_dir + '/' + test + '.in';
   var input = fs.readFileSync(input_file, 'UTF-8');
-  child_process.exec(bug.path + "/" + version + '/bin/hello $(cat ' + input_file +' )', function(err, stdout, stderr) {
+  child_process.exec(bug.path + "/" + version + '/' + bug.config.command + ' $(cat ' + input_file +' )', function(err, stdout, stderr) {
 	  var obj = {
 		  name: test,
 		  input: input,

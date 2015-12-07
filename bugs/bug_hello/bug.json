@@ -1,5 +1,6 @@
 {
 	"name": "bug_hello",
 	"title": "Bug Hello",
-	"description": "Challenge example for the debug competition."
+	"description": "Challenge example for the debug competition.",
+	"command": "bin/hello"
 }
