@@ -7,12 +7,33 @@
 var app = require('../app');
 var debug = require('debug')('wrapper:server');
 var http = require('http');
+var path = require('path');
+var fs = require('fs');
+
+/**
+ * Team config.
+ */
+
+var argv = process.argv
+if(argv.length != 3) {
+	console.log("usage:\n");
+	console.log("node bin/www path/to/challenge/bug.json")
+	process.exit(1);
+}
+
+var team_file = argv[2];
+app.set('team_file', team_file);
+var team_dir = path.dirname(team_file);
+app.set('team_dir', team_dir);
+var team = JSON.parse(fs.readFileSync(team_file, 'UTF-8'));
+app.set('team', team);
+var bugs_dir = team_dir + '/bugs/';
+app.set('bugs_dir', bugs_dir);
 
 /**
  * Get port from environment and store in Express.
  */
-
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(team.port || process.env.PORT || '3000');
 app.set('port', port);
 
 /**

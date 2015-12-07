@@ -2,7 +2,7 @@
 	{
 		"id": "team_01",
 		"name": "Team 01",
-		"url": "http://localhost:3001",
+		"port": "3001",
 		"score": 0,
 		"oxygen": 100,
 		"energy": 100

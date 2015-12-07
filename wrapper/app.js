@@ -1,31 +1,13 @@
 var express = require('express');
-var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var fs = require('fs');
-
-var argv = process.argv
-if(argv.length != 3) {
-	console.log("usage:\n");
-	console.log("node bin/www path/to/challenge/bug.json")
-	process.exit(1);
-}
-
-var team_file = argv[2];
-var team_dir = path.dirname(team_file);
-var team = JSON.parse(fs.readFileSync(team_file, 'UTF-8'));
-var bugs_dir = team_dir + '/bugs/';
+var path = require('path');
 
 var routes = require('./routes/index');
 
 var app = express();
-
-app.set('team_file', team_file);
-app.set('team_dir', team_dir);
-app.set('team', team);
-app.set('bugs_dir', bugs_dir);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
