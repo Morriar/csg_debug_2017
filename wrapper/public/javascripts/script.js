@@ -6,8 +6,8 @@ $('.run-build').on('click', function() {
 	var td = $this.parent("td").next("td");
 	td.empty();
 
-	var version = $this.data().version;
-	$.get( "/json/build/" + version, function(data) {
+	var url = $this.data().url;
+	$.get(url, function(data) {
 		// console.log(data);
 		if(data.status == "success") {
 			td.append(
@@ -45,7 +45,7 @@ $('.run-build').on('click', function() {
 });
 
 $('.run-all').on('click', function() {
-	$('.run-test').trigger('click');
+	$('.run-test:visible').trigger('click');
 });
 
 $('.run-test').on('click', function() {
@@ -54,9 +54,8 @@ $('.run-test').on('click', function() {
 	var td = btn.parent("td").next("td");
 	td.empty();
 
-	var version = btn.data().version;
-	var test = btn.data().test;
-	$.get( "/json/check/" + version + '/' + test, function(data) {
+	var url = btn.data().url;
+	$.get(url, function(data) {
 		// console.log(data);
 		if(data.status == "success") {
 			td.append(
@@ -89,6 +88,23 @@ $('.run-test').on('click', function() {
 				.popover()
 			);
 		}
+		btn.removeAttr('disabled');
+	});
+});
+
+$('.run-round').on('click', function() {
+	var btn = $(this)
+	btn.attr('disabled', 'disabled');
+	var div = $("#roundResponse");
+	div.empty();
+
+	var url = btn.data().url;
+	$.get(url, function(data) {
+		div.append(
+			$('<pre>').append(
+				$('code').innerHTML = JSON.stringify(data, null, 4)
+			)
+		);
 		btn.removeAttr('disabled');
 	});
 });

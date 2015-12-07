@@ -13,18 +13,19 @@ if(argv.length != 3) {
 	process.exit(1);
 }
 
-var config_file = argv[2];
-var config = JSON.parse(fs.readFileSync(config_file, 'UTF-8'));
-var bug_dir = path.dirname(config_file);
+var team_file = argv[2];
+var team_dir = path.dirname(team_file);
+var team = JSON.parse(fs.readFileSync(team_file, 'UTF-8'));
+var bugs_dir = team_dir + '/bugs/';
 
 var routes = require('./routes/index');
-var json = require('./routes/json');
 
 var app = express();
 
-app.set('config_file', config_file);
-app.set('config', config);
-app.set('bug_dir', bug_dir);
+app.set('team_file', team_file);
+app.set('team_dir', team_dir);
+app.set('team', team);
+app.set('bugs_dir', bugs_dir);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -39,7 +40,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/json', json);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

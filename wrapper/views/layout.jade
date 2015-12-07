@@ -14,15 +14,12 @@ html
 						span.icon-bar
 						span.icon-bar
 						span.icon-bar
-					if config
-						a.navbar-brand(href="/")= config.title
+					if team
+						a.navbar-brand(href="/")= team.name
 					else
-						a.navbar-brand(href="/") Bug Challenge
+						a.navbar-brand(href="/") Team Wrapper
 
-				.collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
-					ul.nav.navbar-nav
-						li
-							a(href="/tests") Tests
+				block menus
 
 		.container
 			block content

@@ -39,6 +39,24 @@ The wrapper provides a web interface against a bug challenge (see next section).
 With the html api, the wrapper can be used to review and test the bug challenge.
 With the json api the wrapper can act as a launcher for the bug challenge.
 
+Usage:
+
+	wrapper/bin/www team/dir/team.json
+
+The team.json config file MUST be in the team directory as it is used to resolve
+the team working directory.
+
+## Teams directories
+
+A team directory represent a copy of all bugs for a team.
+
+Team directory structure:
+
+* `team.json` team wrapper config file
+* `bugs` copy of the `bugs/` directory
+
+Team directories can be deployed with the tool `tools/deploy_teams.nit`.
+
 ### HTML API
 
 THe HTML API has for only goal to help the competition manager to review the status
