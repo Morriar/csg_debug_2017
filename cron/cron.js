@@ -57,16 +57,16 @@ function pingTeams(db, round, bugs) {
 }
 
 var argv = process.argv;
-if(argv.length != 3) {
+if(argv.length != 5) {
 	console.log("usage:\n");
-	console.log("node cron.js db_name");
+	console.log("node cron.js db_name max_rounds round_duration");
 	process.exit(1);
 }
 
 // Rules config
-var maxRounds = 10;
+var maxRounds = argv[3];
 var currentRound = 0;
-var roundDuration = 2;
+var roundDuration = argv[4];
 var o2_loss = 10;
 var z_loss = 10;
 

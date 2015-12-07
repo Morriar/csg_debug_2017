@@ -20,7 +20,6 @@ if not json isa JsonArray then
 	return
 end
 
-out_dir.rmdir
 out_dir.mkdir
 
 for team in json do
