@@ -28,6 +28,17 @@ If a resource hits 0 for more than one round, people under the dome die and the 
 To counterbalance the dome consumption effect, teams must fix bugs in the main systems.
 An up and running system produces a small amount of resources each turn its up.
 
+## Requirements
+
+This competition requires the following dependencies:
+* `make 3.0`
+* `nit 0.7`
+* `mongodb 2.4.9`
+* `nodejs 0.10`
+* `npm 1.3`
+
+**All files MUST be UTF-8 encoded!**
+
 ## Architecture
 
 The next figure shows the general architecture and communication between components.
