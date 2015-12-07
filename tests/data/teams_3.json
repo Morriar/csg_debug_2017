@@ -1,0 +1,24 @@
+[
+	{
+		"id": "team_01",
+		"name": "Team 01",
+		"url": "http://localhost:3001",
+		"score": 0,
+		"oxygen": 100,
+		"energy": 100
+	}, {
+		"id": "team_02",
+		"name": "Team 02",
+		"url": "http://localhost:3002",
+		"score": 0,
+		"oxygen": 100,
+		"energy": 100
+	}, {
+		"id": "team_03",
+		"name": "Team 03",
+		"url": "http://localhost:3003",
+		"score": 0,
+		"oxygen": 100,
+		"energy": 100
+	}
+]
