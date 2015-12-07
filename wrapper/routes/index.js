@@ -224,6 +224,7 @@ router.get('/round', function(req, res, next) {
 	  };
 	  var response = {
 		team: team.id,
+	    timestamp: new Date().getTime(),
 		bugs: results
 	  };
 	  res.json(response);
