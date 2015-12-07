@@ -86,6 +86,28 @@ There is two public pages:
 * `/team/:team` team page that shows the status of one team. It displays its ressources
   and each bugs with the last ping results.
 
+## CRON
+
+The CRON is responsible to ping each team wrapper for each round and apply the game
+logic depending on the results.
+
+CRON logic:
+
+	for round in game.rounds do
+		for team in game.teams do
+			team.resources = apply_round_loss()
+			var response = ping team wrapper on `team.url + /round`
+			for each bug in response do
+				if bug.fixed then
+					team.ressources
+				end
+			end
+			if team.resources <= 0 then kill(team)
+		end
+	end
+
+Cron data can be initialized with the tool `tools/load_db.js`.
+Test data can be found in `tests/data/`.
 
 ## Team Wrappers
 

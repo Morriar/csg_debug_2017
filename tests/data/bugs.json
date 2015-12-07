@@ -1,0 +1,20 @@
+[
+    {
+        "id": "bug_01",
+        "title": "Control Point 1",
+        "desc": "A very long descirption that spans multiple lines",
+        "icon": "lock.png",
+        "o2boost": 5,
+        "zboost": 5,
+        "score_bonus": 10
+    },
+    {
+        "id": "bug_02",
+        "title": "Control Point 2",
+        "desc": "A very long descirption that spans multiple lines",
+        "icon": "lock.png",
+        "o2boost": 5,
+        "zboost": 5,
+        "score_bonus": 10
+    }
+]
