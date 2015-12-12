@@ -1,13 +1,18 @@
 -var o2_icon = '<span><b>O<sup>2</sup></b></span>'
 -var zz_icon = '<span class="glyphicon glyphicon-flash"></span>'
 
+mixin o2-bar(value)
+	+resource-bar(o2_icon, value, "info")
+
+mixin zz-bar(value)
+	+resource-bar(zz_icon,  value, "warning")
+
 mixin resource-bar(icon, value, color)
 	dl.dl-horizontal.dl-short
 		dt| !{icon}
 		dd
 			div.progress
-				div(class='progress-bar progress-bar-#{color} progress-bar-striped active', role='progressbar', aria-valuenow=value, aria-valuemin='0', aria-valuemax='100', style='width: #{value}%')
-					| #{value}%
+				div(class='progress-bar progress-bar-#{color} progress-bar-striped active', role='progressbar', aria-valuenow=value, aria-valuemin='0', aria-valuemax='100', style='width: #{value}%') #{value}%
 
 
 doctype html
