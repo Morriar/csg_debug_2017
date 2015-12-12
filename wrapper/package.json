@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "PORT=3001 node ./bin/www ../tests/teams/team_1/team.json"
+    "start": "PORT=3001 node ./bin/www ../tests/out/team_01/team.json"
   },
   "dependencies": {
     "body-parser": "~1.12.4",
