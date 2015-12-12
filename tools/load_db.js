@@ -1,3 +1,25 @@
+//  Copyright 2015 Alexandre Terrasa <alexandre@moz-code.org>.
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+
+// Use this tool to load th database with a json file.
+//
+// usage:
+//	node load_db.js db_name collection_name /path/to/json
+//
+// Pass "drop" as filename to drop the database:
+//	node load_db.js db_name collection_name drop
+
 var fs = require("fs");
 var mongo = require('mongoskin');
 
@@ -7,7 +29,7 @@ function load_collection(db, collection, items) {
 	for(i in items) {
 		db.collection(collection).insert(items[i]);
 	}
-	var count = db.collection(collection).count(function(err, count) {
+	db.collection(collection).count(function(err, count) {
 		console.log("Loaded " + count + " " + collection +"...")
 		process.exit(0);
 	});
@@ -32,5 +54,8 @@ var file = argv[4];
 
 var db = mongo.db('mongodb://localhost:27017/' + db_name)
 
-var items = readJsonFile(file);
-load_collection(db, collection_name, items)
+if(file === "drop") {
+	load_collection(db, collection_name, []);
+} else {
+	load_collection(db, collection_name, readJsonFile(file));
+}
