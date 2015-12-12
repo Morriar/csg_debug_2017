@@ -19,6 +19,7 @@ block content
 
 	div.container#canvas-dome
 		each bug in bugs
+		+round-panel(round)
 
 			-var desc = "<p>#{bug.desc}</p><dl class='dl-horizontal dl-short'><class='text-primary'>"
 
