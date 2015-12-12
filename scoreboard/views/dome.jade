@@ -3,25 +3,48 @@ extends layout
 block content
 
 	div.container
-		div.row
-			div.col-sm-12
-				h1
-					= team.name
-					| <small>&nbsp;
-					= team.score
-					| pts</small>
-		div.row
-			div.col-sm-6
-				+resource-bar(o2_icon, team.oxygen, "info")
-			div.col-sm-6
-				+resource-bar(zz_icon, team.energy, "warning")
-		div &nbsp;
 
-	div.container#canvas-dome
-		each bug in bugs
+		if !team
+			div.panel.panel-error
+				h3 Team Error
+				p Team id not found
+		else
+			div.panel.panel-custom
+				div.row
+					div.col-sm-12
+						h1
+							= team.name
+							| <small>&nbsp;
+							= team.score
+							| pts</small>
+						br
+				div.row
+					div.col-sm-6
+						+resource-bar(o2_icon, team.oxygen, "info")
+					div.col-sm-6
+						+resource-bar(zz_icon, team.energy, "warning")
+				br
 		+round-panel(round)
 
-			-var desc = "<p>#{bug.desc}</p><dl class='dl-horizontal dl-short'><class='text-primary'>"
+		if status.error
+			div.panel.panel-error
+				h3 Team Server Error
+				p Your team server does not respond anymore. Contact the competition team now!
+		else
+			-var cls = team.isDead? 'isdead': team.inDanger? 'indanger': '';
+			div.panel.panel-custom.panel-dome(class='team ' + cls)
+				div.container#canvas-dome
+					each bug in status.bugs
+						-var css = bug.status == "success" ? "success" : "danger"
+						button(id=bug.id class='slot-icon btn btn-#{css}' title=bug.title data-bid=bug.id data-tid=team.id)
 
-			button(id=bug.id, class='slot-icon btn btn-#{bug.status}', style='background-image: url("/images/#{bug.icon}")', data-toggle='popover', data-trigger="focus", title=bug.title, data-html='true', data-content=desc)
-
+	.modal.fade(tabindex='-1' role='dialog')#bugModal
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type='button' data-dismiss='modal' aria-label='Close')
+						span(aria-hidden='true') &times;
+					h4.modal-title
+				.modal-body
+				.modal-footer
+					button.btn.btn-default(type='button' data-dismiss='modal') Close

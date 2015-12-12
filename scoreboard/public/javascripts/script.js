@@ -1,4 +1,15 @@
 $(document).ready(function() {
+	$('.slot-icon').on('click', function() {
+		var bid = $(this).data('bid');
+		var tid = $(this).data('tid');
+		var title = $(this).attr('title');
+		$.get('/team/' + tid + '/' + bid, function(data) {
+			$('#bugModal').find('.modal-title').text(title)
+			$('#bugModal').find('.modal-body').html(data)
+			$('#bugModal').modal();
+		});
+	});
+
 	var countdown = $('.countdown');
 	if(countdown) {
 		var ends = countdown.data('endsat');

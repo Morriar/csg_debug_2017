@@ -1,0 +1,73 @@
+-var o2_icon = '<span><b>O<sup>2</sup></b></span>'
+-var zz_icon = '<span class="glyphicon glyphicon-flash"></span>'
+
+mixin date(timestamp)
+	- var d = new Date(timestamp)
+	- var aaaa = d.getFullYear()
+	- var mm = d.getMonth()
+	- var dd = d.getDate()
+	- var hh = d.getHours()
+	- var uu = d.getMinutes()
+	- var ss = d.getSeconds()
+	span #{aaaa}/#{mm}/#{dd} #{hh}:#{uu}:#{ss}
+
+if !rounds
+	p.text-danger Bug not found.
+else
+	-bug = rounds[1];
+	p= bug.description
+	br
+	table.table
+		tr
+			th(width='5%')!= o2_icon
+			if bug.o2boost > 0
+				th.text-success +#{bug.o2boost}
+			else
+				th.text-danger= bug.o2boost
+			th(width='5%')!= zz_icon
+			if bug.zboost > 0
+				th.text-success +#{bug.zboost}
+			else
+				th.text-danger= bug.zboost
+			th +#{bug.score_bonus} pts / round
+
+	h3 Last status
+	table.table
+		if bug.build
+			tr
+				th Build
+				if bug.build.status === "failure"
+					td
+						strong.text-danger FAILURE
+						pre(style='width: 450px;')= bug.build.message
+				else
+					th.text-success SUCCESS
+		if bug.check
+			tr
+				th Check
+				if bug.check.status === "failure"
+					td
+						strong.text-danger FAILURE
+						pre(style='width: 450px;')= bug.check.message
+				else
+					th.text-success SUCCESS
+	h3 Logs
+	table.table
+		tr
+			th(width='10%') Round
+			th(width='30%') Timestamp
+			th Status
+		for round, index in rounds
+			tr
+				th # #{index}
+				td
+					+date(round.timestamp)
+				td
+					if bug.build && bug.build.status === "failure"
+						strong.text-danger BUILD FAILURE
+						pre(style='width: 450px; overflow: scroll;')= bug.build.message
+					else if bug.check && bug.check.status === "failure"
+						strong.text-danger TEST FAILURE
+						pre(style='width: 400px;')= bug.check.message
+					else
+						b.text-success SUCCESS
