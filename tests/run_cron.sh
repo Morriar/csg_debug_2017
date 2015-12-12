@@ -11,7 +11,8 @@ bugs=$2
 
 # Load db
 node ../tools/load_db.js csg_debug teams $teams
-node ../tools/load_db.js csg_debug bugs data/bugs.json
+node ../tools/load_db.js csg_debug status drop
+node ../tools/load_db.js csg_debug rounds drop
 
 # Deploy teams
 nit ../tools/deploy_teams.nit $teams $bugs out/

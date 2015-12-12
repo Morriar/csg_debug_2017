@@ -1,55 +1,57 @@
 Loaded 3 teams...
-Loaded 2 bugs...
+Drop collection status...
+Drop collection round...
 Deploy team team_01...
 Deploy team team_02...
 Deploy team team_03...
+# Start game (10 rounds, 3 teams)
 
-## ROUND 1 / 10
- * team_01 (o2:90, e: 90, s: 0)
- * team_02 (o2:90, e: 90, s: 0)
- * team_03 (o2:90, e: 90, s: 0)
+## ROUND 1
+ * team_01 (o2:90, z: 90, s: 0) ERROR: connect ECONNREFUSED
+ * team_02 (o2:90, z: 90, s: 0) ERROR: connect ECONNREFUSED
+ * team_03 (o2:90, z: 90, s: 0) ERROR: connect ECONNREFUSED
 
-## ROUND 2 / 10
- * team_01 (o2:80, e: 80, s: 0)
- * team_02 (o2:80, e: 80, s: 0)
- * team_03 (o2:80, e: 80, s: 0)
+## ROUND 2
+ * team_01 (o2:80, z: 80, s: 0) ERROR: connect ECONNREFUSED
+ * team_02 (o2:80, z: 80, s: 0) ERROR: connect ECONNREFUSED
+ * team_03 (o2:80, z: 80, s: 0) ERROR: connect ECONNREFUSED
 
-## ROUND 3 / 10
- * team_01 (o2:70, e: 70, s: 0)
- * team_02 (o2:70, e: 70, s: 0)
- * team_03 (o2:70, e: 70, s: 0)
+## ROUND 3
+ * team_01 (o2:70, z: 70, s: 0) ERROR: connect ECONNREFUSED
+ * team_02 (o2:70, z: 70, s: 0) ERROR: connect ECONNREFUSED
+ * team_03 (o2:70, z: 70, s: 0) ERROR: connect ECONNREFUSED
 
-## ROUND 4 / 10
- * team_01 (o2:60, e: 60, s: 0)
- * team_02 (o2:60, e: 60, s: 0)
- * team_03 (o2:60, e: 60, s: 0)
+## ROUND 4
+ * team_01 (o2:60, z: 60, s: 0) ERROR: connect ECONNREFUSED
+ * team_02 (o2:60, z: 60, s: 0) ERROR: connect ECONNREFUSED
+ * team_03 (o2:60, z: 60, s: 0) ERROR: connect ECONNREFUSED
 
-## ROUND 5 / 10
- * team_01 (o2:50, e: 50, s: 0)
- * team_02 (o2:50, e: 50, s: 0)
- * team_03 (o2:50, e: 50, s: 0)
+## ROUND 5
+ * team_01 (o2:50, z: 50, s: 0) ERROR: connect ECONNREFUSED
+ * team_02 (o2:50, z: 50, s: 0) ERROR: connect ECONNREFUSED
+ * team_03 (o2:50, z: 50, s: 0) ERROR: connect ECONNREFUSED
 
-## ROUND 6 / 10
- * team_01 (o2:40, e: 40, s: 0)
- * team_02 (o2:40, e: 40, s: 0)
- * team_03 (o2:40, e: 40, s: 0)
+## ROUND 6
+ * team_01 (o2:40, z: 40, s: 0) ERROR: connect ECONNREFUSED
+ * team_02 (o2:40, z: 40, s: 0) ERROR: connect ECONNREFUSED
+ * team_03 (o2:40, z: 40, s: 0) ERROR: connect ECONNREFUSED
 
-## ROUND 7 / 10
- * team_01 (o2:30, e: 30, s: 0)
- * team_02 (o2:30, e: 30, s: 0)
- * team_03 (o2:30, e: 30, s: 0)
+## ROUND 7
+ * team_01 (o2:30, z: 30, s: 0) ERROR: connect ECONNREFUSED
+ * team_02 (o2:30, z: 30, s: 0) ERROR: connect ECONNREFUSED
+ * team_03 (o2:30, z: 30, s: 0) ERROR: connect ECONNREFUSED
 
-## ROUND 8 / 10
- * team_01 (o2:20, e: 20, s: 0)
- * team_02 (o2:20, e: 20, s: 0)
- * team_03 (o2:20, e: 20, s: 0)
+## ROUND 8
+ * team_01 (o2:20, z: 20, s: 0) ERROR: connect ECONNREFUSED
+ * team_02 (o2:20, z: 20, s: 0) ERROR: connect ECONNREFUSED
+ * team_03 (o2:20, z: 20, s: 0) ERROR: connect ECONNREFUSED
 
-## ROUND 9 / 10
- * team_01 (o2:10, e: 10, s: 0)
- * team_02 (o2:10, e: 10, s: 0)
- * team_03 (o2:10, e: 10, s: 0)
+## ROUND 9
+ * team_01 (o2:10, z: 10, s: 0) ERROR: connect ECONNREFUSED
+ * team_02 (o2:10, z: 10, s: 0) ERROR: connect ECONNREFUSED
+ * team_03 (o2:10, z: 10, s: 0) ERROR: connect ECONNREFUSED
 
-## ROUND 10 / 10
- * team_01 (o2:0, e: 0, s: 0)
- * team_02 (o2:0, e: 0, s: 0)
- * team_03 (o2:0, e: 0, s: 0)
+## ROUND 10
+ * team_01 (o2:0, z: 0, s: 0) ERROR: connect ECONNREFUSED
+ * team_02 (o2:0, z: 0, s: 0) ERROR: connect ECONNREFUSED
+ * team_03 (o2:0, z: 0, s: 0) ERROR: connect ECONNREFUSED
