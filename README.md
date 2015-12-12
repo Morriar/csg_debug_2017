@@ -79,23 +79,49 @@ Please use any other batabase name for tests.
 
 Collections of the `csg_debug` database are:
 
-* `game` the started game (only one item in the collection)
 * `teams` the list of registered teams for the game
-* `bugs` the list of registered bugs for the game
 * `status` the resulting bug status for each team for each round
+* `rounds` the rounds of the game and started time
+
+There is a tool called `load_db` to load json files into the Mongod database.
+Look at `tools/load_db.js`:
+
+	node tools/load_db.js csg_debug teams tests/data/teams_3.json
+
+The same tool can also be used to clear game data:
+
+	node tools/load_db.js csg_debug teams drop
+
+See `tests/data` for some data you can use when developping and testing your bug
+challenges.
 
 ## Scoreboard
 
 The score board is used to display the list of teams and their remaining ressources
 during the competition.
 
+To run the scoreboard:
+
+	node scoreboard/bin/www
+
+Or to run in debug mode:
+
+	make -C scoreboard
+
 There is two public pages:
 
-* `/` teams ranking page that displays all teams and their levels of Oxygen,
+* `GET /` teams ranking page that displays all teams and their levels of Oxygen,
   Energy and Score.
 
-* `/team/:team` team page that shows the status of one team. It displays its ressources
+* `GET /team/:team` team page that shows the status of one team. It displays its ressources
   and each bugs with the last ping results.
+
+Also one internal page is used to serve the bug status modal by Ajax:
+
+* `GET /team/:team/:bug` bug stauts page that shows the status of the bug and the logs.
+
+The scoreboard depends on the MongoDB data to render the pages.
+The database is populated by the CRON.
 
 ## CRON
 
@@ -118,11 +144,11 @@ CRON logic:
 	end
 
 Cron data can be initialized with the tool `tools/load_db.js`.
-Test data can be found in `tests/data/`.
 
 ## Team Wrappers
 
-The wrapper provides a web interface against a bug challenge (see next section).
+The wrapper provides a web interface against the bug challenges (the programs to
+debug). There is one team wrapper by team.
 
 With the html api, the wrapper can be used to review and test the bug challenge.
 With the json api the wrapper can act as a launcher for the bug challenge.
@@ -157,22 +183,26 @@ bug challenge data.
 
 Interface:
 
-* `GET /json` pull, build and test the big challenge with a randomly selected test.
+* `GET /round` pull, build and test the big challenge with a randomly selected test.
 
 	Response:
 		{
+			team: "team.id",
 			build: {
+				id: "bud.id",
+				name: "test",
 				status: "success",
 				message: ""
 			},
 			check: {
-				name: "test1",
+				id: "bud.id",
+				name: "test",
 				status: "success",
 				message: ""
 			}
 		}
 
-* `GET /json/pull/` pull the public sources (version is always `PUBLIC`.
+* `GET /bugs/:bug/pull` pull the public sources (version is always `PUBLIC`.
 
 	Response:
 		{
@@ -180,7 +210,7 @@ Interface:
 			message: ""
 		}
 
-* `GET /json/build/:version` build the version requested.
+* `GET /bugs/:bug/build/:version` build the version requested.
 	`:version` is one of `PUBLIC` or `PRIVATE`.
 
 	Response:
@@ -189,7 +219,17 @@ Interface:
 			message: ""
 		}
 
-* `GET /json/check/:version/:test` run the test `:test` against the built `:version`.
+* `GET /bugs/:bug/test/:version` run a random test against the built `:version`.
+
+	Response:
+		{
+			name: "test1",
+			status: "success",
+			message: ""
+		}
+
+
+* `GET /bugs/:bug/test/:version/:test` run the test `:test` against the built `:version`.
 
 	Response:
 		{
