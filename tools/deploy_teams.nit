@@ -1,3 +1,22 @@
+# Copyright 2015 Alexandre Terrasa <alexandre@moz-code.org>.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Use this tool to deploy teams infrastructures from a json list.
+#
+# usage:
+#	deploy_teams teams.json bugs/dir out/dir
+
 import json
 
 if args.length != 3 then
@@ -10,10 +29,7 @@ var team_list = args[0]
 var bugs_dir = args[1]
 var out_dir = args[2]
 
-var json
-with fr = new FileReader.open(team_list) do
-	json = fr.read_all.parse_json
-end
+var json = team_list.to_path.read_all.parse_json
 if not json isa JsonArray then
 	print "Unable to read {team_list}"
 	exit 1
@@ -35,9 +51,7 @@ for team in json do
 	team_config["id"] = id
 	team_config["name"] = team["name"].as(String)
 	team_config["port"] = team["port"].as(String)
-	with fw = new FileWriter.open(team_dir / "team.json") do
-		fw.write(team_config.to_pretty_json)
-	end
+	team_config.to_pretty_json.write_to_file(team_dir / "team.json")
 
 	# TODO make public repos and init first commmit
 	# TODO make participant folder
