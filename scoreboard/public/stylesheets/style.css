@@ -121,7 +121,7 @@ tr.team.indanger a {color: #ff0000; }
 #bug_09 { left:600px; top:200px; }
 #bug_10 { left:275px; top:300px; }
 #bug_11 { left:475px; top:300px; }
-#bug_12 { left:550px; top:425px; }
+#thermal_reactor_1 { margin-left:-180px; margin-top:105px; background-image: url('/images/temp.png')}
 #bug_13 { left:200px; top:425px; }
 #bug_14 { left:750px; top:350px; }
 #bug_15 { left:375px; top:250px; }

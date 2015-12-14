@@ -1,4 +1,7 @@
+$('[data-toggle="popover"]').popover();
+
 $(document).ready(function() {
+
 	$('.slot-icon').on('click', function() {
 		var bid = $(this).data('bid');
 		var tid = $(this).data('tid');
@@ -7,6 +10,7 @@ $(document).ready(function() {
 			$('#bugModal').find('.modal-title').text(title)
 			$('#bugModal').find('.modal-body').html(data)
 			$('#bugModal').modal();
+			$('[data-toggle="popover"]').popover();
 		});
 	});
 
