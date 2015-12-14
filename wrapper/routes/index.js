@@ -107,31 +107,14 @@ router.get('/bugs/:bug/tests/:version/:test', function(req, res, next) {
 
 // TODO add PULL action
 
-/* GET build version. */
-router.get('/bugs/:bug/build/:version', function(req, res, next) {
-  var team = req.app.get('team');
-  var bug = loadBug(req.app.get('bugs_dir'), req.params.bug);
-  var version = req.params.version
-  child_process.exec('make compile-batch -sB -C ' + bug.path + "/" + version, function(err, stdout, stderr) {
-	  var obj = {}
-	  if(err) {
-		  obj.status = 'failure',
-		  obj.message = stderr
-	  } else {
-		  obj.status = 'success'
-	  }
-	  res.json(obj);
-  });
-});
-
 /* GET test version with random test input. */
-router.get('/bugs/:bug/test/:version', function(req, res, next) {
+router.get('/bugs/:bug/check/:version', function(req, res, next) {
   var team = req.app.get('team');
   var bug = loadBug(req.app.get('bugs_dir'), req.params.bug);
   var version = req.params.version
   var tests = loadTestFiles(version, bug.path + "/" + version + '/tests/');
   var rand = tests[Math.floor(Math.random() * tests.length)];
-  var url = req.protocol + '://' + req.get('host') + '/bugs/' + bug.name + '/test/' + version + '/' + rand.name;
+  var url = req.protocol + '://' + req.get('host') + '/bugs/' + bug.name + '/check/' + version + '/' + rand.name;
   request.get(url , function (err, resp, body) {
     if(err) {
 		res.json({error: err.message, resp: resp, body: body});
@@ -144,71 +127,22 @@ router.get('/bugs/:bug/test/:version', function(req, res, next) {
 var out_dir = 'logs/';
 
 /* GET test version with specific input. */
-router.get('/bugs/:bug/test/:version/:test', function(req, res, next) {
+router.get('/bugs/:bug/check/:version/:test', function(req, res, next) {
   var team = req.app.get('team');
   var bug = loadBug(req.app.get('bugs_dir'), req.params.bug);
   var version = req.params.version;
   var test = req.params.test;
-  var tests_dir = bug.path + '/' + version + '/tests';
-  var exp_file = tests_dir + '/' + test + '.res';
-  var exp = fs.readFileSync(exp_file, 'UTF-8');
-  var input_file = tests_dir + '/' + test + '.in';
-  var input = fs.readFileSync(input_file, 'UTF-8');
-  child_process.exec(bug.path + "/" + version + '/' + bug.config.command + ' $(cat ' + input_file +' )', function(err, stdout, stderr) {
-	  var obj = {
-		  name: test,
-		  input: input,
-	      expected: exp
-	  }
-	  var out_file = out_dir + (new Date().getTime()) + '.out';
+  child_process.exec('cd "' + bug.path + '/' + version + '" && ./tests.sh "' + test +'"',
+	function(err, stdout, stderr) {
+	  var obj = bug.config
 	  if(err) {
-          fs.writeFileSync(out_file, stderr);
-		  obj.output = stderr
+		obj.status = 'failure'
+		obj.output = stderr? stderr : stdout
 	  } else {
-          fs.writeFileSync(out_file, stdout);
-		  obj.output = stdout
+		obj.status = 'success'
+		obj.output = stdout
 	  }
-	  child_process.exec('diff -u ' + exp_file + ' ' + out_file, function(err, stdout, stderr) {
-	   if(err) {
-		   obj['status'] = 'failure'
-	       obj['message'] = stderr? stderr : stdout
-	   } else {
-		   obj['status'] = 'success'
-	   }
-       res.json(obj);
-	  });
-  });
-});
-
-/* GET build and test version with random test. */
-router.get('/bugs/:bug/check/:version', function(req, res, next) {
-  var team = req.app.get('team');
-  var bug = loadBug(req.app.get('bugs_dir'), req.params.bug);
-  // Build
-  var build_url = req.protocol + '://' + req.get('host') + '/bugs/' + bug.name + '/build/PUBLIC/';
-  request.get(build_url , function (err, resp, body) {
-    if(err) {
-		res.json({error: err.message, resp: resp, body: body});
-	} else {
-		var response = bug.config;
-		response.build = JSON.parse(body);
-	    // Run check
-		if(response.build.status == "success") {
-          var check_url = req.protocol + '://' + req.get('host') + '/bugs/' + bug.name + '/test/PUBLIC/';
-          request.get(check_url , function (err, resp, body) {
-            if(err) {
-              res.json({error: err.message, resp: resp, body: body});
-            } else {
-			  response.check = JSON.parse(body);
-			  response.status = response.check.status;
-			  res.json(response);
-			}
-		  });
-		} else {
-			response.status = "failure";
-			res.json(response);
-		}
-	}
+      res.json(obj);
   });
 });
 

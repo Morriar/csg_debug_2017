@@ -9,11 +9,6 @@ mixin build_block(version)
 					button(class='btn btn-primary run-pull') Pull src
 				td
 		tr
-			td(width='40%') Build the bug challenge binary
-			td(width='15%').text-center
-				button(class='btn btn-primary run-build' data-url='/bugs/#{bug.name}/build/#{version}') Build bin
-			td
-		tr
 			td(width='40%') Run all tests
 			td(width='15%').text-center
 				button(class='btn btn-primary run-all') Check all
@@ -32,7 +27,7 @@ mixin table(version, tests)
 					td
 						a(href='/bugs/#{bug.name}/tests/#{test.version}/#{test.name}')= test.name
 					td.text-center
-						button(class='btn btn-primary run-test' data-url='/bugs/#{bug.name}/test/#{version}/#{test.name}') Check test
+						button(class='btn btn-primary run-test' data-url='/bugs/#{bug.name}/check/#{version}/#{test.name}') Check test
 					td
 		tfoot
 			tr

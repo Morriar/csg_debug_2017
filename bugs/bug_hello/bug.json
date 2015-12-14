@@ -2,7 +2,6 @@
 	"id": "bug_hello",
 	"title": "Bug Hello",
 	"description": "Challenge example for the debug competition.",
-	"command": "bin/hello",
 	"icon": "lock.png",
 	"o2boost": "5",
 	"zboost": "5",
