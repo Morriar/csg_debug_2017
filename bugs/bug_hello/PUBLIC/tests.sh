@@ -1,43 +1,113 @@
 #!/bin/bash
 
-mkdir -p out/
+compile()
+{
+	compile_log=$1
+	make compile > "$compile_log" 2>&1
+	return $?
+}
 
-echo "Compile bin..."
-make compile > "out/compile.log" 2>&1
-if [ "$?" -ne 0 ]; then
-	echo " [FAIL] compile bin (cat out/compile.log)"
-	exit 1
-fi
+run_test()
+{
+	run_input=$1
+	run_output=$2
+	bin/hello $(cat $run_input) > "$run_output" 2>&1
+	return $?
+}
 
-echo -e "\nRun tests..."
-OK=0
-KO=0
-ALL=0
+diff_test()
+{
+	diff_input1=$1
+	diff_input2=$2
+	diff_output=$3
+	diff -u -- "$diff_input1" "$diff_input2" > "$diff_output"
+	return $?
+}
 
-for input in $(ls tests/*.in); do
-	ALL=$(($ALL + 1))
+run_all()
+{
+	out_dir=$1
+	tests_dir=$2
+	timestamp=$(date +"%s")
 
-	file=$(basename "$input")
-	name="${file%.*}"
-
-	out="out/$name.out"
-	exp="tests/$name.res"
-
-	bin/hello $(cat $input) > "$out" 2>&1
-
-	diff -u -- "$out" "$exp" > "out/$name.diff"
-	if [ "$?" == 0 ]; then
-		echo " * [OK] $name"
-		OK=$(($OK + 1))
-	else
-		echo " * [FAIL] $name (diff $out $exp)"
-		KO=$(($KO + 1))
+	echo "Compile bin..."
+	compile "$out_dir/compile.$timestamp.log"
+	if [ "$?" -ne 0 ]; then
+		echo " * [FAIL] compile bin (cat $out_dir/compile.log)"
+		exit 1
 	fi
-done
 
-echo -e "\n [ALL: $ALL, KO: $KO, OK: $OK]\n"
-if [ $KO -gt 0 ]; then
-	echo "Some tests have FAILED!"
+	echo -e "\nRun tests..."
+	OK=0
+	KO=0
+	ALL=0
+
+	for input in $(ls "$tests_dir"/*.in); do
+		ALL=$(($ALL + 1))
+
+		file=$(basename "$input")
+		name="${file%.*}"
+
+		out="$out_dir/$name.$timestamp.out"
+		exp="$tests_dir/$name.res"
+
+		run_test "$input" "$out"
+		diff_test "$out" "$exp" "$out_dir/$name.$timestamp.diff"
+		if [ "$?" == 0 ]; then
+			echo " * [OK] $name"
+			OK=$(($OK + 1))
+		else
+			echo " * [FAIL] $name (diff $out $exp)"
+			KO=$(($KO + 1))
+		fi
+	done
+
+	echo -e "\n [ALL: $ALL, KO: $KO, OK: $OK]\n"
+	if [ $KO -gt 0 ]; then
+		echo "Some tests have FAILED!"
+		return 1
+	else
+		echo "All tests are OK!"
+		return 0
+	fi
+}
+
+run_one()
+{
+	name=$1
+	out_dir=$2
+	tests_dir=$3
+	timestamp=$(date +"%s")
+
+	echo "Compile bin..."
+	compile "$out_dir/compile.$timestamp.log"
+	if [ "$?" -ne 0 ]; then
+		echo "[BUILD FAIL]"
+		cat "$out_dir/compile.$timestamp.log"
+		return 1
+	fi
+
+	input="$tests_dir/$name.in"
+	out="$out_dir/$name.$timestamp.out"
+	exp="$tests_dir/$name.res"
+
+	echo "Run tests..."
+	run_test "$input" "$out"
+	diff_test "$out" "$exp" "$out_dir/$name.$timestamp.diff"
+	if [ "$?" == 0 ]; then
+		echo "[OK] $name"
+		return 0
+	else
+		echo "[FAIL] $name"
+		cat "$out_dir/$name.$timestamp.diff"
+		return 1
+	fi
+}
+
+mkdir -p out/
+if [ -z "$1" ]; then
+	run_all "out" "tests"
 else
-	echo "All tests are OK!"
+	run_one "$1" "out" "tests"
 fi
+exit $?
