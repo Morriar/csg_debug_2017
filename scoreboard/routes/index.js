@@ -92,6 +92,7 @@ router.get('/team/:tid', function(req, res, next) {
 			loadStatus(team.id, 1, function(status) {
 				if(status.length == 0) {
 					res.redirect('/');
+					return;
 				}
 				res.render('dome', {
 					title: 'Debug Competition',
