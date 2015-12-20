@@ -2,7 +2,7 @@
 	"id": "access_panel_1",
 	"title": "Access Panel 1",
 	"description": "Allow dome sensors data transmission for better resource regulation.",
-	"o2boost": "1",
-	"zboost": "1",
-	"score_bonus": "5"
+	"o2boost": 1,
+	"zboost": 1,
+	"score_bonus": 5
 }
