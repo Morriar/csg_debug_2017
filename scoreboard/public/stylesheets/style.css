@@ -110,8 +110,8 @@ tr.team.indanger a {color: #ff0000; }
 	background-position: center;
 }
 
-#bug_hello { margin-left:-285px; margin-top:85px; background-image: url("/images/lock.png"); }
-#bug_02 { margin-left:245px; margin-top:85px; }
+#access_panel_1 { margin-left:-285px; margin-top:85px; background-image: url("/images/lock.png"); }
+#bug_hello { margin-left:250px; margin-top:85px; background-image: url("/images/lock.png"); }
 #bug_03 { left:650px; top:400px; }
 #bug_04 { left:300px; top:450px; }
 #bug_05 { left:450px; top:450px; }
