@@ -158,7 +158,11 @@ router.get('/round', function(req, res, next) {
 		if(err) {
 		  callback({error: err.message, resp: resp, body: body});
 	    } else {
-		  callback(null, JSON.parse(body));
+		  try {
+		    callback(null, JSON.parse(body));
+		  } catch(e) {
+		    callback({error: e.message, resp: resp, body: body});
+		  }
 		}
 	  });
 	});
