@@ -11,10 +11,9 @@ mixin date(timestamp)
 	- var ss = d.getSeconds()
 	span #{aaaa}/#{mm}/#{dd} #{hh}:#{uu}:#{ss}
 
-if !rounds
+if !bug
 	p.text-danger Bug not found.
 else
-	-bug = rounds[1];
 	p= bug.description
 	br
 	table.table
@@ -31,29 +30,30 @@ else
 				th.text-danger= bug.zboost
 			th +#{bug.score_bonus} pts / round
 
-	h3 Last status&nbsp;-&nbsp;
-		if bug.status === "failure"
-			strong.text-danger FAILURE
-		else
-			strong.text-success SUCCESS
-		end
-	if bug.output
-		pre= bug.output
+	if status
+		h3 Last status&nbsp;-&nbsp;
+			if bug.status === "failure"
+				strong.text-danger FAILURE
+			else
+				strong.text-success SUCCESS
+			end
+		if bug.output
+			pre= bug.output
 
-	h3 Logs
-	table.table
-		tr
-			th(width='10%') Round
-			th(width='30%') Timestamp
-			th Status
-		for round, index in rounds
+		h3 Logs
+		table.table
 			tr
-				th # #{index}
-				td
-					+date(round.timestamp)
-				th
-					if bug.status === "failure"
-						span.text-danger FAILURE
-						button.btn.btn-link(data-toggle='popover' data-content="<pre>#{bug.output}</pre>" data-placement='top' data-trigger='focus' data-html='true') Show output
-					else
-						span.text-success SUCCESS
+				th(width='10%') Round
+				th(width='30%') Timestamp
+				th Status
+			for round, index in rounds
+				tr
+					th # #{index}
+					td
+						+date(round.timestamp)
+					th
+						if bug.status === "failure"
+							span.text-danger FAILURE
+							button.btn.btn-link(data-toggle='popover' data-content="<pre>#{bug.output}</pre>" data-placement='top' data-trigger='focus' data-html='true') Show output
+						else
+							span.text-success SUCCESS

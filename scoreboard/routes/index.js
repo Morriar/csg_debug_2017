@@ -17,6 +17,7 @@
 var express = require('express');
 var request = require('request');
 var teams = require('../model/teams');
+var bugs = require('../model/bugs');
 var rounds = require('../model/rounds');
 var status = require('../model/status');
 var router = express.Router();
@@ -48,18 +49,20 @@ router.get('/team/:tid', function(req, res, next) {
 				res.redirect('/');
 				return;
 			}
-			console.log(team.id);
-			status.find({team: team.id}, 1, function(status) {
-				console.log(status);
-				if(status.length == 0) {
-					res.redirect('/');
-					return;
-				}
-				res.render('dome', {
-					title: 'Debug Competition',
-					team: team,
-					round: round,
-					status: status[0]
+			bugs.find({}, function(bugs) {
+				status.find({team: team.id}, 1, function(status) {
+					// console.log(status);
+					// if(status.length == 0) {
+						// res.redirect('/');
+						// return;
+					// }
+					res.render('dome', {
+						title: 'Debug Competition',
+						team: team,
+						round: round,
+						bugs: bugs,
+						status: status[0]
+					});
 				});
 			});
 		});
@@ -74,18 +77,20 @@ router.get('/team/:tid/:bid', function(req, res, next) {
 		res.redirect('/');
 		return;
 	}
-	status.find({team: tid}, 50, function(status) {
-		var rounds = {};
-		status.forEach(function(round) {
-			if(!round.bugs) { return; }
-			round.bugs.forEach(function(bug) {
-				if(bug.id !== bid) { return; }
-				bug.team = round.team;
-				bug.timestamp = round.timestamp;
+	bugs.findOne(bid, function(bug) {
+		status.find({team: tid}, 50, function(status) {
+			var rounds = {};
+			status.forEach(function(round) {
+				if(!round.bugs) { return; }
+				round.bugs.forEach(function(bug) {
+					if(bug.id !== bid) { return; }
+					bug.team = round.team;
+					bug.timestamp = round.timestamp;
 				rounds[round.round] = bug;
+				});
 			});
+			res.render('bug', {bug: bug, rounds: rounds});
 		});
-		res.render('bug', {bug_id: bid, rounds: rounds});
 	});
 });
 

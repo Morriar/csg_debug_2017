@@ -112,16 +112,6 @@ tr.team.indanger a {color: #ff0000; }
 
 #access_panel_1 { margin-left:-285px; margin-top:85px; background-image: url("/images/lock.png"); }
 #bug_hello { margin-left:250px; margin-top:85px; background-image: url("/images/lock.png"); }
-#bug_03 { left:650px; top:400px; }
-#bug_04 { left:300px; top:450px; }
-#bug_05 { left:450px; top:450px; }
-#bug_06 { left:250px; top:100px; }
-#bug_07 { left:500px; top:100px; }
-#bug_08 { left:150px; top:200px; }
-#bug_09 { left:600px; top:200px; }
-#bug_10 { left:275px; top:300px; }
-#bug_11 { left:475px; top:300px; }
 #thermal_reactor_1 { margin-left:-180px; margin-top:105px; background-image: url('/images/temp.png')}
-#bug_13 { left:200px; top:425px; }
-#bug_14 { left:750px; top:350px; }
-#bug_15 { left:375px; top:250px; }
+#ventilation_1 { margin-left:-45px; margin-top:120px; background-image: url('/images/fan.png')}
+#atomic_engine_1 { margin-left:105px; margin-top:110px; background-image: url('/images/flux.png')}
