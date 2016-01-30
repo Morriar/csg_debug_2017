@@ -16,56 +16,15 @@
 
 var express = require('express');
 var request = require('request');
-var db = require('mongoskin').db('mongodb://localhost:27017/csg_debug');
+var teams = require('../model/teams');
+var rounds = require('../model/rounds');
+var status = require('../model/status');
 var router = express.Router();
-
-/* utils */
-
-// Load teams
-//
-// callback(teams);
-function loadTeams(callback) {
-	db.collection("teams").find().sort({score: -1}).toArray(function(err, teams) {
-		if(err) {
-			console.log(err);
-			teams = [];
-		}
-		callback(teams);
-	});
-}
-
-// Load a team by its id
-//
-// callback(team);
-function loadTeam(team_id, callback) {
-	db.collection('teams').findOne({id: team_id}, function(err, team) {
-		callback(team);
-	});
-}
-
-// Load the last inserted round
-//
-// callback(round);
-function loadLastRound(callback) {
-	db.collection('rounds').find().sort({round: -1}).limit(1).toArray(function(err, round) {
-		callback(round[0]);
-	});
-}
-
-// Load last status for team_id (limit can be used to limit the number of results)
-//
-// callback(status_list);
-function loadStatus(team_id, limit, callback) {
-	db.collection('status').find({team: team_id}).sort({timestamp: -1}).limit(limit)
-		.toArray(function(err, status) {
-			callback(status);
-		});
-}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	loadLastRound(function(round) {
-		loadTeams(function(teams) {
+	rounds.findLast(function(round) {
+		teams.find({}, function(teams) {
 			res.render('index', { title: 'Debug Competition', round: round, teams: teams });
 		});
 	});
@@ -83,13 +42,15 @@ router.get('/team/:tid', function(req, res, next) {
 		res.redirect('/');
 		return;
 	}
-	loadLastRound(function(round) {
-		loadTeam(tid, function(team) {
+	rounds.findLast(function(round) {
+		teams.findOne(tid, function(team) {
 			if(!team) {
 				res.redirect('/');
 				return;
 			}
-			loadStatus(team.id, 1, function(status) {
+			console.log(team.id);
+			status.find({team: team.id}, 1, function(status) {
+				console.log(status);
 				if(status.length == 0) {
 					res.redirect('/');
 					return;
@@ -113,7 +74,7 @@ router.get('/team/:tid/:bid', function(req, res, next) {
 		res.redirect('/');
 		return;
 	}
-	loadStatus(tid, 50, function(status) {
+	status.find({team: tid}, 50, function(status) {
 		var rounds = {};
 		status.forEach(function(round) {
 			if(!round.bugs) { return; }
