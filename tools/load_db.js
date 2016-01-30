@@ -12,7 +12,7 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-// Use this tool to load th database with a json file.
+// Use this tool to load the database with a json file.
 //
 // usage:
 //	node load_db.js db_name collection_name /path/to/json
