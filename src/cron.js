@@ -68,7 +68,7 @@ function applyRound(team, status, callback) {
 // Ping team and callback(team, json_status)
 function pingTeam(round, team, callback) {
 	var team_uri = 'http://localhost:' + team.port + '/round';
-	request({uri: team_uri, timeout: 10000}, function(err, res, body) {
+	request({uri: team_uri, timeout: 99999}, function(err, res, body) {
 		if(err) {
 			applyRound(team, {
 				round: round.round,
