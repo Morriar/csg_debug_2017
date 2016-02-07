@@ -35,3 +35,13 @@ exports.findOne = function(bug_id, callback) {
 		callback(bug);
 	});
 }
+
+// Save a big in the database.
+exports.save = function(bug) {
+	db.bugs.insert(bug);
+}
+
+// Drop all bugs.
+exports.drop = function() {
+	db.bugs.drop();
+}
