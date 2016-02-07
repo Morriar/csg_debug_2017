@@ -34,3 +34,13 @@ exports.findOne = function(team_id, callback) {
 		callback(team);
 	});
 }
+
+// Save a team.
+exports.save = function(team) {
+	db.teams.save(team);
+}
+
+// Drop all teams.
+exports.drop = function() {
+	db.teams.drop();
+}
