@@ -8,7 +8,7 @@ Informations you will find in this README:
 
 ## Description
 
-In this competition, participant teams are evaluated on their ability to keep the
+In this competition, participants are evaluated on their ability to keep the
 dome running.
 
 Each team is assigned with an architecture composed of 15 essential systems like
@@ -22,8 +22,8 @@ Each team is assigned with 15 bugs to fix.
 At each round (5 min), a CRON task pings each bug in each team and checks if the
 bug is fixed or not.
 
-Each round, the dome consumes a part of its resources.
-If a resource hits 0 for more than one round, people under the dome die and the team lose.
+At each round, the dome consumes a part of its resources.
+If a resource hits 0 for more than one round, people under the dome die and the team loses.
 
 To counterbalance the dome consumption effect, teams must fix bugs in the main systems.
 An up and running system produces a small amount of resources each turn its up.
@@ -31,11 +31,13 @@ An up and running system produces a small amount of resources each turn its up.
 ## Requirements
 
 This competition requires the following dependencies:
+
 * `make 3.0`
 * `nit 0.7`
 * `mongodb 2.4.9`
 * `nodejs 0.10`
 * `npm 1.3`
+* `jdk 1.7`
 
 **All files MUST be UTF-8 encoded!**
 
@@ -59,9 +61,8 @@ Each component is reviewed in details in de the next sections.
 	           |       (json)       |
 			   |                    |
 	           v                    v
-	     TEAM_1 WRAPPER       TEAM_2 WRAPPER
-        (wrapper, bugs)      (wrapper, bugs)
-	  (origin, priv tests) (origin, priv tests)
+	      TEAM_1 DIR           TEAM_2 DIR
+		    (origin)			 (origin)
 	           ^                    ^
                |                    |
                | git push           |  git push
@@ -74,26 +75,20 @@ Each component is reviewed in details in de the next sections.
 
 The MongoDB databased is used to store the game status and events.
 
-The main database is `csg_debug`, this is the one that will be used for the competition.
-Please use any other batabase name for tests.
-
 Collections of the `csg_debug` database are:
-
-* `teams` the list of registered teams for the game
+* `bugs` the list of registered bugs in the game
+* `teams` the list of registered teams in the game
 * `status` the resulting bug status for each team for each round
 * `rounds` the rounds of the game and started time
 
-There is a tool called `load_db` to load json files into the Mongod database.
-Look at `tools/load_db.js`:
+See tools:
+* `src/loadBugs.js`
+* `src/loadTeams.js`
+* `src/deployTeams.js`
 
-	node tools/load_db.js csg_debug teams tests/data/teams_3.json
+Or use:
 
-The same tool can also be used to clear game data:
-
-	node tools/load_db.js csg_debug teams drop
-
-See `tests/data` for some data you can use when developping and testing your bug
-challenges.
+	make load-teams
 
 ## Scoreboard
 
@@ -102,11 +97,7 @@ during the competition.
 
 To run the scoreboard:
 
-	node scoreboard/bin/www
-
-Or to run in debug mode:
-
-	make -C scoreboard
+	make start-scoreboard
 
 There is two public pages:
 
@@ -125,7 +116,7 @@ The database is populated by the CRON.
 
 ## CRON
 
-The CRON is responsible to ping each team wrapper for each round and apply the game
+The CRON is responsible to ping each team for each round and apply the game
 logic depending on the results.
 
 CRON logic:
@@ -143,100 +134,10 @@ CRON logic:
 		end
 	end
 
-Cron data can be initialized with the tool `tools/load_db.js`.
+To run the CRON:
 
-## Team Wrappers
-
-The wrapper provides a web interface against the bug challenges (the programs to
-debug). There is one team wrapper by team.
-
-With the html api, the wrapper can be used to review and test the bug challenge.
-With the json api the wrapper can act as a launcher for the bug challenge.
-
-Usage:
-
-	wrapper/bin/www team/dir/team.json
-
-The team.json config file MUST be in the team directory as it is used to resolve
-the team working directory.
-
-## Teams directories
-
-A team directory represent a copy of all bugs for a team.
-
-Team directory structure:
-
-* `team.json` team wrapper config file
-* `bugs` copy of the `bugs/` directory
-
-Team directories can be deployed with the tool `tools/deploy_teams.nit`.
-
-### HTML API
-
-THe HTML API has for only goal to help the competition manager to review the status
-of each bug mannually.
-
-### JSON API
-
-The JSON API is used by the CRON task and the score board to launch and access
-bug challenge data.
-
-Interface:
-
-* `GET /round` pull, build and test the big challenge with a randomly selected test.
-
-	Response:
-		{
-			team: "team.id",
-			build: {
-				id: "bud.id",
-				name: "test",
-				status: "success",
-				message: ""
-			},
-			check: {
-				id: "bud.id",
-				name: "test",
-				status: "success",
-				message: ""
-			}
-		}
-
-* `GET /bugs/:bug/pull` pull the public sources (version is always `PUBLIC`.
-
-	Response:
-		{
-			status: "success",
-			message: ""
-		}
-
-* `GET /bugs/:bug/build/:version` build the version requested.
-	`:version` is one of `PUBLIC` or `PRIVATE`.
-
-	Response:
-		{
-			status: "success",
-			message: ""
-		}
-
-* `GET /bugs/:bug/test/:version` run a random test against the built `:version`.
-
-	Response:
-		{
-			name: "test1",
-			status: "success",
-			message: ""
-		}
-
-
-* `GET /bugs/:bug/test/:version/:test` run the test `:test` against the built `:version`.
-
-	Response:
-		{
-			name: "test1",
-			status: "success",
-			message: ""
-		}
+	make load-teams
+	make start-cron
 
 ## Bug challenges
 
