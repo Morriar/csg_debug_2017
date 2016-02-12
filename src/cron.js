@@ -37,26 +37,18 @@ function playRound(teamsDir, round) {
 	teams.find({}, function(allteams) {
 		bugs.find({}, function(allbugs) {
 			allteams.forEach(function(team) {
-				applyRoundLoss(round, team);
-				applyBugs(teamsDir, round, team, allbugs);
-				var status = ' * ' + team.id +
-								' (o2:' + team.oxygen +
-								', z: ' + team.energy +
-								', s: ' + team.score + ')';
-				if(team.error) {
-					console.log(status + ' ERROR: ' + team.error);
-				} else if(team.isDead) {
-					console.log(status + ' dead');
-				} else {
-					console.log(status);
-				}
+				applyRoundLoss(round, team, allbugs, function(teamsDir, round, team, allbugs) {
+					applyBugs(teamsDir, round, team, allbugs, function(team, result) {
+						show_team(team, result);
+					});
+				});
 			});
 		});
 	});
 }
 
 // Apply loss in energy and oxygen for a team.
-function applyRoundLoss(round, team) {
+function applyRoundLoss(round, team, bs, callback) {
 	// Apply round loss
 	team.oxygen = team.oxygen - o2_loss;
 	team.energy = team.energy - z_loss;
@@ -72,21 +64,46 @@ function applyRoundLoss(round, team) {
 		team.inDanger = false;
 	}
 	teams.save(team);
+	callback(teamsDir, round, team, bs);
 }
 
-function applyBugs(teamsDir, round, team, bs) {
+function applyBugs(teamsDir, round, team, bs, callback) {
 	tests.testTeam(teamsDir, round, team, bs, function(status) {
 		if(status.bugs) {
-			Object.keys(status.bugs).forEach(function(result) {
+			Object.keys(status.bugs).forEach(function(bugId) {
+				var result = status.bugs[bugId];
 				if(result.status == "success") {
-					team.oxygen = team.oxygen + result.bug.o2boost;
-					team.energy = team.energy + result.bug.zboost;
-					team.score = team.score + result.bug.score_bonus
+					team.oxygen = team.oxygen + result.object.o2boost;
+					team.energy = team.energy + result.object.zboost;
+					team.score = team.score + result.object.score_bonus;
 				}
 			});
 		}
-		console.log(status);
+		teams.save(team);
 		statuses.save(status);
+		callback(team, status)
+	});
+}
+
+function show_team(team, result) {
+	var status = ' * ' + team.id +
+				' (o2:' + team.oxygen +
+				', z: ' + team.energy +
+				', s: ' + team.score + ')';
+	if(team.error) {
+		console.log(status + ' ERROR: ' + team.error);
+	} else if(team.isDead) {
+		console.log(status + ' dead');
+	} else {
+		console.log(status);
+	}
+	Object.keys(result.bugs).forEach(function(bugId) {
+		var r = result.bugs[bugId];
+		if(r.status == 'success') {
+			console.log("   [OK] " + bugId);
+		} else {
+			console.log("   [KO] " + bugId);
+		}
 	});
 }
 
