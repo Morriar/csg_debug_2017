@@ -1,0 +1,9 @@
+{
+	"id": "atomic_engine_1",
+	"title": "Atomic Engine 1",
+	"description": "TODO.",
+	"o2boost": 3,
+	"zboost": 3,
+	"score_bonus": 6,
+	"language": "nit"
+}
