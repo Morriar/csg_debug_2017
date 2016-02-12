@@ -1,0 +1,18 @@
+{
+	"max_z": 1,
+	"airvents": [
+		{
+			"name": "airvent_1",
+			"z": 1,
+			"o2": 1
+		}, {
+			"name": "airvent_2",
+			"z": 1,
+			"o2": 2
+		}, {
+			"name": "airvent_3",
+			"z": 1,
+			"o2": 2
+		}
+	]
+}
