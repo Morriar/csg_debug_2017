@@ -14,102 +14,35 @@
 
 // The Cron pings all teams at a set interval and update game data.
 
+var teams = require("./model/teams.js");
+var bugs = require("./model/bugs.js");
+var rounds = require("./model/rounds.js");
+var tests = require("./model/tests.js");
+var statuses = require("./model/status.js");
 var fs = require("fs");
-var request = require('request');
-var mongo = require('mongoskin');
-var async = require('async');
 
-// Load teams and callback(teams);
-function loadTeams(db, callback) {
-	db.collection("teams").find().toArray(function(err, teams) {
-		if(err) {
-			console.log(err);
-			teams = [];
-		}
-		callback(teams);
-	});
-}
-
-function applyRound(team, status, callback) {
-	db.collection("status").insert(status);
-
-	// Apply round loss
-	team.oxygen = team.oxygen - o2_loss;
-	team.energy = team.energy - z_loss;
-
-	if(status.bugs) {
-		status.bugs.forEach(function(bug) {
-			if(bug.status == "success") {
-				team.oxygen = team.oxygen + bug.o2boost;
-				team.energy = team.energy + bug.zboost;
-				team.score = team.score + bug.score_bonus
-			}
-		});
+// Create a new round or stop the game if maxRounds is reached.
+function newRound(roundNumber, roundDuration, maxRounds) {
+	if(currentRound > maxRounds) {
+		rounds.create(currentRound, roundDuration, true);
+		process.exit(0);
 	}
-
-	// Kill teams
-	if(team.oxygen <= 0 || team.energy <= 0) {
-		team.isDead = true;
-		team.oxygen = 0;
-		team.energy = 0;
-	} else if(team.oxygen <= 25 || team.energy <= 25) {
-		team.inDanger = true;
-	} else {
-		team.inDanger = false;
-	}
-	db.collection("teams").save(team);
-
-	if(status.error) {
-		team.error = status.error
-	}
-	callback(null, team);
+	var round = rounds.create(currentRound, roundDuration);
+	console.log("\n# Round " + currentRound + " / " + maxRounds + " (" + roundDuration + "s)");
+	return round;
 }
 
-// Ping team and callback(team, json_status)
-function pingTeam(round, team, callback) {
-	var team_uri = 'http://localhost:' + team.port + '/round';
-	request({uri: team_uri, timeout: 99999}, function(err, res, body) {
-		if(err) {
-			applyRound(team, {
-				round: round.round,
-				team: team.id,
-				timestamp: new Date().getTime(),
-				error: err.message
-			}, callback);
-		} else {
-			var json = JSON.parse(body);
-			json.round = round.round;
-			applyRound(team, json, callback);
-		}
-	});
-}
-
-// Ping all `teams` and callback(results)
-function pingTeams(round, teams, callback) {
-	var calls = [];
-	teams.forEach(function(team) {
-		calls.push(function(callback) {
-			pingTeam(round, team, callback);
-		});
-	});
-	async.parallel(calls, function(err, results) {
-		if(err) {
-			res.json({err: err.message});
-			return;
-		};
-		callback(results);
-	});
-}
-
-function playRound(db, round) {
-	loadTeams(db, function(teams) {
-		pingTeams(round, teams, function(results) {
-			console.log('\n## ROUND ' + round.round);
-			results.forEach(function(team) {
+// Play round for each team
+function playRound(teamsDir, round) {
+	teams.find({}, function(allteams) {
+		bugs.find({}, function(allbugs) {
+			allteams.forEach(function(team) {
+				applyRoundLoss(round, team);
+				applyBugs(teamsDir, round, team, allbugs);
 				var status = ' * ' + team.id +
-							' (o2:' + team.oxygen +
-							', z: ' + team.energy +
-							', s: ' + team.score + ')';
+								' (o2:' + team.oxygen +
+								', z: ' + team.energy +
+								', s: ' + team.score + ')';
 				if(team.error) {
 					console.log(status + ' ERROR: ' + team.error);
 				} else if(team.isDead) {
@@ -122,51 +55,69 @@ function playRound(db, round) {
 	});
 }
 
-function newRound(db, roundNumber, duration, finished) {
-	var round = {
-		round: roundNumber,
-		startedAt: new Date().getTime(),
-		duration: duration
+// Apply loss in energy and oxygen for a team.
+function applyRoundLoss(round, team) {
+	// Apply round loss
+	team.oxygen = team.oxygen - o2_loss;
+	team.energy = team.energy - z_loss;
+
+	// Kill teams
+	if(team.oxygen <= 0 || team.energy <= 0) {
+		team.isDead = true;
+		team.oxygen = 0;
+		team.energy = 0;
+	} else if(team.oxygen <= 25 || team.energy <= 25) {
+		team.inDanger = true;
+	} else {
+		team.inDanger = false;
 	}
-	if(finished) {
-		round.gameFinished = true
-	}
-	db.collection("rounds").insert(round);
-	return round;
+	teams.save(team);
+}
+
+function applyBugs(teamsDir, round, team, bs) {
+	tests.testTeam(teamsDir, round, team, bs, function(status) {
+		if(status.bugs) {
+			Object.keys(status.bugs).forEach(function(result) {
+				if(result.status == "success") {
+					team.oxygen = team.oxygen + result.bug.o2boost;
+					team.energy = team.energy + result.bug.zboost;
+					team.score = team.score + result.bug.score_bonus
+				}
+			});
+		}
+		console.log(status);
+		statuses.save(status);
+	});
 }
 
 var argv = process.argv;
 if(argv.length != 5) {
 	console.log("usage:\n");
-	console.log("node cron.js db_name max_rounds round_duration");
+	console.log("node cron.js teams_dir max_rounds round_duration");
 	process.exit(1);
 }
 
 // Rules config
+var teamsDir = argv[2];
 var maxRounds = argv[3];
 var currentRound = 1;
 var roundDuration = argv[4];
 var o2_loss = 10;
 var z_loss = 10;
 
-// Database
-var db_name = argv[2];
-var db = mongo.db('mongodb://localhost:27017/' + db_name)
+rounds.drop();
+statuses.drop();
 
-loadTeams(db, function(teams) {
+// Database
+teams.find({}, function(teams) {
 	console.log("# Start game (" + maxRounds + " rounds, " + teams.length + " teams)");
 
 	// Start cron
-	var round = newRound(db, currentRound, roundDuration);
-	playRound(db, round);
+	var round = newRound(currentRound, roundDuration, maxRounds);
+	playRound(teamsDir, round);
 	setInterval(function() {
 		currentRound += 1;
-		if(currentRound > maxRounds) {
-			newRound(db, currentRound, roundDuration, true);
-			process.exit(0);
-		}
-		var round = newRound(db, currentRound, roundDuration);
-		db.collection("rounds").insert(round);
-		playRound(db, round);
+		var round = newRound(currentRound, roundDuration, maxRounds);
+		playRound(teamsDir, round);
 	}, roundDuration * 1000);
 });
