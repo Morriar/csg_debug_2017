@@ -19,6 +19,22 @@
 
 var fs = require("fs");
 var bugs = require('./model/bugs.js');
+var path = require('path');
+
+function loadTestFiles(dir) {
+  var res = [];
+  var files = fs.readdirSync(dir);
+  for(i in files) {
+    var file = files[i];
+	if(path.extname(file) == '.res') { continue; }
+	var name = path.basename(file, '.in')
+	res.push({
+	  name: name,
+	  path: dir + file
+	});
+  }
+  return res;
+}
 
 var argv = process.argv;
 
@@ -35,6 +51,7 @@ bugs.drop();
 json.forEach(function(bug_dir) {
 	var bug_json = JSON.parse(fs.readFileSync(bug_dir + '/bug.json', 'utf-8'));
 	bug_json.dir = bug_dir;
+	bug_json.tests = loadTestFiles(bug_dir + '/PRIVATE/tests/');
 	bugs.save(bug_json);
 });
 bugs.find({}, function(bs) {
