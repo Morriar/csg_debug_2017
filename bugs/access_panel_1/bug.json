@@ -4,5 +4,6 @@
 	"description": "Allow dome sensors data transmission for better resource regulation.",
 	"o2boost": 1,
 	"zboost": 1,
-	"score_bonus": 5
+	"score_bonus": 5,
+	"language": "lua"
 }

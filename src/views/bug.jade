@@ -18,6 +18,8 @@ else
 	br
 	table.table
 		tr
+			th(width='10%') language
+			td= bug.language
 			th(width='5%')!= o2_icon
 			if bug.o2boost > 0
 				th.text-success +#{bug.o2boost}

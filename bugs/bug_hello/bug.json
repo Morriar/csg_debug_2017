@@ -4,5 +4,6 @@
 	"description": "Challenge example for the debug competition.",
 	"o2boost": 5,
 	"zboost": 5,
-	"score_bonus": 10
+	"score_bonus": 10,
+	"language": "nit"
 }

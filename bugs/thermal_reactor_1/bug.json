@@ -4,5 +4,6 @@
 	"description": "Configure the probes layout to generate power.",
 	"o2boost": 3,
 	"zboost": 3,
-	"score_bonus": 6
+	"score_bonus": 6,
+	"language": "java"
 }
