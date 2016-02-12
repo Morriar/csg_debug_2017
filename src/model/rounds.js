@@ -17,6 +17,19 @@
 var db = require('mongoskin').db('mongodb://localhost:27017/csg_debug');
 db.bind('rounds');
 
+exports.create = function(roundNumber, duration, finished) {
+	var round = {
+		round: roundNumber,
+		startedAt: new Date().getTime(),
+		duration: duration
+	}
+	if(finished) {
+		round.gameFinished = true
+	}
+	db.rounds.insert(round);
+	return round;
+}
+
 // Load rounds and callback(rounds);
 exports.find = function(req, callback) {
 	db.rounds.find(req).sort({score: -1}).toArray(function(err, rounds) {
@@ -40,4 +53,9 @@ exports.findLast = function(callback) {
 	db.rounds.find().sort({round: -1}).toArray(function(err, rounds) {
 		callback(rounds[0]);
 	});
+}
+
+// Drop all rounds.
+exports.drop = function() {
+	db.rounds.drop();
 }
