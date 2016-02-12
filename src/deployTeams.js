@@ -18,14 +18,14 @@ var teams = require('./model/teams.js');
 var bugs = require('./model/bugs.js');
 
 // Clear db and create teams
-function deployTeams(bugs_dir, teams_dir) {
+function deployTeams(bugs_dir, teams_dir, version) {
 	proc.execSync("rm -rf " + teams_dir);
 	fs.mkdirSync(teams_dir);
 
 	teams.find({}, function(ts) {
 		bugs.find({}, function(bs) {
 			ts.forEach(function(team) {
-				createTeamDir(bugs_dir, teams_dir, team, bs);
+				createTeamDir(bugs_dir, teams_dir, team, bs, version);
 			});
 			console.log("Loaded " + bs.length + " bugs in " + ts.length + " teams")
 			process.exit(0);
@@ -34,22 +34,22 @@ function deployTeams(bugs_dir, teams_dir) {
 }
 
 // Create the team directory and each bug in it.
-function createTeamDir(bugs_dir, teams_dir, team, bs) {
+function createTeamDir(bugs_dir, teams_dir, team, bs, version) {
 	fs.mkdirSync(teams_dir + '/' + team.id);
 	bs.forEach(function(bug) {
 		var tbug_dir = teams_dir + '/' + team.id + '/' + bug.id;
 		fs.mkdirSync(tbug_dir);
-		proc.execSync("make -C " + bugs_dir + '/' + bug.dir + '/PUBLIC/ clean');
-		proc.execSync("cp -r " + bugs_dir + '/' + bug.dir + '/PUBLIC/* ' + tbug_dir);
+		proc.execSync("make -C " + bugs_dir + '/' + bug.dir + '/' + version + '/ clean');
+		proc.execSync("cp -r " + bugs_dir + '/' + bug.dir + '/' + version + '/* ' + tbug_dir);
 	});
 }
 
 var argv = process.argv;
 
-if(argv.length != 4) {
+if(argv.length != 5) {
 	console.log("usage:\n");
-	console.log("node deployTeams.js bugs/dir deploy/dir");
+	console.log("node deployTeams.js bugs/dir deploy/dir VERSION");
 	process.exit(1);
 }
 
-deployTeams(argv[2], argv[3])
+deployTeams(argv[2], argv[3], argv[4])
