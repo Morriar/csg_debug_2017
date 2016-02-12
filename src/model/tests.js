@@ -57,6 +57,7 @@ exports.testBug = function(teamsDir, round, team, bug, test, callback) {
 			var status = {
 				bug: bug.id,
 				test: test.name,
+				object: bug
 			}
 			if(err) {
 				status.status = 'failure'
@@ -65,7 +66,6 @@ exports.testBug = function(teamsDir, round, team, bug, test, callback) {
 				status.status = 'success'
 				status.output = stdout
 			}
-			console.log("   - test " + bug.id + " with " + test.name + ' [' + (err? 'KO' : 'OK') + ']');
 			callback(null, status);
 		});
 }
