@@ -3,7 +3,7 @@
 compile()
 {
 	compile_log=$1
-	make compile > "$compile_log" 2>&1
+	make --no-print-directory compile > "$compile_log" 2>&1
 	return $?
 }
 
