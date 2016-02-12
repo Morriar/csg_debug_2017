@@ -40,18 +40,18 @@ var argv = process.argv;
 
 if(argv.length != 3) {
 	console.log("usage:\n");
-	console.log("node loadBugs.js path/to/bugs.json");
+	console.log("node loadBugs.js bugs/dir");
 	process.exit(1);
 }
 
-var file = argv[2];
-var json = JSON.parse(fs.readFileSync(file, 'utf-8'));
+var bugs_dir = argv[2];
+var json = JSON.parse(fs.readFileSync(bugs_dir + '/bugs.json', 'utf-8'));
 
 bugs.drop();
 json.forEach(function(bug_dir) {
-	var bug_json = JSON.parse(fs.readFileSync(bug_dir + '/bug.json', 'utf-8'));
+	var bug_json = JSON.parse(fs.readFileSync(bugs_dir + '/' + bug_dir + '/bug.json', 'utf-8'));
 	bug_json.dir = bug_dir;
-	bug_json.tests = loadTestFiles(bug_dir + '/PRIVATE/tests/');
+	bug_json.tests = loadTestFiles(bugs_dir + '/' + bug_dir + '/PRIVATE/tests/');
 	bugs.save(bug_json);
 });
 bugs.find({}, function(bs) {
