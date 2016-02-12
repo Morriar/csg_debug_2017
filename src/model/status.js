@@ -34,3 +34,13 @@ exports.findOne = function(status_id, callback) {
 		callback(status);
 	});
 }
+
+// Insert a new status.
+exports.save = function(status) {
+	db.status.insert(status);
+}
+
+// Drop all status.
+exports.drop = function() {
+	db.status.drop();
+}
