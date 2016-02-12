@@ -34,12 +34,12 @@ else
 
 	if last
 		h3 Last status&nbsp;-&nbsp;
-			if last.status == "sucess"
+			if last.status == "success"
 				strong.text-success SUCCESS
 			else
 				strong.text-danger FAILURE
 			end
-		if last.output
+		if last.status != "success" && last.output
 			pre= last.output
 
 	if rounds
@@ -55,7 +55,7 @@ else
 					td(style='vertical-align: middle')
 						+date(round.timestamp)
 					th
-						if round.status == "success"
+						if round.status.status == "success"
 							span.text-success SUCCESS
 						else
 							span.text-danger FAILURE

@@ -56,7 +56,7 @@ router.get('/team/:tid', function(req, res, next) {
 						team: team,
 						round: round,
 						bugs: bugs,
-						status: status.length == 0 ? {} : status[0]
+						status: status.length == 0 ? null : status[0]
 					});
 				});
 			});
@@ -87,7 +87,7 @@ router.get('/team/:tid/:bid', function(req, res, next) {
 				}
 				list[s.round.round] = ss;
 			});
-			res.render('bug', {bug: bug, rounds: list, last: last});
+			res.render('bug', {bug: bug, rounds: list.length == 0 ? null : list, last: last});
 		});
 	});
 });

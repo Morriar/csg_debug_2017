@@ -26,12 +26,12 @@ block content
 				br
 		+round-panel(round)
 
+		-var cls = team.isDead? 'isdead': team.inDanger? 'indanger': '';
 		div.panel.panel-custom.panel-dome(class='team ' + cls)
 			div.container#canvas-dome
 				each bug in bugs
-					- var s = status.bugs[bug.id]
-					if s
-						-var css = s.status == "success" ? "success" : "danger"
+					if status
+						-var css = status.bugs[bug.id].status == "success" ? "success" : "danger"
 						button(id=bug.id class='slot-icon btn btn-#{css}' title=bug.title data-bid=bug.id data-tid=team.id)
 					else
 						button(id=bug.id class='slot-icon btn' title=bug.title data-bid=bug.id data-tid=team.id)
