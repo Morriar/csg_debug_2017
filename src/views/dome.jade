@@ -26,23 +26,15 @@ block content
 				br
 		+round-panel(round)
 
-		if status
-			if status.error
-				div.panel.panel-error
-					h3 Team Server Error
-					p Your team server does not respond anymore. Contact the competition team now!
-			else
-				-var cls = team.isDead? 'isdead': team.inDanger? 'indanger': '';
-				div.panel.panel-custom.panel-dome(class='team ' + cls)
-					div.container#canvas-dome
-						each bug in status.bugs
-							-var css = bug.status == "success" ? "success" : "danger"
-							button(id=bug.id class='slot-icon btn btn-#{css}' title=bug.title data-bid=bug.id data-tid=team.id)
-
 		div.panel.panel-custom.panel-dome(class='team ' + cls)
 			div.container#canvas-dome
 				each bug in bugs
-					button(id=bug.id class='slot-icon btn btn-' title=bug.title data-bid=bug.id data-tid=team.id)
+					- var s = status.bugs[bug.id]
+					if s
+						-var css = s.status == "success" ? "success" : "danger"
+						button(id=bug.id class='slot-icon btn btn-#{css}' title=bug.title data-bid=bug.id data-tid=team.id)
+					else
+						button(id=bug.id class='slot-icon btn' title=bug.title data-bid=bug.id data-tid=team.id)
 
 	.modal.fade(tabindex='-1' role='dialog')#bugModal
 		.modal-dialog
