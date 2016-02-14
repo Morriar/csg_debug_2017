@@ -72,7 +72,7 @@ Any derogation to these rules should result in an error (see `errors`).
 
 ## Output Format
 
-The output format ve the validity status of each id:
+The output format lists the validity status of each id:
 
 	3670-5597-2219-0590: valid
 	1050-4104-1095-6065: invalid
