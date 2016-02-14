@@ -42,7 +42,7 @@ run_all()
 	KO=0
 	ALL=0
 
-	for input in $(ls "$tests_dir"/*.dom); do
+	for input in $(ls "$tests_dir"/*.in); do
 		ALL=$(($ALL + 1))
 
 		file=$(basename "$input")
@@ -87,7 +87,7 @@ run_one()
 		return 1
 	fi
 
-	input="$tests_dir/$name.dom"
+	input="$tests_dir/$name.in"
 	out="$out_dir/$name.$timestamp.out"
 	exp="$tests_dir/$name.res"
 
