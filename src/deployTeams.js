@@ -41,6 +41,7 @@ function createTeamDir(bugs_dir, teams_dir, team, bs, version) {
 		fs.mkdirSync(tbug_dir);
 		proc.execSync("make -C " + bugs_dir + '/' + bug.dir + '/' + version + '/ clean');
 		proc.execSync("cp -r " + bugs_dir + '/' + bug.dir + '/' + version + '/* ' + tbug_dir);
+		proc.execSync("cp -r " + bugs_dir + '/' + bug.dir + '/PRIVATE/tests/* ' + tbug_dir + '/tests/');
 	});
 }
 
