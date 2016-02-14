@@ -23,13 +23,6 @@ run_all()
 	tests_dir=$2
 	timestamp=$(date +"%s")
 
-	echo "Compile bin..."
-	compile "$out_dir/compile.$timestamp.log"
-	if [ "$?" -ne 0 ]; then
-		echo " * [FAIL] compile bin (cat $out_dir/compile.log)"
-		exit 1
-	fi
-
 	echo -e "\nRun tests..."
 	OK=0
 	KO=0
@@ -71,14 +64,6 @@ run_one()
 	out_dir=$2
 	tests_dir=$3
 	timestamp=$(date +"%s")
-
-	echo "Compile bin..."
-	compile "$out_dir/compile.$timestamp.log"
-	if [ "$?" -ne 0 ]; then
-		echo "[BUILD FAIL]"
-		cat "$out_dir/compile.$timestamp.log"
-		return 1
-	fi
 
 	input="$tests_dir/$name.in"
 	out="$out_dir/$name.$timestamp.out"

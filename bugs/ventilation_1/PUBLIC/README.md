@@ -13,7 +13,7 @@ but the power output level is not constant and varies a lot between days.
 For this reason, the airvents cannot be all powered at the same time.
 
 During the past 600 years of the life dome, the airvent network changed a lot.
-Many airvents were replaced with brand new technology but despite all the mech team effots
+Many airvents were replaced with brand new technology but despite all the mech team efforts
 there stills a lot of old, energy consumming, airvents.
 
 The `aivents` program is the one that controls which airvents should be activated
@@ -30,7 +30,7 @@ The `airvents` program expects only one parameter, the path to the airvents inpu
 The input file provide the maximum amount of energy `max_z` allocated to ventilation
 for the day.
 The `airvents` list gives the operational airvents that can be activated and the
-amount of ernegy `z` they will consume.
+amount of energy `z` they will consume.
 
 	{
 		"max_z": 100,
@@ -48,9 +48,12 @@ amount of ernegy `z` they will consume.
 
 ## Output Format
 
-The output format is a json object that lists the `airvents` that can be activated:
+The output displays how many O2 units can be produced and lists the airvents used for that.
+Airvents MUST be listed in alphabetic order:
 
-	{ "airvents": [ "airvent_1", "airvent_2" ] }
+	Maximum O2 output: 10
+	 * airvent_1	z: 2	O2: 3
+	 * airvent_2	z: 3	O2: 7
 
 ## Errors
 
@@ -58,15 +61,15 @@ The `airvents` program can output two kinds of error:
 
 One if the input file cannot be found:
 
-	{ "error": "Input not found" }
+	"error: Input not found"
 
 Another one if the input file is not valid json:
 
-	{ "error": "Input not valid" }
+	"error: Input not valid"
 
-Anyother error state should return an empty array:
+Anyother error state should return:
 
-	{ "airvents": [] }
+	Maximum O2 output: 0
 
 ## Input / Output examples
 

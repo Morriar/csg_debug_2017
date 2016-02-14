@@ -1,0 +1,44 @@
+{
+	"max_z": 0,
+	"airvents": [{
+		"name": "airvent_0",
+		"z": 5,
+		"o2": 9
+	}, {
+		"name": "airvent_1",
+		"z": 2,
+		"o2": 9
+	}, {
+		"name": "airvent_2",
+		"z": 4,
+		"o2": 2
+	}, {
+		"name": "airvent_3",
+		"z": 5,
+		"o2": 2
+	}, {
+		"name": "airvent_4",
+		"z": 5,
+		"o2": 5
+	}, {
+		"name": "airvent_5",
+		"z": 4,
+		"o2": 9
+	}, {
+		"name": "airvent_6",
+		"z": 2,
+		"o2": 4
+	}, {
+		"name": "airvent_7",
+		"z": 2,
+		"o2": 4
+	}, {
+		"name": "airvent_8",
+		"z": 5,
+		"o2": 8
+	}, {
+		"name": "airvent_9",
+		"z": 3,
+		"o2": 6
+	}]
+}

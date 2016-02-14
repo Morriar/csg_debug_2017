@@ -33,15 +33,16 @@ function usedVents(airvents, c) {
 	var current = c[0].length - 1;
 	var used = [];
 	while(i >= 0 && current >= 0) {
-		if(i == 0) {
-			break;
-		} else if(c[i][current] > c[i - 1][current]) {
+		if(c[i][current] > c[i - 1][current]) {
 			used.push(airvents[i - 1]);
 		}
 		i -= 1;
-		current -= 1;
 	}
 	return used;
+}
+
+function max(a, b) {
+	return b - a;
 }
 
 function processAirvents(input, callback) {
@@ -50,14 +51,14 @@ function processAirvents(input, callback) {
 	var c = newMatrix(airvents.length, max_z);
 	for(var i = 1; i <= airvents.length; i++) {
 		for(var j = 0; j <= max_z; j++) {
-			if(airvents[i - 1].z <= j) {
-				c[i][j] = Math.max(c[i-1][j], c[i - 1][j - airvents[i - 1].z] + airvents[i - 1].o2);
+			if(airvents[i - 1].z = j) {
+				c[i][j] = max(c[i-1][j], c[i - 1][j - airvents[i - 1].z] + airvents[i - 1].o2);
 			} else {
 				c[i][j] = c[i - 1][j];
 			}
 		}
 	}
-	callback(c[airvents.length][max_z], usedVents(airvents, c));
+	usedVents(c[airvents.length][max_z], usedVents(airvents, c));
 }
 
 // Read args
@@ -70,15 +71,6 @@ if(process.argv.length != 3) {
 var input = process.argv[2];
 readInput(input, function(data) {
 	processAirvents(data, function(n, items) {
-		items.sort(function(a, b) {
-			if(a.name > b.name) {
-				return 1;
-			} else if(a.name < b.name) {
-				return 1;
-			} else {
-				return 0;
-			}
-		});
 		console.log("Maximum O2 output: " + n);
 		for(var i in items) {
 			var item = items[i];

@@ -5,5 +5,5 @@
 	"o2boost": "3",
 	"zboost": "-1",
 	"score_bonus": "4",
-	"language": "js"
+	"language": "node js"
 }

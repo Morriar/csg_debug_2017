@@ -1,19 +1,16 @@
-# Thermal Reactor 1
+# Ventilation 1
 
 See `PUBLIC/README.md` for the challenge description.
 
 ## Bugs List
 
-* `parseConfiguration`: probe names used twice are not checked
-* `parseConfiguration`: probe names used twice are not checked
-* `parseConfiguration`: invalid level index are not checked
-* `ThermalConfiguration::renderReport`: maxLevel is set at every iteration, it should be based on a max check
-* `ThermalConfiguration::renderReport`: level should be check against `i` not `j`
-* `ThermalConfiguration::isEmpty`: the method does not check if probe are deployed
-* `ThermalProbe::isDeployed`: the method does not check if level == null
+* usedVents, missing stop condition on i == 0
+* usedVents, current is not decremented
+* max function is wrong
+* processAirvents calls UsedVents instead of callback
+* result array is not sorted
 
-Run `diff PRIVATE/src/ThermalConfigurator.java PUBLIC/src/ThermalConfigurator.java`
-for more details.
+Run `diff PRIVATE/src/airvents.js PUBLIC/src/airvents.js` for more details.
 
 ## Requirements and Installation
 
