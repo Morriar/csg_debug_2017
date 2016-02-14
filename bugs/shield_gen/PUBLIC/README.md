@@ -38,3 +38,9 @@ The simulator takes a few parameters into account, namely the input configuratio
 
 This particular command will run a 10-turns simulation on the configuration described in
 `file.dom`.
+
+## Developers
+
+Useful commands:
+
+	make test
