@@ -1,18 +1,19 @@
-# Thermal Reactor 1
+# Atomic Engine 1
 
 See `PUBLIC/README.md` for the challenge description.
 
 ## Bugs List
 
-* `parseConfiguration`: probe names used twice are not checked
-* `parseConfiguration`: probe names used twice are not checked
-* `parseConfiguration`: invalid level index are not checked
-* `ThermalConfiguration::renderReport`: maxLevel is set at every iteration, it should be based on a max check
-* `ThermalConfiguration::renderReport`: level should be check against `i` not `j`
-* `ThermalConfiguration::isEmpty`: the method does not check if probe are deployed
-* `ThermalProbe::isDeployed`: the method does not check if level == null
+* `Simulator.java`: String comparison with `==`
+* `Reactor.java`: unchecked negative values
+* `ReactorGrid.java`: grod does not check first and last row before getting neighbors
+* `ReactorSlot.java`: the setter always set null
+* `ReactorRod.java`: the `baseEnergy` and `baseHeat` methods should be abstract
+* `ControlRod.java`: baseHeat return value is commented, clusterHeat should always be begative (use `abs()`)
+* `UraniumRod.java`: bad overriding of `baseEnergy` and `baseHeat`.
+* `Coolant.java` `heatAbsorption` is commented.
 
-Run `diff PRIVATE/src/ThermalConfigurator.java PUBLIC/src/ThermalConfigurator.java`
+Run `meld PRIVATE/src/ PUBLIC/src/`
 for more details.
 
 ## Requirements and Installation

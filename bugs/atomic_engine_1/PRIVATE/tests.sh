@@ -11,7 +11,7 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	java -cp bin/ ThermalConfigurator < "$run_input" > "$run_output" 2>&1
+	java -cp bin/ sim.Simulator < "$run_input" > "$run_output" 2>&1
 	return $?
 }
 

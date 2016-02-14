@@ -3,7 +3,7 @@
 compile()
 {
 	compile_log=$1
-	make --no-print-directory compile > "$compile_log" 2>&1
+	make compile > "$compile_log" 2>&1
 	return $?
 }
 
@@ -11,7 +11,7 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	java -cp bin/ ThermalConfigurator < "$run_input" > "$run_output" 2>&1
+	java -cp bin/ sim.Simulator < "$run_input" > "$run_output" 2>&1
 	return $?
 }
 
