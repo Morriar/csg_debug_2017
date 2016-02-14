@@ -1,9 +1,9 @@
 {
 	"id": "alu_sim",
-	"title": "Access Panel 1",
-	"description": "Allow dome sensors data transmission for better resource regulation.",
-	"o2boost": 1,
-	"zboost": 1,
-	"score_bonus": 5,
-	"language": "lua"
+	"title": "Legacy ALU",
+	"description": "Several systems which have been in use since the early days of the dome rely on an old system with a deprecated instruction set. Though we could migrate most of the system to a more modern architecture, there remains some parts of it which could barely be understood. One particular sub-system is the Arithmetic and Logic Unit.",
+	"o2boost": 2,
+	"zboost": 2,
+	"score_bonus": 10,
+	"language": "c"
 }

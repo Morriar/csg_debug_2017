@@ -43,6 +43,11 @@ Parser
 
 The emulator works by taking a file's path as argument.
 
-	./aluemu simplemov.cstm
+	./aluemu simplemov.in
 	6
 
+## Developers
+
+Useful commands:
+
+	make test
