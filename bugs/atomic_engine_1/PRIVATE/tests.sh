@@ -28,6 +28,7 @@ run_all()
 {
 	out_dir=$1
 	tests_dir=$2
+	rm -rf $out_dir/*
 	timestamp=$(date +"%s")
 
 	echo "Compile bin..."

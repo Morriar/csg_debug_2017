@@ -13,6 +13,6 @@ test:
 	./tests.sh
 
 clean:
-	rm src/*.o
-	rm src/hash.c
+	rm -rf src/*.o
+	rm -rf src/hash.c
 	rm -rf out/
