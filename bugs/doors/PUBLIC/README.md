@@ -14,11 +14,11 @@ Expected output is available in the `expected_result` file.
 
 ## Usage
 
-The program takes no arguments and will inspect files in the `data/` directory.
+The program takes the directory with the data as arguments.
 For each file in the directory it prints acceptation or rejection orders. 
 
 ~~~
-./test.sh
+./test.sh data
 ~~~
 
 ## Developers

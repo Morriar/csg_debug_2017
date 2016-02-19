@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd data/
+cd $1
 for i in *; do
 	case $i in
 		a*)

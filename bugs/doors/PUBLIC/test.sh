@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for i in $(ls data); do
+for i in $(ls $1); do
 	case $i in
 		*a*)
 			# Each line of the file contains a name, its

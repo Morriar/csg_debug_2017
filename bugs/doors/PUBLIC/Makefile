@@ -2,7 +2,7 @@ all:
 	@echo "Nothing to do, just execute: make test"
 
 test:
-	./test.sh > results ; diff -u expected_result results
+	./test.sh data > results ; diff -u expected_result results
 	@echo SUCCESS!
 
 clean:
