@@ -1,0 +1,9 @@
+{
+	"id": "doors",
+	"title": "Intelligent Doors",
+	"description": "Apply rules to accept or reject accesses.",
+	"o2boost": 1,
+	"zboost": 1,
+	"score_bonus": 5,
+	"language": "shell"
+}
