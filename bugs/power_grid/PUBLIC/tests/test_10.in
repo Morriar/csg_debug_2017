@@ -1,0 +1,20 @@
+nodes
+	O O1 AtomicEngine 0
+	O O2 ThermalReactor 100
+	T T3 Transmitter 100 100
+	T T4 Transmitter 100 200
+	T T5 Transmitter 100 50
+	T T6 Transmitter 100 50
+	T T7 Transmitter 100 50
+	I I8 Airvent 100
+	I I9 Oxydizer 100
+links
+	O1 --> T3
+	O1 --> T4
+	O2 --> T4
+	T3 --> T5
+	T4 --> T6
+	T5 --> T7
+	T6 --> T7
+	T7 --> I8
+	T7 --> I9

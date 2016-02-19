@@ -3,6 +3,7 @@
 	"alu_sim",
 	"atomic_engine_1",
 	"bug_hello",
+	"power_grid",
 	"shield_gen",
 	"thermal_reactor_1",
 	"ventilation_1"

@@ -1,0 +1,5 @@
+nodes
+	O O1 AtomicEngine 50
+	I I1 Oxydizer 50
+links
+	O1 --> I1

@@ -1,0 +1,25 @@
+nodes
+	O o1 AtomicEngine 42
+	O o2 AtomicEngine 175
+	O o3 AtomicEngine 149
+	O o4 AtomicEngine 161
+	O o5 AtomicEngine 55
+	T t1 Trasnmitter 85 90
+	T t2 Trasnmitter 45 97
+	T t3 Trasnmitter 183 5
+	I i1 Airvents 96
+	I i2 Airvents 25
+	I i3 Airvents 29
+links
+	o1 --> i2
+	o2 --> t2
+	o3 --> t3
+	o4 --> i2
+	o5 --> t1
+	t1 --> t3
+	t1 --> t2
+	t2 --> t3
+	t2 --> i2
+	t3 --> t2
+	t3 --> i1
+	t3 --> t1

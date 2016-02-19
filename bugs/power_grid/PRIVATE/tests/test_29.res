@@ -1,0 +1,16 @@
+Loaded 7 nodes...
+
+Check cycles...
+
+Check outputs...
+ * {o1 O: 142}: [OK]
+ * {o2 O: 25}: [OK]
+ * {o3 O: 66}: [OK]
+
+Check transmitters...
+ * {t1 I: 93, O: 84}: [KO] wrong input (142/93)
+ * {t2 I: 149, O: 65}: [OK]
+
+Check inputs...
+ * {i1 I: 30}: [KO] wrong input (65/30)
+ * {i2 I: 41}: [KO] wrong input (25/41)

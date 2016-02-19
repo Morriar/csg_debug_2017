@@ -1,0 +1,8 @@
+nodes
+	O O1 AtomicEngine 100
+	T T1 Transmitter 100 50
+	I I1 Airvent 100
+
+links
+	O1 --> T1
+	T1 --> I1
