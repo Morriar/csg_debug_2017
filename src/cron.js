@@ -79,6 +79,8 @@ function applyBugs(teamsDir, round, team, bs, callback) {
 				}
 			});
 		}
+		if(team.oxygen > 100) { team.oxygen = 100; }
+		if(team.energy > 100) { team.energy = 100; }
 		teams.save(team);
 		statuses.save(status);
 		callback(team, status)
