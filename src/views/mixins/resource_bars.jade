@@ -1,0 +1,15 @@
+mixin o2-bar(team)
+	- var value = team.oxygen
+	dl.dl-horizontal.dl-short
+		dt| <span><b>O<sup>2</sup></b></span>
+		dd
+			div.progress
+				div.progress-bar-o2.progress-bar.progress-bar-info.progress-bar-striped.active(role='progressbar' aria-valuenow=value aria-valuemin='0' aria-valuemax='100' data-tid=team.id style='width: #{value}%') #{value}%
+
+mixin zz-bar(team)
+	- var value = team.energy
+	dl.dl-horizontal.dl-short
+		dt| <span class="glyphicon glyphicon-flash"></span>
+		dd
+			div.progress
+				div.progress-bar-zz.progress-bar.progress-bar-warning.progress-bar-striped.active(role='progressbar' aria-valuenow=value aria-valuemin='0' aria-valuemax='100' data-tid=team.id style='width: #{value}%') #{value}%

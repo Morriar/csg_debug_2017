@@ -1,33 +1,31 @@
 extends layout
 
+include mixins/resource_bars
+include mixins/panel_round
+
 block content
 
 	div.container
 
-		if !team
-			div.panel.panel-error
-				h3 Team Error
-				p Team id not found
-		else
-			div.panel.panel-custom
-				div.row
-					div.col-sm-12
-						h1
-							= team.name
-							| <small>&nbsp;
-							= team.score
-							| pts</small>
-						br
-				div.row
-					div.col-sm-6
-						+resource-bar(o2_icon, team.oxygen, "info")
-					div.col-sm-6
-						+resource-bar(zz_icon, team.energy, "warning")
-				br
+		div.panel.panel-custom.panel-team-status(data-tid=team.id)
+			div.row
+				div.col-sm-12
+					h1
+						= team.name
+						| <small class="team-score">&nbsp;
+						= team.score
+						| &nbsp;pts</small>
+					br
+			div.row
+				div.col-sm-6
+					+o2-bar(team)
+				div.col-sm-6
+					+zz-bar(team)
+			br
+
 		+round-panel(round)
 
-		-var cls = team.isDead? 'isdead': team.inDanger? 'indanger': '';
-		div.panel.panel-custom.panel-dome(class='team ' + cls)
+		div.panel.panel-custom.panel-dome(data-tid=team.id)
 			div.container#canvas-dome
 				each bug in bugs
 					if status

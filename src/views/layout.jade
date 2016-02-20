@@ -1,36 +1,3 @@
--var o2_icon = '<span><b>O<sup>2</sup></b></span>'
--var zz_icon = '<span class="glyphicon glyphicon-flash"></span>'
-
-mixin round-panel(round)
-	div.panel.panel-custom
-		if !round
-			h3 Compatition is not started
-			p Please wait...
-		else if round.gameFinished
-			h3 Competition is over
-			p Please leave now!
-		else
-			- var endsAt = round.startedAt + round.duration * 1000;
-			- var rest = Math.floor(new Date(endsAt - new Date().getTime()) / 1000);
-			- var perc = Math.floor(rest * 100 / round.duration)
-			h3 Round #{round.round}
-			div.progress.countdown(data-endsAt=endsAt, data-duration=round.duration)
-				div(class='progress-bar progress-bar-danger progress-bar-striped active' role='progressbar' aria-valuenow=rest aria-valuemin='0' aria-valuemax=round.duration style='width: #{perc}%') #{rest}s
-
-mixin o2-bar(value)
-	+resource-bar(o2_icon, value, "info")
-
-mixin zz-bar(value)
-	+resource-bar(zz_icon,  value, "warning")
-
-mixin resource-bar(icon, value, color)
-	dl.dl-horizontal.dl-short
-		dt| !{icon}
-		dd
-			div.progress
-				div(class='progress-bar progress-bar-#{color} progress-bar-striped active', role='progressbar', aria-valuenow=value, aria-valuemin='0', aria-valuemax='100', style='width: #{value}%') #{value}%
-
-
 doctype html
 html
 	head

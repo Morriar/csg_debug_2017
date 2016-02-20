@@ -1,5 +1,8 @@
 extends layout
 
+include mixins/resource_bars
+include mixins/panel_round
+
 block content
 
 	.container
@@ -11,7 +14,7 @@ block content
 		+round-panel(round)
 
 		div.panel.panel-custom
-			table.table
+			table.table.table-scoreboard
 				tr
 					th(style='width: 50px')= '#'
 					th= 'Team'
@@ -20,12 +23,12 @@ block content
 					th= ' '
 				each team, index in teams
 					-var cls = team.isDead? 'isdead': team.inDanger? 'indanger': '';
-					tr(class='team ' + cls)
+					tr.panel-team-status(class='team ' + cls data-tid=team.id)
 						th= index + 1
 						th
 							a(href='/team/' + team.id)= team.name
 						td
-							+o2-bar(team.oxygen)
+							+o2-bar(team)
 						td
-							+zz-bar(team.energy)
-						th.text-muted= team.score
+							+zz-bar(team)
+						th.text-muted.team-score #{team.score} pts
