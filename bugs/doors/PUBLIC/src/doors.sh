@@ -2,7 +2,7 @@
 
 for i in $(ls $1); do
 	case $i in
-		*a*)
+		a*)
 			# Each line of the file contains a name, its
 			# allegiance index and its personal accepted
 			# allegiance ranges.
@@ -18,7 +18,7 @@ for i in $(ls $1); do
 			done
 			;;
 
-		*b*)
+		b*)
 			# The file contains a citizen information with its
 			# name, its address and its occupation.
 			#
@@ -32,7 +32,7 @@ for i in $(ls $1); do
 				echo REJECT $i
 			fi;;
 
-		*c*)
+		c*)
 			# The file contains the citizenship log of the
 			# citizenship level-related orders.
 			#
@@ -56,7 +56,7 @@ for i in $(ls $1); do
 			fi
 			;;
 
-		*d*)
+		d*)
 			# Datum contains a list of citizens.
 			#
 			# Accept only the 10 more frequent citizens (output the most frequent last).

@@ -9,8 +9,8 @@ In order to train the AI, a test program is used to encode and check the various
 This program applies rules according to the content of specific text files.
 The various rules are explained in the source code.
 
-A sample of data is provided in the `data/` directory.
-Expected output is available in the `expected_result` file.
+A sample of data is provided in the `tests/data.in` directory.
+Expected output is available in the `tests/data.res` file.
 
 ## Usage
 
@@ -18,7 +18,7 @@ The program takes the directory with the data as arguments.
 For each file in the directory it prints acceptation or rejection orders. 
 
 ~~~
-./test.sh data
+./src/doors.sh data
 ~~~
 
 ## Developers
