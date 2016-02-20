@@ -1,9 +1,8 @@
-all:
-	@echo "Nothing to do, just execute: make test"
+compile:
+	@echo Nothing to compile. Just execute: make test
 
 test:
-	./test.sh data > results ; diff -u expected_result results
-	@echo SUCCESS!
+	./tests.sh
 
 clean:
-	rm -f results
+	rm -rf bin/ out/
