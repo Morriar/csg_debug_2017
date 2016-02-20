@@ -118,3 +118,4 @@ tr.team.indanger a {color: #ff0000; }
 #shield_gen { margin-left:-25px; margin-top:-145px; background-image: url('/images/shield.png') }
 #alu_sim { margin-left:-235px; margin-top:-10px; background-image: url('/images/panel.png') }
 #power_grid { margin-left:200px; margin-top:-10px; background-image: url('/images/power.png') }
+#doors { margin-left:-125px; margin-top:5px; background-image: url('/images/lock.png') }
