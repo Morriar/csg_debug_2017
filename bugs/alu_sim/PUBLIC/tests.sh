@@ -11,7 +11,7 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	bin/aluemu "$run_input" > "$run_output" 2>&1
+	timeout -k 3 3 bin/aluemu "$run_input" > "$run_output" 2>&1
 	return $?
 }
 

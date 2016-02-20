@@ -4,7 +4,7 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	./bin/bw "$run_input" "$run_output" 2>&1
+	timeout -k 3 3 bin/bw "$run_input" "$run_output" 2>&1
 	return $?
 }
 
