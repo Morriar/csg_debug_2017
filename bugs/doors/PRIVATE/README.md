@@ -29,8 +29,8 @@ A lot, but only a few of them are required to be solved to pass the tests:
 	* `[]` will be interpreted by the shell, not by `tr`
 	* `A-z` is used instead of `A-Z`
 	* `uniq -c` only considers consecutive lines
-	* `sort` will sort lexicographically 1 < 10 < 2, not numerically
-	* `head` will retrieve the 10 lowest valued
+	* `sort` will sort lexicographically 1 &lt; 10 &lt; 2, not numerically
+	* `head` will retrieve the 10 lowest values
 	* `cut` will extract only the first letter of the name
 	* eventually `for` will break apart first names and family names (space again...)
 
