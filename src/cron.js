@@ -120,7 +120,7 @@ if(argv.length != 5) {
 var teamsDir = argv[2];
 var maxRounds = argv[3];
 var currentRound = 1;
-var roundDuration = argv[4];
+var roundDuration = parseInt(argv[4]);
 var o2_loss = 10;
 var z_loss = 10;
 
