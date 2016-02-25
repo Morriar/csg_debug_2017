@@ -36,6 +36,10 @@ function loadTestFiles(dir) {
   return res;
 }
 
+function loadReadme(path) {
+	return fs.readFileSync(path, 'utf-8');
+}
+
 var argv = process.argv;
 
 if(argv.length != 3) {
@@ -51,6 +55,7 @@ bugs.drop();
 json.forEach(function(bug_dir) {
 	var bug_json = JSON.parse(fs.readFileSync(bugs_dir + '/' + bug_dir + '/bug.json', 'utf-8'));
 	bug_json.dir = bug_dir;
+	bug_json.readme = loadReadme(bugs_dir + '/' + bug_dir + '/PUBLIC/README.md')
 	bug_json.tests = loadTestFiles(bugs_dir + '/' + bug_dir + '/PRIVATE/tests/');
 	bugs.save(bug_json);
 });

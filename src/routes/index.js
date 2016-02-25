@@ -16,6 +16,7 @@
 
 var express = require('express');
 var request = require('request');
+var markdown = require('markdown').markdown;
 var teams = require('../model/teams');
 var bugs = require('../model/bugs');
 var rounds = require('../model/rounds');
@@ -87,7 +88,9 @@ router.get('/team/:tid/:bid', function(req, res, next) {
 				}
 				list[s.round.round] = ss;
 			});
-			res.render('bug', {bug: bug, rounds: list.length == 0 ? null : list, last: last});
+			console.log(bug.readme);
+			var html = markdown.toHTML(bug.readme);
+			res.render('bug', {bug: bug, rounds: list.length == 0 ? null : list, last: last, readme: html});
 		});
 	});
 });

@@ -14,53 +14,65 @@ mixin date(timestamp)
 if !bug
 	p.text-danger Bug not found.
 else
-	p= bug.description
-	br
-	table.table
-		tr
-			th(width='10%') language
-			td= bug.language
-			th(width='5%')!= o2_icon
-			if bug.o2boost > 0
-				th.text-success +#{bug.o2boost}
-			else
-				th.text-danger= bug.o2boost
-			th(width='5%')!= zz_icon
-			if bug.zboost > 0
-				th.text-success +#{bug.zboost}
-			else
-				th.text-danger= bug.zboost
-			th +#{bug.score_bonus} pts / round
 
-	if last
-		h3 Last status&nbsp;-&nbsp;
-			if last.status == "success"
-				strong.text-success SUCCESS
-			else
-				strong.text-danger FAILURE
-			end
-		if last.status != "success" && last.output
-			pre= last.output
+	ul.nav.nav-tabs(role='tablist')
+		li.active(role='presentation')
+			a(href='#status' aria-controles='status' role='tab' data-toggle='tab') Status
+		li(role='presentation')
+			a(href='#readme' aria-controles='readme' role='tab' data-toggle='tab') README
 
-	if rounds
-		h3 Rounds
-		table.table
-			tr
-				th(width='5%') #
-				th(width='30%') Time
-				th Status
-			for round, index in rounds
+	.tab-content
+		.tab-pane#readme(role='tabpanel')!= readme
+
+		.tab-pane.active#status(role='tabpanel')
+
+			p= bug.description
+			br
+			table.table
 				tr
-					th(style='vertical-align: middle')= index
-					td(style='vertical-align: middle')
-						+date(round.timestamp)
-					th
-						if round.status.status == "success"
-							span.text-success SUCCESS
-						else
-							span.text-danger FAILURE
-							button.btn.btn-link(data-toggle='collapse' data-target='#round' + index aria-expanded='false' aria-controls='round' + index) Show output
-				if round.status != "success"
-					tr(class='collapse' id='round' + index)
-						td(colspan=3)
-							pre= round.status.output
+					th(width='10%') language
+					td= bug.language
+					th(width='5%')!= o2_icon
+					if bug.o2boost > 0
+						th.text-success +#{bug.o2boost}
+					else
+						th.text-danger= bug.o2boost
+					th(width='5%')!= zz_icon
+					if bug.zboost > 0
+						th.text-success +#{bug.zboost}
+					else
+						th.text-danger= bug.zboost
+					th +#{bug.score_bonus} pts / round
+
+			if last
+				h3 Last status&nbsp;-&nbsp;
+					if last.status == "success"
+						strong.text-success SUCCESS
+					else
+						strong.text-danger FAILURE
+					end
+				if last.status != "success" && last.output
+					pre= last.output
+
+			if rounds
+				h3 Rounds
+				table.table
+					tr
+						th(width='5%') #
+						th(width='30%') Time
+						th Status
+					for round, index in rounds
+						tr
+							th(style='vertical-align: middle')= index
+							td(style='vertical-align: middle')
+								+date(round.timestamp)
+							th
+								if round.status.status == "success"
+									span.text-success SUCCESS
+								else
+									span.text-danger FAILURE
+									button.btn.btn-link(data-toggle='collapse' data-target='#round' + index aria-expanded='false' aria-controls='round' + index) Show output
+						if round.status != "success"
+							tr(class='collapse' id='round' + index)
+								td(colspan=3)
+									pre= round.status.output
