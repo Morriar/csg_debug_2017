@@ -51,8 +51,13 @@ exports.testBugRandom = function(teamsDir, round, team, bug, callback) {
 }
 
 exports.testBug = function(teamsDir, round, team, bug, test, callback) {
-	var execDir = teamsDir + '/' + team.id + '/' + bug.id;
-	child_process.exec('cd "' + execDir + '" && ./tests.sh "' + test.name +'"',
+	var publicDir = teamsDir + '/' + team.id + '/' + bug.id;
+	var privateDir = teamsDir + '/' + team.id + '/' + bug.id + '_private';
+	child_process.execSync('rm -rf ' + privateDir + '/src');
+	child_process.execSync('cd ' + publicDir + ' && git fetch origin');
+	child_process.execSync('cd ' + publicDir + ' && git reset --hard origin/master');
+	child_process.execSync('cp -rf ' + publicDir + '/src ' + privateDir + '/src');
+	child_process.exec('cd "' + privateDir + '" && ./tests.sh "' + test.name +'"',
 		function(err, stdout, stderr) {
 			var status = {
 				bug: bug.id,
