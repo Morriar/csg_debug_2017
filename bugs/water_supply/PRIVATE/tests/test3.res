@@ -1,1 +1,1 @@
-../../PUBLIC/tests/test3.res
+1

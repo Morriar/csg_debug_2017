@@ -1,1 +1,4 @@
-../../PUBLIC/tests/test1.res
+1
+2
+5
+10
