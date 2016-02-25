@@ -1,6 +1,6 @@
 # Bug Hello
 
-This is an example of a challenge.
+Language: Nit
 
 ## Description
 

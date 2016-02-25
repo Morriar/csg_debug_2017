@@ -1,5 +1,7 @@
 # Access Panel
 
+Language: Lua
+
 The access panel interface is used by all the dome sensors to identificate
 themselves on the central registration computer before transmiting sensor data.
 

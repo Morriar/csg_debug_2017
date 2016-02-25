@@ -16,5 +16,5 @@ Run `diff PRIVATE/src/airvents.js PUBLIC/src/airvents.js` for more details.
 
 This challenge requires the following dependencies:
 
-* java (version >= 1.7)
-* javac (version >= 1.7)
+* nodejs v5.4.1
+* npm v3.3.12

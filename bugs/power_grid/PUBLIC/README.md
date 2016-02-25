@@ -1,5 +1,7 @@
 # Power Grid
 
+Language: Nit
+
 When the generators of the dome operate well, the power is conducted to the main
 systems using the power grid of the dome structure.
 

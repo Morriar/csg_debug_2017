@@ -1,5 +1,7 @@
 # Shield Generator Simulator
 
+Language: C#
+
 To predict and adjust our shield generators needs and installation under our
 beautiful dome, we use a simulation engine capable of predicting the stability
 of a particular configuration.

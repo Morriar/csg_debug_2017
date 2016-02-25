@@ -1,5 +1,7 @@
 # Legacy ALU
 
+Language: C
+
 Several systems which have been in use since the early days of the dome
 rely on an old system with a deprecated instruction set.
 

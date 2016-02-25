@@ -17,4 +17,4 @@ for more details.
 
 This challenge requires the following dependencies:
 
-* nit
+* [nitc](https://github.com/nitlang/nit/) (version > 0.7)
