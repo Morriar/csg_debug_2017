@@ -13,6 +13,8 @@ body {
 
 a:hover { text-decoration: none; }
 
+pre { white-space: pre-wrap; }
+
 /* Panels */
 
 .panel-custom {
