@@ -1,0 +1,23 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet' href='/vendors/bootstrap-3.3.5-dist/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/stylesheets/style.css')
+
+	body
+		nav.navbar.navbar-inverse.navbar-fixed-top
+			.container-fluid
+				.navbar-header
+					button.navbar-toggle.collapsed(data-toggle="collapse", data-target="", aria-expanded="false")
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href="/admin") Admin
+
+		block content
+
+		script(src='/vendors/jquery-2.1.4-min/jquery.js')
+		script(src='/vendors/bootstrap-3.3.5-dist/js/bootstrap.min.js')
+		script(src='/javascripts/script.js')

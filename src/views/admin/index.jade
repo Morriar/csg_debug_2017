@@ -1,0 +1,50 @@
+extends layout
+
+include ../mixins/resource_bars
+
+mixin time(date)
+	- var hours = date.getHours()
+	- if(hours < 10) { hours = "0" + hours }
+	- var minutes = date.getMinutes()
+	- if(minutes < 10) { minutes = "0" + minutes }
+	- var seconds = date.getSeconds()
+	- if(seconds < 10) { seconds = "0" + seconds }
+	span #{hours} : #{minutes} : #{seconds}
+
+block content
+
+	.container
+
+		.panel.panel-default
+			.panel-heading
+				h3.panel-title Teams
+			table.table
+				each team in teams
+					tr
+						th
+							a(href='/team/' + team.id)= team.name
+						th #{team.score} pts
+						td
+							+o2-bar(team)
+						td
+							+zz-bar(team)
+
+		.panel.panel-default
+			.panel-heading
+				h3.panel-title Rounds
+			table.table
+				tr
+					th Round #
+					th Started at
+					th Finish at
+					th Duraiuon
+				each round in rounds
+					if !round.gameFinished
+						tr
+							td
+								a(href='/admin/round/#{round.round}') round #{round.round}
+							td
+								+time(new Date(round.startedAt))
+							td
+								+time(new Date(round.startedAt + round.duration * 1000))
+							td #{round.duration} sec

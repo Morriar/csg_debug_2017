@@ -1,0 +1,20 @@
+extends layout
+
+block content
+
+	.container
+
+		each status in statuses
+			.panel.panel-default
+				.panel-heading
+					h3.panel-title Team #{status.team}
+				table.table
+					each bug in status.bugs
+						-cls = bug.status == "success"? "success" : "danger"
+						tr(class=cls)
+							th= bug.bug
+							th= bug.test
+						if bug.status != "success"
+							tr
+								td(colspan=2)
+									pre(style="white-space: pre-wrap;")= bug.output
