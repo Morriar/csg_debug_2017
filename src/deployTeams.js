@@ -37,11 +37,23 @@ function deployTeams(bugs_dir, teams_dir, version) {
 function createTeamDir(bugs_dir, teams_dir, team, bs, version) {
 	fs.mkdirSync(teams_dir + '/' + team.id);
 	bs.forEach(function(bug) {
-		var tbug_dir = teams_dir + '/' + team.id + '/' + bug.id;
-		fs.mkdirSync(tbug_dir);
+		var bug_dir = teams_dir + '/' + team.id + '/' + bug.id;
+		var bug_private = bug_dir + '_private';
+		var bug_origin = bug_dir + '_origin';
+		// copy private version (used for private tests)
+		fs.mkdirSync(bug_private);
+		proc.execSync("make -C " + bugs_dir + '/' + bug.dir + '/PRIVATE/ clean');
+		proc.execSync("cp -r " + bugs_dir + '/' + bug.dir + '/PRIVATE/* ' + bug_private);
+		// create origin repo and clone public version
+		fs.mkdirSync(bug_origin);
+		proc.execSync("cd " + bug_origin + " && git init --bare");
+		proc.execSync("git clone -q " + bug_origin + " " + bug_dir + " 2>&1")
+		// copy public version (the one given to participants)
 		proc.execSync("make -C " + bugs_dir + '/' + bug.dir + '/' + version + '/ clean');
-		proc.execSync("cp -r " + bugs_dir + '/' + bug.dir + '/' + version + '/* ' + tbug_dir);
-		proc.execSync("cp -r " + bugs_dir + '/' + bug.dir + '/PRIVATE/tests/* ' + tbug_dir + '/tests/');
+		proc.execSync("cp -r " + bugs_dir + '/' + bug.dir + '/' + version + '/* ' + bug_dir);
+		// Init git repo
+		proc.execSync("cd " + bug_dir + " && git add -A && git commit -m 'Initial Commit'");
+		proc.execSync("cd " + bug_dir + " && git push origin master -uq");
 	});
 }
 
