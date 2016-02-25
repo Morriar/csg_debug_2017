@@ -1,6 +1,6 @@
 {
-	"id": "atomic_engine_1",
-	"title": "Atomic Engine 1",
+	"id": "atomic_engine",
+	"title": "Atomic Engine",
 	"description": "Check the reactor grid to avoid core melting.",
 	"o2boost": 3,
 	"zboost": 3,
