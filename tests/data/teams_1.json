@@ -2,9 +2,8 @@
 	{
 		"id": "team_01",
 		"name": "Team 01",
-		"port": "3001",
 		"score": 0,
-		"oxygen": 100,
-		"energy": 100
+		"oxygen": 1000,
+		"energy": 1000
 	}
 ]

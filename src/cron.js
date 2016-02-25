@@ -21,6 +21,10 @@ var tests = require("./model/tests.js");
 var statuses = require("./model/status.js");
 var fs = require("fs");
 
+var MAX_RESSOURCE = 1000;
+var O2_LOSS = 100;
+var ZZ_LOSS = 100;
+
 // Create a new round or stop the game if maxRounds is reached.
 function newRound(roundNumber, roundDuration, maxRounds) {
 	if(currentRound > maxRounds) {
@@ -50,15 +54,15 @@ function playRound(teamsDir, round) {
 // Apply loss in energy and oxygen for a team.
 function applyRoundLoss(round, team, bs, callback) {
 	// Apply round loss
-	team.oxygen = team.oxygen - o2_loss;
-	team.energy = team.energy - z_loss;
+	team.oxygen = team.oxygen - O2_LOSS;
+	team.energy = team.energy - ZZ_LOSS;
 
 	// Kill teams
 	if(team.oxygen <= 0 || team.energy <= 0) {
 		team.isDead = true;
 		team.oxygen = 0;
 		team.energy = 0;
-	} else if(team.oxygen <= 25 || team.energy <= 25) {
+	} else if(team.oxygen <= 250 || team.energy <= 250) {
 		team.inDanger = true;
 	} else {
 		team.inDanger = false;
@@ -79,8 +83,8 @@ function applyBugs(teamsDir, round, team, bs, callback) {
 				}
 			});
 		}
-		if(team.oxygen > 100) { team.oxygen = 100; }
-		if(team.energy > 100) { team.energy = 100; }
+		if(team.oxygen > MAX_RESSOURCE) { team.oxygen = MAX_RESSOURCE; }
+		if(team.energy > MAX_RESSOURCE) { team.energy = MAX_RESSOURCE; }
 		teams.save(team);
 		statuses.save(status);
 		callback(team, status)
@@ -121,8 +125,6 @@ var teamsDir = argv[2];
 var maxRounds = argv[3];
 var currentRound = 1;
 var roundDuration = parseInt(argv[4]);
-var o2_loss = 10;
-var z_loss = 10;
 
 rounds.drop();
 statuses.drop();

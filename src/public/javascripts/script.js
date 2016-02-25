@@ -34,8 +34,8 @@ $(function() {
 			$.get('/json/team/' + tid, function(team) {
 				$panelStatus = $('.panel-team-status[data-tid=' + team.id + ']');
 				$panelStatus.find(".team-score").text(' ' + team.score + ' pts');
-				refreshProgress($panelStatus.find(".progress-bar-o2"), team.oxygen, team.oxygen + '%');
-				refreshProgress($panelStatus.find(".progress-bar-zz"), team.energy, team.energy + '%');
+				refreshProgress($panelStatus.find(".progress-bar-o2"), team.oxygen/10, team.oxygen);
+				refreshProgress($panelStatus.find(".progress-bar-zz"), team.energy/10, team.energy);
 				if(team.isDead) {
 					$panelStatus.removeClass('indanger');
 					$panelStatus.addClass('team isdead');
