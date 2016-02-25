@@ -1,5 +1,7 @@
 # Domesec
 
+Language: Go
+
 As with any advanced facilities, security is primordial for the Dome.
 
 For security checks when our brave soldiers come back from the exterior of the dome, we need the security X-Ray scanner to be on top when it comes to reliability to avoid foreign objects from ever penetrating the Dome.

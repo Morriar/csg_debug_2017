@@ -1,0 +1,9 @@
+{
+	"id": "domesec",
+	"title": "Domesec",
+	"description": "Fix the security scanner to avoid Dome penetration.",
+	"o2boost": 5,
+	"zboost": 5,
+	"score_bonus": 10,
+	"language": "go"
+}
