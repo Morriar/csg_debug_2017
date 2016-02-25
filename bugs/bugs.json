@@ -8,5 +8,6 @@
 	"power_grid",
 	"shield_gen",
 	"thermal_reactor",
-	"ventilation"
+	"ventilation",
+	"water_supply"
 ]

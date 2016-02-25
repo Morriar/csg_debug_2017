@@ -122,3 +122,4 @@ tr.team.indanger a {color: #ff0000; }
 #power_grid { margin-left:200px; margin-top:-10px; background-image: url('/images/power.png') }
 #doors { margin-left:-125px; margin-top:5px; background-image: url('/images/lock.png') }
 #domesec { margin-left:85px; margin-top:5px; background-image: url('/images/scan.png') }
+#water_supply { margin-left:-20px; margin-top:10px; background-image: url('/images/water.png') }

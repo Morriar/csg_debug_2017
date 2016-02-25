@@ -1,9 +1,0 @@
-{
-	"id": "fear_factor",
-	"title": "Fear Factor",
-	"description": "Enumerate factors of a number and check primality",
-	"o2boost": 0,
-	"zboost": 0,
-	"score_bonus": 1,
-	"language": "???"
-}

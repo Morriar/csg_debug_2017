@@ -1,1 +1,0 @@
-../../PUBLIC/tests/test2.res
