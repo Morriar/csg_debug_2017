@@ -1,4 +1,4 @@
-# Atomic Engine 1
+# Atomic Engine
 
 See `PUBLIC/README.md` for the challenge description.
 

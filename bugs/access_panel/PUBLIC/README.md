@@ -1,6 +1,6 @@
-# Access Panel 1
+# Access Panel
 
-The access panel interface 1 is used by all the dome sensors to identificate
+The access panel interface is used by all the dome sensors to identificate
 themselves on the central registration computer before transmiting sensor data.
 
 Each sensor is identified with a uniq tag that is transmitted within the header of
@@ -20,12 +20,12 @@ each data transmission request:
 	sensor_data: VEhFIEZMQUcgSVMgYEZMQUdfODk5ODc4OTc1NjQ0NjUzMjFgLgo=
 
 When the central registration computer receive a sensor transmission request,
-it extracts the sensor ids and send them through the access panel 1.
-The role of the access panel 1 is then to validate all the ids in the input list.
+it extracts the sensor ids and send them through the access panel.
+The role of the access panel is then to validate all the ids in the input list.
 
 ## Description
 
-This program represents the access panel 1.
+This program represents the access panel.
 It parses an input file containg sensor ids and outputs a id validation status list.
 
 The id validation follows this ancient algorithm:

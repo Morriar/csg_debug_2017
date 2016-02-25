@@ -1,6 +1,6 @@
-# Thermal Reactor I
+# Thermal Reactor
 
-The thermal reactor 1 is a geothermal generator that uses the ground heat to
+The thermal reactor is a geothermal generator that uses the ground heat to
 produce energy.
 It works thank to a complex system of probes that are deployed at different underground
 levels to collect the heat and distribute it to the reactor core through pipes.

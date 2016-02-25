@@ -1,4 +1,4 @@
-# Access Panel 1
+# Access Panel
 
 Basically, participants have to implement a Luhn validation algorithm in Lua.
 

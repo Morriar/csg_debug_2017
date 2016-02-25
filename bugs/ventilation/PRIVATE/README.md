@@ -1,4 +1,4 @@
-# Ventilation 1
+# Ventilation
 
 See `PUBLIC/README.md` for the challenge description.
 

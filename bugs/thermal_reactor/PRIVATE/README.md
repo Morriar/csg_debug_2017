@@ -1,4 +1,4 @@
-# Thermal Reactor 1
+# Thermal Reactor
 
 See `PUBLIC/README.md` for the challenge description.
 
