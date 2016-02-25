@@ -19,7 +19,9 @@ var bugs = require("./model/bugs.js");
 var rounds = require("./model/rounds.js");
 var tests = require("./model/tests.js");
 var statuses = require("./model/status.js");
+
 var fs = require("fs");
+var colors = require('colors');
 
 var MAX_RESSOURCE = 1000;
 var O2_LOSS = 100;
@@ -32,7 +34,7 @@ function newRound(roundNumber, roundDuration, maxRounds) {
 		process.exit(0);
 	}
 	var round = rounds.create(currentRound, roundDuration);
-	console.log("\n# Round " + currentRound + " / " + maxRounds + " (" + roundDuration + "s)");
+	console.log(("\n# Round " + currentRound + " / " + maxRounds + " (" + roundDuration + "s)").blue.bold);
 	return round;
 }
 
@@ -92,23 +94,23 @@ function applyBugs(teamsDir, round, team, bs, callback) {
 }
 
 function show_team(team, result) {
-	var status = ' * ' + team.id +
+	var status = ' * ' + team.id.yellow.bold +
 				' (o2:' + team.oxygen +
 				', z: ' + team.energy +
 				', s: ' + team.score + ')';
 	if(team.error) {
-		console.log(status + ' ERROR: ' + team.error);
+		console.log((status + ' ERROR: ' + team.error).red);
 	} else if(team.isDead) {
-		console.log(status + ' dead');
+		console.log(status.gray);
 	} else {
 		console.log(status);
 	}
 	Object.keys(result.bugs).forEach(function(bugId) {
 		var r = result.bugs[bugId];
 		if(r.status == 'success') {
-			console.log("   [OK] " + bugId);
+			console.log("   [OK] ".green + bugId);
 		} else {
-			console.log("   [KO] " + bugId);
+			console.log("   [KO] ".red + bugId);
 		}
 	});
 }
