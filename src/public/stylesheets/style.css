@@ -112,12 +112,12 @@ tr.team.indanger a {color: #ff0000; }
 	background-position: center;
 }
 
-#bug_hello { margin-left:-285px; margin-top:85px; background-image: url("/images/speak.png"); }
-#access_panel { margin-left:250px; margin-top:85px; background-image: url("/images/sensors.png"); }
-#thermal_reactor { margin-left:-180px; margin-top:105px; background-image: url('/images/temp.png')}
-#ventilation { margin-left:-45px; margin-top:120px; background-image: url('/images/fan.png')}
-#atomic_engine { margin-left:105px; margin-top:110px; background-image: url('/images/nuclear.png')}
-#shield_gen { margin-left:-25px; margin-top:-145px; background-image: url('/images/shield.png') }
+#bug_hello { margin-left:-245px; margin-top:70px; background-image: url("/images/speak.png"); }
+#access_panel { margin-left:210px; margin-top:70px; background-image: url("/images/sensors.png"); }
+#thermal_reactor { margin-left:-140px; margin-top:85px; background-image: url('/images/temp.png')}
+#ventilation { margin-left:-20px; margin-top:95px; background-image: url('/images/fan.png')}
+#atomic_engine { margin-left:105px; margin-top:85px; background-image: url('/images/nuclear.png')}
+#shield_gen { margin-left:-20px; margin-top:-130px; background-image: url('/images/shield.png') }
 #alu_sim { margin-left:-235px; margin-top:-10px; background-image: url('/images/panel.png') }
 #power_grid { margin-left:200px; margin-top:-10px; background-image: url('/images/power.png') }
 #doors { margin-left:-125px; margin-top:5px; background-image: url('/images/lock.png') }
