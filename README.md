@@ -41,8 +41,10 @@ This competition requires the following dependencies:
 * `lua 5.2.3`
 * `gcc 4.8.4`
 * `go 1.2.1`
-* `mono 3.2.8.0`
+* `mono-dmcs 3.2.8.0`
 * `ghc 7.6.3`
+
+Use `make install` to install all dependencies.
 
 **All files MUST be UTF-8 encoded!**
 

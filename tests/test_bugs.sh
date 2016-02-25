@@ -1,5 +1,5 @@
 #!/bin/bash
 
 for bug in $(ls ../bugs/); do
-	make test -C "../bugs/$bug/PRIVATE"
+	make --no-print-directory test -C "../bugs/$bug/PRIVATE"
 done
