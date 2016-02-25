@@ -38,6 +38,11 @@ This competition requires the following dependencies:
 * `nodejs 0.10`
 * `npm 1.3`
 * `jdk 1.7`
+* `lua 5.2.3`
+* `gcc 4.8.4`
+* `go 1.2.1`
+* `mono 3.2.8.0`
+* `ghc 7.6.3`
 
 **All files MUST be UTF-8 encoded!**
 
