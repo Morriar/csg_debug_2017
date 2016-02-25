@@ -1,6 +1,6 @@
 {
-	"id": "thermal_reactor_1",
-	"title": "Thermal Reactor 1",
+	"id": "thermal_reactor",
+	"title": "Thermal Reactor",
 	"description": "Configure the probes layout to generate power.",
 	"o2boost": 3,
 	"zboost": 3,
