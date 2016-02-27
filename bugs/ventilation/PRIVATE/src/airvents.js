@@ -1,3 +1,15 @@
+/*
+ * Copyright Dome Systems.
+ *
+ * Dome Private License (D-PL) [a369] PubPL 36 (14 Indium 429)
+ *
+ * * URL: http://csgames.org/2016/dome_license.md
+ * * Type: Software
+ * * Media: Software
+ * * Origin: Mines of Morriar
+ * * Author: Morriar
+*/
+
 var fs = require('fs');
 
 function readInput(path, callback) {

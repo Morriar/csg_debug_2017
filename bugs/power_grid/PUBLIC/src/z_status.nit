@@ -1,9 +1,12 @@
-# Copyright a379 Dome Systems
+# Copyright Dome Systems.
 #
-# Licensed under the Dome License, Version 1.1 (the "License");
-# you should not have seen this file and will be terminated.
+# Dome Private License (D-PL) [a369] PubPL 36 (14 Indium 495)
 #
-# Author: Calibri de la Morriar
+# * URL: http://csgames.org/2016/dome_license.md
+# * Type: Software
+# * Media: Software
+# * Origin: Mines of Morriar
+# * Author: Calibri de la Morriar
 
 # Check and display grid status.
 module z_status
