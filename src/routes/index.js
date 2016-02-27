@@ -74,6 +74,10 @@ router.get('/team/:tid/:bid', function(req, res, next) {
 		return;
 	}
 	bugs.findOne(bid, function(bug) {
+		if(!bug) {
+			res.redirect('/');
+			return;
+		}
 		statuses.find({team: tid}, 50, function(status) {
 			var list = {};
 			var last = null;
@@ -88,7 +92,6 @@ router.get('/team/:tid/:bid', function(req, res, next) {
 				}
 				list[s.round.round] = ss;
 			});
-			console.log(bug.readme);
 			var html = markdown.toHTML(bug.readme);
 			res.render('bug', {bug: bug, rounds: list.length == 0 ? null : list, last: last, readme: html});
 		});
