@@ -43,7 +43,7 @@ run_all()
 	echo "Compile bin..."
 	compile "$out_dir/compile.$timestamp.log"
 	if [ "$?" -ne 0 ]; then
-		echo " * [FAIL] compile bin (cat $out_dir/compile.log)"
+		echo " * [FAIL] compile bin (cat $out_dir/compile.$timestamp.log)"
 		exit 1
 	fi
 
