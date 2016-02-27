@@ -1,8 +1,12 @@
 extends layout
 
-block content
+include mixins/resource_bars
 
-	.container
+block content
+	-var o2_icon = "<span><b>O<sup>2</sup></b></span>"
+	-var zz_icon = "<span class=\"glyphicon glyphicon-flash\"></span>"
+
+	.container.text-justify
 
 		div.panel.panel-custom
 			h1= title
@@ -12,26 +16,31 @@ block content
 			h3 Rules
 
 			p
-				| A dome needs oxygen so the inhabitants can breath and energy to power up
-				| the main systems and generators.
-				| The dome oxygen and energy level of the dome are represented by these gauges:
+				| The dome needs energy to power up the main systems and also
+				| generate oxygen so the inhabitants can breath.
+				| The dome oxygen and energy levels are represented by these gauges:
 
 			p.container-fluid
 				.col-xs-6
-					+o2-bar(80)
+					+o2-bar({oxygen: 800})
 				.col-xs-6
-					+zz-bar(80)
+					+zz-bar({energy: 1000})
 
 			br
 			br
 			p
 				| Each round, the dome consumes&nbsp;
-				strong 10&nbsp;
-				!= o2_icon
-				| &nbsp;and 10&nbsp;
-				!= zz_icon
+				span.text-danger
+					strong 10&nbsp;
+					!= o2_icon
+				| &nbsp;and&nbsp
+				span.text-danger
+					strong 10&nbsp;
+					!= zz_icon
 				| .
-				| If one of the resources reaches 0, then everyone under the dome die.
+				| If one of the resources reaches&nbsp;
+				span.text-danger 0
+				| , then everyone under the dome dies.
 
 			p
 				| To generate power and oxygen, the dome relies on automated life support
@@ -41,14 +50,23 @@ block content
 
 			div.panel.panel-custom.panel-dome
 				div.container#canvas-dome
-					each bug in ["bug_hello"]
-						button(id=bug class='slot-icon btn btn-danger' title=bug)
+					button.slot-icon.btn.btn-success#access_panel
+					button.slot-icon.btn.btn-danger#alu_sim
+					button.slot-icon.btn.btn-success#atomic_engine
+					button.slot-icon.btn.btn-danger#bug_hello
+					button.slot-icon.btn.btn-danger#domesec
+					button.slot-icon.btn.btn-success#doors
+					button.slot-icon.btn.btn-success#power_grid
+					button.slot-icon.btn.btn-success#shield_gen
+					button.slot-icon.btn.btn-danger#thermal_reactor
+					button.slot-icon.btn.btn-success#ventilation
+					button.slot-icon.btn.btn-danger#water_supply
 
 			h4 Producing oxygen and energy
 			p
-				| At each round, the dome cron generate a series of configuration input
-				| parameters that allow each system to function.
-				| If the system process the configuration input parameters as expected,
+				| At each round, the dome cron generates a series of configuration input
+				| parameters that allows each system to function.
+				| If the system processes the configuration input parameters as expected,
 				| the underlying generator is activated and a resource is produced.
 
 			table.table
@@ -96,8 +114,8 @@ block content
 				| In this competition, you are asked to debug the main life support
 				| systems of the dome and save its inhabitants.
 				| Remember, if one of the resources reaches 0, then everyone under the dome
-				| die.
-				strong.text-warning This means that you lose instantaneously the
+				| dies.
+				strong.text-danger &nbsp;This means that you instantaneously lose the
 					| competition and have to leave the room immediately.
 
 			p
@@ -107,16 +125,16 @@ block content
 				pre
 					| $ cd competition_debug/
 					| $ ls
-					| bug_01/
-					| bug_02/
-					| bug_03/
+					| access_panel
+					| alu_sim/
+					| atomic_engine/
 					| ...
 
 			p
-				| Each system is explained by by its own documentation. See the
+				| Each system is explained by its own documentation. See the
 				| README.md file in each directory:
 				pre
-					| cat bug_01/README.md
+					| cat access_panel/README.md
 
 			p
 				| Once you have debugged a system you MUST push it to your team repository
