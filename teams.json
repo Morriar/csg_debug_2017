@@ -1,0 +1,183 @@
+[
+	{
+		"id": "team1",
+		"name": "Clone University",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team2",
+		"name": "Clone High",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team3",
+		"name": "Concordia1",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team4",
+		"name": "Concordia2",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team5",
+		"name": "StuxnETS",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team6",
+		"name": "BotnETS",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team7",
+		"name": "New Sudbury Republic",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team8",
+		"name": "Vault lul",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team9",
+		"name": "Code troopers ulaval legion 1",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team10",
+		"name": "Code troopers ulaval legion 2",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team11",
+		"name": "District HEX",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team12",
+		"name": "HEX-men",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team13",
+		"name": "while (e_coyote) {}",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team14",
+		"name": "Yoga Rebels",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team15",
+		"name": "PolyBlue",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team16",
+		"name": "PolyRed",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team17",
+		"name": "Additional Pylons",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team18",
+		"name": "White Hats",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team19",
+		"name": "Black Hats",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team20",
+		"name": "JDIs",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team21",
+		"name": "Dark JDIs",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team22",
+		"name": "Garbage Collectors",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team23",
+		"name": "The John C#",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team24",
+		"name": "LispMachine",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team25",
+		"name": "ApocaLISP",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team26",
+		"name": "REI",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team27",
+		"name": "Tsintax Error",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team28",
+		"name": "Dub City",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team29",
+		"name": "FluffyHackers",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}, {
+		"id": "team30",
+		"name": "Fluffy hackers 2",
+		"score": 0,
+		"oxygen": 1000,
+		"energy": 1000
+	}
+]
