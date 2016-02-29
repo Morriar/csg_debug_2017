@@ -25,8 +25,20 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	timeout -k 3 3 bin/citysim.exe "$run_input" 100 > "$run_output" 2>&1
+	jail_home=$(dirname $run_output)
+	make_jail $jail_home bin/citysim.exe $run_input
+	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home mono ./citysim.exe "$(basename $run_input)" 100 2>&1 | grep -v "Reading profile" > "$run_output"
 	return $?
+}
+
+make_jail()
+{
+	jail_dir=$1
+	jail_bin=$2
+	jail_input=$3
+	mkdir -p $jail_dir
+	cp $jail_bin $jail_dir
+	cp $jail_input $jail_dir
 }
 
 diff_test()
