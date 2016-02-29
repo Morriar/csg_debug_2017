@@ -14,19 +14,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-compile()
-{
-	compile_log=$1
-	make compile > "$compile_log" 2>&1
-	return $?
-}
-
 run_test()
 {
 	run_input=$1
 	run_output=$2
-	./mpire src/factor.m < "$run_input" > "$run_output" 2>&1
+	jail_home=$(dirname $run_output)
+	make_jail $jail_home src/factor.m $run_input
+	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home ./mpire ./factor.m < "$run_input" 2>&1 | grep -v "Reading profile" > "$run_output"
 	return $?
+}
+
+make_jail()
+{
+	jail_dir=$1
+	jail_bin=$2
+	jail_input=$3
+	mkdir -p $jail_dir
+	cp mpire $jail_dir
+	cp $jail_bin $jail_dir
+	cp $jail_input $jail_dir
 }
 
 diff_test()
@@ -43,13 +49,6 @@ run_all()
 	out_dir=$1
 	tests_dir=$2
 	timestamp=$(date +"%s")
-
-	echo "Compile bin..."
-	compile "$out_dir/compile.$timestamp.log"
-	if [ "$?" -ne 0 ]; then
-		echo " * [FAIL] compile bin (cat $out_dir/compile.log)"
-		exit 1
-	fi
 
 	echo -e "\nRun tests..."
 	OK=0
@@ -92,14 +91,6 @@ run_one()
 	out_dir=$2
 	tests_dir=$3
 	timestamp=$(date +"%s")
-
-	echo "Compile bin..."
-	compile "$out_dir/compile.$timestamp.log"
-	if [ "$?" -ne 0 ]; then
-		echo "[BUILD FAIL]"
-		cat "$out_dir/compile.$timestamp.log"
-		return 1
-	fi
 
 	input="$tests_dir/$name.in"
 	out="$out_dir/$name.$timestamp.out"
