@@ -18,14 +18,14 @@ var teams = require('./model/teams.js');
 var bugs = require('./model/bugs.js');
 
 // Clear db and create teams
-function deployTeams(bugs_dir, teams_dir, version) {
+function deployTeams(bugs_dir, teams_dir, version, prod) {
 	proc.execSync("rm -rf " + teams_dir);
 	fs.mkdirSync(teams_dir);
 
 	teams.find({}, function(ts) {
 		bugs.find({}, function(bs) {
 			ts.forEach(function(team) {
-				createTeamDir(bugs_dir, teams_dir, team, bs, version);
+				createTeamDir(bugs_dir, teams_dir, team, bs, version, prod);
 			});
 			console.log("Loaded " + bs.length + " bugs in " + ts.length + " teams")
 			process.exit(0);
@@ -34,7 +34,7 @@ function deployTeams(bugs_dir, teams_dir, version) {
 }
 
 // Create the team directory and each bug in it.
-function createTeamDir(bugs_dir, teams_dir, team, bs, version) {
+function createTeamDir(bugs_dir, teams_dir, team, bs, version, prod) {
 	fs.mkdirSync(teams_dir + '/' + team.id);
 	bs.forEach(function(bug) {
 		var bug_dir = teams_dir + '/' + team.id + '/' + bug.id;
@@ -54,15 +54,23 @@ function createTeamDir(bugs_dir, teams_dir, team, bs, version) {
 		// Init git repo
 		proc.execSync("cd " + bug_dir + " && git add -A && git commit -m 'Initial Commit'");
 		proc.execSync("cd " + bug_dir + " && git push origin master -uq");
+		// Also init users
+		if(prod == "PROD") {
+			// Set permissions
+			proc.execSync("chown -R " + team.id + " " + bug_origin);
+			// Create home link
+			proc.execSync("ln -fs " + bug_origin + " /home/" + team.id + "/" + bug.id);
+		}
 	});
 }
 
 var argv = process.argv;
 
-if(argv.length != 5) {
+if(argv.length < 5) {
 	console.log("usage:\n");
 	console.log("node deployTeams.js bugs/dir deploy/dir VERSION");
+	console.log("add arg `PROD` to manage user rights");
 	process.exit(1);
 }
 
-deployTeams(argv[2], argv[3], argv[4])
+deployTeams(argv[2], argv[3], argv[4], argv[5])
