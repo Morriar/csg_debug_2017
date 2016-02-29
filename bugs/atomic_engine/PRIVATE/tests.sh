@@ -25,8 +25,21 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	java -cp bin/ sim.Simulator < "$run_input" > "$run_output" 2>&1
+	jail_home=$(dirname $run_output)
+	make_jail $jail_home bin/ $run_input
+	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home java -cp bin/ sim.Simulator < "$run_input" 2>&1 | grep -v "Reading profile" > "$run_output"
+	# java -cp bin/ sim.Simulator < "$run_input" > "$run_output" 2>&1
 	return $?
+}
+
+make_jail()
+{
+	jail_dir=$1
+	jail_bin=$2
+	jail_input=$3
+	mkdir -p $jail_dir
+	cp -r $jail_bin $jail_dir
+	cp $jail_input $jail_dir
 }
 
 diff_test()
