@@ -27,7 +27,7 @@ run_test()
 	run_output=$2
 	jail_home=$(dirname $run_output)
 	make_jail $jail_home bin/bw $run_input
-	timeout -k 8 8 firejail --profile=jail.profile --quiet --private=$jail_home ./bw "$run_input" "$(basename $run_output)" 2>&1 | grep -v "Reading profile"
+	timeout -k 20 20 firejail --profile=jail.profile --quiet --private=$jail_home ./bw "$run_input" "$(basename $run_output)" 2>&1 | grep -v "Reading profile"
 	return $?
 }
 

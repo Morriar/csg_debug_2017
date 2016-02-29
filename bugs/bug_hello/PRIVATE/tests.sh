@@ -25,9 +25,10 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
+	str_input=$(cat $run_input)
 	jail_home=$(dirname $run_output)
 	make_jail $jail_home bin/hello $run_input
-	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home ./hello < "$run_input" 2>&1 | grep -v "Reading profile" > "$run_output"
+	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home ./hello "$str_input" 2>&1 | grep -v "Reading profile" > "$run_output"
 	return $?
 }
 

@@ -31,7 +31,7 @@ make_jail()
 	jail_dir=$1
 	jail_bin=$2
 	jail_input=$3
-	mkdir -p $jail_dir
+	mkdir -p $jail_dir/tests
 	cp $jail_bin $jail_dir
 	cp -r $jail_input $jail_dir/tests/.
 }
