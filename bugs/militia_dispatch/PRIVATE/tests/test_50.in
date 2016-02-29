@@ -1,0 +1,1206 @@
+{
+    "city": "Dome", 
+    "sectors": [
+        {
+            "current_occupation": 10175, 
+            "name": "KII-74"
+        }, 
+        {
+            "current_occupation": 96190, 
+            "name": "QZH-10"
+        }, 
+        {
+            "current_occupation": 18327, 
+            "name": "OKH-24"
+        }, 
+        {
+            "current_occupation": 50529, 
+            "name": "TXG-83"
+        }, 
+        {
+            "current_occupation": 74912, 
+            "name": "WIV-52"
+        }, 
+        {
+            "current_occupation": 72016, 
+            "name": "HKK-67"
+        }, 
+        {
+            "current_occupation": 5288, 
+            "name": "PBL-82"
+        }, 
+        {
+            "current_occupation": 16070, 
+            "name": "ZHB-20"
+        }, 
+        {
+            "current_occupation": 28085, 
+            "name": "HQX-65"
+        }, 
+        {
+            "current_occupation": 66216, 
+            "name": "CTK-52"
+        }, 
+        {
+            "current_occupation": 9650, 
+            "name": "KIU-75"
+        }, 
+        {
+            "current_occupation": 13681, 
+            "name": "NEY-04"
+        }, 
+        {
+            "current_occupation": 62425, 
+            "name": "UUJ-16"
+        }, 
+        {
+            "current_occupation": 41198, 
+            "name": "CGT-65"
+        }, 
+        {
+            "current_occupation": 25271, 
+            "name": "QRH-40"
+        }, 
+        {
+            "current_occupation": 45771, 
+            "name": "QOS-04"
+        }, 
+        {
+            "current_occupation": 97281, 
+            "name": "RUN-68"
+        }, 
+        {
+            "current_occupation": 69514, 
+            "name": "HDK-71"
+        }, 
+        {
+            "current_occupation": 42005, 
+            "name": "XNK-62"
+        }, 
+        {
+            "current_occupation": 35634, 
+            "name": "EIL-28"
+        }, 
+        {
+            "current_occupation": 63807, 
+            "name": "YPQ-46"
+        }, 
+        {
+            "current_occupation": 41338, 
+            "name": "AQC-73"
+        }, 
+        {
+            "current_occupation": 45181, 
+            "name": "WUL-16"
+        }, 
+        {
+            "current_occupation": 26288, 
+            "name": "TPJ-93"
+        }, 
+        {
+            "current_occupation": 91216, 
+            "name": "IFX-60"
+        }, 
+        {
+            "current_occupation": 87088, 
+            "name": "ZOY-49"
+        }, 
+        {
+            "current_occupation": 15030, 
+            "name": "FXD-77"
+        }, 
+        {
+            "current_occupation": 76462, 
+            "name": "ERA-48"
+        }, 
+        {
+            "current_occupation": 3678, 
+            "name": "SSI-22"
+        }, 
+        {
+            "current_occupation": 28223, 
+            "name": "XSG-46"
+        }, 
+        {
+            "current_occupation": 31275, 
+            "name": "RSE-31"
+        }, 
+        {
+            "current_occupation": 71945, 
+            "name": "XHQ-41"
+        }, 
+        {
+            "current_occupation": 9683, 
+            "name": "PBK-76"
+        }, 
+        {
+            "current_occupation": 15237, 
+            "name": "NPA-64"
+        }, 
+        {
+            "current_occupation": 62005, 
+            "name": "IKQ-38"
+        }, 
+        {
+            "current_occupation": 92708, 
+            "name": "PZU-77"
+        }, 
+        {
+            "current_occupation": 85122, 
+            "name": "LCE-69"
+        }, 
+        {
+            "current_occupation": 37000, 
+            "name": "GIY-84"
+        }, 
+        {
+            "current_occupation": 60711, 
+            "name": "GGY-84"
+        }, 
+        {
+            "current_occupation": 68061, 
+            "name": "GAF-42"
+        }, 
+        {
+            "current_occupation": 62732, 
+            "name": "TWA-19"
+        }, 
+        {
+            "current_occupation": 14926, 
+            "name": "BJM-48"
+        }, 
+        {
+            "current_occupation": 62415, 
+            "name": "PNB-96"
+        }, 
+        {
+            "current_occupation": 75564, 
+            "name": "TOK-07"
+        }, 
+        {
+            "current_occupation": 17492, 
+            "name": "LRQ-77"
+        }, 
+        {
+            "current_occupation": 75294, 
+            "name": "ZUF-85"
+        }, 
+        {
+            "current_occupation": 90699, 
+            "name": "PKQ-73"
+        }, 
+        {
+            "current_occupation": 23910, 
+            "name": "ZFX-33"
+        }, 
+        {
+            "current_occupation": 50472, 
+            "name": "OHB-08"
+        }, 
+        {
+            "current_occupation": 34407, 
+            "name": "FXK-47"
+        }, 
+        {
+            "current_occupation": 67334, 
+            "name": "QRW-55"
+        }, 
+        {
+            "current_occupation": 6841, 
+            "name": "XNO-69"
+        }, 
+        {
+            "current_occupation": 96658, 
+            "name": "HYT-72"
+        }, 
+        {
+            "current_occupation": 67349, 
+            "name": "ABJ-79"
+        }, 
+        {
+            "current_occupation": 81601, 
+            "name": "MBQ-95"
+        }, 
+        {
+            "current_occupation": 72319, 
+            "name": "KRW-88"
+        }, 
+        {
+            "current_occupation": 81380, 
+            "name": "FFH-28"
+        }, 
+        {
+            "current_occupation": 52528, 
+            "name": "OCW-33"
+        }, 
+        {
+            "current_occupation": 67751, 
+            "name": "TSP-49"
+        }, 
+        {
+            "current_occupation": 3559, 
+            "name": "AHT-98"
+        }, 
+        {
+            "current_occupation": 29547, 
+            "name": "JKV-97"
+        }, 
+        {
+            "current_occupation": 37116, 
+            "name": "RIE-54"
+        }, 
+        {
+            "current_occupation": 26988, 
+            "name": "PMY-43"
+        }, 
+        {
+            "current_occupation": 20517, 
+            "name": "XGA-56"
+        }, 
+        {
+            "current_occupation": 85135, 
+            "name": "FND-88"
+        }, 
+        {
+            "current_occupation": 95609, 
+            "name": "GVF-49"
+        }, 
+        {
+            "current_occupation": 6067, 
+            "name": "IEE-51"
+        }, 
+        {
+            "current_occupation": 78729, 
+            "name": "JXV-28"
+        }, 
+        {
+            "current_occupation": 39364, 
+            "name": "EFJ-02"
+        }, 
+        {
+            "current_occupation": 39191, 
+            "name": "RBZ-17"
+        }, 
+        {
+            "current_occupation": 38665, 
+            "name": "BPD-66"
+        }, 
+        {
+            "current_occupation": 88242, 
+            "name": "NJB-36"
+        }, 
+        {
+            "current_occupation": 61054, 
+            "name": "PXI-12"
+        }, 
+        {
+            "current_occupation": 25944, 
+            "name": "ADJ-49"
+        }, 
+        {
+            "current_occupation": 72775, 
+            "name": "XFU-53"
+        }, 
+        {
+            "current_occupation": 37220, 
+            "name": "ICG-97"
+        }, 
+        {
+            "current_occupation": 47821, 
+            "name": "UCG-74"
+        }, 
+        {
+            "current_occupation": 46239, 
+            "name": "WPE-31"
+        }, 
+        {
+            "current_occupation": 48169, 
+            "name": "SWR-71"
+        }, 
+        {
+            "current_occupation": 8232, 
+            "name": "FHU-46"
+        }, 
+        {
+            "current_occupation": 60346, 
+            "name": "JCH-41"
+        }, 
+        {
+            "current_occupation": 21022, 
+            "name": "IQN-27"
+        }, 
+        {
+            "current_occupation": 31325, 
+            "name": "RUP-57"
+        }, 
+        {
+            "current_occupation": 82071, 
+            "name": "NTT-64"
+        }, 
+        {
+            "current_occupation": 21432, 
+            "name": "AOI-69"
+        }, 
+        {
+            "current_occupation": 20740, 
+            "name": "LQU-72"
+        }, 
+        {
+            "current_occupation": 33837, 
+            "name": "QAS-08"
+        }, 
+        {
+            "current_occupation": 69714, 
+            "name": "UWW-90"
+        }, 
+        {
+            "current_occupation": 79786, 
+            "name": "XFP-82"
+        }, 
+        {
+            "current_occupation": 38301, 
+            "name": "HBP-10"
+        }, 
+        {
+            "current_occupation": 66645, 
+            "name": "ETG-73"
+        }, 
+        {
+            "current_occupation": 33286, 
+            "name": "DUA-81"
+        }, 
+        {
+            "current_occupation": 72297, 
+            "name": "ZDR-34"
+        }, 
+        {
+            "current_occupation": 78694, 
+            "name": "TEM-53"
+        }, 
+        {
+            "current_occupation": 7971, 
+            "name": "BSH-97"
+        }, 
+        {
+            "current_occupation": 33596, 
+            "name": "JIV-28"
+        }, 
+        {
+            "current_occupation": 32968, 
+            "name": "SCR-35"
+        }, 
+        {
+            "current_occupation": 1968, 
+            "name": "FOD-01"
+        }, 
+        {
+            "current_occupation": 72612, 
+            "name": "KCJ-93"
+        }, 
+        {
+            "current_occupation": 21969, 
+            "name": "YGY-95"
+        }, 
+        {
+            "current_occupation": 98026, 
+            "name": "SAG-17"
+        }, 
+        {
+            "current_occupation": 26799, 
+            "name": "ULF-06"
+        }, 
+        {
+            "current_occupation": 6936, 
+            "name": "BAP-79"
+        }, 
+        {
+            "current_occupation": 22481, 
+            "name": "VYC-53"
+        }, 
+        {
+            "current_occupation": 44964, 
+            "name": "WLH-62"
+        }, 
+        {
+            "current_occupation": 38991, 
+            "name": "WBX-15"
+        }, 
+        {
+            "current_occupation": 68511, 
+            "name": "EMT-19"
+        }, 
+        {
+            "current_occupation": 95817, 
+            "name": "XIX-26"
+        }, 
+        {
+            "current_occupation": 29857, 
+            "name": "RUG-46"
+        }, 
+        {
+            "current_occupation": 66119, 
+            "name": "CYI-82"
+        }, 
+        {
+            "current_occupation": 85128, 
+            "name": "CAX-15"
+        }, 
+        {
+            "current_occupation": 5767, 
+            "name": "QLB-13"
+        }, 
+        {
+            "current_occupation": 88884, 
+            "name": "WFO-34"
+        }, 
+        {
+            "current_occupation": 28580, 
+            "name": "VDS-74"
+        }, 
+        {
+            "current_occupation": 41529, 
+            "name": "UAI-94"
+        }, 
+        {
+            "current_occupation": 16002, 
+            "name": "IBP-32"
+        }, 
+        {
+            "current_occupation": 87227, 
+            "name": "VNO-84"
+        }, 
+        {
+            "current_occupation": 55137, 
+            "name": "LMX-94"
+        }, 
+        {
+            "current_occupation": 65701, 
+            "name": "UWV-92"
+        }, 
+        {
+            "current_occupation": 37658, 
+            "name": "KYI-71"
+        }, 
+        {
+            "current_occupation": 80736, 
+            "name": "CCY-04"
+        }, 
+        {
+            "current_occupation": 27233, 
+            "name": "NAE-73"
+        }, 
+        {
+            "current_occupation": 92465, 
+            "name": "PJV-66"
+        }, 
+        {
+            "current_occupation": 80376, 
+            "name": "SST-21"
+        }, 
+        {
+            "current_occupation": 86631, 
+            "name": "UKG-16"
+        }, 
+        {
+            "current_occupation": 3022, 
+            "name": "MRM-48"
+        }, 
+        {
+            "current_occupation": 86987, 
+            "name": "YWO-14"
+        }, 
+        {
+            "current_occupation": 88324, 
+            "name": "OWB-36"
+        }, 
+        {
+            "current_occupation": 63076, 
+            "name": "KQR-33"
+        }, 
+        {
+            "current_occupation": 68408, 
+            "name": "FEV-85"
+        }, 
+        {
+            "current_occupation": 39322, 
+            "name": "FUJ-68"
+        }, 
+        {
+            "current_occupation": 76654, 
+            "name": "OEN-75"
+        }, 
+        {
+            "current_occupation": 42334, 
+            "name": "DLY-05"
+        }, 
+        {
+            "current_occupation": 23806, 
+            "name": "TSD-54"
+        }, 
+        {
+            "current_occupation": 16557, 
+            "name": "PXO-04"
+        }, 
+        {
+            "current_occupation": 93075, 
+            "name": "UUE-40"
+        }, 
+        {
+            "current_occupation": 26059, 
+            "name": "YIL-68"
+        }, 
+        {
+            "current_occupation": 71962, 
+            "name": "UPR-96"
+        }, 
+        {
+            "current_occupation": 35289, 
+            "name": "QCF-35"
+        }, 
+        {
+            "current_occupation": 56089, 
+            "name": "JDG-79"
+        }, 
+        {
+            "current_occupation": 31445, 
+            "name": "YLG-84"
+        }, 
+        {
+            "current_occupation": 42640, 
+            "name": "LGS-56"
+        }, 
+        {
+            "current_occupation": 42162, 
+            "name": "UVM-20"
+        }, 
+        {
+            "current_occupation": 26409, 
+            "name": "JGK-43"
+        }, 
+        {
+            "current_occupation": 98395, 
+            "name": "ICP-88"
+        }, 
+        {
+            "current_occupation": 18329, 
+            "name": "BJD-27"
+        }, 
+        {
+            "current_occupation": 20874, 
+            "name": "FHM-17"
+        }, 
+        {
+            "current_occupation": 43703, 
+            "name": "RXY-34"
+        }, 
+        {
+            "current_occupation": 68087, 
+            "name": "OFA-93"
+        }, 
+        {
+            "current_occupation": 83570, 
+            "name": "PQC-27"
+        }, 
+        {
+            "current_occupation": 82633, 
+            "name": "QAQ-06"
+        }, 
+        {
+            "current_occupation": 21638, 
+            "name": "GSF-78"
+        }, 
+        {
+            "current_occupation": 45090, 
+            "name": "SVH-34"
+        }, 
+        {
+            "current_occupation": 26866, 
+            "name": "RTJ-28"
+        }, 
+        {
+            "current_occupation": 73857, 
+            "name": "ABX-39"
+        }, 
+        {
+            "current_occupation": 79009, 
+            "name": "QDA-46"
+        }, 
+        {
+            "current_occupation": 36906, 
+            "name": "ZWL-05"
+        }, 
+        {
+            "current_occupation": 587, 
+            "name": "VXS-61"
+        }, 
+        {
+            "current_occupation": 29853, 
+            "name": "LUD-10"
+        }, 
+        {
+            "current_occupation": 51264, 
+            "name": "OJN-97"
+        }, 
+        {
+            "current_occupation": 14250, 
+            "name": "VGL-69"
+        }, 
+        {
+            "current_occupation": 29999, 
+            "name": "VRV-69"
+        }, 
+        {
+            "current_occupation": 36018, 
+            "name": "YQN-09"
+        }, 
+        {
+            "current_occupation": 37980, 
+            "name": "UCW-36"
+        }, 
+        {
+            "current_occupation": 75255, 
+            "name": "HGF-53"
+        }, 
+        {
+            "current_occupation": 49627, 
+            "name": "CLN-06"
+        }, 
+        {
+            "current_occupation": 60678, 
+            "name": "HQD-10"
+        }, 
+        {
+            "current_occupation": 81898, 
+            "name": "TIA-70"
+        }, 
+        {
+            "current_occupation": 22390, 
+            "name": "WSX-85"
+        }, 
+        {
+            "current_occupation": 24204, 
+            "name": "LEP-72"
+        }, 
+        {
+            "current_occupation": 65005, 
+            "name": "GPR-40"
+        }, 
+        {
+            "current_occupation": 8595, 
+            "name": "XUE-00"
+        }, 
+        {
+            "current_occupation": 73691, 
+            "name": "EWD-65"
+        }, 
+        {
+            "current_occupation": 9675, 
+            "name": "QGS-78"
+        }, 
+        {
+            "current_occupation": 58909, 
+            "name": "MRB-13"
+        }, 
+        {
+            "current_occupation": 99286, 
+            "name": "FNJ-20"
+        }, 
+        {
+            "current_occupation": 43607, 
+            "name": "IVM-05"
+        }, 
+        {
+            "current_occupation": 39468, 
+            "name": "IBF-84"
+        }, 
+        {
+            "current_occupation": 94780, 
+            "name": "DXA-78"
+        }, 
+        {
+            "current_occupation": 29628, 
+            "name": "BJT-84"
+        }, 
+        {
+            "current_occupation": 62142, 
+            "name": "IBH-66"
+        }, 
+        {
+            "current_occupation": 78884, 
+            "name": "VER-73"
+        }, 
+        {
+            "current_occupation": 55395, 
+            "name": "HSB-05"
+        }, 
+        {
+            "current_occupation": 40391, 
+            "name": "CFX-34"
+        }, 
+        {
+            "current_occupation": 92469, 
+            "name": "KIK-40"
+        }, 
+        {
+            "current_occupation": 4743, 
+            "name": "VBP-30"
+        }, 
+        {
+            "current_occupation": 97240, 
+            "name": "FHV-67"
+        }, 
+        {
+            "current_occupation": 33913, 
+            "name": "GIB-13"
+        }, 
+        {
+            "current_occupation": 10398, 
+            "name": "LAQ-82"
+        }, 
+        {
+            "current_occupation": 74748, 
+            "name": "RPM-91"
+        }, 
+        {
+            "current_occupation": 96041, 
+            "name": "YNT-16"
+        }, 
+        {
+            "current_occupation": 75847, 
+            "name": "IFW-03"
+        }, 
+        {
+            "current_occupation": 66530, 
+            "name": "FCN-33"
+        }, 
+        {
+            "current_occupation": 20738, 
+            "name": "GBM-66"
+        }, 
+        {
+            "current_occupation": 15408, 
+            "name": "VYU-84"
+        }, 
+        {
+            "current_occupation": 68973, 
+            "name": "QYD-40"
+        }, 
+        {
+            "current_occupation": 39132, 
+            "name": "RBU-63"
+        }, 
+        {
+            "current_occupation": 59881, 
+            "name": "BCD-87"
+        }, 
+        {
+            "current_occupation": 71161, 
+            "name": "CQJ-85"
+        }, 
+        {
+            "current_occupation": 8090, 
+            "name": "QPS-21"
+        }, 
+        {
+            "current_occupation": 25678, 
+            "name": "PPV-93"
+        }, 
+        {
+            "current_occupation": 61004, 
+            "name": "SZA-32"
+        }, 
+        {
+            "current_occupation": 12476, 
+            "name": "RRR-98"
+        }, 
+        {
+            "current_occupation": 65135, 
+            "name": "KWW-75"
+        }, 
+        {
+            "current_occupation": 37691, 
+            "name": "ZJE-41"
+        }, 
+        {
+            "current_occupation": 1352, 
+            "name": "NEV-59"
+        }, 
+        {
+            "current_occupation": 9624, 
+            "name": "JWM-93"
+        }, 
+        {
+            "current_occupation": 47103, 
+            "name": "VBI-41"
+        }, 
+        {
+            "current_occupation": 53569, 
+            "name": "LZT-30"
+        }, 
+        {
+            "current_occupation": 26391, 
+            "name": "ACJ-11"
+        }, 
+        {
+            "current_occupation": 16033, 
+            "name": "KEG-63"
+        }, 
+        {
+            "current_occupation": 98683, 
+            "name": "QFT-79"
+        }, 
+        {
+            "current_occupation": 61500, 
+            "name": "HUF-62"
+        }, 
+        {
+            "current_occupation": 32567, 
+            "name": "NNB-96"
+        }, 
+        {
+            "current_occupation": 85443, 
+            "name": "CTL-44"
+        }, 
+        {
+            "current_occupation": 37569, 
+            "name": "RJB-59"
+        }, 
+        {
+            "current_occupation": 95854, 
+            "name": "GZC-19"
+        }, 
+        {
+            "current_occupation": 19444, 
+            "name": "BER-70"
+        }, 
+        {
+            "current_occupation": 39972, 
+            "name": "UOP-05"
+        }, 
+        {
+            "current_occupation": 48449, 
+            "name": "WYV-72"
+        }, 
+        {
+            "current_occupation": 22618, 
+            "name": "BSZ-39"
+        }, 
+        {
+            "current_occupation": 47456, 
+            "name": "EDX-79"
+        }, 
+        {
+            "current_occupation": 6416, 
+            "name": "RJR-94"
+        }, 
+        {
+            "current_occupation": 30550, 
+            "name": "KET-95"
+        }, 
+        {
+            "current_occupation": 54730, 
+            "name": "BRY-63"
+        }, 
+        {
+            "current_occupation": 35008, 
+            "name": "UJS-37"
+        }, 
+        {
+            "current_occupation": 23456, 
+            "name": "OCF-20"
+        }, 
+        {
+            "current_occupation": 79312, 
+            "name": "XRQ-55"
+        }, 
+        {
+            "current_occupation": 76859, 
+            "name": "ULY-62"
+        }, 
+        {
+            "current_occupation": 97443, 
+            "name": "FQY-84"
+        }, 
+        {
+            "current_occupation": 83402, 
+            "name": "VBZ-48"
+        }, 
+        {
+            "current_occupation": 99202, 
+            "name": "BHX-20"
+        }, 
+        {
+            "current_occupation": 17262, 
+            "name": "YRR-37"
+        }, 
+        {
+            "current_occupation": 94095, 
+            "name": "KQC-67"
+        }, 
+        {
+            "current_occupation": 79207, 
+            "name": "RGR-74"
+        }, 
+        {
+            "current_occupation": 42084, 
+            "name": "FLD-14"
+        }, 
+        {
+            "current_occupation": 61473, 
+            "name": "FGR-51"
+        }, 
+        {
+            "current_occupation": 64818, 
+            "name": "BDO-45"
+        }, 
+        {
+            "current_occupation": 8016, 
+            "name": "LXQ-26"
+        }, 
+        {
+            "current_occupation": 73727, 
+            "name": "OOS-31"
+        }, 
+        {
+            "current_occupation": 5842, 
+            "name": "RXZ-82"
+        }, 
+        {
+            "current_occupation": 10120, 
+            "name": "VLN-92"
+        }, 
+        {
+            "current_occupation": 70143, 
+            "name": "QAC-37"
+        }, 
+        {
+            "current_occupation": 98246, 
+            "name": "NKH-65"
+        }, 
+        {
+            "current_occupation": 6834, 
+            "name": "IGP-98"
+        }, 
+        {
+            "current_occupation": 12968, 
+            "name": "EFB-52"
+        }, 
+        {
+            "current_occupation": 55610, 
+            "name": "TTJ-01"
+        }, 
+        {
+            "current_occupation": 40629, 
+            "name": "TFI-61"
+        }, 
+        {
+            "current_occupation": 95274, 
+            "name": "GRB-38"
+        }, 
+        {
+            "current_occupation": 94038, 
+            "name": "MLN-51"
+        }, 
+        {
+            "current_occupation": 56408, 
+            "name": "SVG-87"
+        }, 
+        {
+            "current_occupation": 79313, 
+            "name": "LAQ-90"
+        }, 
+        {
+            "current_occupation": 14415, 
+            "name": "SRL-77"
+        }, 
+        {
+            "current_occupation": 12036, 
+            "name": "LLD-70"
+        }, 
+        {
+            "current_occupation": 61488, 
+            "name": "UFA-29"
+        }, 
+        {
+            "current_occupation": 24152, 
+            "name": "EYX-11"
+        }, 
+        {
+            "current_occupation": 15264, 
+            "name": "YQS-44"
+        }, 
+        {
+            "current_occupation": 69177, 
+            "name": "SPR-89"
+        }, 
+        {
+            "current_occupation": 29550, 
+            "name": "GYF-79"
+        }, 
+        {
+            "current_occupation": 6429, 
+            "name": "DEH-42"
+        }, 
+        {
+            "current_occupation": 49793, 
+            "name": "TTF-35"
+        }, 
+        {
+            "current_occupation": 44363, 
+            "name": "UKN-97"
+        }, 
+        {
+            "current_occupation": 53177, 
+            "name": "KTL-07"
+        }, 
+        {
+            "current_occupation": 82682, 
+            "name": "OMC-91"
+        }, 
+        {
+            "current_occupation": 79703, 
+            "name": "ULP-35"
+        }, 
+        {
+            "current_occupation": 96490, 
+            "name": "EIK-82"
+        }, 
+        {
+            "current_occupation": 94503, 
+            "name": "LBJ-23"
+        }, 
+        {
+            "current_occupation": 16097, 
+            "name": "WKM-27"
+        }, 
+        {
+            "current_occupation": 66120, 
+            "name": "NUM-90"
+        }, 
+        {
+            "current_occupation": 12572, 
+            "name": "WEM-20"
+        }, 
+        {
+            "current_occupation": 69357, 
+            "name": "LAA-04"
+        }, 
+        {
+            "current_occupation": 71346, 
+            "name": "LDM-82"
+        }, 
+        {
+            "current_occupation": 296, 
+            "name": "OSP-55"
+        }, 
+        {
+            "current_occupation": 7968, 
+            "name": "BDJ-21"
+        }, 
+        {
+            "current_occupation": 55592, 
+            "name": "OJX-30"
+        }, 
+        {
+            "current_occupation": 67707, 
+            "name": "FAI-96"
+        }, 
+        {
+            "current_occupation": 7913, 
+            "name": "DMF-67"
+        }, 
+        {
+            "current_occupation": 97315, 
+            "name": "YUZ-79"
+        }, 
+        {
+            "current_occupation": 20752, 
+            "name": "RMB-83"
+        }, 
+        {
+            "current_occupation": 49084, 
+            "name": "MSE-80"
+        }, 
+        {
+            "current_occupation": 28316, 
+            "name": "LDJ-73"
+        }, 
+        {
+            "current_occupation": 74731, 
+            "name": "IMW-19"
+        }, 
+        {
+            "current_occupation": 77568, 
+            "name": "KZO-27"
+        }, 
+        {
+            "current_occupation": 70709, 
+            "name": "CBV-85"
+        }, 
+        {
+            "current_occupation": 67066, 
+            "name": "YDU-21"
+        }, 
+        {
+            "current_occupation": 7559, 
+            "name": "RSR-79"
+        }, 
+        {
+            "current_occupation": 80005, 
+            "name": "JQG-92"
+        }, 
+        {
+            "current_occupation": 25594, 
+            "name": "ULT-86"
+        }, 
+        {
+            "current_occupation": 57206, 
+            "name": "OVQ-31"
+        }, 
+        {
+            "current_occupation": 52329, 
+            "name": "QPY-62"
+        }, 
+        {
+            "current_occupation": 51592, 
+            "name": "OEX-62"
+        }, 
+        {
+            "current_occupation": 85184, 
+            "name": "ESY-33"
+        }, 
+        {
+            "current_occupation": 53040, 
+            "name": "AEE-96"
+        }, 
+        {
+            "current_occupation": 425, 
+            "name": "XGY-63"
+        }, 
+        {
+            "current_occupation": 36644, 
+            "name": "FGF-42"
+        }, 
+        {
+            "current_occupation": 28577, 
+            "name": "YDG-77"
+        }, 
+        {
+            "current_occupation": 2040, 
+            "name": "ABA-62"
+        }, 
+        {
+            "current_occupation": 13038, 
+            "name": "IAE-08"
+        }, 
+        {
+            "current_occupation": 4781, 
+            "name": "BBV-85"
+        }, 
+        {
+            "current_occupation": 69879, 
+            "name": "TOA-59"
+        }
+    ], 
+    "militia_count": 189388133
+}

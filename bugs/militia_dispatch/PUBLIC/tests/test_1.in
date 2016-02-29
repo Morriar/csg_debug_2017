@@ -1,0 +1,30 @@
+{
+    "city": "dome", 
+    "sectors": [
+        {
+            "current_occupation": 74818, 
+            "name": "XVR-44"
+        }, 
+        {
+            "current_occupation": 12613, 
+            "name": "XKW-07"
+        }, 
+        {
+            "current_occupation": 99859, 
+            "name": "IUV-22"
+        }, 
+        {
+            "current_occupation": 66340, 
+            "name": "XKS-84"
+        }, 
+        {
+            "current_occupation": 3738, 
+            "name": "ZDV-49"
+        }, 
+        {
+            "current_occupation": 90690, 
+            "name": "SQE-12"
+        }
+    ], 
+    "militia_count": 486
+}

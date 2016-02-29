@@ -1,0 +1,174 @@
+{
+    "city": "dome", 
+    "sectors": [
+        {
+            "current_occupation": 22173, 
+            "name": "CTW-51"
+        }, 
+        {
+            "current_occupation": 13689, 
+            "name": "BTI-26"
+        }, 
+        {
+            "current_occupation": 37203, 
+            "name": "PIR-64"
+        }, 
+        {
+            "current_occupation": 75627, 
+            "name": "ZWJ-33"
+        }, 
+        {
+            "current_occupation": 15523, 
+            "name": "YXY-31"
+        }, 
+        {
+            "current_occupation": 95547, 
+            "name": "QQT-18"
+        }, 
+        {
+            "current_occupation": 48859, 
+            "name": "MAK-92"
+        }, 
+        {
+            "current_occupation": 75896, 
+            "name": "FHB-12"
+        }, 
+        {
+            "current_occupation": 7404, 
+            "name": "EZM-62"
+        }, 
+        {
+            "current_occupation": 83240, 
+            "name": "QKH-20"
+        }, 
+        {
+            "current_occupation": 8126, 
+            "name": "GFW-93"
+        }, 
+        {
+            "current_occupation": 99851, 
+            "name": "FOS-75"
+        }, 
+        {
+            "current_occupation": 18565, 
+            "name": "VPZ-89"
+        }, 
+        {
+            "current_occupation": 88767, 
+            "name": "ALF-78"
+        }, 
+        {
+            "current_occupation": 84014, 
+            "name": "NGR-16"
+        }, 
+        {
+            "current_occupation": 68439, 
+            "name": "FTI-28"
+        }, 
+        {
+            "current_occupation": 18069, 
+            "name": "IRN-89"
+        }, 
+        {
+            "current_occupation": 74571, 
+            "name": "KIF-02"
+        }, 
+        {
+            "current_occupation": 57372, 
+            "name": "GFH-71"
+        }, 
+        {
+            "current_occupation": 19311, 
+            "name": "XKW-46"
+        }, 
+        {
+            "current_occupation": 32522, 
+            "name": "EQW-12"
+        }, 
+        {
+            "current_occupation": 84638, 
+            "name": "OGM-48"
+        }, 
+        {
+            "current_occupation": 23256, 
+            "name": "GIU-15"
+        }, 
+        {
+            "current_occupation": 48949, 
+            "name": "XIF-00"
+        }, 
+        {
+            "current_occupation": 45769, 
+            "name": "MVU-42"
+        }, 
+        {
+            "current_occupation": 87405, 
+            "name": "JRN-57"
+        }, 
+        {
+            "current_occupation": 48313, 
+            "name": "PAW-22"
+        }, 
+        {
+            "current_occupation": 13871, 
+            "name": "CXZ-35"
+        }, 
+        {
+            "current_occupation": 20011, 
+            "name": "CCU-50"
+        }, 
+        {
+            "current_occupation": 30671, 
+            "name": "AEP-83"
+        }, 
+        {
+            "current_occupation": 43000, 
+            "name": "PYX-32"
+        }, 
+        {
+            "current_occupation": 83679, 
+            "name": "LUX-29"
+        }, 
+        {
+            "current_occupation": 52145, 
+            "name": "MEB-90"
+        }, 
+        {
+            "current_occupation": 34991, 
+            "name": "IUM-59"
+        }, 
+        {
+            "current_occupation": 42500, 
+            "name": "LAT-01"
+        }, 
+        {
+            "current_occupation": 92822, 
+            "name": "ENK-61"
+        }, 
+        {
+            "current_occupation": 66862, 
+            "name": "LRM-94"
+        }, 
+        {
+            "current_occupation": 91507, 
+            "name": "EZC-17"
+        }, 
+        {
+            "current_occupation": 96447, 
+            "name": "PKR-38"
+        }, 
+        {
+            "current_occupation": 96070, 
+            "name": "AVA-87"
+        }, 
+        {
+            "current_occupation": 50924, 
+            "name": "PNH-32"
+        }, 
+        {
+            "current_occupation": 74269, 
+            "name": "CGM-97"
+        }
+    ], 
+    "militia_count": 526
+}
