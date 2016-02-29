@@ -25,8 +25,20 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	bin/bw "$run_input" "$run_output" 2>&1
+	jail_home=$(dirname $run_output)
+	make_jail $jail_home bin/bw $run_input
+	timeout -k 8 8 firejail --profile=jail.profile --quiet --private=$jail_home ./bw "$run_input" "$(basename $run_output)" 2>&1 | grep -v "Reading profile"
 	return $?
+}
+
+make_jail()
+{
+	jail_dir=$1
+	jail_bin=$2
+	jail_input=$3
+	mkdir -p $jail_dir/tests
+	cp $jail_bin $jail_dir
+	cp $jail_input $jail_dir/tests/.
 }
 
 diff_test()
