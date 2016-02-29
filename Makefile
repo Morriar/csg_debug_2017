@@ -26,13 +26,13 @@ install:
 check:
 	make test-bugs -C tests/
 
-load-teams:
+init-compe:
 	node src/loadTeams.js teams.json
-	node src/loadBugs.js bugs/ data/bugs.json
-	node src/deployTeams.js bugs/ teams_repos/
+	node src/loadBugs.js bugs/
+	node src/deployTeams.js bugs/ DEPLOY/ PUBLIC PROD
 
 start-scoreboard:
-	make start-scoreboard -C src/
+	node src/bin/www
 
 start-cron:
-	make start-cron -C src/
+	node src/cron.js DEPLOY 35 300
