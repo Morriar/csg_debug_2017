@@ -1,5 +1,4 @@
 bin/
 *.o
 src/*.o
-src/hash.c
 out/
