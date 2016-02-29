@@ -48,3 +48,11 @@ cd $bfore
 cd src
 npm install
 cd ..
+
+# install firejail
+git clone https://github.com/netblue30/firejail.git
+cd firejail
+./configure && make && sudo make install-strip
+cd ..
+
+# chmod -R 771 ~/
