@@ -1,11 +1,40 @@
 #!/bin/bash
 
+# Copyright Dome Systems.
+#
+# Dome Private License (D-PL) [a369] PubPL 36 (7 Gallium 369)
+#
+# * URL: http://csgames.org/2016/dome_license.md
+# * Type: Software
+# * Media: Software
+# * Origin: Mines of Morriar
+# * Author: R4PaSs
+
+compile()
+{
+	compile_log=$1
+	make compile --no-print-directory > "$compile_log" 2>&1
+	return $?
+}
+
 run_test()
 {
 	run_input=$1
 	run_output=$2
-	timeout -k 3 3 bin/irrigations "$run_input" > "$run_output" 2>&1
+	jail_home=$(dirname $run_output)
+	make_jail $jail_home bin/irrigations $run_input
+	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home ./irrigations "$run_input" 2>&1 | grep -v "Reading profile" > "$run_output"
 	return $?
+}
+
+make_jail()
+{
+	jail_dir=$1
+	jail_bin=$2
+	jail_input=$3
+	mkdir -p $jail_dir/tests
+	cp $jail_bin $jail_dir
+	cp $jail_input $jail_dir/tests/.
 }
 
 diff_test()
@@ -19,9 +48,17 @@ diff_test()
 
 run_all()
 {
-	rm out/*
 	out_dir=$1
 	tests_dir=$2
+	rm -rf $out_dir/*
+	timestamp=$(date +"%s")
+
+	echo "Compile bin..."
+	compile "$out_dir/compile.$timestamp.log"
+	if [ "$?" -ne 0 ]; then
+		echo " * [FAIL] compile bin (cat $out_dir/compile.$timestamp.log)"
+		exit 1
+	fi
 
 	echo -e "\nRun tests..."
 	OK=0
@@ -34,11 +71,11 @@ run_all()
 		file=$(basename "$input")
 		name="${file%.*}"
 
-		out="$out_dir/$name.res"
+		out="$out_dir/$name.$timestamp.out"
 		exp="$tests_dir/$name.res"
 
 		run_test "$input" "$out"
-		diff_test "$out" "$exp" "$out_dir/$name.diff"
+		diff_test "$out" "$exp" "$out_dir/$name.$timestamp.diff"
 		if [ "$?" == 0 ]; then
 			echo " * [OK] $name"
 			OK=$(($OK + 1))
@@ -58,6 +95,42 @@ run_all()
 	fi
 }
 
+run_one()
+{
+	name=$1
+	out_dir=$2
+	tests_dir=$3
+	timestamp=$(date +"%s")
+
+	echo "Compile bin..."
+	compile "$out_dir/compile.$timestamp.log"
+	if [ "$?" -ne 0 ]; then
+		echo "[BUILD FAIL]"
+		cat "$out_dir/compile.$timestamp.log"
+		return 1
+	fi
+
+	input="$tests_dir/$name.in"
+	out="$out_dir/$name.$timestamp.out"
+	exp="$tests_dir/$name.res"
+
+	echo "Run tests..."
+	run_test "$input" "$out"
+	diff_test "$out" "$exp" "$out_dir/$name.$timestamp.diff"
+	if [ "$?" == 0 ]; then
+		echo "[OK] $name"
+		return 0
+	else
+		echo "[FAIL] $name"
+		cat "$out_dir/$name.$timestamp.diff"
+		return 1
+	fi
+}
+
 mkdir -p out/
-run_all "out" "tests"
+if [ -z "$1" ]; then
+	run_all "out" "tests"
+else
+	run_one "$1" "out" "tests"
+fi
 exit $?

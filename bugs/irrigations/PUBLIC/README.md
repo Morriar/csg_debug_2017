@@ -1,32 +1,34 @@
-# Banquet
+# Irrigation systems
 
-As you may all know at this point, the Emperor is inviting every participant of the games to a marvelous banquet at the end of the competitions.
+Food under the Dome is a scarce resource.
 
-Though we do not want to bother with the placement of non-citizens, the table of the emperor must impeccable.
+Due to a lack of space, all the farming space must be extremely efficient to provide for people living under the Dome.
 
-To make the event a success, it is primordial for the council to be placed in the right way.
+To ensure a maximum yield when harvesting, a highly performant irrigation system is mandatory for our survival.
 
-We have a list of preferences for every council member, including the emperor himself.
+Irrigation stations are in charge of how the distribution of water is done under the dome.
 
-We need the perfect disposition to maximize the happiness of everyone on the table.
+Each station has a system that can be efficiently paired only with certain stations.
 
-We have a part of a final program which computes the maximum happiness level of the table.
+To maximise the water throughput, stations must be positioned efficiently.
 
-It was initially written in Haskell, and has been rendered inoperable.
+Which leads us to the program we have here.
 
-Can you fix it before the competitions are over.
+It runs a placement simulation, the best yield is computed.
 
-You must not fail, the Emperor insists the table must be perfect.
+However, it does not run for now, and no one has a good knowledge of Haskell within our forces.
+
+Can you debug it as fast as possible, the survival of humanity depends on you.
 
 ## Description
 
-A list of preferences is given as argument of the program.
+A list of placements is given as argument of the program.
 
 It then parses the input and maps it with a series of edges.
 
-A brute-force method to bind everyone is then tried, the highest scoring disposition is kept, and its score is printed.
+A brute-force method to bind stations is then tried, the highest scoring disposition is kept, and its score is printed.
 
 ## Usage
 
-./banquet happiness_1.in
+./irrigation positioning_1.in
 901

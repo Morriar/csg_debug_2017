@@ -1,34 +1,17 @@
 # Irrigation systems
 
-Food under the Dome is a scarce resource.
+See `PUBLIC/README.md` for the challenge description.
 
-Due to a lack of space, all the farming space must be extremely efficient to provide for people living under the Dome.
+## Bugs List
 
-To ensure a maximum yield when harvesting, a highly performant irrigation system is mandatory for our survival.
+* `lines 21,23` use `=` operator instead of `<-`
+* `line 22` bad array access
 
-Irrigation stations are in charge of how the distribution of water is done under the dome.
+Run `meld PRIVATE/src/ PUBLIC/src/`
+for more details.
 
-Each station has a system that can be efficiently paired only with certain stations.
+## Requirements and Installation
 
-To maximise the water throughput, stations must be positioned efficiently.
+This challenge requires the following dependencies:
 
-Which leads us to the program we have here.
-
-It runs a placement simulation, the best yield is computed.
-
-However, it does not run for now, and no one has a good knowledge of Haskell within our forces.
-
-Can you debug it as fast as possible, the survival of humanity depends on you.
-
-## Description
-
-A list of placements is given as argument of the program.
-
-It then parses the input and maps it with a series of edges.
-
-A brute-force method to bind stations is then tried, the highest scoring disposition is kept, and its score is printed.
-
-## Usage
-
-./irrigation positioning_1.in
-901
+* ghc (version >=7.6.3)
