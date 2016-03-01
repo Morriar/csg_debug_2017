@@ -19,8 +19,8 @@ run_test()
 	run_input=$1
 	run_output=$2
 	jail_home=$(dirname $run_output)
-	make_jail $jail_home src/access.lua $run_input
-	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home python2.7 dispatch.py < "$run_input" 2>&1 | grep -v "Reading profile" > "$run_output"
+	make_jail $jail_home src/dispatch.py $run_input
+	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home python dispatch.py "$run_input" 2>&1 | grep -v "Reading profile" > "$run_output"
 	return $?
 }
 
@@ -29,9 +29,9 @@ make_jail()
 	jail_dir=$1
 	jail_bin=$2
 	jail_input=$3
-	mkdir -p $jail_dir
+	mkdir -p $jail_dir/tests
 	cp $jail_bin $jail_dir
-	cp $jail_input $jail_dir
+	cp $jail_input $jail_dir/tests/.
 }
 
 diff_test()

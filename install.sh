@@ -28,6 +28,7 @@ apt-get install -y golang
 apt-get install -y mono-runtime
 apt-get install -y mono-dmcs
 apt-get install -y ghc
+apt-get install -y python2.7
 
 # update node js
 cp /usr/bin/nodejs /user/bin/node

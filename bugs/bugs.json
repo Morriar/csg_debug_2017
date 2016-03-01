@@ -7,6 +7,7 @@
 	"doors",
 	"irrigations",
 	"power_grid",
+	"militia_dispatch",
 	"shield_gen",
 	"thermal_reactor",
 	"ventilation",

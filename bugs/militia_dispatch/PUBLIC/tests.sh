@@ -2,19 +2,19 @@
 
 # Copyright Dome Systems.
 #
-# Dome Private License (D-PL) [a369] PubPL 36 (7 Gallium 369)
+# Dome Private License (D-PL) [a369] PubPL 36 (3 Gallium 886)
 #
 # * URL: http://csgames.org/2016/dome_license.md
 # * Type: Software
 # * Media: Software
 # * Origin: Mines of Morriar
-# * Author: Morriar
+# * Author: Pep/OS
 
 run_test()
 {
 	run_input=$1
 	run_output=$2
-	timeout -k 3 3 lua src/access.lua < "$run_input" > "$run_output" 2>&1
+	timeout -k 3 3 python src/dispatch.py "$run_input" > "$run_output" 2>&1
 	return $?
 }
 

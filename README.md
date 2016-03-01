@@ -43,6 +43,7 @@ This competition requires the following dependencies:
 * `go 1.2.1`
 * `mono-dmcs 3.2.8.0`
 * `ghc 7.6.3`
+* `python 2.7`
 
 Use `make install` to install all dependencies.
 

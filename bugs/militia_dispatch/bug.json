@@ -2,8 +2,8 @@
 	"id": "militia_dispatch",
 	"title": "Militia Dispatch Automation",
 	"description": "Dispatches militia units to needed sectors.",
-	"o2boost": 0,
-	"zboost": 0,
-	"score_bonus": 0,
-	"language": "python2.7"
+	"o2boost": 2,
+	"zboost": 2,
+	"score_bonus": 10,
+	"language": "python 2"
 }
