@@ -1,0 +1,78 @@
+{
+    "city": "dome", 
+    "sectors": [
+        {
+            "current_occupation": 94712, 
+            "name": "NHQ-63"
+        }, 
+        {
+            "current_occupation": 14798, 
+            "name": "CEN-02"
+        }, 
+        {
+            "current_occupation": 96522, 
+            "name": "BBO-54"
+        }, 
+        {
+            "current_occupation": 37094, 
+            "name": "UEQ-70"
+        }, 
+        {
+            "current_occupation": 14521, 
+            "name": "INM-31"
+        }, 
+        {
+            "current_occupation": 99801, 
+            "name": "GTR-03"
+        }, 
+        {
+            "current_occupation": 8087, 
+            "name": "JOV-85"
+        }, 
+        {
+            "current_occupation": 65945, 
+            "name": "NAO-04"
+        }, 
+        {
+            "current_occupation": 73092, 
+            "name": "PKD-44"
+        }, 
+        {
+            "current_occupation": 95010, 
+            "name": "ZFE-29"
+        }, 
+        {
+            "current_occupation": 16587, 
+            "name": "VMF-86"
+        }, 
+        {
+            "current_occupation": 16524, 
+            "name": "ZZY-02"
+        }, 
+        {
+            "current_occupation": 49324, 
+            "name": "KVJ-74"
+        }, 
+        {
+            "current_occupation": 88200, 
+            "name": "GRR-49"
+        }, 
+        {
+            "current_occupation": 58679, 
+            "name": "MUZ-19"
+        }, 
+        {
+            "current_occupation": 91596, 
+            "name": "TMB-48"
+        }, 
+        {
+            "current_occupation": 59883, 
+            "name": "VRK-92"
+        }, 
+        {
+            "current_occupation": 53122, 
+            "name": "FCF-64"
+        }
+    ], 
+    "militia_count": 828
+}

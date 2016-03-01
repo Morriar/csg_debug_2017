@@ -1,0 +1,29 @@
+{
+    "city": "dome", 
+    "sectors": [
+        {
+            "current_occupation": 18057, 
+            "name": "OLJ-83"
+        }, 
+        {
+            "current_occupation": 58366, 
+            "name": "TMM-86"
+        }, 
+        {
+            "current_occupation": 17115, 
+            "name": "CPJ-08"
+        }, 
+        {
+            "current_occupation": 15547, 
+            "name": "IDX-15"
+        }, 
+        {
+            "current_occupation": 49184, 
+            "name": "BRC-72"
+        }, 
+        {
+            "current_occupation": 12350, 
+            "name": "HPI-05"
+        }
+    ], 
+    "militia_count": 1866118261
