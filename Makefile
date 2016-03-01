@@ -27,6 +27,8 @@ check:
 	make test-bugs -C tests/
 
 init-compe:
+	node src/loadRounds.js
+	node src/loadStatus.js
 	node src/loadTeams.js teams.json
 	node src/loadBugs.js bugs/
 	node src/deployTeams.js bugs/ DEPLOY/ PUBLIC PROD

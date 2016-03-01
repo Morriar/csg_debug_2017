@@ -20,12 +20,16 @@ test-bugs:
 test-cron: test-cron-private test-cron-public
 
 test-cron-private:
+	node ../src/loadStatus.js
+	node ../src/loadRounds.js
 	node ../src/loadTeams.js data/teams_1.json
 	node ../src/loadBugs.js ../bugs
 	node ../src/deployTeams.js ../bugs out/ PRIVATE
 	node ../src/cron.js out/ 11 15
 
 test-cron-public:
+	node ../src/loadStatus.js
+	node ../src/loadRounds.js
 	node ../src/loadTeams.js data/teams_1.json
 	node ../src/loadBugs.js ../bugs
 	node ../src/deployTeams.js ../bugs out/ PUBLIC
