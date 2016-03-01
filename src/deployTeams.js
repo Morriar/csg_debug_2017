@@ -27,9 +27,6 @@ function deployTeams(bugs_dir, teams_dir, version, prod) {
 			ts.forEach(function(team) {
 				createTeamDir(bugs_dir, teams_dir, team, bs, version, prod);
 			});
-			if(prod == "PROD") {
-				proc.execSync("chmod -R 751 " + teams_dir);
-			}
 			console.log("Loaded " + bs.length + " bugs in " + ts.length + " teams")
 			process.exit(0);
 		});
@@ -57,14 +54,6 @@ function createTeamDir(bugs_dir, teams_dir, team, bs, version, prod) {
 		// Init git repo
 		proc.execSync("cd " + bug_dir + " && git add -A && git commit -m 'Initial Commit'");
 		proc.execSync("cd " + bug_dir + " && git push origin master -uq");
-		// Also init users
-		if(prod == "PROD") {
-			// Set permissions
-			proc.execSync("chown -R " + team.id + " " + bug_origin);
-			// Create home link
-			proc.execSync("ln -fs " + bug_origin + " /home/" + team.id + "/" + bug.id);
-			proc.execSync("chown " + team.id + " " + bug_origin);
-		}
 	});
 }
 
