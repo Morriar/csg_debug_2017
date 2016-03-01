@@ -132,14 +132,16 @@ func write_to_ppm(inmap *pixelmap, outpath string) error {
 	if err != nil {
 		return err
 	}
-	f.Write([]byte("P3\n"))
+	// Buffer for faster writes
+	buffer := make([]byte, 0, 4096)
+	buffer = append(buffer, "P3\n"...)
 	width_str := strconv.Itoa(inmap.width)
 	height_str := strconv.Itoa(inmap.height)
-	f.Write([]byte(width_str))
-	f.Write([]byte{0x20})
-	f.Write([]byte(height_str))
-	f.Write([]byte{0x0A})
-	f.Write([]byte("255\n"))
+	buffer = append(buffer, width_str...)
+	buffer = append(buffer, 0x20)
+	buffer = append(buffer, height_str...)
+	buffer = append(buffer, 0x0A)
+	buffer = append(buffer, "255\n"...)
 	x := 0
 	y := 0
 	for x <= inmap.width {
@@ -148,12 +150,16 @@ func write_to_ppm(inmap *pixelmap, outpath string) error {
 			if err != nil {
 				return err
 			}
-			f.Write([]byte(strconv.Itoa(colour.r)))
-			f.Write([]byte{0x20})
-			f.Write([]byte(strconv.Itoa(colour.g)))
-			f.Write([]byte{0x20})
-			f.Write([]byte(strconv.Itoa(colour.b)))
-			f.Write([]byte{0x20})
+			if len(buffer) > 4000 {
+				f.Write(buffer)
+				buffer = buffer[:0]
+			}
+			buffer = append(buffer, strconv.Itoa(colour.r)...)
+			buffer = append(buffer, 0x20)
+			buffer = append(buffer, strconv.Itoa(colour.g)...)
+			buffer = append(buffer, 0x20)
+			buffer = append(buffer, strconv.Itoa(colour.b)...)
+			buffer = append(buffer, 0x20)
 			y += 1
 		}
 		y = 0
