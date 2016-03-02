@@ -51,10 +51,11 @@ exports.testBugRandom = function(teamsDir, round, team, bug, callback) {
 }
 
 exports.testBug = function(teamsDir, round, team, bug, test, callback) {
+	try {
 	var publicDir = teamsDir + '/' + team.id + '/' + bug.id;
 	var privateDir = teamsDir + '/' + team.id + '/' + bug.id + '_private';
 	child_process.execSync('rm -rf ' + privateDir + '/src');
-	child_process.execSync('cd ' + publicDir + ' && git fetch origin');
+	child_process.execSync('cd ' + publicDir + ' && sudo git fetch origin');
 	child_process.execSync('cd ' + publicDir + ' && git reset --hard origin/master');
 	child_process.execSync('cp -rf ' + publicDir + '/src ' + privateDir + '/src');
 	child_process.exec('cd "' + privateDir + '" && ./tests.sh "' + test.name +'"',
@@ -73,4 +74,13 @@ exports.testBug = function(teamsDir, round, team, bug, test, callback) {
 			}
 			callback(null, status);
 		});
+	} catch(e) {
+		var status = {
+			bug: bug.id,
+			test: test.name,
+			object: bug,
+			status: 'failure',
+			output: 'Can\'t fetch your submission, did you remove something you shouldn\'t? Please contact a competition admin...'
+		}
+	}
 }

@@ -27,11 +27,15 @@ check:
 	make test-bugs -C tests/
 
 init-compe:
+	sudo rm -rf DEPLOY
+	sudo ./srv/delete_teams.sh teams.csv
+	sudo ./srv/create_teams.sh teams.csv
 	node src/loadRounds.js
 	node src/loadStatus.js
 	node src/loadTeams.js teams.json
 	node src/loadBugs.js bugs/
-	node src/deployTeams.js bugs/ DEPLOY/ PUBLIC PROD
+	node src/deployTeams.js bugs/ DEPLOY/ PUBLIC
+	sudo ./srv/init_teams.sh teams.csv /home/ubuntu/csg_debug/DEPLOY/
 
 start-scoreboard:
 	node src/bin/www
