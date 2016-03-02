@@ -2,8 +2,8 @@
 	"id": "thermal_reactor",
 	"title": "Thermal Reactor",
 	"description": "Configure the probes layout to generate power.",
-	"o2boost": 3,
-	"zboost": 3,
-	"score_bonus": 6,
+	"o2boost": 10,
+	"zboost": 10,
+	"score_bonus": 20,
 	"language": "java"
 }

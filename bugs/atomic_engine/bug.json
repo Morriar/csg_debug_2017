@@ -2,8 +2,8 @@
 	"id": "atomic_engine",
 	"title": "Atomic Engine",
 	"description": "Check the reactor grid to avoid core melting.",
-	"o2boost": 3,
-	"zboost": 3,
-	"score_bonus": 6,
+	"o2boost": 10,
+	"zboost": 10,
+	"score_bonus": 20,
 	"language": "java"
 }

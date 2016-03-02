@@ -2,8 +2,8 @@
 	"id": "bug_hello",
 	"title": "Bug Hello",
 	"description": "Challenge example for the debug competition.",
-	"o2boost": 5,
-	"zboost": 5,
-	"score_bonus": 10,
+	"o2boost": 10,
+	"zboost": 10,
+	"score_bonus": 20,
 	"language": "nit"
 }

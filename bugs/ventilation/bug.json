@@ -2,8 +2,8 @@
 	"id": "ventilation",
 	"title": "Ventilation",
 	"description": "Manage the air vents of the dome so people can breath.",
-	"o2boost": 3,
-	"zboost": -1,
-	"score_bonus": 4,
+	"o2boost": 10,
+	"zboost": 10,
+	"score_bonus": 20,
 	"language": "node js"
 }
