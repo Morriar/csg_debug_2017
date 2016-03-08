@@ -14,8 +14,6 @@ This is required to keep the Dome at peace.
 Without this component being functionnal, we will not retain control over the
 citizens of the Dome.
 
-The goal of this program
-
 ## Input files
 
 The Militia Dispatch Automator takes the path to an input file as the only argument.

@@ -141,3 +141,4 @@ tr.team.indanger a {color: #ff0000; }
 #water_supply { margin-left:-20px; margin-top:10px; background-image: url('/images/water.png') }
 #irrigations { margin-left:-180px; margin-top:-85px; background-image: url('/images/pipe.png') }
 #militia_dispatch { margin-left:-80px; margin-top:-70px; background-image: url('/images/militia.png') }
+#alveoli { margin-left:40px; margin-top:-70px; background-image: url('/images/alveoli.png') }

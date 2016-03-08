@@ -1,0 +1,19 @@
+<alveoli>
+  <alveolus name="AntiRadiationCell">
+    <field type="RS" pat="'^(alpha)|(beta)|(gamma)$'">wave</field>
+    <field type="PI">capacity</field>
+    <field type="PI">identifier</field>
+  </alveolus>
+  <alveolus name="SunCell">
+    <field type="PI">luminosity</field>
+    <field type="PF">capacity</field>
+  </alveolus>
+  <alveolus name="EnergyCell">
+    <field type="PI">radcell_id</field>
+    <field type="O">capacity</field>
+  </alveolus>
+  <alveolus name="AntiNonCitizenCell">
+    <field type="PI">kill_count</field>
+    <field type="PI">current_health</field>
+  </alveolus>
+</alveoli>

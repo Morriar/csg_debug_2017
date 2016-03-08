@@ -23,6 +23,7 @@ ssh-add ~/.ssh/id_rsa_debug
 
 git clone ssh://debug/home/$teamid/access_panel
 git clone ssh://debug/home/$teamid/alu_sim
+git clone ssh://debug/home/$teamid/alveoli
 git clone ssh://debug/home/$teamid/atomic_engine
 git clone ssh://debug/home/$teamid/bug_hello
 git clone ssh://debug/home/$teamid/domesec

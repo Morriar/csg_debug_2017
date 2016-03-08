@@ -1,0 +1,9 @@
+{
+	"id": "alveoli",
+	"title": "Alveoli Control",
+	"description": "",
+	"o2boost": 7,
+	"zboost": 7,
+	"score_bonus": 14,
+	"language": "python 3.4"
+}
