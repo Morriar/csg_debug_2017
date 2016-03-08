@@ -81,7 +81,7 @@ $(function() {
 			$panelRound = $(panelRound);
 			$.get('/json/round/', function(round) {
 				var endsAt = round.startedAt + round.duration * 1000;
-				var rest = Math.floor(new Date(endsAt - new Date().getTime()) / 1000);
+				var rest = Math.floor(new Date(endsAt - round.now) / 1000);
 				var value = Math.floor(rest * 100 / round.duration)
 				//refreshScore($panel, team.score)
 				if(round.gameFinished) {

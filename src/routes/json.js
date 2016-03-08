@@ -24,6 +24,9 @@ var router = express.Router();
 
 router.get('/round', function(req, res, next) {
 	rounds.findLast(function(round) {
+		if(round) {
+			round.now = new Date().getTime();
+		}
 		res.json(round);
 	});
 });
