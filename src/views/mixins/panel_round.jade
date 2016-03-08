@@ -12,4 +12,4 @@ mixin round-panel(round)
 			- var perc = Math.floor(rest * 100 / round.duration)
 			h3 Round #{round.round}
 			div.progress
-				div.progress-bar.progress-bar-round.progress-bar-danger.progress-bar-striped.active(role='progressbar' aria-valuenow=rest aria-valuemin='0' aria-valuemax=round.duration style='width: #{perc}%') #{rest}s
+					div.progress-bar.progress-bar-round.progress-bar-danger.progress-bar-striped(role='progressbar' aria-valuenow=rest aria-valuemin='0' aria-valuemax=round.duration style='width: #{perc}%') #{rest}s
