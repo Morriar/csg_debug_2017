@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$#" -ne 2 ]; then
-	echo "usage: clone_team ip teamid"
+	echo "usage: clone_repos IP TEAM"
 	exit 1
 fi
 
@@ -20,9 +20,6 @@ echo "IdentityFile ~/.ssh/id_rsa_debug" >> ~/.ssh/config
 source ~/.profile
 
 ssh-add ~/.ssh/id_rsa_debug
-
-mkdir -p $teamid
-cd $teamid
 
 git clone ssh://debug/home/$teamid/access_panel
 git clone ssh://debug/home/$teamid/alu_sim
