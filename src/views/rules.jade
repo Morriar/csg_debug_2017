@@ -10,15 +10,15 @@ block content
 
 		div.panel.panel-custom
 			h1= title
-			p Keep the dome systems up and running to survive!
+			p Keep the Dome systems up and running to survive!
 
 		div.panel.panel-custom
 			h3 Rules
 
 			p
-				| The dome needs energy to power up the main systems and also
+				| The Dome needs energy to power up the main systems and also
 				| generate oxygen so the inhabitants can breath.
-				| The dome oxygen and energy levels are represented by these gauges:
+				| The Dome oxygen and energy levels are represented by these gauges:
 
 			p.container-fluid
 				.col-xs-6
@@ -29,7 +29,7 @@ block content
 			br
 			br
 			p
-				| Each round, the dome consumes&nbsp;
+				| Each round, the Dome consumes&nbsp;
 				span.text-danger
 					strong 50&nbsp;
 					!= o2_icon
@@ -40,23 +40,25 @@ block content
 				| .
 				| If one of the resources reaches&nbsp;
 				span.text-danger 0
-				| , then everyone under the dome dies.
+				| , then everyone under the Dome dies.
 
 			p
-				| To generate power and oxygen, the dome relies on automated life support
-				| systems that control the main generators and regulators of the dome.
-				| There is 15 systems that need to be running to keep the dome and its
+				| To generate power and oxygen, the Dome relies on automated life support
+				| systems that control the main generators and regulators of the Dome.
+				| There is 15 systems that need to be running to keep the Dome and its
 				| inhabitants safe.
 
-			div.panel.panel-custom.panel-dome
-				div.container#canvas-dome
+			div.panel.panel-custom.panel-Dome
+				div.container#canvas-Dome
 					button.slot-icon.btn.btn-success#access_panel
 					button.slot-icon.btn.btn-danger#alu_sim
 					button.slot-icon.btn.btn-success#atomic_engine
 					button.slot-icon.btn.btn-danger#bug_hello
-					button.slot-icon.btn.btn-danger#domesec
+					button.slot-icon.btn.btn-danger#Domesec
 					button.slot-icon.btn.btn-success#doors
 					button.slot-icon.btn.btn-success#power_grid
+					button.slot-icon.btn.btn-success#irrigations
+					button.slot-icon.btn.btn-success#militia_dispatch
 					button.slot-icon.btn.btn-success#shield_gen
 					button.slot-icon.btn.btn-danger#thermal_reactor
 					button.slot-icon.btn.btn-success#ventilation
@@ -64,7 +66,7 @@ block content
 
 			h4 Producing oxygen and energy
 			p
-				| At each round, the dome cron generates a series of configuration input
+				| At each round, the Dome cron generates a series of configuration input
 				| parameters that allows each system to function.
 				| If the system processes the configuration input parameters as expected,
 				| the underlying generator is activated and a resource is produced.
@@ -105,51 +107,88 @@ block content
 
 			p
 				| Unfortunately, the development of these systems goes for centuries
-				| and their well behavior cannot be guaranted.
+				| and their well behavior cannot be guaranteed.
 				| If the system does not respond as expected, no resource is produced.
-
-
-			h4 Debugging the life-support systems
 			p
 				| In this competition, you are asked to debug the main life support
-				| systems of the dome and save its inhabitants.
-				| Remember, if one of the resources reaches 0, then everyone under the dome
+				| systems of the Dome and save its inhabitants.
+				| Remember, if one of the resources reaches 0, then everyone under the Dome
 				| dies.
 				strong.text-danger &nbsp;This means that you instantaneously lose the
 					| competition and have to leave the room immediately.
 
+			h4 Cloning the Dome environment
 			p
-				| You will find the source code of the life-support systems that you have
-				| to debug on the competition computer you are using.
-				| Simply navigate to the challenge directory:
+				| To fix the Dome systems you must clone the Dome environment.
+				| Simply type the following commands in a terminal.
+				| Don't forget to replace IP and TEAM by the adequate values...
+				| The password is your team password.
 				pre
-					| $ cd competition_debug/
+					| $ git clone ssh://TEAM@IP:9291/home/TEAM/debug
+					| $ cd debug
+					| $ ./clone_repos.sh
+
+			p All the systems have been cloned into your computer.
+				pre
 					| $ ls
 					| access_panel
 					| alu_sim/
 					| atomic_engine/
 					| ...
 
+
+			h4 Debugging the life-support systems
 			p
 				| Each system is explained by its own documentation. See the
-				| README.md file in each directory:
+				| README.md file in each directory.
+				| The Empire strongly recommend to start with bug_hello.
 				pre
-					| cat access_panel/README.md
+					| $ cd bug_hello/
+					| $ cat README.md
+			p
+				| The README is also available in the Dome interface by clicking
+				| on a bug button in your team page.
 
 			p
+				| Read carefully the README and take a look at the tests files to
+				| understand the expected behavior of the programs.
+				| You can then fix the sources.
+				pre
+					| $ vim src/main.nit # do edits and fix that bug!
+
+			p
+				| You can test your changes locally with a set of test inputs.
+				| Use the diff command to check the differences between
+				| your output and the expected one.
+
+				pre
+					| $ make test
+					| Compile bin...
+					| Run tests...
+					|  * [OK] test1
+					|  * [FAIL] test2 (diff out/test_02.out tests/test_02.res)
+					| ...
+					| $ diff out/test_02.out tests/test_02.res
+
+
+			h4 Pushing the bug fixes to the Dome
+			p.text-danger
 				| Once you have debugged a system you MUST push it to your team repository
 				| so the fixed version will be available for the cron to test.
 
 				pre
-					| cd bug_01/
-					| vim src/main.nit # do edits and fix that bug!
-					| git add src/*
+					| git add -A
 					| git commit -m "I fixed that bug!"
 					| git push origin master
 
 			p
 				| That's it! The new version of the system is deployed and you can
 				| wait for the cron to test it.
-				| Check your dome view page for more information on the program,
+				| Check your Dome view page for more information on the program,
 				| the resources it produces and the status of the last check performed
 				| by the cron.
+
+			p.text-warning
+				b <i>Final note:</i>
+					| You do not need to edit anything outside of the src/ directory.
+					| Everything else will not be considered by the cron.

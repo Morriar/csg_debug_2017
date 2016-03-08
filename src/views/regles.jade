@@ -1,0 +1,204 @@
+extends layout
+
+include mixins/resource_bars
+
+block content
+	-var o2_icon = "<span><b>O<sup>2</sup></b></span>"
+	-var zz_icon = "<span class=\"glyphicon glyphicon-flash\"></span>"
+
+	.container.text-justify
+
+		div.panel.panel-custom
+			h1= title
+			p Fixer les systèmes de survie automatisés du Dôme pour survivre!
+
+		div.panel.panel-custom
+			h3 Règles
+
+			p
+				| Le Dôme nécessite de l'énergie pour alimenter les systèmes de survie
+				| et de l'oxygène pour que ses habitants puissent respirer.
+				| Les niveaux d'oxygène et d'énergie du Dôme sont représentés par
+				| ces jauges:
+
+			p.container-fluid
+				.col-xs-6
+					+o2-bar({oxygen: 800})
+				.col-xs-6
+					+zz-bar({energy: 1000})
+
+			br
+			br
+			p
+				| Chaque tour, le Dôme consume&nbsp;
+				span.text-danger
+					strong 50&nbsp;
+					!= o2_icon
+				| &nbsp;et&nbsp
+				span.text-danger
+					strong 50&nbsp;
+					!= zz_icon
+				| .
+				| Si l'une de ces ressources atteint&nbsp;
+				span.text-danger 0
+				| , alors tout le monde sous le Dôme meurt.
+
+			p
+				| Pour générer de l'énergie et de l'oxygène, le Dôme dépend de systèmes
+				| automatiques qui contrôles les différents générateurs et régulateurs
+				| nécessaires à son bon fonctionnement.
+				| Il y a 15 systèmes qui doivent fonctionner pour garder le Dôme
+				| et ses habitants en sécurité.
+
+			div.panel.panel-custom.panel-dome
+				div.container#canvas-dome
+					button.slot-icon.btn.btn-success#access_panel
+					button.slot-icon.btn.btn-danger#alu_sim
+					button.slot-icon.btn.btn-success#atomic_engine
+					button.slot-icon.btn.btn-danger#bug_hello
+					button.slot-icon.btn.btn-danger#domesec
+					button.slot-icon.btn.btn-success#doors
+					button.slot-icon.btn.btn-success#power_grid
+					button.slot-icon.btn.btn-success#irrigations
+					button.slot-icon.btn.btn-success#militia_dispatch
+					button.slot-icon.btn.btn-success#shield_gen
+					button.slot-icon.btn.btn-danger#thermal_reactor
+					button.slot-icon.btn.btn-success#ventilation
+					button.slot-icon.btn.btn-danger#water_supply
+
+			h4 Produire de l'énergie et de l'oxygène
+			p
+				| Chaque tour, le Dôme CRON génère une série de fichiers de configuration
+				| permettant à chaque système de fonctionner.
+				| Si le système interprète le fichier de configuration correctement,
+				| alors le générateur ou régulateur sous-jacent peut fonctionner
+				| et produire une ressource.
+
+			table.table
+				tr
+					td(width='25%') Exemple 1:
+					th(width='5%')!= o2_icon
+					th(width='15%').text-success +5
+					th(width='5%')!= zz_icon
+					th(width='15%').text-success +5
+					th +10 pts / round
+
+			p
+				| Le type et la quantité de ressource produite diffère selon les systèmes.
+				| Ainsi, certains systèmes peuvent apparaître plus critique que d'autres.
+
+			table.table
+				tr
+					td(width='25%') Exemple 2:
+					th(width='5%')!= o2_icon
+					th(width='15%').text-success +15
+					th(width='5%')!= zz_icon
+					th(width='15%').text-success +10
+					th +20 pts / round
+
+			p
+				| Aussi, certains systèmes consomment l'une des ressource pour produire
+				| la seconde.
+
+			table.table
+				tr
+					td(width='25%') Exemple 3:
+					th(width='5%')!= o2_icon
+					th(width='15%').text-success +20
+					th(width='5%')!= zz_icon
+					th(width='15%').text-danger -5
+					th +25 pts / round
+
+			p
+				| Malheureusement, le développement de ces systèmes s'est étalé sur
+				| des centaines d'années, et il n'est pas garanti que tous fonctionnent
+				| correctement.
+				| Si par malheur, le système ne répond pas correctement, aucune
+				| ressource n'est produite...
+			p
+				| Dans cette compétition, il vous est demandé de remettre en marche
+				| l'ensemble des systèmes vitaux du Dôme afin d'en sauver ses habitants.
+				| Souvenez vous que si l'une des deux ressources atteint 0, tous le
+				| monde sous le Dôme va mourir!
+				strong.text-danger &nbsp;Cela signifie que vous perdez instantanément
+					| la compétition et devez alors quitter la salle.
+
+			h4 Cloner l'environnement du Dôme
+			p
+				| Pour réparer les systèmes du Dôme, vous devez d'abord cloner son
+				| environnement.
+				| Tapez les commandes suivantes dans un terminal.
+				| N'oubliez pas de remplacer IP et TEAM par les valeurs appropriées...
+				| Le mot de passe est celui de votre équipe.
+				pre
+					| $ git clone ssh://TEAM@IP:9291/home/TEAM/debug
+					| $ cd debug
+					| $ ./clone_repos.sh IP TEAM
+
+			p Tous les systèmes viennent d'être clonés sur votre ordinateur.
+				pre
+					| $ ls
+					| access_panel
+					| alu_sim/
+					| atomic_engine/
+					| ...
+
+
+			h4 Déboguer les systèmes du Dôme.
+			p
+				| Chaque système possède son propre fichier README expliquant son fonctionnement.
+				| L'Empire recommande fortement de commencer par le bug <i>bug_hello</i>
+				pre
+					| $ cd bug_hello/
+					| $ cat README.md
+			p
+				| Le README est aussi disponible au travers de l'interface web en cliquant
+				| sur les boutons de votre page d'équipe.
+
+			p
+				| Lisez attentivement les fichiers README et jetez un coup d'oeil
+				| aux fichiers de tests afin de comprendre le fonctionnement attendu
+				| du programme.
+				| Vous pouvez ensuite corriger les fichiers source.
+				pre
+					| $ vim src/main.nit # do edits and fix that bug!
+
+			p
+				| Pour vous vérifier vos modifications, vous pouvez utiliser le
+				| script de test automatisé.
+				| En cas de différence entre votre output et le résultat attendu,
+				| vous pouvez utiliser la commande <i>diff</i>.
+
+				pre
+					| $ make test
+					| Compile bin...
+					| Run tests...
+					|  * [OK] test1
+					|  * [FAIL] test2 (diff out/test_02.out tests/test_02.res)
+					| ...
+					| $ diff out/test_02.out tests/test_02.res
+
+
+			h4 Pousser les modifications vers le Dôme
+			p.text-danger
+				| Une fois qu'un système est débogué, vous devez pousser les modifications
+				| vers votre dépôt d'équipe.
+				| Ainsi, la version des sources corrigée sera disponible pour être
+				| testé par le cron.
+
+				pre
+					| git add -A
+					| git commit -m "I fixed that bug!"
+					| git push origin master
+
+			p
+				| C'est tout! La nouvelle version est prête à être testée.
+				| Vérifiez l'interface web pour savoir si le test a fonctionné.
+				| Le résultat de l'exécution de chaque programme est disponible
+				| dans l'interface web après chaque tour.
+
+			p.text-warning
+				b <i>Note finale:</i>
+					| Vous n'avez pas besoin de toucher à autre chose qu'aux répertoires
+					| src/.
+					| Les autres modifications ne sont pas prises en compte.

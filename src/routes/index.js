@@ -37,6 +37,12 @@ router.get('/rules', function(req, res, next) {
 	res.render('rules', { title: 'Debug Competition' });
 });
 
+/* GET regles page. */
+router.get('/regles', function(req, res, next) {
+	res.render('regles', { title: 'Compétition Deboggage' });
+});
+
+
 /* GET dome page. */
 router.get('/team/:tid', function(req, res, next) {
 	var tid = req.params.tid;
