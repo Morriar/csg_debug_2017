@@ -24,8 +24,8 @@ var fs = require("fs");
 var colors = require('colors');
 
 var MAX_RESSOURCE = 1000;
-var O2_LOSS = 100;
-var ZZ_LOSS = 100;
+var O2_LOSS = 50;
+var ZZ_LOSS = 50;
 
 // Create a new round or stop the game if maxRounds is reached.
 function newRound(roundNumber, roundDuration, maxRounds) {
