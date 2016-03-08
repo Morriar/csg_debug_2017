@@ -12,7 +12,6 @@ from collections import OrderedDict
 from inspect import Parameter, Signature
 from xml.etree.ElementTree import parse
 
-# Utility functions
 def _make_init(fields):
     '''
     Give a list of field names, make an __init__ method
@@ -62,7 +61,6 @@ class T(D):
             '    sys.exit(0)',
             ]
 
-# Specialized types
 class I(T):
     _type = int
 
@@ -72,7 +70,6 @@ class F(T):
 class S(T):
     _type = str
 
-# Value checking
 class P(D):
     @staticmethod
     def set_code():
@@ -93,14 +90,12 @@ class O(I):
                 ]
         super().__set__(instance, value)
 
-# More specialized types
 class PI(I, P):
     pass
 
 class PF(F, P):
     pass
 
-# Length checking
 class L(D):
     def __init__(self, *args, ml, **kwargs):
         self.ml = ml
@@ -117,7 +112,6 @@ class L(D):
 class SS(S, L):
     pass
 
-# Pattern matching
 class RS(D):
     def __init__(self, *args, pat, **kwargs):
         self.pat = re.compile(pat)
@@ -147,7 +141,6 @@ class StructMeta(type):
         for name in fields:
             clsdict[name].name = name
 
-        # Make the init function
         if fields:
             exec(_make_init(fields), globals(), clsdict)
 
@@ -158,7 +151,6 @@ class StructMeta(type):
 class Structure(metaclass=StructMeta):
     pass
 
-# Import hooks
 def _xml_to_code(filename):
     doc = parse(filename)
     code = 'import alveoli as _i\n'
