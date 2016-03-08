@@ -14,7 +14,7 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	timeout -k 3 3 node src/airvents.js "$run_input" > "$run_output" 2>&1
+	node src/airvents.js "$run_input" > "$run_output" 2>&1
 	return $?
 }
 

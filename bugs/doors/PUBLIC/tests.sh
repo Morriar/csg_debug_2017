@@ -14,7 +14,7 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	timeout -k 3 3 src/doors.sh "$run_input" > "$run_output" 2>&1
+	src/doors.sh "$run_input" > "$run_output" 2>&1
 	return $?
 }
 

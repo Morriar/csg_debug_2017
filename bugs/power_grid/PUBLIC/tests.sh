@@ -21,7 +21,7 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	timeout -k 3 3 bin/z_status "$run_input" > "$run_output" 2>&1
+	bin/z_status "$run_input" > "$run_output" 2>&1
 	return $?
 }
 

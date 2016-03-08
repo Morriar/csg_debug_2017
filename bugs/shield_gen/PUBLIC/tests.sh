@@ -21,7 +21,7 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	timeout -k 3 3 bin/citysim.exe "$run_input" 100 > "$run_output" 2>&1
+	bin/citysim.exe "$run_input" 100 > "$run_output" 2>&1
 	return $?
 }
 
