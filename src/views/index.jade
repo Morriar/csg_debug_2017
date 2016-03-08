@@ -14,21 +14,24 @@ block content
 		+round-panel(round)
 
 		div.panel.panel-custom
-			table.table.table-scoreboard
-				tr
-					th(style='width: 50px')= '#'
-					th= 'Team'
-					th= ' '
-					th= ' '
-					th= ' '
-				each team, index in teams
-					-var cls = team.isDead? 'isdead': team.inDanger? 'indanger': '';
-					tr.panel-team-status(class='team ' + cls data-tid=team.id)
-						th= index + 1
-						th
-							a(href='/team/' + team.id)= team.name
-						td
-							+o2-bar(team)
-						td
-							+zz-bar(team)
-						th.text-muted.team-score #{team.score} pts
+			if round && round.hideScoreboard
+				p Scoreboard is hidden...
+			else
+				table.table.table-scoreboard
+					tr
+						th(style='width: 50px')= '#'
+						th= 'Team'
+						th= ' '
+						th= ' '
+						th= ' '
+					each team, index in teams
+						-var cls = team.isDead? 'isdead': team.inDanger? 'indanger': '';
+						tr.panel-team-status(class='team ' + cls data-tid=team.id)
+							th= index + 1
+							th
+								a(href='/team/' + team.id)= team.name
+							td
+								+o2-bar(team)
+							td
+								+zz-bar(team)
+							th.text-muted.team-score #{team.score} pts

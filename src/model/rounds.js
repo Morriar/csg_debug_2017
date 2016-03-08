@@ -21,7 +21,8 @@ exports.create = function(roundNumber, duration, finished) {
 	var round = {
 		round: roundNumber,
 		startedAt: new Date().getTime(),
-		duration: duration
+		duration: duration,
+		hideScoreboard: roundNumber >= 30
 	}
 	if(finished) {
 		round.gameFinished = true

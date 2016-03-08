@@ -84,6 +84,9 @@ $(function() {
 				var rest = Math.floor(new Date(endsAt - round.now) / 1000);
 				var value = Math.floor(rest * 100 / round.duration)
 				//refreshScore($panel, team.score)
+				if(round.hideScoreboard) {
+					$('.table-scoreboard').remove();
+				}
 				if($('#team-panel.team.isdead').length > 0) {
 					$panelRound.find('h3').text('You are dead!');
 					$panelRound.find('div').remove();
