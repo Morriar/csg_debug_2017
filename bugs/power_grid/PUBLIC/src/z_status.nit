@@ -74,7 +74,7 @@ end
 var grid = new ZGrid.from_file(sys.args.first)
 var comparator = new ZNodeComparator
 
-print "Loaded {grid.nodes.length} nodes..."
+print "Loaded {grid.nodes.length} nodes!!!"
 
 print "\nCheck cycles..."
 if grid.has_cycle then

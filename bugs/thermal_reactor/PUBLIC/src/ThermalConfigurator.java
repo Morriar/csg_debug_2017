@@ -22,14 +22,13 @@ class ThermalConfigurator {
 	public static void main(String[] args) throws IOException {
             ThermalConfigurator configurator = new ThermalConfigurator();
             String output = configurator.configure(System.in);
-            System.out.print(output);
 	}
 
-        public String configure(InputStream source) throws IOException {
-            ThermalConfigurationParser parser = new ThermalConfigurationParser(source);
-            ThermalConfiguration configuration = parser.parseConfiguration();
-            return configuration.renderReport();
-        }
+    public String configure(InputStream source) throws IOException {
+        ThermalConfigurationParser parser = new ThermalConfigurationParser(source);
+        ThermalConfiguration configuration = parser.parseConfiguration();
+        return configuration.renderReport();
+    }
 
     class ThermalConfigurationParser {
         InputStream source;

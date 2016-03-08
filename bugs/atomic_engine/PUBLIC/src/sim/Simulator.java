@@ -40,11 +40,11 @@ public class Simulator {
             heat += h;
             turns++;
         }
-        System.out.println("Reactor grid:");
-        reactor.grid.displayGrid();
-        System.out.println("\nReactor can run " + turns + " turns before explosion.");
-        System.out.println(" * Energy output: " + energy);
-        System.out.println(" * Heat output: " + heat);
+        //System.out.println("Reactor grid:");
+        //reactor.grid.displayGrid();
+        //System.out.println("\nReactor can run " + turns + " turns before explosion.");
+        //System.out.println(" * Energy output: " + energy);
+        //System.out.println(" * Heat output: " + heat);
     }
 
     /**
