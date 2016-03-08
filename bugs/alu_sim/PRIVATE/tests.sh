@@ -27,7 +27,7 @@ run_test()
 	run_output=$2
 	jail_home=$(dirname $run_output)
 	make_jail $jail_home bin/aluemu $run_input
-	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home ./aluemu "$run_input" 2>&1 | grep -v "Reading profile" > "$run_output"
+	timeout -k 5 5 firejail --profile=jail.profile --quiet --private=$jail_home ./aluemu "$run_input" 2>&1 | grep -v "Reading profile" > "$run_output"
 	return $?
 }
 
