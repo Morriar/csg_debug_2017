@@ -43,7 +43,9 @@ function playRound(teamsDir, round) {
 	teams.find({}, function(allteams) {
 		bugs.find({}, function(allbugs) {
 			allteams.forEach(function(team) {
+				if(team.isDead) { return; }
 				applyRoundLoss(round, team, allbugs, function(teamsDir, round, team, allbugs) {
+					if(team.isDead) { return; }
 					applyBugs(teamsDir, round, team, allbugs, function(team, result) {
 						show_team(team, result);
 					});

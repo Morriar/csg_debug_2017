@@ -84,12 +84,19 @@ $(function() {
 				var rest = Math.floor(new Date(endsAt - round.now) / 1000);
 				var value = Math.floor(rest * 100 / round.duration)
 				//refreshScore($panel, team.score)
-				if(round.gameFinished) {
+				if($('#team-panel.team.isdead').length > 0) {
+					$panelRound.find('h3').text('You are dead!');
+					$panelRound.find('div').remove();
+					$panelRound.addClass('team isdead');
+					$panelRound.append($('<div>').text('You are a disgrace for the Empire. Please leave now.'))
+				} else if(round.gameFinished) {
 					$panelRound.find('h3').text('Competition is over');
 					$panelRound.find('div').remove();
+					$panelRound.removeClass('team isdead');
 					$panelRound.append($('<div>').text('Please leave now.'))
 				} else {
 					$panelRound.find('h3').text('Round ' + round.round);
+					$panelRound.removeClass('team isdead');
 					refreshProgress($panelRound.find(".progress-bar-round"), value, rest + 's');
 				}
 			});

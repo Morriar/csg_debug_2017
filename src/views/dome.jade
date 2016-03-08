@@ -6,8 +6,8 @@ include mixins/panel_round
 block content
 
 	div.container
-
-		div.panel.panel-custom.panel-team-status(data-tid=team.id)
+		-var cls = team.isDead? 'team isdead' : 'team';
+		#team-panel.panel.panel-custom.panel-team-status(data-tid=team.id class=cls)
 			div.row
 				div.col-sm-12
 					h1
@@ -23,7 +23,7 @@ block content
 					+zz-bar(team)
 			br
 
-		+round-panel(round)
+		+round-panel(round, team)
 
 		div.panel.panel-custom.panel-dome(data-tid=team.id)
 			div.container#canvas-dome
