@@ -1,7 +1,7 @@
 {
 	"id": "bug_hello",
 	"title": "Bug Hello",
-	"description": "Challenge example for the debug competition.",
+	"description": "Challenge example, really simple to solve. You should start by this one.",
 	"o2boost": 1,
 	"zboost": 1,
 	"score_bonus": 2,
