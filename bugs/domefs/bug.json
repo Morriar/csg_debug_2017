@@ -1,0 +1,9 @@
+{
+	"id": "domefs",
+	"title": "Dome File System",
+	"description": "This really simple program is used by all the application that depends on the Dome File System (domefs) to parse the content of directories.",
+	"o2boost": 5,
+	"zboost": 5,
+	"score_bonus": 10,
+	"language": "C++"
+}

@@ -5,6 +5,7 @@
 	"atomic_engine",
 	"bug_hello",
 	"doors",
+	"domefs",
 	"domesec",
 	"irrigations",
 	"power_grid",

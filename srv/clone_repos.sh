@@ -27,6 +27,7 @@ git clone ssh://debug/home/$teamid/alveoli
 git clone ssh://debug/home/$teamid/atomic_engine
 git clone ssh://debug/home/$teamid/bug_hello
 git clone ssh://debug/home/$teamid/domesec
+git clone ssh://debug/home/$teamid/domefs
 git clone ssh://debug/home/$teamid/doors
 git clone ssh://debug/home/$teamid/irrigations
 git clone ssh://debug/home/$teamid/power_grid
