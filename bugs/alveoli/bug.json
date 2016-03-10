@@ -1,7 +1,7 @@
 {
 	"id": "alveoli",
 	"title": "Alveoli Control",
-	"description": "",
+	"description": "Manage the alveoli structure of the Dome",
 	"o2boost": 7,
 	"zboost": 7,
 	"score_bonus": 14,
