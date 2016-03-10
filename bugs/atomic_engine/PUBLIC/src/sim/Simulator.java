@@ -25,7 +25,7 @@ import sim.reactor.items.UraniumRod;
 public class Simulator {
 
     public static void main(String[] args) {
-        Reactor reactor = parseReactor(System.in);
+        Reactor reactor = parseReactor(args);
 
         Integer turns = 0;
         Integer energy = 0;
@@ -96,7 +96,6 @@ public class Simulator {
         String[] parts = line.split(" ");
         if (parts.length != 4) {
             System.out.println("Malformed input.");
-            System.exit(1);
         }
         return parts;
     }

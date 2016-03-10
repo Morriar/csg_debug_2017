@@ -21,7 +21,7 @@ class ThermalConfigurator {
 
 	public static void main(String[] args) throws IOException {
             ThermalConfigurator configurator = new ThermalConfigurator();
-            String output = configurator.configure(System.in);
+            String output = configurator.configure(System.out);
 	}
 
     public String configure(InputStream source) throws IOException {
