@@ -12,7 +12,7 @@ do
 
 	team_dir=$2/$team
 
-	for bug in access_panel alu_sim atomic_engine bug_hello domesec doors irrigations militia_dispatch power_grid shield_gen thermal_reactor ventilation water_supply; do
+	for bug in access_panel alveoli alu_sim atomic_engine bug_hello domesec domefs doors irrigations militia_dispatch power_grid shield_gen thermal_reactor ventilation water_supply; do
 		bug_origin=$team_dir/${bug}_origin
 		# Set permissions
 		chown -R $team $bug_origin;
