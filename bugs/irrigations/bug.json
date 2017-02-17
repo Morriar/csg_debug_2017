@@ -1,9 +1,0 @@
-{
-	"id": "irrigations",
-	"title": "Irrigation",
-	"description": "Provide the Dome farms with water so the inhabitant won't starve.",
-	"o2boost": 10,
-	"zboost": 0,
-	"score_bonus": 10,
-	"language": "haskell"
-}

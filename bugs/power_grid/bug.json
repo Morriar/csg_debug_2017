@@ -1,9 +1,0 @@
-{
-	"id": "power_grid",
-	"title": "Power Grid",
-	"description": "Check transmitters of the power grid to avoid life support systems explosion.",
-	"o2boost": 0,
-	"zboost": 10,
-	"score_bonus": 5,
-	"language": "nit"
-}

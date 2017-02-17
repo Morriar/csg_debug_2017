@@ -1,9 +1,0 @@
-{
-	"id": "alu_sim",
-	"title": "Legacy ALU",
-	"description": "Several systems which have been in use since the early days of the dome rely on an old system with a deprecated instruction set. Though we could migrate most of the system to a more modern architecture, there remains some parts of it which could barely be understood. One particular sub-system is the Arithmetic and Logic Unit.",
-	"o2boost": 10,
-	"zboost": 10,
-	"score_bonus": 20,
-	"language": "C"
-}

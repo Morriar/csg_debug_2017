@@ -1,7 +1,0 @@
-nodes
-	O O1 AtomicEngine 50
-	O O2 AtomicEngine 50
-	I I1 Oxydizer 100
-links
-	O1 --> I1
-	O2 --> I1

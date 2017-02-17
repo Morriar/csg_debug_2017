@@ -1,9 +1,0 @@
-{
-	"id": "water_supply",
-	"title": "Water Supply",
-	"description": "Enumerate factors of a number and check primality",
-	"o2boost": 15,
-	"zboost": 0,
-	"score_bonus": 100,
-	"language": "Mpire"
-}

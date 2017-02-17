@@ -1,9 +1,0 @@
-{
-	"id": "shield_gen",
-	"title": "Shield Generator Simulation",
-	"description": "The Shield Generation Simulator is down! Someone has tampered with the code, and now all our predictions for the future of the dome are scrambled! You need to do something, or we will face extinction!",
-	"o2boost": 10,
-	"zboost": -5,
-	"score_bonus": 15,
-	"language": "C#"
-}

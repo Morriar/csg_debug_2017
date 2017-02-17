@@ -1,4 +1,0 @@
-bin/
-*.o
-src/*.o
-out/

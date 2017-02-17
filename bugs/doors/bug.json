@@ -1,9 +1,0 @@
-{
-	"id": "doors",
-	"title": "Intelligent Doors",
-	"description": "Apply rules to accept or reject accesses.",
-	"o2boost": 5,
-	"zboost": 5,
-	"score_bonus": 10,
-	"language": "shell"
-}

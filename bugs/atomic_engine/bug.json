@@ -1,9 +1,0 @@
-{
-	"id": "atomic_engine",
-	"title": "Atomic Engine",
-	"description": "Check the reactor grid to avoid core melting.",
-	"o2boost": 0,
-	"zboost": 10,
-	"score_bonus": 10,
-	"language": "java"
-}

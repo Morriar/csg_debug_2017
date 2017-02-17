@@ -1,8 +1,0 @@
-{
-	"max_z": 5,
-	"airvents": [{
-		"name": "airvent_0",
-		"z": 2,
-		"o2": 6
-	}]
-}

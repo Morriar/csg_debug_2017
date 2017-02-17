@@ -1,9 +1,0 @@
-{
-	"id": "alveoli",
-	"title": "Alveoli Control",
-	"description": "Manage the alveoli structure of the Dome",
-	"o2boost": 7,
-	"zboost": 7,
-	"score_bonus": 14,
-	"language": "python 3.4"
-}
