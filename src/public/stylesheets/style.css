@@ -17,27 +17,29 @@
 body {
 	margin-top: 100px;
 	margin-bottom: 40px;
-	background-color:#001321;
-	background-image:
-	linear-gradient(rgba(90,190,222,.1) 0px, transparent 1px),
-	linear-gradient(90deg, rgba(90,190,222,.1) 0px, transparent 1px),
-	linear-gradient(rgba(90,190,222,.1) 1px, transparent 1px),
-	linear-gradient(90deg, rgba(90,190,222,.1) 1px, transparent 1px);
-	background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
-	background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+	background-color:#fff;
 }
 
 a:hover { text-decoration: none; }
 
 pre { white-space: pre-wrap; }
 
+/* Topbar */
+
+.navbar-inverse {
+    background-color: #e67e22;
+    border-color: #e67e22;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+
 /* Panels */
 
 .panel-custom {
 	padding: 1em;
-	border-color: rgba(90, 190, 222, 0.2);
-	background-color: rgba(0, 190, 255, 0.2);
-	color: white;
+	border-color: #e67e22;
 }
 
 .panel-custom h1, .panel-custom h2, .panel-custom h3,
@@ -59,6 +61,11 @@ pre { white-space: pre-wrap; }
 
 .panel-dome {
 	position: relative;
+}
+
+.panel h1:first-child, .panel h2:first-child, .panel h3:first-child,
+.panel h4:first-child, .panel h5:first-child, .panel h6:first-child {
+	margin-top: 0
 }
 
 #panel-canvas {
@@ -85,19 +92,19 @@ dl.dl-short {
 	margin-left: 30px;
 }
 
-tr.team:hover { background-color: rgba(245, 245, 245, 0.12); }
+tr.team:hover { background-color: rgba(255, 150, 0, 0.05); }
 
-tr.team.isdead { background-color: rgba(0, 0, 0, 0.5); }
-tr.team.isdead:hover { background-color: rgba(0, 0, 0, 0.7); }
+tr.team.isdead { background-color: rgba(0, 0, 0, 0.15); }
+tr.team.isdead:hover { background-color: rgba(0, 0, 0, 0.35); }
 tr.team.isdead a {color: #888; }
 
-tr.team.indanger { background-color: rgba(255, 0, 0, 0.4); }
-tr.team.indanger:hover { background-color: rgba(255, 0, 0, 0.6); }
+tr.team.indanger { background-color: rgba(255, 0, 0, 0.05); }
+tr.team.indanger:hover { background-color: rgba(255, 0, 0, 0.15); }
 tr.team.indanger a {color: #ff0000; }
 
 .panel-custom.team.isdead { background-color: rgba(0, 0, 0, 0.5); }
 .panel-custom.team.indanger {
-	background-color: rgba(255, 0, 0, 0.2);
+	background-color: rgba(255, 0, 0, 0.05);
     animation-name: danger-flash;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -106,15 +113,17 @@ tr.team.indanger a {color: #ff0000; }
 }
 
 @keyframes danger-flash {
-    from {background-color: rgba(255, 0, 0, 0.2)}
-    to {background-color: rgba(255, 0, 0, 0.4)}
+    from {background-color: rgba(255, 0, 0, 0.05)}
+    to {background-color: rgba(255, 0, 0, 0.2)}
 }
 
 #canvas-dome {
-	background-image: url("../images/dome.png");
-	background-size: 100% 460px;
+	background-image: url("../images/cs2017.png");
+	background-size: auto 400px;
+	background-repeat: no-repeat;
+	background-position: center center;
 	width: 600px;
-	height: 400px;
+	height: 500px;
 }
 
 .slot-icon {
@@ -128,18 +137,20 @@ tr.team.indanger a {color: #ff0000; }
 	background-position: center;
 }
 
-#bug_hello { margin-left:-245px; margin-top:70px; background-image: url("/images/speak.png"); }
-#access_panel { margin-left:210px; margin-top:70px; background-image: url("/images/sensors.png"); }
-#thermal_reactor { margin-left:-140px; margin-top:85px; background-image: url('/images/temp.png')}
-#ventilation { margin-left:-20px; margin-top:95px; background-image: url('/images/fan.png')}
-#atomic_engine { margin-left:105px; margin-top:85px; background-image: url('/images/nuclear.png')}
-#shield_gen { margin-left:-20px; margin-top:-135px; background-image: url('/images/shield.png') }
-#alu_sim { margin-left:-235px; margin-top:-10px; background-image: url('/images/panel.png') }
-#power_grid { margin-left:200px; margin-top:-10px; background-image: url('/images/power.png') }
-#doors { margin-left:-125px; margin-top:5px; background-image: url('/images/lock.png') }
-#domesec { margin-left:85px; margin-top:5px; background-image: url('/images/scan.png') }
-#water_supply { margin-left:-20px; margin-top:10px; background-image: url('/images/water.png') }
-#irrigations { margin-left:-180px; margin-top:-85px; background-image: url('/images/pipe.png') }
-#militia_dispatch { margin-left:-80px; margin-top:-70px; background-image: url('/images/militia.png') }
-#alveoli { margin-left:40px; margin-top:-70px; background-image: url('/images/alveoli.png') }
-#domefs { margin-left:140px; margin-top:-85px; background-image: url('/images/domefs.png') }
+#water_supply { margin-left:-100px; margin-top:140px; background-image: url('/images/water.png') }
+#access_panel { margin-left:-110px; margin-top:70px; background-image: url('/images/sensors.png'); }
+#thermal_reactor { margin-left:-180px; margin-top:20px; background-image: url('/images/temp.png')}
+#doors { margin-left:-190px; margin-top:-50px; background-image: url('/images/lock.png') }
+#irrigations { margin-left:-195px; margin-top:-120px; background-image: url('/images/pipe.png') }
+#alu_sim { margin-left:-165px; margin-top:-190px; background-image: url('/images/panel.png') }
+#bug_hello { margin-left:-100px; margin-top:-235px; background-image: url('/images/speak.png'); }
+#shield_gen { margin-left:-26px; margin-top:-250px; background-image: url('/images/shield.png') }
+#domefs { margin-left:50px; margin-top:-235px; background-image: url('/images/domefs.png') }
+#alveoli { margin-left:115px; margin-top:-190px; background-image: url('/images/alveoli.png') }
+#domesec { margin-left:145px; margin-top:-120px; background-image: url('/images/scan.png') }
+#power_grid { margin-left:140px; margin-top:-50px; background-image: url('/images/power.png') }
+#atomic_engine { margin-left:125px; margin-top:20px; background-image: url('/images/nuclear.png')}
+#ventilation { margin-left:55px; margin-top:70px; background-image: url('/images/fan.png')}
+#militia_dispatch { margin-left:40px; margin-top:140px; background-image: url('/images/militia.png') }
+
+

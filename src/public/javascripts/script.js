@@ -91,7 +91,7 @@ $(function() {
 					$panelRound.find('h3').text('You are dead!');
 					$panelRound.find('div').remove();
 					$panelRound.addClass('team isdead');
-					$panelRound.append($('<div>').text('You are a disgrace for the Empire. Please leave now.'))
+					$panelRound.append($('<div>').text('You are a disgrace for the Silicon Valley. Please leave now.'))
 				} else if(round.gameFinished) {
 					$panelRound.find('h3').text('Competition is over');
 					$panelRound.find('div').remove();
