@@ -12,27 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-all: check
+help:
+	@echo "usage:"
+	@echo " * check		check bug"
 
-check: test-cron
-
-test-cron: test-cron-private test-cron-public
-
-test-cron-private:
-	node ../src/loadStatus.js
-	node ../src/loadRounds.js
-	node ../src/loadTeams.js data/teams_1.json
-	node ../src/loadBugs.js ../bugs
-	node ../src/deployTeams.js ../bugs out/ PRIVATE
-	node ../src/cron.js out/ 11 15
-
-test-cron-public:
-	node ../src/loadStatus.js
-	node ../src/loadRounds.js
-	node ../src/loadTeams.js data/teams_1.json
-	node ../src/loadBugs.js ../bugs
-	node ../src/deployTeams.js ../bugs out/ PUBLIC
-	node ../src/cron.js out/ 11 15
-
-clean:
-	rm -rf out/
+check:
+	@echo "\n## bug_hello\n"
+	@make --no-print-directory -C PRIVATE/ check

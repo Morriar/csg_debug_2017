@@ -24,7 +24,8 @@ install:
 	./install.sh
 
 check:
-	make test-bugs -C tests/
+	make --no-print-directory -C bugs/ check
+	make --no-print-directory -C tests/ check
 
 init-compe:
 	sudo rm -rf DEPLOY

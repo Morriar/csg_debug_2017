@@ -60,7 +60,7 @@ run_all()
 	echo "Compile bin..."
 	compile "$out_dir/compile.$timestamp.log"
 	if [ "$?" -ne 0 ]; then
-		echo " * [FAIL] compile bin (cat $out_dir/compile.log)"
+		echo -e " * [\e[31mFAIL\e[0m] compile bin (cat $out_dir/compile.log)"
 		exit 1
 	fi
 
@@ -81,20 +81,20 @@ run_all()
 		run_test "$input" "$out"
 		diff_test "$out" "$exp" "$out_dir/$name.$timestamp.diff"
 		if [ "$?" == 0 ]; then
-			echo " * [OK] $name"
+			echo -e " * [\e[32mOK\e[0m] $name"
 			OK=$(($OK + 1))
 		else
-			echo " * [FAIL] $name (diff $out $exp)"
+			echo -e " * [\e[31mFAIL\e[0m] $name (diff $out $exp)"
 			KO=$(($KO + 1))
 		fi
 	done
 
 	echo -e "\n [ALL: $ALL, KO: $KO, OK: $OK]\n"
 	if [ $KO -gt 0 ]; then
-		echo "Some tests have FAILED!"
+		echo -e "\e[31mSome tests have FAILED!\e[0m"
 		return 1
 	else
-		echo "All tests are OK!"
+		echo -e "\e[32mAll tests are OK!\e[0m"
 		return 0
 	fi
 }
@@ -109,7 +109,7 @@ run_one()
 	echo "Compile bin..."
 	compile "$out_dir/compile.$timestamp.log"
 	if [ "$?" -ne 0 ]; then
-		echo "[BUILD FAIL]"
+		echo -e "[\e[31mBUILD FAIL\e[0m]"
 		cat "$out_dir/compile.$timestamp.log"
 		return 1
 	fi
@@ -122,10 +122,10 @@ run_one()
 	run_test "$input" "$out"
 	diff_test "$out" "$exp" "$out_dir/$name.$timestamp.diff"
 	if [ "$?" == 0 ]; then
-		echo "[OK] $name"
+		echo -e "[\e[32mOK\e[0m] $name"
 		return 0
 	else
-		echo "[FAIL] $name"
+		echo -e "[\e[31mFAIL\e[0m] $name"
 		cat "$out_dir/$name.$timestamp.diff"
 		return 1
 	fi

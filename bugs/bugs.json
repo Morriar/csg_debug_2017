@@ -1,17 +1,3 @@
 [
-	"access_panel",
-	"alu_sim",
-	"alveoli",
-	"atomic_engine",
-	"bug_hello",
-	"doors",
-	"domefs",
-	"domesec",
-	"irrigations",
-	"power_grid",
-	"militia_dispatch",
-	"shield_gen",
-	"thermal_reactor",
-	"ventilation",
-	"water_supply"
+	"bug_hello"
 ]

@@ -179,7 +179,7 @@ Minimal files and directory are:
   A minimal Makefile should contain these goals:
   * `install` (optional if everything is already on the team computer)
   * `compile` (optional)
-  *	`test` run the script `tests.sh`
+  *	`check` run the script `tests.sh`
   * `clean` remove all files created by previous goals
 
 * `src/` the directory where the bugged sources of the program are.

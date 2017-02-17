@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Copyright 2016 Alexandre Terrasa <alexandre@moz-code.org>.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-for bug in $(ls ../bugs/); do
-	make --no-print-directory test -C "../bugs/$bug/PRIVATE"
-done
+help:
+	@echo "usage:"
+	@echo " * check		check all bugs"
+
+check:
+	@make --no-print-directory -C bug_hello/ check

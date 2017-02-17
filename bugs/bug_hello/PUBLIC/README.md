@@ -41,4 +41,4 @@ Output:
 Usefull commands:
 
 	make compile
-	make test
+	make check
