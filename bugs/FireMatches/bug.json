@@ -1,0 +1,9 @@
+{
+	"id": "FireMatches",
+	"title": "FireMatches",
+	"description": "Finding the love of your life can be pretty hard. Luckily, FireMatches is here!",
+	"o2boost": 10,
+	"zboost": 10,
+	"score_bonus": 20,
+	"language": "java"
+}

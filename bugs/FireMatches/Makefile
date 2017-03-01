@@ -14,8 +14,8 @@
 
 help:
 	@echo "usage:"
-	@echo " * check		check all bugs"
+	@echo " * check		check bug"
 
 check:
-	@make --no-print-directory -C bug_hello/ check
-	@make --no-print-directory -C FireMatches/ check
+	@echo "\n## FireMatches\n"
+	@make --no-print-directory -C PRIVATE/ check
