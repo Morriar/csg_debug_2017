@@ -20,8 +20,46 @@ help:
 	@echo " * start-scoreboard	start the scoreboard web server"
 	@echo " * start-cron		start the cron & the competition"
 
-install:
-	./install.sh
+install: install-mongodb install-nodejs install-java install-lua install-gcc install-go install-mono install-haskell install-python install-nit install-firejail
+	cd src && npm install
+
+install-mongodb:
+	apt-get install -y mongodb
+
+install-nodejs:
+	apt-get install -y npm
+	apt-get install -y nodejs
+	# update node js
+	cp /usr/bin/nodejs /user/bin/node && npm cache clean -f && npm install -g n && n stable
+
+install-java:
+	apt-get install -y openjdk-7-jdk
+
+install-lua:
+	apt-get install -y lua5.2
+
+install-gcc:
+	apt-get install -y gcc
+
+install-go:
+	apt-get install -y golang
+
+install-mono:
+	apt-get install -y mono-runtime
+	apt-get install -y mono-dmcs
+
+install-haskell:
+	apt-get install -y ghc
+
+install-python:
+	apt-get install -y python2.7
+
+install-nit:
+	apt-get install -y build-essential ccache libgc-dev graphviz libunwind-dev pkg-config
+	git clone http://nitlanguage.org/nit.git && cd nit && make && source misc/nit_env.sh
+
+install-firejail:
+	git clone https://github.com/netblue30/firejail.git && cd firejail && ./configure && make && make install-strip
 
 check:
 	make --no-print-directory -C bugs/ check
