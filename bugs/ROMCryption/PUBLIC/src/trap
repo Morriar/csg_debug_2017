@@ -1,0 +1,23 @@
+NOP0
+NOP1
+NOP2
+NOP3
+NOP  i
+DECI  d  n  s  sf  x  sx  sxf
+DECO  i  d  n  s  sf  x  sx  sxf
+STRO  d n sf
+
+
+File: trap
+
+File format:
+File trap is used by asem8.cpp.
+The first eight lines are input during initialization of the program.
+All text after the first eight lines is ignored. The first eight lines
+contain the mnemonics of the unimplemented op-codes and can be changed
+by the user to work the problems from Chapter 8 of "Computer Systems".
+
+Line format: 
+Mnemonic, followed by whitespace, followed by allowed addressing modes in
+any order, whitespace delimited. First four mnemonics are assumed to be
+unary.

@@ -1,0 +1,9 @@
+{
+	"id": "ROMCryption",
+	"title": "ROMCryption",
+	"description": "ROMCryption(TM)(R)(C) allows you to decrypt ROMs.",
+	"o2boost": 10,
+	"zboost": 10,
+	"score_bonus": 20,
+	"language": "pep/8"
+}

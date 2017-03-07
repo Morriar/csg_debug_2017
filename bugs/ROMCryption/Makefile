@@ -14,14 +14,12 @@
 
 help:
 	@echo "usage:"
-	@echo " * check		check all bugs"
+	@echo " * check		check bug"
 
 check:
-	@make --no-print-directory -C bug_hello/ check
-	@make --no-print-directory -C FireMatches/ check
-	@make --no-print-directory -C ROMCryption/ check
+	@echo "\n## ROMCryption\n"
+	@make --no-print-directory -C PRIVATE/ check
 
 clean:
-	@make --no-print-directory -C bug_hello/ clean
-	@make --no-print-directory -C FireMatches/ clean
-	@make --no-print-directory -C ROMCryption/ clean
+	@make --no-print-directory -C PUBLIC/ clean
+	@make --no-print-directory -C PRIVATE/ clean
