@@ -19,3 +19,7 @@ help:
 check:
 	@echo "\n## bug_hello\n"
 	@make --no-print-directory -C PRIVATE/ check
+
+clean:
+	@make --no-print-directory -C PUBLIC/ clean
+	@make --no-print-directory -C PRIVATE/ clean

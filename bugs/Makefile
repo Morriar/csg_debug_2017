@@ -19,3 +19,7 @@ help:
 check:
 	@make --no-print-directory -C bug_hello/ check
 	@make --no-print-directory -C FireMatches/ check
+
+clean:
+	@make --no-print-directory -C bug_hello/ clean
+	@make --no-print-directory -C FireMatches/ clean
