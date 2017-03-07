@@ -1,0 +1,9 @@
+{
+	"id": "PearMap",
+	"title": "PearMap",
+	"description": "Never get lost with PearMap(R)!",
+	"o2boost": 10,
+	"zboost": 10,
+	"score_bonus": 20,
+	"language": "nit"
+}

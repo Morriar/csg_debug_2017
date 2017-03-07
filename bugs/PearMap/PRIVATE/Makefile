@@ -1,4 +1,4 @@
-# Copyright 2016 Alexandre Terrasa <alexandre@moz-code.org>.
+# Copyright 2017 Alexandre Terrasa <alexandre@moz-code.org>.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,18 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-help:
-	@echo "usage:"
-	@echo " * check		check all bugs"
+compile:
+	mkdir -p bin/
+	nitc src/pear_map.nit -o bin/pear_map
 
 check:
-	@make --no-print-directory -C bug_hello/ check
-	@make --no-print-directory -C FireMatches/ check
-	@make --no-print-directory -C ROMCryption/ check
-	@make --no-print-directory -C PearMap/ check
+	./tests.sh
 
 clean:
-	@make --no-print-directory -C bug_hello/ clean
-	@make --no-print-directory -C FireMatches/ clean
-	@make --no-print-directory -C ROMCryption/ clean
-	@make --no-print-directory -C PearMap/ clean
+	rm -rf bin/ out/
