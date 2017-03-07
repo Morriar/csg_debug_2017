@@ -20,7 +20,7 @@ help:
 	@echo " * start-scoreboard	start the scoreboard web server"
 	@echo " * start-cron		start the cron & the competition"
 
-install: install-mongodb install-nodejs install-java install-lua install-gcc install-go install-mono install-haskell install-python install-nit install-firejail
+install: install-mongodb install-nodejs install-java install-lua install-gcc install-go install-mono install-haskell install-python install-nit install-pep8term install-firejail
 	cd src && npm install
 
 install-mongodb:
@@ -57,6 +57,13 @@ install-python:
 install-nit:
 	apt-get install -y build-essential ccache libgc-dev graphviz libunwind-dev pkg-config
 	git clone http://nitlanguage.org/nit.git && cd nit && make && source misc/nit_env.sh
+
+install-pep8term:
+	test -d pep8term || git clone https://github.com/privat/pep8term.git
+	cd pep8term && git pull
+	${MAKE} -C pep8term
+	ln pep8 /bin/pep8
+	ln asem8 /bin/asem8
 
 install-firejail:
 	git clone https://github.com/netblue30/firejail.git && cd firejail && ./configure && make && make install-strip
