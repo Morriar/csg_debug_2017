@@ -26,8 +26,8 @@ switch($_){
 			}
 		}
 		# bug cmp au lieu de <=>: test4 un mot frequent > 10
-		# print(join"\x20",((sort{$c{$b}cmp%c{$a}}sort(keys%c))[0..9]),"\n");
-		print(join"\x20",((sort{$c{$b}<=>%c{$a}}sort(keys%c))[0..9]),"\n");
+		# print(join"\x20",((sort{$c{$b}cmp$c{$a}}sort(keys%c))[0..9]),"\n");
+		print(join"\x20",((sort{$c{$b}<=>$c{$a}}sort(keys%c))[0..9]),"\n");
 	}
 	case('kikoolol'){
 		while(<>){
