@@ -20,7 +20,7 @@ help:
 	@echo " * start-scoreboard	start the scoreboard web server"
 	@echo " * start-cron		start the cron & the competition"
 
-install: install-mongodb install-nodejs install-java install-lua install-gcc install-go install-mono install-haskell install-python install-nit install-pep8term install-firejail
+install: install-mongodb install-nodejs install-java install-lua install-gcc install-go install-mono install-haskell install-python install-nit install-pep8term install-perl install-firejail
 	cd src && npm install
 
 install-mongodb:
@@ -64,6 +64,9 @@ install-pep8term:
 	${MAKE} -C pep8term
 	ln pep8 /bin/pep8
 	ln asem8 /bin/asem8
+
+install-perl:
+	apt-get install -y perl libswitch-perl
 
 install-firejail:
 	git clone https://github.com/netblue30/firejail.git && cd firejail && ./configure && make && make install-strip
