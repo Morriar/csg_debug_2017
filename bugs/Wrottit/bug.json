@@ -1,0 +1,9 @@
+{
+	"id": "Wrottit",
+	"title": "Wrottit",
+	"description": "Wrottit: The frontpage of the internet!",
+	"o2boost": 10,
+	"zboost": 10,
+	"score_bonus": 20,
+	"language": "javascript"
+}
