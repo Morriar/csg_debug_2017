@@ -1,15 +1,24 @@
 #!/bin/bash
 
 # usage: infile outfile pinnumber
-set -e
-set -x
+#set -e
+#set -x
+
+## TOP SECRET. IF YOU ARE NOT AUTHORIZED TO READ BELLOW.
+# Or do whatever you want, I'm only a comment.
 
 # Get the input file
 input="$1"
 # Get the output file
-out="$2"
-# Get the password in number
+output="$2"
+# Get the PIN (password in number)
 pin="$3"
+
+# Get a working temporary directory
+tmp=`mktemp -d --tmpdir`
+trap "rm -rf $tmp" EXIT
+in="$tmp/in"
+out="$tmp/out"
 
 # By default, just output the input
 cp -a "$input" "$out"
@@ -17,9 +26,6 @@ cp -a "$input" "$out"
 for i in `seq 0 ${#pin}`; do
 	# What method?
 	method=${pin:$i:1}
-	echo $method
-	# Get a working temporary file
-	in=`mktemp`
 	# Process the previous output
 	mv "$out" "$in"
 	case "$method" in
@@ -27,33 +33,41 @@ for i in `seq 0 ${#pin}`; do
 			# Binary cloaked vaulting
 			#
 			# We create an .a archive with the input file named 'secret'
-			mv "$in" secret
-			# bug: ar "$out.a" < "secret" 
-			ar qD "$out" "secret" ;;
+			# Take care that there is no metadata leak
+			mv "$in" "$tmp"/secret
+			cd "$tmp"
+			# bug: ar out.a < secret
+			ar qD out secret > /dev/null 2>&1
+			cd - > /dev/null
+			;;
 		1)
 			# Mystifying mathematical encryption
 			#
 			# We convert it into base64, nobody will guess it.
 			#bug: openssl --baze64 "$in" "$out"
-			base64 "$in" > "$out";;
+			base64 "$in" > "$out"
+			;;
 		2)
 			# Impenetrable covered concealment
 			#
 			# We uuencode with the input file named 'secret'
 			# bug: mv "$in" secret; uuencode < "$in" > "$out"
-			uuencode secret "$in" > "$out";;
+			uuencode "$in" secret > "$out"
+			;;
 		3)
 			# Diabolically unbreakable cypher
 			#
-			# a classic rot13
-			# bug: tr a-ZA-Z N-ZA-Mn-za-m "$in" "$out"
-			tr A-Za-z N-ZA-Mn-za-m < "$in" > "$out";;
+			# A classic rot13
+			# bug: tr s/[a-ZA-Z]/[N-ZA-Mn-za-m]/ "$in" "$out"
+			tr A-Za-z N-ZA-Mn-za-m < "$in" > "$out"
+			;;
 		4)
-			# Futuristic low-level compression 
+			# Futuristic low-level compression
 			#
 			# We create a .Z compressed file (Lempel-Ziv coding)
 			# bug (bad command): Zip "$in" "$out"
-			compress -c < "$in" > "$out";;
+			compress -c < "$in" > "$out" || true
+			;;
 		5)
 			# Literal secret hiding
 			#
@@ -62,12 +76,13 @@ for i in `seq 0 ${#pin}`; do
 			# bugs: > au lieu de >>
 			echo -n "FLAG{" > "$out"
 			cat "$in" >> "$out"
-			echo -n "}" >> "$out" ;;
+			echo -n "}" >> "$out"
+			;;
 		6)
 			# Invisible meta-information stenography
 			#
 			# We enclose the file into a exif tag of an innocent jpeg image.
-			base64 -id > "$out" <<CEIL
+			base64 -id > "$out" <<'CEIL'
 			/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
 			HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
 			MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAD3AbADASIA
@@ -202,14 +217,18 @@ for i in `seq 0 ${#pin}`; do
 			UpfqsspILn+VTv6rLJAN2iAqaLLIDJQL9VllYCkyUIWWQFKSsss2BiPusFlkGWWWQYqdb+DUn6D+
 			FllVf//Z
 CEIL
-			exiftool -comment<=<(base64 -d $in) "$out";;
+			# bug:
+			# To avoid issue, use the comment tag and encode data in base64
+			# bug: base64 "$in" | exiftool --tag=comment "$out"
+			exiftool -q "-comment<="<(base64 "$in") "$out"
+			;;
 		7)
 			# Intricate colorful smuggling
 			#
 			# This one is da bomb. We take the data and include it into a special ad-hoc
 			# chunk of an innocent png image.
 			# The trick is to have to correct metadata so the png is still valid.
-			base64 -id > "$out" <<NIAN
+			base64 -id > "$out" <<'NIAN'
 			iVBORw0KGgoAAAANSUhEUgAAAZAAAADnCAYAAAAw7wABAAAABHNCSVQICAgIfAhkiAAAIABJREFU
 			eJztvXuUJFd54Pm7NyIyK+td/X5Vq9+tB3q03EISCDBgJIvFElgMjA3jY4OZwywztnf2+Ky99q53
 			zIx9ZsZ7Zr1/7NqDH8PDC2sBwiweBgRCCGEsCUm0Ht20WupWd6ufVV3vqqzMjLh3/4jM6qqurMqI
@@ -263,7 +282,24 @@ CEIL
 			+0aB78w+w/+hnqOPTG09Zww9G/u569538ODALTiOQyaTiSHcNeNZSxAE+L4/NwtVSpHR8V7vDV19
 			4fkN10UxLxBbnuhPbXrWKK2JGBBhWZSO5kO/ekK5bHitY2Y64NT2sMDgZC56EqEfwPXbYHBd6BIZ
 			6C5vVdbQMkrFmFUruDgBT1ygtnVSKLJMMckpXo84Puzq2o3jOWSzWYIgoFRa3s0Ulfkz0biz0obP
-			Yu3c/6UGC5R8id9MihiQGCgWeWiXJaD1Q4t/cuwc5y6NM9Cbi5aZnSnCN++G8Ro9I7QNCx0qwtVI
+			Yu3c/6UGC5R8id9MihiQGCgWeWiXJaD1Q4t/cuwc5y6NM9Cbi5aZnSnCN
+
+			                \`*-.
+			                 )  _`-.
+			                 .  : `. .
+			                 : _   '  \
+			                 ; *` _.   `*-._
+			                 `-.-'          `-.
+			                   ;       `       `.
+			                   :.       .        \
+			                   . \  .   :   .-'   .
+		                           '  `+.;  ;  '      :
+			                   :  ;  |    ;       ;-.
+		                           ; ;   : :`-:     _.`* ;
+			                .*' ,  .*' ; .*`- +'  `*'
+				        `*-*   `*-*  `*-*'
+
+			G8Ro9I7QNCx0qwtVI
 			1HBNa6GrA7rL0YkVv/JK+3+1IjQetQwIzBLwELfwezwaeXhHhSuiRiltpRTbt2+nt7eXiYm0pLVa
 			2LERuoZTk6xVKPr8+gfv5OvffbnZorQkbWNANLU/jEPyJasCCsCTEa4DoeEYBLbT2kZkeHSGqZki
 			6/o6iTx7zPrQFTH0Mgl2Bfp7rCABhp30N1uMRfT09NDd3Z0iAwL05qBDwXQ6vr8gMOwZrN7+VqhN
@@ -388,7 +424,14 @@ CEIL
 			2LqhFz+QWO+luHz5Mvl8nkwm02xRgPBNzyqP9U4XPgbdwu91FOOslJqrTRUEQUN7fCiluHDhApOT
 			k2it52S8cOECP/3pTxcZlUKhwH333cfevXsjGRGlNKPBNKVyHawUGf9+wm5G5yQwXIjMYz96lV/7
 			xTvEgCzDyZMnmZycZGBgIBWZ0BZLl5NlMLOeVwuX0CpalIrWOlaRQGNMQz+v4zhzynopI+I4DufP
-			n+frX/86AO9///t529ve1rBeGo7j8Pzzz/P4449HPqdQKEReobpoXi8OMR0UyekMKTIhO4B7gb8W
+			n+frX/86AO9/
+
+			\    /\
+		         )  ( ')
+			(  /  )
+		         \(__)|
+
+			t529ve1rBeGo7j8Pzzz/P4449HPqdQKEReobpoXi8OMR0UyekMKTIhO4B7gb8W
 			AyJEpiMrj0sU0ujCilJvq4JSiqGhIS5dujQ3s152fGvp7+9nx44dDTMiruvy3HPP8f3vfz/yOath
 			wD3Pi3V83GfDVU4aXVgB5bAd0QhCZFIz/1lJHA1LKUntgFtPXHl6iKOCtNacOXOGv/3bv418zr33
 			3suuXbsaqrSz2Wys49NmyFNLHS/2YgPSFvdcXCwtS9yX3lTv1LYslRfGUXB+BC6PVzciSsHMlXhj
@@ -496,6 +539,7 @@ CEIL
 NIAN
 			# Our chunk here
 			# 1. the size (4 bytes, big endian)
+			# bug: no xxd -r -p, lol
 			printf "%08x" `stat --printf="%s" "$in"` | xxd -r -p >> "$out"
 			# 2. the tag (proprietary)
 			printf "ssSs" > "$out.2"
@@ -505,16 +549,14 @@ NIAN
 			# 4. the checksum32 of tag+data (4 bytes, big endian)
 			crc32 "$out.2" | xxd -r -p >> "$out"
 			# Now the rest of the png file
-			base64 -id >> "$out" <<CAT
-			AAAAAElFTkSuQmCC
-CAT
+			echo AAAAAElFTkSuQmCC | base64 -id >> "$out"
 			;;
 		8)
 			# Shuffle internal binary encoding
 			#
 			# We just invert each pair of byte
 			#bug: dd --input "$in" --output "$out" --special swap-bytes
-			dd conv=swab if="$in" of="$out"
+			dd conv=swab if="$in" of="$out" status=none
 			;;
 		9)
 			# Unexpected international transliteration
@@ -528,6 +570,8 @@ CAT
 			cp "$in" "$out"
 			;;
 	esac
-	# bug: the removal may abort
-	rm "$in" 2> /dev/null || true
 done
+
+# Finally, get the result and clean the tmp directory
+mv "$out" "$output"
+rm -rf "$tmp" 2> /dev/null || true
