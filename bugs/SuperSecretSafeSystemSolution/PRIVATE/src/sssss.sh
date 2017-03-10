@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# usage: infile outfile pinnumber
+# usage: infile pinnumber outfile
 #set -e
 #set -x
 
@@ -9,10 +9,10 @@
 
 # Get the input file
 input="$1"
-# Get the output file
-output="$2"
 # Get the PIN (password in number)
-pin="$3"
+pin="$2"
+# Get the output file
+output="$3"
 
 # Get a working temporary directory
 tmp=`mktemp -d --tmpdir`
