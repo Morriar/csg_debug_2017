@@ -2,8 +2,8 @@
 	"id": "PearMap",
 	"title": "PearMap",
 	"description": "Never get lost with PearMap(R)!",
-	"o2boost": 10,
-	"zboost": 10,
-	"score_bonus": 20,
+	"o2boost": 3,
+	"zboost": 1,
+	"score_bonus": 4,
 	"language": "nit"
 }
