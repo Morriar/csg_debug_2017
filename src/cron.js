@@ -23,7 +23,7 @@ var statuses = require("./model/status.js");
 var fs = require("fs");
 var colors = require('colors');
 
-var MAX_RESSOURCE = 1000;
+var MAX_RESSOURCE = 1250;
 var O2_LOSS = 50;
 var ZZ_LOSS = 50;
 

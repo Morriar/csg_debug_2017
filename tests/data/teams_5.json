@@ -3,31 +3,31 @@
 		"id": "team_01",
 		"name": "Team 01",
 		"score": 0,
-		"oxygen": 1000,
-		"energy": 1000
+		"oxygen": 1250,
+		"energy": 1250
 	}, {
 		"id": "team_02",
 		"name": "Team 02",
 		"score": 0,
-		"oxygen": 1000,
-		"energy": 1000
+		"oxygen": 1250,
+		"energy": 1250
 	}, {
 		"id": "team_03",
 		"name": "Team 03",
 		"score": 0,
-		"oxygen": 1000,
-		"energy": 1000
+		"oxygen": 1250,
+		"energy": 1250
 	}, {
 		"id": "team_04",
 		"name": "Team 04",
 		"score": 0,
-		"oxygen": 1000,
-		"energy": 1000
+		"oxygen": 1250,
+		"energy": 1250
 	}, {
 		"id": "team_05",
 		"name": "Team 05",
 		"score": 0,
-		"oxygen": 1000,
-		"energy": 1000
+		"oxygen": 1250,
+		"energy": 1250
 	}
 ]
