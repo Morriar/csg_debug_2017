@@ -1,4 +1,4 @@
-FLAG{begin 644 secret
+FLAG{begin 664 secret
 MB5!.1PT*&@H````-24A$4@```9````#G"`8````P[P`!````!'-"250("`@(
 M?`ADB```(`!)1$%4>)SMO7N4)%=YX/F[-R(R*^M=_7Y5J]^M!WJTW$(2"#!@
 M)(O%$E@,C`WC8X.9PRPSMG?V^*R]]JYWS(Q]9L9[9KU_[-J#'\/#"VL!PBP>

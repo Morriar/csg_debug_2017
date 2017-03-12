@@ -23,6 +23,7 @@ check:
 	@make --no-print-directory -C ROMCryption/ check
 	@make --no-print-directory -C PearMap/ check
 	@make --no-print-directory -C Filther/ check
+	@make --no-print-directory -C SuperSecretSafeSystemSolution/ check
 	@make --no-print-directory -C Wrottit/ check
 
 clean:
@@ -31,4 +32,5 @@ clean:
 	@make --no-print-directory -C ROMCryption/ clean
 	@make --no-print-directory -C PearMap/ clean
 	@make --no-print-directory -C Filther/ clean
+	@make --no-print-directory -C SuperSecretSafeSystemSolution/ clean
 	@make --no-print-directory -C Wrottit/ clean

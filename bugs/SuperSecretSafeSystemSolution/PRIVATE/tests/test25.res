@@ -1,4 +1,4 @@
-FLAG{begin 644 secret
+FLAG{begin 664 secret
 M4'5S<WD@8V%T+"!P=7-S>2!C870*5VAE<F4@:&%V92!U(&)E96X_"DDG=F4@
 M8F5E;B!T;R!,;VYD;VX*5&\@;&]O:R!A="!T:&4@475E96X*"E!U<W-Y(&-A
 M="P@<'5S<WD@8V%T"E=H870@9&ED('EO=2!T:&5R93\*22!F<FEG:'1E;F5D
