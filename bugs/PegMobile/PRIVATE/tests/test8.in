@@ -1,0 +1,19 @@
+require "PegMobile.rb"
+
+doc = XMLDocument.new "html"
+doc.xml
+	.head
+		.title("Sample xml transformation")
+	.head!
+	.body
+		.xsl(select:"/letter")
+			.div("title")
+			.div("salutation")
+			.div("text")
+			.div("greetings")
+			.div("signature")
+			.div("address")
+		.xsl!
+	.body!
+
+puts doc.to_s

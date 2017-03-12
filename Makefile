@@ -20,7 +20,7 @@ help:
 	@echo " * start-scoreboard	start the scoreboard web server"
 	@echo " * start-cron		start the cron & the competition"
 
-install: install-mongodb install-nodejs install-java install-lua install-gcc install-go install-mono install-haskell install-python install-nit install-pep8term install-perl install-bash install-firejail
+install: install-mongodb install-nodejs install-java install-lua install-gcc install-go install-mono install-haskell install-python install-nit install-pep8term install-perl install-bash install-ruby install-firejail
 	cd src && npm install
 
 install-mongodb:
@@ -70,6 +70,9 @@ install-perl:
 
 install-bash:
 	apt-get install -y sharutils ncompress
+
+install-ruby:
+	apt-get install -y ruby
 
 install-firejail:
 	git clone https://github.com/netblue30/firejail.git && cd firejail && ./configure && make && make install-strip

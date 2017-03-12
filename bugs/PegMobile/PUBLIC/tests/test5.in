@@ -1,0 +1,32 @@
+require "PegMobile.rb"
+
+doc = XMLDocument.new "project"
+doc.xml
+	.modelVersion("4.0.0", type:"global", date:"2011-12-12")
+	.groupId("com.compy.project")
+	.artifactId("project-model")
+	.version("1.0-SNAPSHOT")
+	.dependencies
+		.comment!("JUnit dependency")
+		.dependency
+			.groupId("junit")
+			.artifactId("junit")
+			.version("3.8.2")
+			.scope("test")
+		.dependency!
+		.comment!("Modello dependency")
+		.dependency
+			.groupId("org.codehous.modello")
+			.artifactId("modello-core")
+			.version("1.0-alpha-2-snapshot")
+		.dependency!
+		.comment!("Javax Servlet dependency")
+		.dependency
+			.groupId("javax.servlet")
+			.artifactId("servlet-api")
+			.version("2.4")
+			.scope("provided")
+		.dependency!
+	.dependencies!
+
+puts doc.to_s

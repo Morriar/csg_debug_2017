@@ -1,0 +1,43 @@
+require "PegMobile.rb"
+
+doc = XMLDocument.new "catalog"
+doc.xml
+	.product(description:"Cardigan Sweater", product_image:"cardigan.jpg")
+		.catalog_item(gender:"Men's")
+			.item_number("QWZ5671")
+			.price("39.95")
+			.size(description:"Medium")
+				.color_swatch("Red", image:"red_cardigan.jpg")
+				.color_swatch("Burgundy", image:"burgundy_cardigan.jpg")
+			.size!
+			.size(description:"Large")
+				.color_swatch("Red", image:"red_cardigan.jpg")
+				.color_swatch("Burgundy", image:"burgundy_cardigan.jpg")
+			.size!
+		.catalog_item!
+		.catalog_item(gender:"Women's")
+			.item_number("RRX9856")
+			.price("42.50")
+			.size(description:"Small")
+				.color_swatch("Red", image:"red_cardigan.jpg")
+				.color_swatch("Navy", image:"navy_cardigan.jpg")
+				.color_swatch("Burgundy", image:"burgundy_cardigan.jpg")
+			.size!
+			.size(description:"Medium")
+				.color_swatch("Red", image:"red_cardigan.jpg")
+				.color_swatch("Navy", image:"navy_cardigan.jpg")
+				.color_swatch("Burgundy", image:"burgundy_cardigan.jpg")
+				.color_swatch("Black", image:"black_cardigan.jpg")
+			.size!
+			.size(description:"Large")
+				.color_swatch("Navy", image:"navy_cardigan.jpg")
+				.color_swatch("Black", image:"black_cardigan.jpg")
+			.size!
+			.size(description:"Extra Large")
+				.color_swatch("Burgundy", image:"burgundy_cardigan.jpg")
+				.color_swatch("Black", image:"black_cardigan.jpg")
+			.size!
+		.catalog_item!
+	.product!
+
+puts doc.to_s

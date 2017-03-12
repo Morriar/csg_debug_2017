@@ -1,0 +1,19 @@
+require "PegMobile.rb"
+
+doc = XMLDocument.new "project"
+doc.xml
+	.description("Builds, tests, and runs the project contrats_exemples.")
+	.import(file:"nbproject/build-impl.xml")
+		.target(name:"-post-compile")
+			.obfuscate
+				.fileset("build.classes.dir")
+			.obfuscate!
+		.target!
+		.target(name:"run", depends:"ex-impl.jar")
+			.exec(dir:"bin", executable:"launcher.exe")
+				.arg("dist.jar")
+			.exec!
+		.target!
+	.import!
+
+puts doc.to_s

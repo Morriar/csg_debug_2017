@@ -1,0 +1,31 @@
+require "PegMobile.rb"
+
+doc = XMLDocument.new "PARTS"
+doc.xml
+	.TITLE("Computer Parts")
+	.PART
+		.ITEM("Motherboard")
+		.MANUFACTURER("ASUS")
+		.MODEL("P3B-F")
+		.COST("123.00")
+	.PART!
+	.PART
+		.ITEM("Video Card")
+		.MANUFACTURER("ATI")
+		.MODEL("All-in-Wonder Pro")
+		.COST("160.00")
+	.PART!
+	.PART
+		.ITEM("Sound Card")
+		.MANUFACTURER("Creative Labs")
+		.MODEL("Sound Blaster Live")
+		.COST("80.00")
+	.PART!
+	.PART
+		.ITEM("7inch Monitor")
+		.MANUFACTURER("LG Electronics")
+		.MODEL("995E")
+		.COST("290.00")
+	.PART!
+
+puts doc.to_s

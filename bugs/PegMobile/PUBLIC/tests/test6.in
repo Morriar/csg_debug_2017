@@ -1,0 +1,17 @@
+require "PegMobile.rb"
+
+doc = XMLDocument.new "letter"
+doc.xml
+	.title("Quote Letter", maxlength:"10")
+	.salutation("Dear Daniel,", limit:"40")
+	.text("Thank you for sending us the information on SDL Trados Studio 2015. We like your products and think they certainly represent the most powerful translation solution on the market. We especially like the XML Parser rules options in the XML filter. It has helped us to set up support for our XML files in a flash. We have already downloaded the latest version from your Customer Center.")
+	.title("Quote Details", maxlength:"40")
+	.text("We would like to order 50 licenses. Please send us a quote. Keep up the good work!")
+	.greetings("Yours sincerely,", minlength:"10")
+	.signature("Paul Smith")
+	.address("Smith &amp; Company Ltd.", translate:"yes")
+	.address("Smithtown", translate:"no")
+	.weblink("http://www.smith-company-ltd.com")
+	.logo(alt:"Logo of Smith and Company Ltd.", address:"http://www.smith-company-ltd.com/logo.jpg")
+
+puts doc.to_s

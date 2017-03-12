@@ -1,0 +1,9 @@
+{
+	"id": "PegMobile",
+	"title": "PegMobile",
+	"description": "Peg for Mobile: design your website from where you are!",
+	"o2boost": 2,
+	"zboost": 5,
+	"score_bonus": 7,
+	"language": "ruby"
+}

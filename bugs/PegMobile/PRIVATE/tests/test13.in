@@ -1,0 +1,15 @@
+require "PegMobile.rb"
+
+doc = XMLDocument.new "project"
+doc.xml
+	.type("org.netbeans.modules.java.j2seproject")
+	.configuration
+		.data(xmlns:"http://www.netbeans.org/ns/j2se-project/3")
+			.name("ex")
+			.sourceroots
+				.root("src.dir")
+			.sourceroots!
+		.data!
+	.configuration!
+
+puts doc.to_s
