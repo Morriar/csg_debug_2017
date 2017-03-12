@@ -107,7 +107,7 @@ run_one()
 	compile "$out_dir/compile.log"
 	if [ "$?" -ne 0 ]; then
 		echo -e "[\e[31mBUILD FAIL\e[0m]"
-		cat "$out_dir/compile.$timestamp.log"
+		cat "$out_dir/compile.log"
 		return 1
 	fi
 
@@ -123,7 +123,7 @@ run_one()
 		return 0
 	else
 		echo -e "[\e[31mFAIL\e[0m] $name"
-		cat "$out_dir/$name.$timestamp.diff"
+		cat "$out_dir/$name.diff"
 		return 1
 	fi
 }

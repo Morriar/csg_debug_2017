@@ -86,7 +86,7 @@ run_one()
 		return 0
 	else
 		echo -e "[\e[31mFAIL\e[0m] $name"
-		cat "$out_dir/$name.$timestamp.diff"
+		cat "$out_dir/$name.diff"
 		return 1
 	fi
 }

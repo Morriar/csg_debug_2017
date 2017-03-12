@@ -18,8 +18,7 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	# TODO jail?
-	timeout -k 5 5 bash src/sssss.sh `cat $run_input` "$run_output"
+	bash src/sssss.sh `cat $run_input` "$run_output"
 	return $?
 }
 
@@ -36,7 +35,6 @@ run_all()
 {
 	out_dir=$1
 	tests_dir=$2
-	timestamp=$(date +"%s")
 
 	echo -e "\nRun tests..."
 	OK=0
@@ -49,11 +47,11 @@ run_all()
 		file=$(basename "$input")
 		name="${file%.*}"
 
-		out="$out_dir/$name.$timestamp.out"
+		out="$out_dir/$name.out"
 		exp="$tests_dir/$name.res"
 
 		run_test "$input" "$out"
-		diff_test "$out" "$exp" "$out_dir/$name.$timestamp.diff"
+		diff_test "$out" "$exp" "$out_dir/$name.diff"
 		if [ "$?" == 0 ]; then
 			echo -e " * [\e[32mOK\e[0m] $name"
 			OK=$(($OK + 1))
@@ -78,21 +76,20 @@ run_one()
 	name=$1
 	out_dir=$2
 	tests_dir=$3
-	timestamp=$(date +"%s")
 
 	input="$tests_dir/$name.in"
-	out="$out_dir/$name.$timestamp.out"
+	out="$out_dir/$name.out"
 	exp="$tests_dir/$name.res"
 
 	echo "Run tests..."
 	run_test "$input" "$out"
-	diff_test "$out" "$exp" "$out_dir/$name.$timestamp.diff"
+	diff_test "$out" "$exp" "$out_dir/$name.diff"
 	if [ "$?" == 0 ]; then
 		echo -e "[\e[32mOK\e[0m] $name"
 		return 0
 	else
 		echo -e "[\e[31mFAIL\e[0m] $name"
-		cat "$out_dir/$name.$timestamp.diff"
+		cat "$out_dir/$name.diff"
 		return 1
 	fi
 }
