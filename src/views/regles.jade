@@ -3,23 +3,23 @@ extends layout
 include mixins/resource_bars
 
 block content
-	-var o2_icon = "<span><b>O<sup>2</sup></b></span>"
-	-var zz_icon = "<span class=\"glyphicon glyphicon-flash\"></span>"
+	-var o2_icon = "<span class=\"glyphicon glyphicon-thumbs-up\"></span>"
+	-var zz_icon = "<span class=\"glyphicon glyphicon-usd\"></span>"
 
 	.container.text-justify
 
 		div.panel.panel-custom
 			h1= title
-			p Fixer les systèmes de survie automatisés du Dôme pour survivre!
+			p Réparez vos apps pour gagner du hype et du cash!
 
 		div.panel.panel-custom
 			h3 Règles
 
 			p
-				| Le Dôme nécessite de l'énergie pour alimenter les systèmes de survie
-				| et de l'oxygène pour que ses habitants puissent respirer.
-				| Les niveaux d'oxygène et d'énergie du Dôme sont représentés par
-				| ces jauges:
+				| Votre compagnie est propriétaire de plusieurs applications déployées sur le cloud.
+				| Chaque application, quand elle fonctionne, vous rapporte du hype et du cash.
+				| La quantité de hype et de cash que possède votre entreprise est représentée par
+				| les jauges suivantes:
 
 			p.container-fluid
 				.col-xs-6
@@ -30,7 +30,7 @@ block content
 			br
 			br
 			p
-				| Chaque tour, le Dôme consume&nbsp;
+				| Chaque tour, votre entreprise perd&nbsp;
 				span.text-danger
 					strong 50&nbsp;
 					!= o2_icon
@@ -41,40 +41,32 @@ block content
 				| .
 				| Si l'une de ces ressources atteint&nbsp;
 				span.text-danger 0
-				| , alors tout le monde sous le Dôme meurt.
+				| , alors votre entreprise fait faillite.
 
 			p
-				| Pour générer de l'énergie et de l'oxygène, le Dôme dépend de systèmes
-				| automatiques qui contrôles les différents générateurs et régulateurs
-				| nécessaires à son bon fonctionnement.
-				| Il y a 15 systèmes qui doivent fonctionner pour garder le Dôme
-				| et ses habitants en sécurité.
+				| Pour gagner du hype et du cash, votre entreprise dépend du bon fonctionnement
+				| de vos applications.
+				| Il y a 15 applications qui vous permettent de gagner l'une ou l'autre des deux
+				| ressources.
 
 			div.panel.panel-custom.panel-dome
 				div.container#canvas-dome
-					button.slot-icon.btn.btn-success#access_panel
-					button.slot-icon.btn.btn-danger#alu_sim
-					button.slot-icon.btn.btn-success#alveoli
-					button.slot-icon.btn.btn-success#atomic_engine
-					button.slot-icon.btn.btn-danger#bug_hello
-					button.slot-icon.btn.btn-danger#domesec
-					button.slot-icon.btn.btn-success#doors
-					button.slot-icon.btn.btn-success#domefs
-					button.slot-icon.btn.btn-success#power_grid
-					button.slot-icon.btn.btn-success#irrigations
-					button.slot-icon.btn.btn-success#militia_dispatch
-					button.slot-icon.btn.btn-success#shield_gen
-					button.slot-icon.btn.btn-danger#thermal_reactor
-					button.slot-icon.btn.btn-success#ventilation
-					button.slot-icon.btn.btn-danger#water_supply
+					button.slot-icon.btn.btn-success#bug_hello
+					button.slot-icon.btn.btn-danger#FireMatches
+					button.slot-icon.btn.btn-success#Filther
+					button.slot-icon.btn.btn-success#PearMap
+					button.slot-icon.btn.btn-danger#PegMobile
+					button.slot-icon.btn.btn-danger#ROMCryption
+					button.slot-icon.btn.btn-success#SuperSecretSafeSystemSolution
+					button.slot-icon.btn.btn-success#Wrottit
 
-			h4 Produire de l'énergie et de l'oxygène
+			h4 Produire du hype et du cash
 			p
-				| Chaque tour, le Dôme CRON génère une série de fichiers de configuration
-				| permettant à chaque système de fonctionner.
-				| Si le système interprète le fichier de configuration correctement,
-				| alors le générateur ou régulateur sous-jacent peut fonctionner
-				| et produire une ressource.
+				| Chaque tour, le CRON d'intégration continue génère une série de fichiers
+				| de tests permettant de vérifier le bon comportement de vos applications.
+				| Si l'application exécture le fichier de test correctement,
+				| alors elle peut être déployer au grand publique et vous rapporter du hype
+				| et/ou du cash.
 
 			table.table
 				tr
@@ -86,8 +78,8 @@ block content
 					th +10 pts / round
 
 			p
-				| Le type et la quantité de ressource produite diffère selon les systèmes.
-				| Ainsi, certains systèmes peuvent apparaître plus critique que d'autres.
+				| Le type et la quantité de ressource produite diffère selon les applications.
+				| Ainsi, certaines applications peuvent apparaître plus critiques que d'autres.
 
 			table.table
 				tr
@@ -99,7 +91,7 @@ block content
 					th +20 pts / round
 
 			p
-				| Aussi, certains systèmes consomment l'une des ressource pour produire
+				| Aussi, certaines applications consomment l'une des ressource pour produire
 				| la seconde.
 
 			table.table
@@ -112,23 +104,23 @@ block content
 					th +25 pts / round
 
 			p
-				| Malheureusement, le développement de ces systèmes s'est étalé sur
-				| des centaines d'années, et il n'est pas garanti que tous fonctionnent
+				| Malheureusement, le développement de ces applications s'est étalé sur
+				| des années, et il n'est pas garanti que toutes fonctionnent
 				| correctement.
-				| Si par malheur, le système ne répond pas correctement, aucune
-				| ressource n'est produite...
+				| Si par malheur, l'application ne passe pas les tests, elle ne peut pas être
+				| déployée publiquement, et donc ne produit aucune ressource...
 			p
 				| Dans cette compétition, il vous est demandé de remettre en marche
-				| l'ensemble des systèmes vitaux du Dôme afin d'en sauver ses habitants.
-				| Souvenez vous que si l'une des deux ressources atteint 0, tous le
-				| monde sous le Dôme va mourir!
+				| l'ensemble des applications de votre entreprise pour la sauver de la faillite.
+				| Souvenez vous que si l'une des deux ressources atteint 0, votre entreprise
+				| fait faillite.
 				strong.text-danger &nbsp;Cela signifie que vous perdez instantanément
 					| la compétition et devez alors quitter la salle.
 
-			h4 Cloner l'environnement du Dôme
+			h4 Cloner l'environnement de test
 			p
-				| Pour réparer les systèmes du Dôme, vous devez d'abord cloner son
-				| environnement.
+				| Pour réparer les applications, vous devez d'abord cloner l'environnement
+				| de test.
 				| Tapez les commandes suivantes dans un terminal.
 				| N'oubliez pas de remplacer IP et TEAM par les valeurs appropriées...
 				| Le mot de passe est celui de votre équipe.
@@ -140,16 +132,17 @@ block content
 			p Tous les systèmes viennent d'être clonés sur votre ordinateur.
 				pre
 					| $ ls
-					| access_panel
-					| alu_sim/
-					| atomic_engine/
+					| bug_hello/
+					| FireMatches/
+					| Filther/
 					| ...
 
 
-			h4 Déboguer les systèmes du Dôme.
+			h4 Déboguer les applications.
 			p
-				| Chaque système possède son propre fichier README expliquant son fonctionnement.
-				| L'Empire recommande fortement de commencer par le bug <i>bug_hello</i>
+				| Chaque applciation possède son propre fichier README expliquant son
+				| fonctionnement.
+				| Nous recommandons fortement de commencer par le bug <i>bug_hello</i>
 				pre
 					| $ cd bug_hello/
 					| $ cat README.md
@@ -166,7 +159,7 @@ block content
 					| $ vim src/main.nit # do edits and fix that bug!
 
 			p
-				| Pour vous vérifier vos modifications, vous pouvez utiliser le
+				| Pour vérifier vos modifications, vous pouvez utiliser le
 				| script de test automatisé.
 				| En cas de différence entre votre output et le résultat attendu,
 				| vous pouvez utiliser la commande <i>diff</i>.
@@ -181,12 +174,12 @@ block content
 					| $ diff out/test_02.out tests/test_02.res
 
 
-			h4 Pousser les modifications vers le Dôme
+			h4 Pousser les modifications vers le CRON d'intégration continue
 			p.text-danger
-				| Une fois qu'un système est débogué, vous devez pousser les modifications
+				| Une fois qu'une application est déboguée, vous devez pousser les modifications
 				| vers votre dépôt d'équipe.
 				| Ainsi, la version des sources corrigée sera disponible pour être
-				| testé par le cron.
+				| testé par le CRON.
 
 				pre
 					| git add -A

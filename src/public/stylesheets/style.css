@@ -119,7 +119,7 @@ tr.team.indanger a {color: #ff0000; }
 
 #canvas-dome {
 	background-image: url("../images/cs2017.png");
-	background-size: auto 400px;
+	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
 	width: 600px;
@@ -130,27 +130,40 @@ tr.team.indanger a {color: #ff0000; }
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	width: 50px;
-	height: 50px;
-	background-repeat:  no-repeat;
-	background-size:45px 45px;
+	width: 75px;
+	height: 75px;
+	background-repeat: no-repeat;
+	background-size:50px 50px;
 	background-position: center;
+	background-color: white;
+	border-radius: 50%;
 }
 
-#water_supply { margin-left:-100px; margin-top:140px; background-image: url('/images/water.png') }
-#access_panel { margin-left:-110px; margin-top:70px; background-image: url('/images/sensors.png'); }
-#thermal_reactor { margin-left:-180px; margin-top:20px; background-image: url('/images/temp.png')}
-#doors { margin-left:-190px; margin-top:-50px; background-image: url('/images/lock.png') }
-#irrigations { margin-left:-195px; margin-top:-120px; background-image: url('/images/pipe.png') }
-#alu_sim { margin-left:-165px; margin-top:-190px; background-image: url('/images/panel.png') }
-#bug_hello { margin-left:-100px; margin-top:-235px; background-image: url('/images/speak.png'); }
-#shield_gen { margin-left:-26px; margin-top:-250px; background-image: url('/images/shield.png') }
-#domefs { margin-left:50px; margin-top:-235px; background-image: url('/images/domefs.png') }
-#alveoli { margin-left:115px; margin-top:-190px; background-image: url('/images/alveoli.png') }
-#domesec { margin-left:145px; margin-top:-120px; background-image: url('/images/scan.png') }
-#power_grid { margin-left:140px; margin-top:-50px; background-image: url('/images/power.png') }
-#atomic_engine { margin-left:125px; margin-top:20px; background-image: url('/images/nuclear.png')}
-#ventilation { margin-left:55px; margin-top:70px; background-image: url('/images/fan.png')}
-#militia_dispatch { margin-left:40px; margin-top:140px; background-image: url('/images/militia.png') }
+.slot-icon.btn.btn-danger {
+	border-width: 8px;
+	border-color: #d05959;
+}
+
+.slot-icon.btn.btn-danger:hover {
+	background-color: #d05959;
+}
+
+.slot-icon.btn {
+	border-width: 8px;
+	border-color: #5bd059;
+}
+
+.slot-icon.btn:hover {
+	background-color: #5bd059;
+}
+
+#bug_hello 	{ margin-left:-270px; margin-top:-150px; background-image: url('/images/speak.png'); }
+#ROMCryption{ margin-left:-130px; margin-top:-150px; background-image: url('/images/lock.png') }
+#PearMap 	{ margin-left:0px; margin-top:-150px; background-image: url('/images/map.png'); }
+#PegMobile	{ margin-left:130px; margin-top:-150px; background-image: url('/images/panel.png') }
+#Wrottit	{ margin-left:-270px; margin-top:90px; background-image: url('/images/pen.png')}
+#FireMatches{ margin-left:-130px; margin-top:90px; background-image: url('/images/fire.png') }
+#Filther 	{ margin-left:0px; margin-top:90px; background-image: url('/images/alveoli.png') }
+#SuperSecretSafeSystemSolution 	{ margin-left:130px; margin-top:90px; background-image: url('/images/shield.png') }
 
 

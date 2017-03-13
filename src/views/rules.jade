@@ -3,20 +3,21 @@ extends layout
 include mixins/resource_bars
 
 block content
-	-var o2_icon = "<span><b>O<sup>2</sup></b></span>"
-	-var zz_icon = "<span class=\"glyphicon glyphicon-flash\"></span>"
+	-var o2_icon = "<span class=\"glyphicon glyphicon-thumbs-up\"></span>"
+	-var zz_icon = "<span class=\"glyphicon glyphicon-usd\"></span>"
 
 	.container.text-justify
 
 		div.panel.panel-custom
 			h1= title
-			p Keep the Dome systems up and running to survive!
+			p Fix your apps to earn hype and cash!
 
 		div.panel.panel-custom
 			h3 Rules
 
 			p
-				| The Dome needs energy to power up the main systems and also
+				| Your campany owns some apps currently deployed on the cloud.
+				| Each app, when it works, earns you som hype and cash.
 				| generate oxygen so the inhabitants can breath.
 				| The Dome oxygen and energy levels are represented by these gauges:
 
@@ -50,21 +51,14 @@ block content
 
 			div.panel.panel-custom.panel-dome
 				div.container#canvas-dome
-					button.slot-icon.btn.btn-success#access_panel
-					button.slot-icon.btn.btn-danger#alu_sim
-					button.slot-icon.btn.btn-success#alveoli
-					button.slot-icon.btn.btn-success#atomic_engine
-					button.slot-icon.btn.btn-danger#bug_hello
-					button.slot-icon.btn.btn-danger#domesec
-					button.slot-icon.btn.btn-success#doors
-					button.slot-icon.btn.btn-success#domefs
-					button.slot-icon.btn.btn-success#power_grid
-					button.slot-icon.btn.btn-success#irrigations
-					button.slot-icon.btn.btn-success#militia_dispatch
-					button.slot-icon.btn.btn-success#shield_gen
-					button.slot-icon.btn.btn-danger#thermal_reactor
-					button.slot-icon.btn.btn-success#ventilation
-					button.slot-icon.btn.btn-danger#water_supply
+					button.slot-icon.btn.btn-success#bug_hello
+					button.slot-icon.btn.btn-danger#FireMatches
+					button.slot-icon.btn.btn-success#Filther
+					button.slot-icon.btn.btn-success#PearMap
+					button.slot-icon.btn.btn-danger#PegMobile
+					button.slot-icon.btn.btn-danger#ROMCryption
+					button.slot-icon.btn.btn-success#SuperSecretSafeSystemSolution
+					button.slot-icon.btn.btn-success#Wrottit
 
 			h4 Producing oxygen and energy
 			p
@@ -133,9 +127,9 @@ block content
 			p All the systems have been cloned into your computer.
 				pre
 					| $ ls
-					| access_panel
-					| alu_sim/
-					| atomic_engine/
+					| bug_hello/
+					| FireMatches/
+					| Filther/
 					| ...
 
 
