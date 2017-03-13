@@ -30,7 +30,8 @@ install-nodejs:
 	apt-get install -y npm
 	apt-get install -y nodejs
 	# update node js
-	cp /usr/bin/nodejs /user/bin/node && npm cache clean -f && npm install -g n && n stable
+	# ln -sf /usr/bin/node /usr/bin/nodejs && 
+	npm cache clean -f && npm install -g n && n stable
 
 install-java:
 	apt-get install -y openjdk-7-jdk
@@ -52,18 +53,18 @@ install-haskell:
 	apt-get install -y ghc
 
 install-python:
-	apt-get install -y python2.7
+	# apt-get install -y python2.7
 
 install-nit:
 	apt-get install -y build-essential ccache libgc-dev graphviz libunwind-dev pkg-config
-	git clone http://nitlanguage.org/nit.git && cd nit && make && source misc/nit_env.sh
+	# git clone http://nitlanguage.org/nit.git && cd nit && make && source misc/nit_env.sh
 
 install-pep8term:
 	test -d pep8term || git clone https://github.com/privat/pep8term.git
 	cd pep8term && git pull
 	${MAKE} -C pep8term
-	ln pep8 /bin/pep8
-	ln asem8 /bin/asem8
+	ln -s pep8term/pep8 /usr/bin/pep8 || echo "Already Done"
+	ln -s pep8term/asem8 /usr/bin/asem8 || echo "Already Done"
 
 install-perl:
 	apt-get install -y perl libswitch-perl
