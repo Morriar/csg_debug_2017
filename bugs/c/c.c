@@ -12,6 +12,7 @@ struct heap {
 	struct node *nodes;
 	int len;
 	int size;
+	int (*compare)(void *data1, void *data2);
 };
 
 void enqueue(struct heap *heap, double priority, void *data) {
@@ -26,7 +27,9 @@ void enqueue(struct heap *heap, double priority, void *data) {
 	int i = heap->len++;
 	while(i>0) {
 		int p = (i+1)/2-1;
-		if (heap->nodes[p].priority <= priority)
+		if (heap->nodes[p].priority < priority)
+			break;
+		if (heap->nodes[p].priority == priority && heap->compare(heap->nodes[p].data, data) <= 0)
 			break;
 		heap->nodes[i] = heap->nodes[p];
 		i = p;
@@ -50,8 +53,12 @@ struct state *dequeue(struct heap *heap) {
 		int c = i;
 		if (l < heap->len && heap->nodes[l].priority < heap->nodes[c].priority)
 			c = l;
+		if (l < heap->len && heap->nodes[l].priority == heap->nodes[c].priority && heap->compare(heap->nodes[l].data, heap->nodes[c].data) < 0)
+			c = l;
 		if (r < heap->len && heap->nodes[r].priority < heap->nodes[c].priority)
 			c = r;
+		if (r < heap->len && heap->nodes[r].priority == heap->nodes[c].priority && heap->compare(heap->nodes[r].data, heap->nodes[c].data) < 0)
+			c = l;
 		if (c == i)
 			break;
 		struct node tmp = heap->nodes[i];
@@ -80,9 +87,28 @@ struct state {
 	const char *desc;
 };
 
-struct state *area[110][110];
+int state_compare(struct state *s1, struct state *s2) {
+	if (s1->time < s2->time) return -1;
+	if (s1->time > s2->time) return 1;
+	if (s1->money > s2->money) return -1;
+	if (s1->money < s2->money) return 1;
+	if (s1->fun > s2->fun) return -1;
+	if (s1->fun < s2->fun) return 1;
+	if (s1->prev == NULL && s2->prev == NULL) return 0;
+	if (s1->prev == NULL) return -1;
+	if (s2->prev == NULL) return 1;
+	return state_compare(s1->prev, s2->prev);
+}
 
-struct state *next_state(struct state *state, struct heap *heap, int dmoney, int dfun, const char *desc) {
+struct problem {
+	struct state *start;
+	int money_goal;
+	int fun_goal;
+	struct state *area[200][200];
+	struct heap *heap;
+};
+
+struct state *next_state(struct state *state, struct problem *problem, int dmoney, int dfun, const char *desc) {
 	if (state->money + dmoney < 0 || state->fun + dfun < 0)
 		return NULL;
 
@@ -93,8 +119,8 @@ struct state *next_state(struct state *state, struct heap *heap, int dmoney, int
 	int time = state->time + 1;
 
 	if (dmoney < 110 && dfun < 110) {
-		struct state * old = area[dmoney][dfun];
-		if (old != NULL && old->time >= time) {
+		struct state * old = problem->area[dmoney][dfun];
+		if (old != NULL && old->time > time) {
 			return NULL;
 		}
 	}
@@ -106,80 +132,76 @@ struct state *next_state(struct state *state, struct heap *heap, int dmoney, int
 	result->time = time;
 	result->desc = desc;
 
+	if (dmoney < 200 && dfun < 200) {
+		struct state * old = problem->area[dmoney][dfun];
+		if (old != NULL && state_compare(old, result) <= 0) {
+			free(result);
+			return NULL;
+		}
+	}
+
 	double cost = result->time;
-	double cm = result->money < 100 ? (100.0 - result->money) / 34 : 0;
-	double cf = result->fun < 100   ? (100.0 - result->fun) / 34 : 0;
+	double cm = result->money < problem->money_goal ? (problem->money_goal - result->money) / 34.0 : 0.0;
+	double cf = result->fun < problem->fun_goal ? (problem->fun_goal - result->fun) / 34.0 : 0.0;
 	cost += cm > cf ? cm : cf;
 	//cost += cm + cf;
 
 	//printf("in t=%d %s m=%d f=%d h=%f c=%f\n", result->time, result->desc, result->money, result->fun, cost-result->time, cost);
-	if (dmoney < 110 && dfun < 110) {
-		area[dmoney][dfun] = result;
+	if (dmoney < 200 && dfun < 200) {
+		problem->area[dmoney][dfun] = result;
 	}
-	enqueue(heap, cost, result);
+	enqueue(problem->heap, cost, result);
 
 	return result;
 }
 
-void solve(void) {
+struct state * solve(int money_start, int fun_start, int money_goal, int fun_goal) {
+	struct problem *problem = (struct problem*)malloc(sizeof(struct problem));
 	struct state *state = (struct state*)malloc(sizeof(struct state));
 	state->prev = NULL;
-	state->money = 0;
-	state->fun = 10;
-	state->time = 10;
+	state->money = money_start;
+	state->fun = fun_start;
+	state->time = 0;
+	problem->start = state;
 	struct heap *heap = new_heap();
+	heap->compare = (int(*)(void*,void*))&state_compare;
+	problem->heap = heap;
+	problem->money_goal = money_goal;
+	problem->fun_goal = fun_goal;
 
 	enqueue(heap, 0, state);
-	printf("hello\n");
-
 	int i = 0;
 	while((state=dequeue(heap))) {
 		i++;
-		if (i%1000 == 0)
-		printf("%d out t=%d %s m=%d f=%d\n", i, state->time, state->desc, state->money, state->fun);
+		//if (i%1 == 0) printf("%d out t=%d %s m=%d f=%d\n", i, state->time, state->desc, state->money, state->fun);
 
-		if (state->money >= 100 && state->fun >= 100) {
-			while (state) {
+		if (state->money >= money_goal && state->fun >= fun_goal) {
+			/*while (state) {
 				printf("t=%d %s m=%d f=%d\n", state->time, state->desc, state->money, state->fun);
 				state = state->prev;
-			}
-			return;
+			}*/
+			return state;
 		}
 
-		//next_state(state, heap,   0, 0, "tv"); // watch tv and chill
-		//next_state(state, heap,   0, 20, "0,20"); // watch tv and chill
-		//next_state(state, heap,   10, 10, "10,10"); // watch tv and chill
-		//next_state(state, heap,   20, 0, "20,0"); // watch tv and chill
-		//next_state(state, heap,   20, 10, "20,10"); // watch tv and chill
-		next_state(state, heap,   20, -10, "20,-10"); // watch tv and chill
-		next_state(state, heap,   -20, 10, "-20,10"); // watch tv and chill
-		next_state(state, heap,   -20, -10, "-20,-10"); // watch tv and chill
-		//next_state(state, heap,   10, 20, "10,20"); // watch tv and chill
-		next_state(state, heap,   -10, 20, "-10,20"); // watch tv and chill
-		next_state(state, heap,   10, -20, "10,-20"); // watch tv and chill
-		next_state(state, heap,   -10, -20, "-10,-20"); // watch tv and chill
-		//next_state(state, heap,   -1, +10, "tv"); // watch tv and chill
-		//next_state(state, heap,   10, -1, "mny"); // watch tv and chill
-		//next_state(state, heap, -11, +21, "home booze"); // home booze
-		//next_state(state, heap, +12, -12, "home work"); // home work
-		continue;
+		next_state(state, problem,   0, 0, "tv"); // watch tv and chill
 
 		switch(state->time % 3) {
 			// night, 1:00 -> 9:00
-			case 0: next_state(state, heap, -24, +34, "night fiesta"); // booze is expensive, but you have the rest of the night to vomit
-				next_state(state, heap, +8,   0, "early work"); // night work is boring but don't pay that much
+			case 0: next_state(state, problem, -24, +34, "night fiesta"); // booze is expensive, but you have the rest of the night to vomit
+				next_state(state, problem, +8,   0, "early work"); // early work is calm but don't pay that much
 				break;
 			// day, 9:00 -> 15:00
-			case 1: next_state(state, heap, -14, +24, "day pub"); // booze
-				next_state(state, heap, +28, -28, "day work"); // day work with people
+			case 1: next_state(state, problem, -14, +24, "day pub"); // booze
+				next_state(state, problem, +28, -28, "day work"); // day work with people, you hate people
 				break;
 			// evening, 15:00 -> 1:00
 			case 2:
-				next_state(state, heap, -24, +34, "night pub"); // booze
-				next_state(state, heap, +18,  -8, "night work"); // work
+				next_state(state, problem, -24, +34, "night pub"); // booze is expensive, but you have the rest of the  e night to vomit
+				next_state(state, problem, +18,  -8, "night work"); // night work is boring
 				break;
 		}
 	}
+	return NULL;
 }
 
 void dump_heap(struct heap *heap) {
@@ -206,12 +228,29 @@ int test_heap(void) {
 	dequeue(heap);
 
 	char *s;
-	while((s=dequeue(heap))) {
+	while((s=(char*)dequeue(heap))) {
 		printf("* %s\n", s);
 	}
 }
 
-int main(void) {
+const char *days[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+const char *hours[] = {"1:00 -> 9:00", "9:00 -> 15:00", "15:00 -> 1:00"};
+
+void print_plan(struct state *state) {
+	if (state == NULL) return;
+	print_plan(state->prev);
+	int t = state->time - 1;
+	if (t < 0)
+		printf("* initial money=%d fun=%d\n", state->money, state->fun);
+	else
+		printf("* %s %s: %s (money=%d fun=%d)\n", days[t/3%7], hours[t%3], state->desc, state->money, state->fun);
+}
+
+int main(int argc, char **argv) {
 	//test_heap();
-	solve();
+	struct state *state = solve(argc>1?atoi(argv[1]):10, argc>2?atoi(argv[2]):10, argc>3?atoi(argv[3]):100, argc>4?atoi(argv[4]):100);
+	if (state != NULL)
+		print_plan(state);
+	else
+		printf("No solution\n");
 }
