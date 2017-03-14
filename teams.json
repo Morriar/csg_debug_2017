@@ -1,181 +1,163 @@
 [
 	{
 		"id": "team1",
-		"name": "Clone University",
+		"name": "Boracle",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team2",
-		"name": "Clone High",
+		"name": "Brinder",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team3",
-		"name": "Concordia1",
+		"name": "Macrohard",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team4",
-		"name": "Concordia2",
+		"name": "Youber",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team5",
-		"name": "StuxnETS",
+		"name": "Pastafy",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team6",
-		"name": "BotnETS",
+		"name": "Pastagram",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team7",
-		"name": "New Sudbury Republic",
+		"name": "sudo rm -rf competition",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team8",
-		"name": "Vault lul",
+		"name": "Silly Cônes Finder",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team9",
-		"name": "Code troopers ulaval legion 1",
+		"name": "Sille Cônes Volés",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team10",
-		"name": "Code troopers ulaval legion 2",
+		"name": "Manitoogle",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team11",
-		"name": "District HEX",
+		"name": "Seed Round",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team12",
-		"name": "HEX-men",
+		"name": "Series A",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team13",
-		"name": "while (e_coyote) {}",
+		"name": "Poly-Caulking",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team14",
-		"name": "Yoga Rebels",
+		"name": "Poly-Cônes",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team15",
-		"name": "PolyBlue",
+		"name": "Git Rekt",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team16",
-		"name": "PolyRed",
+		"name": "American Emigrants",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team17",
-		"name": "Additional Pylons",
+		"name": "Canadian Immigrants",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team18",
-		"name": "White Hats",
+		"name": "Team Gordon",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team19",
-		"name": "Black Hats",
+		"name": "Team Ramsay",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team20",
-		"name": "JDIs",
+		"name": "Kekstarter",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team21",
-		"name": "Dark JDIs",
+		"name": "Smarter - The smart toaster",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team22",
-		"name": "Garbage Collectors",
+		"name": "ToasterTech Laboratories",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team23",
-		"name": "The John C#",
+		"name": "UQO",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team24",
-		"name": "LispMachine",
+		"name": "Bronze 3 All-Stars"",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team25",
-		"name": "ApocaLISP",
+		"name": "Dangling Pointers",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team26",
-		"name": "REI",
+		"name": "Byte Me",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
 		"id": "team27",
-		"name": "Tsintax Error",
-		"score": 0,
-		"oxygen": 1250,
-		"energy": 1250
-	}, {
-		"id": "team28",
-		"name": "Dub City",
-		"score": 0,
-		"oxygen": 1250,
-		"energy": 1250
-	}, {
-		"id": "team29",
-		"name": "FluffyHackers",
-		"score": 0,
-		"oxygen": 1250,
-		"energy": 1250
-	}, {
-		"id": "team30",
-		"name": "Fluffy hackers 2",
+		"name": "Cache Me Ouhside",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
