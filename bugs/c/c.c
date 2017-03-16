@@ -1,7 +1,13 @@
+/* ** *
+ * Quick and dirty code. Should work as is, except I did not really tested it.
+ * TODO: clean it and remove debug.
+ * ** */
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
 
+/* Min-heap data structure. Basically by the book. */
 
 struct node {
 	double priority;
@@ -12,7 +18,7 @@ struct heap {
 	struct node *nodes;
 	int len;
 	int size;
-	int (*compare)(void *data1, void *data2);
+	int (*compare)(const void *data1, const void *data2);
 };
 
 void enqueue(struct heap *heap, double priority, void *data) {
@@ -74,10 +80,13 @@ struct heap* new_heap(void) {
 	return (struct heap*)calloc(sizeof(struct heap),1);
 }
 
+// Empty the heap and deallocate the data first please.
 void free_heap(struct heap* heap) {
 	free(heap->nodes);
 	free(heap);
 }
+
+/* Simple A* search */
 
 struct state {
 	struct state *prev;
@@ -87,7 +96,9 @@ struct state {
 	const char *desc;
 };
 
-int state_compare(struct state *s1, struct state *s2) {
+/* Ensure a total preference on a state.
+ * so for the same (if the used see variable result for the same input, he will assume the program is buggy... users are dumb) */
+int state_compare(const struct state *s1, const struct state *s2) {
 	if (s1->time < s2->time) return -1;
 	if (s1->time > s2->time) return 1;
 	if (s1->money > s2->money) return -1;
@@ -100,14 +111,20 @@ int state_compare(struct state *s1, struct state *s2) {
 	return state_compare(s1->prev, s2->prev);
 }
 
+/* Global data */
 struct problem {
+	/* initial state */
 	struct state *start;
+	/* goals */
 	int money_goal;
 	int fun_goal;
+	/* memorize states per position. */
 	struct state *area[200][200];
+	/* the associated priority queue. */
 	struct heap *heap;
 };
 
+/* If possible, create and register the new state for the move (`dmoney`,`dfun`) from the state `state`. */
 struct state *next_state(struct state *state, struct problem *problem, int dmoney, int dfun, const char *desc) {
 	if (state->money + dmoney < 0 || state->fun + dfun < 0)
 		return NULL;
@@ -117,13 +134,6 @@ struct state *next_state(struct state *state, struct problem *problem, int dmone
 	dfun += state->fun;
 	if (dfun > 200) dfun = 200;
 	int time = state->time + 1;
-
-	if (dmoney < 110 && dfun < 110) {
-		struct state * old = problem->area[dmoney][dfun];
-		if (old != NULL && old->time > time) {
-			return NULL;
-		}
-	}
 
 	struct state *result = (struct state*)malloc(sizeof(struct state));
 	result->prev = state;
@@ -140,11 +150,11 @@ struct state *next_state(struct state *state, struct problem *problem, int dmone
 		}
 	}
 
+	/* Heuristic: Chebyshev distance with the max known moves. */
 	double cost = result->time;
 	double cm = result->money < problem->money_goal ? (problem->money_goal - result->money) / 34.0 : 0.0;
 	double cf = result->fun < problem->fun_goal ? (problem->fun_goal - result->fun) / 34.0 : 0.0;
 	cost += cm > cf ? cm : cf;
-	//cost += cm + cf;
 
 	//printf("in t=%d %s m=%d f=%d h=%f c=%f\n", result->time, result->desc, result->money, result->fun, cost-result->time, cost);
 	if (dmoney < 200 && dfun < 200) {
@@ -164,7 +174,7 @@ struct state * solve(int money_start, int fun_start, int money_goal, int fun_goa
 	state->time = 0;
 	problem->start = state;
 	struct heap *heap = new_heap();
-	heap->compare = (int(*)(void*,void*))&state_compare;
+	heap->compare = (int(*)(const void*,const void*))&state_compare;
 	problem->heap = heap;
 	problem->money_goal = money_goal;
 	problem->fun_goal = fun_goal;
@@ -175,15 +185,9 @@ struct state * solve(int money_start, int fun_start, int money_goal, int fun_goa
 		i++;
 		//if (i%1 == 0) printf("%d out t=%d %s m=%d f=%d\n", i, state->time, state->desc, state->money, state->fun);
 
-		if (state->money >= money_goal && state->fun >= fun_goal) {
-			/*while (state) {
-				printf("t=%d %s m=%d f=%d\n", state->time, state->desc, state->money, state->fun);
-				state = state->prev;
-			}*/
-			return state;
-		}
+		if (state->money >= money_goal && state->fun >= fun_goal) return state;
 
-		next_state(state, problem,   0, 0, "tv"); // watch tv and chill
+		next_state(state, problem,   0, +1, "tv"); // watch tv and chill
 
 		switch(state->time % 3) {
 			// night, 1:00 -> 9:00
@@ -191,12 +195,12 @@ struct state * solve(int money_start, int fun_start, int money_goal, int fun_goa
 				next_state(state, problem, +8,   0, "early work"); // early work is calm but don't pay that much
 				break;
 			// day, 9:00 -> 15:00
-			case 1: next_state(state, problem, -14, +24, "day pub"); // booze
+			case 1: next_state(state, problem, -4,  +14, "home alcoholism"); // at home, nobody can judge you
 				next_state(state, problem, +28, -28, "day work"); // day work with people, you hate people
 				break;
 			// evening, 15:00 -> 1:00
 			case 2:
-				next_state(state, problem, -24, +34, "night pub"); // booze is expensive, but you have the rest of the  e night to vomit
+				next_state(state, problem, -14, +24, "night pub"); // nice booze and nice people to hang out with
 				next_state(state, problem, +18,  -8, "night work"); // night work is boring
 				break;
 		}
@@ -218,12 +222,13 @@ void dump_heap(struct heap *heap) {
 
 int test_heap(void) {
 	struct heap *heap = new_heap();
+	heap->compare = (int(*)(const void*, const void*))&strcmp;
 	for(int i = 0; i<50; i++) {
 		char s[100];
-		int x = rand() % 50;
+		int x = rand() % 500;
 		sprintf(s, "%d", x);
 		enqueue(heap, x, strdup(s));
-		printf("n[0]=%f %p\n", heap->nodes[0].priority, heap->nodes[0].data);
+		//printf("n[0]=%f %p\n", heap->nodes[0].priority, heap->nodes[0].data);
 	}
 	dequeue(heap);
 
@@ -247,7 +252,8 @@ void print_plan(struct state *state) {
 }
 
 int main(int argc, char **argv) {
-	//test_heap();
+	//test_heap(); exit(0);
+
 	struct state *state = solve(argc>1?atoi(argv[1]):10, argc>2?atoi(argv[2]):10, argc>3?atoi(argv[3]):100, argc>4?atoi(argv[4]):100);
 	if (state != NULL)
 		print_plan(state);
