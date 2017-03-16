@@ -1,0 +1,9 @@
+{
+	"id": "solo",
+	"title": "Solo",
+	"description": "Next-Gen video chat so you can talk to all your friends, nerd.",
+	"o2boost": 1,
+	"zboost": 1,
+	"score_bonus": 2,
+	"language": "ruby"
+}
