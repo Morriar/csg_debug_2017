@@ -3,17 +3,17 @@
 #include <string.h>
 #include <errno.h>
 
-int hdb[] = {0, 1, 1, 2, 1, 2, 2};
-
+/* Hamming weight of `x`. see https://oeis.org/A000120 */
 int bhd(unsigned char x) {
 	int res = 0;
 	for (int j = 0 ; j < 8; j++) {
 		res += x & 1;
-		x >>= 1;
+		x >>= 1; // BUG remove =
 	}
 	return res;
 }
 
+/* The hamming distance (of bits) between two byte sequences. */
 int hamdist(const char *s1, const char *s2, size_t len) {
 	int res = 0;
 	for (size_t i = 0; i < len; i++) {
@@ -23,6 +23,7 @@ int hamdist(const char *s1, const char *s2, size_t len) {
 	return res;
 }
 
+/* The average Hamming distance on slices of `klen` bytes. */
 double score_keylen(const char *s, size_t klen, size_t slen) {
 	double score = 0;
 	int nb = 0;
@@ -35,6 +36,7 @@ double score_keylen(const char *s, size_t klen, size_t slen) {
 	return score/nb;
 }
 
+/* The most probable length of the key. */
 size_t search_keylen(const char *s, size_t len) {
 	size_t best_len = 0;
 	double best_score = 1.0/0.0;
@@ -50,6 +52,7 @@ size_t search_keylen(const char *s, size_t len) {
 	return best_len;
 }
 
+/* A to Z frequency in English. */
 double freqs[] = {
 	0.0651738,
 	0.0124248,
@@ -77,96 +80,77 @@ double freqs[] = {
 	0.0013692,
 	0.0145984,
 	0.0007836,
-	0.1918182,
+	0.1918182, // the space character
 };
 
-
+/* fill in `key` the most probable key. */
 double crack_xor(const char *s, size_t slen, char *key, size_t klen) {
 	double final_score = 0;
 	for (size_t i = 0; i<klen; i++) {
-		double best_score = 0;//1/0.0;
-		unsigned char best_byte = -1;
+		double best_score = 0;
+		unsigned char best_byte = 0;
 		for (int b=0; b<=255; b++) {
 			size_t bf[27];
 			memset(bf, 0, 27*sizeof(size_t));
-			size_t len = 0;
-#if 0
-			for(size_t j=i; j<slen; j+=klen) {
-				char c = s[j] ^ b;
-				if ( c >= 'A' && c <= 'Z') bf[c-'A']++;
-				else if ( c >= 'a' && c <= 'z') bf[c-'a']++;
-				else if (c == ' ') bf[26]++;
-				else continue;
-				len++;
-			}
-			double score = 0;
-			for(int j=0;j<27;j++) {
-				double d = freqs[j] - bf[j] / (double)len;
-				score += d*d;
-				//printf("*** %d %02x? %d %f %f\n", i, b, j, d, score);
-			}
-			//printf("** %d %02x? %f a=%d/%d %f\n", i, b, score, bf[0], len, bf[0]/ (double)len);
-			if (score < best_score) {
-				best_score = score;
-				best_byte = b;
-			}
-#else
 			double score = 0;
 			for(size_t j=i; j<slen; j+=klen) {
 				char c = s[j] ^ b;
-				if ( c >= 'A' && c <= 'Z') score += freqs[c-'A'];
-				else if ( c >= 'a' && c <= 'z') score += freqs[c-'a'];
-				else if (c == ' ') score += freqs[26];
+				if (c >= 'A' && c <= 'Z') score += freqs[c-'A'];
+				else if (c >= 'a' && c <= 'z') score += freqs[c-'a'];
+				else if (c == ' ') score += freqs[26]; // BUG: 27
 				else continue;
-				len++;
 			}
-			//printf("** %d %02x? %f a=%d/%d %f\n", i, b, score, bf[0], len, bf[0]/ (double)len);
 			if (score > best_score) {
 				best_score = score;
 				best_byte = b;
 			}
-
-#endif
 		}
-		//printf("* %d %02x %f\n", i, best_byte, best_score);
 		if (key != NULL) key[i] = best_byte;
 		final_score += best_score;
 	}
 	return final_score;
 }
 
-void cpt_freq(const char *s, size_t slen) {
-	size_t bf[27];
-	memset(bf, 0, 27*sizeof(size_t));
-	size_t len = 0;
-	for(size_t j=0; j<slen; j++) {
-		char c = s[j];
-		if ( c >= 'A' && c <= 'Z') bf[c-'A']++;
-		else if ( c >= 'a' && c <= 'z') bf[c-'a']++;
-		else if (c == ' ') bf[26]++;
-		len++;
-	}
-	double score = 0;
-	for(int j=0;j<27;j++) {
-		double f = bf[j] / (double)len;
-		double d = freqs[j] - f;
-		score += d*d;
-		fprintf(stderr, "* %d %d/%d=%f d=%f\n", j, bf[j], len, f, d);
-	}
-	fprintf(stderr, "* score=%f\n", score);
-}
-
+/* Vigenère cipher. */
 void xor(char* input, size_t ilen, const char *key, size_t klen) {
 	for (size_t i = 0; i < ilen; i++)
 		input[i] ^= key[i%klen];
 }
 
+void printhex(const char *s, size_t len) {
+	for(size_t i=0; i<len; i++)
+		fprintf(stderr, "%02x", (int)(unsigned char)s[i]);
+}
 
+int debug = 1;
+
+void do_crack(char *s, size_t len) {
+	/* say no to drugs. */
+	size_t klen = search_keylen(s, len);
+	if (debug) fprintf(stderr, "keylen=%ld\n", klen);
+	char key[klen];
+	double score = crack_xor(s, len, key, klen);
+	if (debug) {
+		fprintf(stderr, "key=");
+		printhex(key, klen);
+		fprintf(stderr, " score=%f\n", score);
+	}
+	xor(s, len, key, klen);
+	fwrite(s, 1, len, stdout);
+}
+
+/* Read a whole file. */
 char *read_whole(const char *file, size_t *len) {
 	FILE *f = fopen(file, "rb");
-	if (f==NULL) { fprintf(stderr, "Cannot open %s: %s\n", file, strerror(errno)); exit(1);}
+	if (f==NULL) {
+		fprintf(stderr, "Cannot open %s: %s\n", file, strerror(errno));
+		exit(1);
+	}
 	int err = fseek(f, 0, SEEK_END);
-	if (err<0) { fprintf(stderr, "Cannot seek in %s: %s\n", file, strerror(errno)); exit(1);}
+	if (err<0) {
+		fprintf(stderr, "Cannot seek in %s: %s\n", file, strerror(errno));
+		exit(1);
+	}
 	long fsize = ftell(f);
 	rewind(f);
 
@@ -177,37 +161,39 @@ char *read_whole(const char *file, size_t *len) {
 	return string;
 }
 
-void printhex(const char *s, size_t len) {
-	for(size_t i=0; i<len; i++) {
-		fprintf(stderr, "%02x", (int)(unsigned char)s[i]);
-	}
-}
+/* holistically optimal block size */
+#define BLOCK_SIZE 163840 // BUG add =
 
 int main(int argc, char **argv) {
-	size_t len;
-	char *s = read_whole(argv[1], &len);
+	char *file = argc>1 ? argv[1] : "/dev/urandom";
 
+	FILE *f = fopen(file, "rb");
+	if (f==NULL) {
+		fprintf(stderr, "Cannot open %s: %s\n", file, strerror(errno));
+		exit(1);
+	}
+
+	char s[BLOCK_SIZE];
+	size_t len;
 	if (argc>2) {
+		/* Easter egg */
 		size_t klen;
 		char *k = read_whole(argv[2], &klen);
-		fprintf(stderr, "Encoding %d with %d key\n", len, klen);
-		xor(s,len,k,klen);
-		fwrite(s, 1, len, stdout);
+		if (debug) fprintf(stderr, "Encoding %d key\n", klen);
+
+		do {
+			len = fread(s, 1, BLOCK_SIZE, f);
+			xor(s,len,k,klen);
+			fwrite(s, 1, len, stdout);
+		} while (len == BLOCK_SIZE);
 		return 0;
 	}
 
-	//s = strdup("Hello the world!"); len = strlen(s);
-	//char *k = "123";
-	//xor(s,strlen(s),k,strlen(k));
-	size_t klen = search_keylen(s, len);
-	fprintf(stderr, "keylen %ld\n", klen);
-	char key[klen];
-	double score = crack_xor(s, len, key, klen);
-	fprintf(stderr, "key="); printhex(key, klen); fprintf(stderr, " score=%f\n", score);
-	xor(s, len, key, klen);
-	cpt_freq(s,len);
-	fwrite(s, 1, len, stdout);
-
+	do {
+		len = fread(s, 1, BLOCK_SIZE, f);
+		if (debug) fprintf(stderr, "Block %d\n", len);
+		do_crack(s, len);
+	} while (len == BLOCK_SIZE);
 
 	return 0;
 }

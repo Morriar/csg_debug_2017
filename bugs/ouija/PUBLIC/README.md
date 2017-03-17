@@ -1,4 +1,4 @@
-# Ouija
+# Ouija@home
 
 Ghosts, spirits, dead people. They are with us.
 
