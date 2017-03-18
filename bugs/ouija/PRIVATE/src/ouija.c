@@ -3,23 +3,19 @@
 #include <string.h>
 #include <errno.h>
 
-/* Hamming weight of `x`. see https://oeis.org/A000120 */
-int bhd(unsigned char x) {
+/* The Hamming weight of `x`. see https://oeis.org/A000120 */
+int hamweight(unsigned char x) {
 	int res = 0;
-	for (int j = 0 ; j < 8; j++) {
+	for (int j = 0 ; j < 8; j++, x>>=1) // BUG remove =
 		res += x & 1;
-		x >>= 1; // BUG remove =
-	}
 	return res;
 }
 
-/* The hamming distance (of bits) between two byte sequences. */
+/* The Hamming distance (of bits) between two byte sequences. */
 int hamdist(const char *s1, const char *s2, size_t len) {
 	int res = 0;
-	for (size_t i = 0; i < len; i++) {
-		unsigned char x = s1[i] ^ s2[i];
-		res += bhd(x);
-	}
+	for (size_t i = 0; i < len; i++)
+		res += hamweight(s1[i]^s2[i]);
 	return res;
 }
 
@@ -28,18 +24,15 @@ double score_keylen(const char *s, size_t klen, size_t slen) {
 	double score = 0;
 	int nb = 0;
 	for(size_t i=0; i<slen; i+=klen)
-		for(size_t j=0; j<slen; j+=klen) {
-			if (i==j) continue;
+		for(size_t j=i+klen; j<slen; j+=klen, nb++)
 			score += hamdist(s+i, s+j, klen) / (double)klen;
-			nb += 1;
-		}
 	return score/nb;
 }
 
 /* The most probable length of the key. */
 size_t search_keylen(const char *s, size_t len) {
 	size_t best_len = 0;
-	double best_score = 1.0/0.0;
+	double best_score = 1./.0;
 	size_t max = len/2;
 	if (max > 40) max = 40;
 	for (size_t i=1; i<=max; i++) {
@@ -52,7 +45,7 @@ size_t search_keylen(const char *s, size_t len) {
 	return best_len;
 }
 
-/* A to Z frequency in English. */
+/* Normalized A to Z frequency in English. */
 double freqs[] = {
 	0.0651738,
 	0.0124248,
@@ -88,17 +81,16 @@ double crack_xor(const char *s, size_t slen, char *key, size_t klen) {
 	double final_score = 0;
 	for (size_t i = 0; i<klen; i++) {
 		double best_score = 0;
-		unsigned char best_byte = 0;
+		char best_byte = 0;
 		for (int b=0; b<=255; b++) {
 			size_t bf[27];
-			memset(bf, 0, 27*sizeof(size_t));
+			memset(bf, 0, sizeof(bf));
 			double score = 0;
 			for(size_t j=i; j<slen; j+=klen) {
 				char c = s[j] ^ b;
 				if (c >= 'A' && c <= 'Z') score += freqs[c-'A'];
 				else if (c >= 'a' && c <= 'z') score += freqs[c-'a'];
 				else if (c == ' ') score += freqs[26]; // BUG: 27
-				else continue;
 			}
 			if (score > best_score) {
 				best_score = score;
@@ -122,7 +114,7 @@ void printhex(const char *s, size_t len) {
 		fprintf(stderr, "%02x", (int)(unsigned char)s[i]);
 }
 
-int debug = 1;
+int debug = 0;
 
 void do_crack(char *s, size_t len) {
 	/* say no to drugs. */
@@ -161,8 +153,8 @@ char *read_whole(const char *file, size_t *len) {
 	return string;
 }
 
-/* holistically optimal block size */
-#define BLOCK_SIZE 163840 // BUG add =
+/* Holistically optimal block size */
+#define BLOCK_SIZE 16384 // BUG add =
 
 int main(int argc, char **argv) {
 	char *file = argc>1 ? argv[1] : "/dev/urandom";
@@ -179,7 +171,7 @@ int main(int argc, char **argv) {
 		/* Easter egg */
 		size_t klen;
 		char *k = read_whole(argv[2], &klen);
-		if (debug) fprintf(stderr, "Encoding %d key\n", klen);
+		if (debug) fprintf(stderr, "Encoding with %zd key\n", klen);
 
 		do {
 			len = fread(s, 1, BLOCK_SIZE, f);
@@ -191,7 +183,7 @@ int main(int argc, char **argv) {
 
 	do {
 		len = fread(s, 1, BLOCK_SIZE, f);
-		if (debug) fprintf(stderr, "Block %d\n", len);
+		if (debug) fprintf(stderr, "Block %zd\n", len);
 		do_crack(s, len);
 	} while (len == BLOCK_SIZE);
 
