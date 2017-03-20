@@ -1,0 +1,10 @@
+* initial money=11 fun=12
+* Monday 1:00 -> 9:00: early work (money=19 fun=12)
+* Monday 9:00 -> 15:00: home alcoholism (money=15 fun=26)
+* Monday 15:00 -> 1:00: night work (money=33 fun=18)
+* Tuesday 1:00 -> 9:00: night fiesta (money=9 fun=52)
+* Tuesday 9:00 -> 15:00: home alcoholism (money=5 fun=66)
+* Tuesday 15:00 -> 1:00: night work (money=23 fun=58)
+* Wednesday 1:00 -> 9:00: early work (money=31 fun=58)
+* Wednesday 9:00 -> 15:00: home alcoholism (money=27 fun=72)
+* Wednesday 15:00 -> 1:00: night pub (money=13 fun=96)
