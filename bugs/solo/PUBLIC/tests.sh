@@ -21,9 +21,9 @@
 run_test()
 {
 	run_input=$1
-	run_args=$1.args
+	run_args=$(cat $1.args)
 	run_output=$2
-	src/run.sh $run_args $run_input > "$run_output" 2>&1
+	./run.sh $run_args $run_input > "$run_output" 2>&1
 	return $?
 }
 
@@ -32,7 +32,7 @@ diff_test()
 	diff_input1=$1
 	diff_input2=$2
 	diff_output=$3
-	diff -u -- "$diff_input1" "$diff_input2" > "$diff_output"
+	diff -b -u -- "$diff_input1" "$diff_input2" > "$diff_output"
 	return $?
 }
 

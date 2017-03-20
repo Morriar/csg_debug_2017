@@ -16,12 +16,8 @@
 #
 # aHR0cDovL2NzZ2FtZXMub3JnLzIwMTYvCg==
 
-compile:
-	mkdir -p bin/
-	nitc src/hello.nit -o bin/hello
-
 check:
 	./tests.sh
 
 clean:
-	rm -rf bin/ out/
+	rm -rf out/

@@ -17,11 +17,14 @@
 run_test()
 {
 	run_input=$1
+	run_args=$(cat $1.args)
 	run_output=$2
-	str_input=$(cat $run_input)
 	jail_home=$(dirname $run_output)
-	make_jail $jail_home src $run_input
-	timeout -k 5 5 firejail --profile=jail.profile --quiet --private=$jail_home ./run.sh < $run_input 2>&1 | grep -v "Reading profile" > "$run_output"
+	# make_jail $jail_home src $run_input
+	# timeout -k 5 5 firejail --profile=jail.profile --quiet --private=$jail_home ./run.sh $run_args $run_input 2>&1 | grep -v "Reading profile" > "$run_output"
+
+	# TODO: jail this
+	./run.sh $run_args $run_input > "$run_output" 2>&1
 	return $?
 }
 

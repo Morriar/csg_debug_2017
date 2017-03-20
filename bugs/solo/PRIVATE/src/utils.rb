@@ -21,6 +21,7 @@ class RunLengthEncoder < Encoder
 		res = []
 		z = 0
 		# BUG: use '\n' instead of "\n"
+		# Doesn<t seem to work anymore =(
 		data.split("\n").each do |line|
 			# Separate sequences of 0 and 1 by splitting them.
 			# data are 1 and nothingness are 0.
@@ -58,11 +59,19 @@ end
 
 class BitStreamEncoder < Encoder
 	def encode(data)
-		# Bug: replace rjust -> ljust
-		data.each_byte.map { |b| b.to_s(2).rjust(8, '0') }.join
+		# Bug: remove rjust
+		out = ""
+		first = true
+		data.each_line do |line|
+			out << "\n" if not first
+			out << line.each_byte.map { |b| b.to_s(2).rjust(8, '0') }.join
+			first = false
+		end
+		out
 	end
 
 	def decode(data)
+		return nil if data.nil?
 		data.scan(/[01]{1,8}/).map { |x| x.to_i(2).chr }.join
 	end
 end
