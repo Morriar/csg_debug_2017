@@ -34,7 +34,7 @@ install-nodejs:
 	npm cache clean -f && npm install -g n && n stable
 
 install-java:
-	apt-get install -y openjdk-7-jdk
+	apt-get install -y openjdk-8-jdk
 
 install-lua:
 	apt-get install -y lua5.2
