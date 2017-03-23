@@ -27,7 +27,7 @@ But wait, there is more: there is no way for the evil forces to know the order o
 ## Usage
 
 SuperSecretSafeSystemSolution takes two arguments. The first one is the input file to encode using the super secret encoding systems of SuperSecretSafeSystemSolution. The second one is the PIN encoded
-algorithm serie to enode the inputfile with.
+algorithm series to encode the inputfile with.
 
 Possible pins are:
 
@@ -80,6 +80,6 @@ Output:
 
 ## Developers
 
-Usefull commands:
+Useful commands:
 
 	make check
