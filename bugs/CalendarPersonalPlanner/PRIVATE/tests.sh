@@ -62,7 +62,7 @@ run_all()
 	echo "Compile bin..."
 	compile "$out_dir/compile.$timestamp.log"
 	if [ "$?" -ne 0 ]; then
-		echo -e " * [\e[31mFAIL\e[0m] compile bin (cat $out_dir/compile.log)"
+		echo -e " * [\e[31mFAIL\e[0m] compile bin (cat $out_dir/compile.$timestamp.log)"
 		exit 1
 	fi
 

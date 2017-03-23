@@ -12,12 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-compile:
-	mkdir -p bin/
-	gcc -std=c99 -O2 src/cpp.c -o bin/cpp
+help:
+	@echo "usage:"
+	@echo " * check		check bug"
 
 check:
-	./tests.sh
+	@echo "\n## ouija\n"
+	@make --no-print-directory -C PRIVATE/ check
 
 clean:
-	rm -rf bin/ out/
+	@make --no-print-directory -C PUBLIC/ clean
+	@make --no-print-directory -C PRIVATE/ clean

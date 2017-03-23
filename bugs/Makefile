@@ -19,18 +19,26 @@ help:
 
 check:
 	@make --no-print-directory -C bug_hello/ check
-	@make --no-print-directory -C FireMatches/ check
-	@make --no-print-directory -C ROMCryption/ check
-	@make --no-print-directory -C PearMap/ check
+	@make --no-print-directory -C CalendarPersonalPlanner/ check
 	@make --no-print-directory -C Filther/ check
+	@make --no-print-directory -C FireMatches/ check
+	@make --no-print-directory -C ouija/ check
+	@make --no-print-directory -C PearMap/ check
+	@make --no-print-directory -C PegMobile/ check
+	@make --no-print-directory -C ROMCryption/ check
+	@make --no-print-directory -C solo/ check
 	@make --no-print-directory -C SuperSecretSafeSystemSolution/ check
 	@make --no-print-directory -C Wrottit/ check
 
 clean:
 	@make --no-print-directory -C bug_hello/ clean
-	@make --no-print-directory -C FireMatches/ clean
-	@make --no-print-directory -C ROMCryption/ clean
-	@make --no-print-directory -C PearMap/ clean
+	@make --no-print-directory -C CalendarPersonalPlanner/ clean
 	@make --no-print-directory -C Filther/ clean
+	@make --no-print-directory -C FireMatches/ clean
+	@make --no-print-directory -C ouija/ clean
+	@make --no-print-directory -C PearMap/ clean
+	@make --no-print-directory -C PegMobile/ clean
+	@make --no-print-directory -C ROMCryption/ clean
+	@make --no-print-directory -C solo/ clean
 	@make --no-print-directory -C SuperSecretSafeSystemSolution/ clean
 	@make --no-print-directory -C Wrottit/ clean

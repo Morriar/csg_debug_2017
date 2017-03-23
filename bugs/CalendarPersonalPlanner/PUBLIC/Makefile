@@ -14,7 +14,7 @@
 
 compile:
 	mkdir -p bin/
-	gcc -O2 src/cpp.c -o bin/cpp
+	gcc -std=c99 -O2 src/cpp.c -o bin/cpp
 
 check:
 	./tests.sh
