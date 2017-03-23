@@ -922,53 +922,53 @@ pÈUç‰Îà§
 ðßáù
 ÒµDJÝRÝ‹¦˜9°ÙÍÃXûïE­äñõÕE
 Ö¾;p®éÒ
-ÿI³How many years can a mountain exist
-Before it's washed to the sea?
-How many years can some people exist
-Before they're allowed to be free?
-How many times can a man turn his head
-And pretend that he just doesn't see?
-Well, as we marched down, as we marched down
+ÿI³Well, as we marched down, as we marched down
 Well, as we marched down to Fennerio'
 Well, our captain fell in love with a lady like a dove
 Her name that she had was Pretty Peggy-O
-Well, what will your mother say, what will your mother say
-What will your mother say, Pretty Peggy-O
-What will your mother say to know you're going away
-You're never, never, never coming back-io ?
-The answer, my friend, is blowin' in the wind
-The answer is blowin' in the wind.
-Come a-running down your stairs
-Come a-running down your stairs
-Come a-running down your stairs, Pretty Peggy-O
-Come a-running down your stairs
-Combing back your yellow hair
-You're the prettiest darned girl I ever seen-io.
-How many roads must a man walk down
-Before you call him a man?
-How many seas must a white dove sail
-Before she sleeps in the sand?
-How many times must the cannon balls fly
-Before they're forever banned?
-----
-The lieutenant he has gone
-The lieutenant he has gone
-The lieutenant he has gone, Pretty Peggy-O
-The lieutenant he has gone, long gone
-He's a-riding down in Texas with the rodeo.
-The answer, my friend, is blowin' in the wind
-The answer is blowin' in the wind.
 How many times must a man look up
 Before he can really see the sky?
 How many ears must one person have
 Before he can hear people cry?
 How many deaths will it take 'til he knows
 That too many people have died?
+How many years can a mountain exist
+Before it's washed to the sea?
+How many years can some people exist
+Before they're allowed to be free?
+How many times can a man turn his head
+And pretend that he just doesn't see?
+----
 The answer, my friend, is blowin' in the wind
 The answer is blowin' in the wind.
+Well, what will your mother say, what will your mother say
+What will your mother say, Pretty Peggy-O
+What will your mother say to know you're going away
+You're never, never, never coming back-io ?
+How many roads must a man walk down
+Before you call him a man?
+How many seas must a white dove sail
+Before she sleeps in the sand?
+How many times must the cannon balls fly
+Before they're forever banned?
+Come a-running down your stairs
+Come a-running down your stairs
+Come a-running down your stairs, Pretty Peggy-O
+Come a-running down your stairs
+Combing back your yellow hair
+You're the prettiest darned girl I ever seen-io.
+The lieutenant he has gone
+The lieutenant he has gone
+The lieutenant he has gone, Pretty Peggy-O
+The lieutenant he has gone, long gone
+He's a-riding down in Texas with the rodeo.
 I've been around this whole country
 But I never yet found Fenneario.
 Well, our captain he is dead, our captain he is dead
 Our captain he is dead, Pretty Peggy-O
 Well, our captain he is dead, died for a maid
 He's buried somewhere in Louisiana-O.
+The answer, my friend, is blowin' in the wind
+The answer is blowin' in the wind.
+The answer, my friend, is blowin' in the wind
+The answer is blowin' in the wind.

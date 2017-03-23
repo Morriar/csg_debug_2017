@@ -551,14 +551,6 @@ x«ﬂô
 H£G6~
 Ä¢≠)î°Ω
 ∞?ïù»%Ÿ<
-Je te raconterai
-L'histoire de ce roi
-Mort de n'avoir pas
-Pu te rencontrer
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
 O√π il ne pleut pas
 Je creuserai la terre
 Jusqu'apr√®s ma mort
@@ -568,22 +560,6 @@ Je ferai un domaine
 O√π l'amour sera roi
 O√π l'amour sera loi
 O√π tu seras reine
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-On a vu souvent
-Rejaillir le feu
-de l¬¥ancien volcan
-Qu'on croyait trop vieux
-Il est para√Æt-il
-Des terres br√ªl√©es
-Donnant plus de bl√©
-Qu'un meilleur avril,
-Et quand vient le soir
-Pour qu'un ciel flamboie
-Le rouge et le noir
-Ne s'√©pousent-ils pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
@@ -608,6 +584,22 @@ Moi je t'offrirai
 Des perles de pluie
 Venues de pays
 Ne me quitte pas
+Je t'inventerai
+Des mots insens√©s
+Que tu comprendras
+Je te parlerai
+De ces amants l√†
+Qui ont vu deux fois
+Leurs c≈ìurs s'embraser
+Je te raconterai
+L'histoire de ce roi
+Mort de n'avoir pas
+Pu te rencontrer
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
 Je ne vais plus pleurer
 Je ne vais plus parler
 Je me cacherai l√†
@@ -623,11 +615,19 @@ mais, Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
+On a vu souvent
+Rejaillir le feu
+de l¬¥ancien volcan
+Qu'on croyait trop vieux
+Il est para√Æt-il
+Des terres br√ªl√©es
+Donnant plus de bl√©
+Qu'un meilleur avril,
+Et quand vient le soir
+Pour qu'un ciel flamboie
+Le rouge et le noir
+Ne s'√©pousent-ils pas
 Ne me quitte pas
-Je t'inventerai
-Des mots insens√©s
-Que tu comprendras
-Je te parlerai
-De ces amants l√†
-Qui ont vu deux fois
-Leurs c≈ìurs s'embraser
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas

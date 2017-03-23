@@ -579,10 +579,47 @@ QñşÍv¨
 ’#äÙX
 (­×GwNï
 Giƒ³âù¶‚B®·Y·/·[¦œ‹t
-Û4J¼”¦ÅJe te raconterai
+Û4J¼”¦ÅNe me quitte pas
+Je t'inventerai
+Des mots insensÃ©s
+Que tu comprendras
+Je te parlerai
+De ces amants lÃ 
+Qui ont vu deux fois
+Leurs cÅ“urs s'embraser
+Ne me quitte pas
+Je ne vais plus pleurer
+Je ne vais plus parler
+Je me cacherai lÃ 
+A te regarder
+Danser et sourire
+Et Ã  t'Ã©couter
+Chanter et puis rire
+Laisse-moi devenir
+L'ombre de ton ombre
+L'ombre de ta main
+L'ombre de ton chien
+mais, Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Je te raconterai
 L'histoire de ce roi
 Mort de n'avoir pas
 Pu te rencontrer
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+OÃ¹ il ne pleut pas
+Je creuserai la terre
+Jusqu'aprÃ¨s ma mort
+Pour couvrir ton corps
+D'or et de lumiÃ¨re
+Je ferai un domaine
+OÃ¹ l'amour sera roi
+OÃ¹ l'amour sera loi
+OÃ¹ tu seras reine
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
@@ -603,14 +640,9 @@ Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
-Ne me quitte pas
-Je t'inventerai
-Des mots insensÃ©s
-Que tu comprendras
-Je te parlerai
-De ces amants lÃ 
-Qui ont vu deux fois
-Leurs cÅ“urs s'embraser
+Moi je t'offrirai
+Des perles de pluie
+Venues de pays
 On a vu souvent
 Rejaillir le feu
 de lÂ´ancien volcan
@@ -624,38 +656,6 @@ Pour qu'un ciel flamboie
 Le rouge et le noir
 Ne s'Ã©pousent-ils pas
 Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-OÃ¹ il ne pleut pas
-Je creuserai la terre
-Jusqu'aprÃ¨s ma mort
-Pour couvrir ton corps
-D'or et de lumiÃ¨re
-Je ferai un domaine
-OÃ¹ l'amour sera roi
-OÃ¹ l'amour sera loi
-OÃ¹ tu seras reine
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-Moi je t'offrirai
-Des perles de pluie
-Venues de pays
-Ne me quitte pas
-Je ne vais plus pleurer
-Je ne vais plus parler
-Je me cacherai lÃ 
-A te regarder
-Danser et sourire
-Et Ã  t'Ã©couter
-Chanter et puis rire
-Laisse-moi devenir
-L'ombre de ton ombre
-L'ombre de ta main
-L'ombre de ton chien
-mais, Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas

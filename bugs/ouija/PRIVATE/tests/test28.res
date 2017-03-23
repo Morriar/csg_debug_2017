@@ -830,44 +830,28 @@ rÌ)*
 Ð­Fv4Bùþ
 ç‹û¡n
 ÛŽWxl‰7EûäU[
-òzg»šoå¨›Don't be cruel to a heart that's true.
-Don't be cruel to a heart that's true.
-I don't want no other love,
-Baby it's just you I'm thinking of.
-Well, since my baby left me,
-I found a new place to dwell.
-It's down at the end of lonely street
-at Heartbreak Hotel.
-You know I can be found,
-sitting home all alone,
-If you can't come around,
-at least please telephone.
-Don't be cruel to a heart that's true.
-Don't stop thinking of me,
-don't make me feel this way,
-Come on over here and love me,
-you know what I want you to say.
-Don't be cruel to a heart that's true.
-Why should we be apart?
-I really love you baby, cross my heart.
-You make me so lonely baby,
-I get so lonely,
-I get so lonely I could die.
-You ain't nothin' but a hound dog
-cryin' all the time.
-You ain't nothin' but a hound dog
-cryin' all the time.
-Well, you ain't never caught a rabbit
-and you ain't no friend of mine.
-When they said you was high classed,
+òzg»šoå¨›When they said you was high classed,
 well, that was just a lie.
 When they said you was high classed,
 well, that was just a lie.
 You ain't never caught a rabbit
 and you ain't no friend of mine.
-You make me so lonely baby,
-I get so lonely,
-I get so lonely I could die.
+Baby, if I made you mad
+for something I might have said,
+Please, let's forget the past,
+the future looks bright ahead,
+Don't be cruel to a heart that's true.
+I don't want no other love,
+Baby it's just you I'm thinking of.
+Don't be cruel to a heart that's true.
+Don't be cruel to a heart that's true.
+I don't want no other love,
+Baby it's just you I'm thinking of.
+---------------------------
+Hey now, if your baby leaves you,
+and you got a tale to tell.
+Just take a walk down lonely street
+to Heartbreak Hotel.
 You make me so lonely baby,
 I get so lonely,
 I get so lonely I could die.
@@ -878,15 +862,29 @@ and I'll know that I'll have you,
 Don't be cruel to a heart that's true.
 I don't want no other love,
 Baby it's just you I'm thinking of.
----------------------------
-Baby, if I made you mad
-for something I might have said,
-Please, let's forget the past,
-the future looks bright ahead,
-Don't be cruel to a heart that's true.
-I don't want no other love,
-Baby it's just you I'm thinking of.
 ------------------------
+Well, since my baby left me,
+I found a new place to dwell.
+It's down at the end of lonely street
+at Heartbreak Hotel.
+You know I can be found,
+sitting home all alone,
+If you can't come around,
+at least please telephone.
+Don't be cruel to a heart that's true.
+You make me so lonely baby,
+I get so lonely,
+I get so lonely I could die.
+You make me so lonely baby,
+I get so lonely,
+I get so lonely I could die.
+Don't stop thinking of me,
+don't make me feel this way,
+Come on over here and love me,
+you know what I want you to say.
+Don't be cruel to a heart that's true.
+Why should we be apart?
+I really love you baby, cross my heart.
 Well, the Bell hop's tears keep flowin',
 and the desk clerk's dressed in black.
 Well they been so long on lonely street
@@ -895,7 +893,9 @@ And although it's always crowded,
 you still can find some room.
 Where broken hearted lovers
 do cry away their gloom.
-Hey now, if your baby leaves you,
-and you got a tale to tell.
-Just take a walk down lonely street
-to Heartbreak Hotel.
+You ain't nothin' but a hound dog
+cryin' all the time.
+You ain't nothin' but a hound dog
+cryin' all the time.
+Well, you ain't never caught a rabbit
+and you ain't no friend of mine.

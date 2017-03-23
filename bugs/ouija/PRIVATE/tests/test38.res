@@ -6,6 +6,22 @@ You need a guardian
 Woo-hoo, and you know I'm yours
 Woo-hoo, and I know you're mine
 Woo-hoo, and that's for all time
+What's with these homies, dissing my girl?
+Why do they gotta front?
+What did we ever do to these guys
+That made them so violent?
+Woo-hoo, but you know I'm yours
+Woo-hoo, and I know you're mine
+Woo-hoo, and that's for all time
+Oo-ee-oo I look just like Buddy Holly
+Oh-oh, and you're Mary Tyler Moore
+I don't care what they say about us anyway
+I don't care bout that
+I don't care bout that
+Oo-ee-oo I look just like Buddy Holly
+Oh-oh, and you're Mary Tyler Moore
+I don't care what they say about us anyway
+I don't care bout that
 Bang, bang a knock on the door
 Another big bang and you're down on the floor
 Oh no! What do we do?
@@ -20,25 +36,9 @@ Oo-ee-oo I look just like Buddy Holly
 Oh-oh, and you're Mary Tyler Moore
 I don't care what they say about us anyway
 I don't care bout that
-Oo-ee-oo I look just like Buddy Holly
-Oh-oh, and you're Mary Tyler Moore
-I don't care what they say about us anyway
-I don't care bout that
-I don't care bout that
-Oo-ee-oo I look just like Buddy Holly
-Oh-oh, and you're Mary Tyler Moore
-I don't care what they say about us anyway
 I don't care bout that
 I don't care bout that
 I don't care bout that
-I don't care bout that
-What's with these homies, dissing my girl?
-Why do they gotta front?
-What did we ever do to these guys
-That made them so violent?
-Woo-hoo, but you know I'm yours
-Woo-hoo, and I know you're mine
-Woo-hoo, and that's for all time
 ËÔ$ØNNÀE9ñs
 I©58Lº–©Ã
 œÚ-Ð[_ÑY'àb

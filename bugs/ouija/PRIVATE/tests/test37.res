@@ -1,22 +1,11 @@
-¡ªzý÷On a vu souvent
-Rejaillir le feu
-de lÂ´ancien volcan
-Qu'on croyait trop vieux
-Il est paraÃ®t-il
-Des terres brÃ»lÃ©es
-Donnant plus de blÃ©
-Qu'un meilleur avril,
-Et quand vient le soir
-Pour qu'un ciel flamboie
-Le rouge et le noir
-Ne s'Ã©pousent-ils pas
+¡ªzý÷Je te raconterai
+L'histoire de ce roi
+Mort de n'avoir pas
+Pu te rencontrer
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
-Moi je t'offrirai
-Des perles de pluie
-Venues de pays
 Ne me quitte pas
 Il faut oublier
 Tout peut s'oublier
@@ -29,6 +18,25 @@ Oublier ces heures
 Qui tuaient parfois
 A coups de pourquoi
 Le cÅ“ur du bonheur
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Moi je t'offrirai
+Des perles de pluie
+Venues de pays
+On a vu souvent
+Rejaillir le feu
+de lÂ´ancien volcan
+Qu'on croyait trop vieux
+Il est paraÃ®t-il
+Des terres brÃ»lÃ©es
+Donnant plus de blÃ©
+Qu'un meilleur avril,
+Et quand vient le soir
+Pour qu'un ciel flamboie
+Le rouge et le noir
+Ne s'Ã©pousent-ils pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
@@ -47,14 +55,6 @@ Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
-Je t'inventerai
-Des mots insensÃ©s
-Que tu comprendras
-Je te parlerai
-De ces amants lÃ 
-Qui ont vu deux fois
-Leurs cÅ“urs s'embraser
-Ne me quitte pas
 Je ne vais plus pleurer
 Je ne vais plus parler
 Je me cacherai lÃ 
@@ -70,14 +70,14 @@ mais, Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
-Je te raconterai
-L'histoire de ce roi
-Mort de n'avoir pas
-Pu te rencontrer
 Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
+Je t'inventerai
+Des mots insensÃ©s
+Que tu comprendras
+Je te parlerai
+De ces amants lÃ 
+Qui ont vu deux fois
+Leurs cÅ“urs s'embraser
 …ô©‹Zwƒfü
 L'Gv˜ÄÃŒ¾£™P}‰sï
 ]7Ua­ÑÓž”µ›HR©CÛ"˜Hˆ;R>bL¥æù Ÿ€¥¡²…hð

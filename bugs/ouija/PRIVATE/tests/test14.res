@@ -6,11 +6,6 @@ That made them so violent?
 Woo-hoo, but you know I'm yours
 Woo-hoo, and I know you're mine
 Woo-hoo, and that's for all time
-Oo-ee-oo I look just like Buddy Holly
-Oh-oh, and you're Mary Tyler Moore
-I don't care what they say about us anyway
-I don't care bout that
-I don't care bout that
 Don't you ever fear, I'm always near
 I know that you need help
 Your tongue is twisted, your eyes are slit
@@ -29,6 +24,7 @@ Oo-ee-oo I look just like Buddy Holly
 Oh-oh, and you're Mary Tyler Moore
 I don't care what they say about us anyway
 I don't care bout that
+I don't care bout that
 Bang, bang a knock on the door
 Another big bang and you're down on the floor
 Oh no! What do we do?
@@ -39,6 +35,10 @@ what's a matter, what's a matter, what's a matter you?
 What's a matter babe, are you feeling blue? oh-oh!
 And that's for all time
 And that's for all time
+Oo-ee-oo I look just like Buddy Holly
+Oh-oh, and you're Mary Tyler Moore
+I don't care what they say about us anyway
+I don't care bout that
 ®_Ž|N«eq¼¹/wØŠL
 ¥V‡h_¹xo¬ª?iÈ‡c
 ½O«ThŽFP’”

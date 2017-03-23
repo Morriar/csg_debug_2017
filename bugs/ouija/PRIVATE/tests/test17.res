@@ -577,14 +577,6 @@ v¦*o¥İ
 ‰š6²´ñ¬OÿBöÛ5Ú*
 ×>Rtâ“
 ±?¤ÒKzGNe me quitte pas
-Je t'inventerai
-Des mots insensÃ©s
-Que tu comprendras
-Je te parlerai
-De ces amants lÃ 
-Qui ont vu deux fois
-Leurs cÅ“urs s'embraser
-Ne me quitte pas
 Il faut oublier
 Tout peut s'oublier
 Qui s'enfuit dÃ©jÃ ,
@@ -616,6 +608,25 @@ Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
+Je te raconterai
+L'histoire de ce roi
+Mort de n'avoir pas
+Pu te rencontrer
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Moi je t'offrirai
+Des perles de pluie
+Venues de pays
+Ne me quitte pas
+Je t'inventerai
+Des mots insensÃ©s
+Que tu comprendras
+Je te parlerai
+De ces amants lÃ 
+Qui ont vu deux fois
+Leurs cÅ“urs s'embraser
 OÃ¹ il ne pleut pas
 Je creuserai la terre
 Jusqu'aprÃ¨s ma mort
@@ -642,17 +653,6 @@ L'ombre de ton ombre
 L'ombre de ta main
 L'ombre de ton chien
 mais, Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-Moi je t'offrirai
-Des perles de pluie
-Venues de pays
-Je te raconterai
-L'histoire de ce roi
-Mort de n'avoir pas
-Pu te rencontrer
-Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas

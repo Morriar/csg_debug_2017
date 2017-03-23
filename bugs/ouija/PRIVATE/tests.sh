@@ -28,7 +28,7 @@ run_test()
 
 	jail_home=$(dirname $run_output)
 	make_jail $jail_home bin/ $run_input
-	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home bin/ouija "`basename $run_input`" 2>&1 | strings -e S | grep -v "Reading profile" > "$run_output"
+	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home bin/ouija "`basename $run_input`" 2>&1 | strings -e S | grep -av "Reading profile" > "$run_output"
 	return $?
 }
 

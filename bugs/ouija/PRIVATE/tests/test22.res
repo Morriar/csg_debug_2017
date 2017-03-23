@@ -1,23 +1,4 @@
-æŒBang, bang a knock on the door
-Another big bang and you're down on the floor
-Oh no! What do we do?
-Don't look now but I lost my shoe
-I can't run and I can't kick
-What's a matter babe are you feeling sick?
-what's a matter, what's a matter, what's a matter you?
-What's a matter babe, are you feeling blue? oh-oh!
-And that's for all time
-And that's for all time
-Oo-ee-oo I look just like Buddy Holly
-Oh-oh, and you're Mary Tyler Moore
-I don't care what they say about us anyway
-I don't care bout that
-I don't care bout that
-Oo-ee-oo I look just like Buddy Holly
-Oh-oh, and you're Mary Tyler Moore
-I don't care what they say about us anyway
-I don't care bout that
-What's with these homies, dissing my girl?
+æŒWhat's with these homies, dissing my girl?
 Why do they gotta front?
 What did we ever do to these guys
 That made them so violent?
@@ -35,7 +16,26 @@ Oo-ee-oo I look just like Buddy Holly
 Oh-oh, and you're Mary Tyler Moore
 I don't care what they say about us anyway
 I don't care bout that
+Bang, bang a knock on the door
+Another big bang and you're down on the floor
+Oh no! What do we do?
+Don't look now but I lost my shoe
+I can't run and I can't kick
+What's a matter babe are you feeling sick?
+what's a matter, what's a matter, what's a matter you?
+What's a matter babe, are you feeling blue? oh-oh!
+And that's for all time
+And that's for all time
+Oo-ee-oo I look just like Buddy Holly
+Oh-oh, and you're Mary Tyler Moore
+I don't care what they say about us anyway
 I don't care bout that
+I don't care bout that
+I don't care bout that
+I don't care bout that
+Oo-ee-oo I look just like Buddy Holly
+Oh-oh, and you're Mary Tyler Moore
+I don't care what they say about us anyway
 I don't care bout that
 I don't care bout that
 ²Ç—î‰F‚åÛEöÓp¯³

@@ -1,16 +1,13 @@
-C��Ne me quitte pas
-Je ne vais plus pleurer
-Je ne vais plus parler
-Je me cacherai là
-A te regarder
-Danser et sourire
-Et à t'écouter
-Chanter et puis rire
-Laisse-moi devenir
-L'ombre de ton ombre
-L'ombre de ta main
-L'ombre de ton chien
-mais, Ne me quitte pas
+C��Où il ne pleut pas
+Je creuserai la terre
+Jusqu'après ma mort
+Pour couvrir ton corps
+D'or et de lumière
+Je ferai un domaine
+Où l'amour sera roi
+Où l'amour sera loi
+Où tu seras reine
+Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
@@ -30,30 +27,6 @@ Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
-Moi je t'offrirai
-Des perles de pluie
-Venues de pays
-Ne me quitte pas
-Je t'inventerai
-Des mots insensés
-Que tu comprendras
-Je te parlerai
-De ces amants là
-Qui ont vu deux fois
-Leurs cœurs s'embraser
-Où il ne pleut pas
-Je creuserai la terre
-Jusqu'après ma mort
-Pour couvrir ton corps
-D'or et de lumière
-Je ferai un domaine
-Où l'amour sera roi
-Où l'amour sera loi
-Où tu seras reine
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
 Je te raconterai
 L'histoire de ce roi
 Mort de n'avoir pas
@@ -62,6 +35,33 @@ Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
+Ne me quitte pas
+Je t'inventerai
+Des mots insensés
+Que tu comprendras
+Je te parlerai
+De ces amants là
+Qui ont vu deux fois
+Leurs cœurs s'embraser
+Ne me quitte pas
+Je ne vais plus pleurer
+Je ne vais plus parler
+Je me cacherai là
+A te regarder
+Danser et sourire
+Et à t'écouter
+Chanter et puis rire
+Laisse-moi devenir
+L'ombre de ton ombre
+L'ombre de ta main
+L'ombre de ton chien
+mais, Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Moi je t'offrirai
+Des perles de pluie
+Venues de pays
 Ne me quitte pas
 Il faut oublier
 Tout peut s'oublier

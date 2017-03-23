@@ -661,11 +661,13 @@ J»{›G
 èKu"
 Á/ax*å¬µML
 ∫¿µ™∞Ól–»=Ñ¿®é
-ﬂOo-ee-oo I look just like Buddy Holly
-Oh-oh, and you're Mary Tyler Moore
-I don't care what they say about us anyway
-I don't care bout that
-I don't care bout that
+ﬂDon't you ever fear, I'm always near
+I know that you need help
+Your tongue is twisted, your eyes are slit
+You need a guardian
+Woo-hoo, and you know I'm yours
+Woo-hoo, and I know you're mine
+Woo-hoo, and that's for all time
 What's with these homies, dissing my girl?
 Why do they gotta front?
 What did we ever do to these guys
@@ -673,13 +675,15 @@ That made them so violent?
 Woo-hoo, but you know I'm yours
 Woo-hoo, and I know you're mine
 Woo-hoo, and that's for all time
-Don't you ever fear, I'm always near
-I know that you need help
-Your tongue is twisted, your eyes are slit
-You need a guardian
-Woo-hoo, and you know I'm yours
-Woo-hoo, and I know you're mine
-Woo-hoo, and that's for all time
+Oo-ee-oo I look just like Buddy Holly
+Oh-oh, and you're Mary Tyler Moore
+I don't care what they say about us anyway
+I don't care bout that
+Oo-ee-oo I look just like Buddy Holly
+Oh-oh, and you're Mary Tyler Moore
+I don't care what they say about us anyway
+I don't care bout that
+I don't care bout that
 Oo-ee-oo I look just like Buddy Holly
 Oh-oh, and you're Mary Tyler Moore
 I don't care what they say about us anyway
@@ -697,7 +701,3 @@ what's a matter, what's a matter, what's a matter you?
 What's a matter babe, are you feeling blue? oh-oh!
 And that's for all time
 And that's for all time
-Oo-ee-oo I look just like Buddy Holly
-Oh-oh, and you're Mary Tyler Moore
-I don't care what they say about us anyway
-I don't care bout that

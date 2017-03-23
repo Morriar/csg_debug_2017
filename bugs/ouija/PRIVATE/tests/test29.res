@@ -11,25 +11,25 @@ Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas
-On a vu souvent
-Rejaillir le feu
-de l´ancien volcan
-Qu'on croyait trop vieux
-Il est paraît-il
-Des terres brûlées
-Donnant plus de blé
-Qu'un meilleur avril,
-Et quand vient le soir
-Pour qu'un ciel flamboie
-Le rouge et le noir
-Ne s'épousent-ils pas
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
-Ne me quitte pas
 Moi je t'offrirai
 Des perles de pluie
 Venues de pays
+Ne me quitte pas
+Il faut oublier
+Tout peut s'oublier
+Qui s'enfuit déjà,
+Oublier le temps
+Des malentendus
+Et le temps perdu
+A savoir comment
+Oublier ces heures
+Qui tuaient parfois
+A coups de pourquoi
+Le cœur du bonheur
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
+Ne me quitte pas
 Je te raconterai
 L'histoire de ce roi
 Mort de n'avoir pas
@@ -46,18 +46,18 @@ Je te parlerai
 De ces amants là
 Qui ont vu deux fois
 Leurs cœurs s'embraser
-Ne me quitte pas
-Il faut oublier
-Tout peut s'oublier
-Qui s'enfuit déjà,
-Oublier le temps
-Des malentendus
-Et le temps perdu
-A savoir comment
-Oublier ces heures
-Qui tuaient parfois
-A coups de pourquoi
-Le cœur du bonheur
+On a vu souvent
+Rejaillir le feu
+de l´ancien volcan
+Qu'on croyait trop vieux
+Il est paraît-il
+Des terres brûlées
+Donnant plus de blé
+Qu'un meilleur avril,
+Et quand vient le soir
+Pour qu'un ciel flamboie
+Le rouge et le noir
+Ne s'épousent-ils pas
 Ne me quitte pas
 Ne me quitte pas
 Ne me quitte pas

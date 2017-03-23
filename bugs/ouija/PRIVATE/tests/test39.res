@@ -1,8 +1,24 @@
-uYª¡ˇ‹The lieutenant he has gone
+uYª¡ˇ‹Come a-running down your stairs
+Come a-running down your stairs
+Come a-running down your stairs, Pretty Peggy-O
+Come a-running down your stairs
+Combing back your yellow hair
+You're the prettiest darned girl I ever seen-io.
+Well, our captain he is dead, our captain he is dead
+Our captain he is dead, Pretty Peggy-O
+Well, our captain he is dead, died for a maid
+He's buried somewhere in Louisiana-O.
+The lieutenant he has gone
 The lieutenant he has gone
 The lieutenant he has gone, Pretty Peggy-O
 The lieutenant he has gone, long gone
 He's a-riding down in Texas with the rodeo.
+The answer, my friend, is blowin' in the wind
+The answer is blowin' in the wind.
+Well, what will your mother say, what will your mother say
+What will your mother say, Pretty Peggy-O
+What will your mother say to know you're going away
+You're never, never, never coming back-io ?
 Well, as we marched down, as we marched down
 Well, as we marched down to Fennerio'
 Well, our captain fell in love with a lady like a dove
@@ -21,33 +37,17 @@ How many times must the cannon balls fly
 Before they're forever banned?
 The answer, my friend, is blowin' in the wind
 The answer is blowin' in the wind.
+The answer, my friend, is blowin' in the wind
+The answer is blowin' in the wind.
+----
 I've been around this whole country
 But I never yet found Fenneario.
-The answer, my friend, is blowin' in the wind
-The answer is blowin' in the wind.
-The answer, my friend, is blowin' in the wind
-The answer is blowin' in the wind.
 How many times must a man look up
 Before he can really see the sky?
 How many ears must one person have
 Before he can hear people cry?
 How many deaths will it take 'til he knows
 That too many people have died?
-Well, what will your mother say, what will your mother say
-What will your mother say, Pretty Peggy-O
-What will your mother say to know you're going away
-You're never, never, never coming back-io ?
-Well, our captain he is dead, our captain he is dead
-Our captain he is dead, Pretty Peggy-O
-Well, our captain he is dead, died for a maid
-He's buried somewhere in Louisiana-O.
-----
-Come a-running down your stairs
-Come a-running down your stairs
-Come a-running down your stairs, Pretty Peggy-O
-Come a-running down your stairs
-Combing back your yellow hair
-You're the prettiest darned girl I ever seen-io.
 ¿#•I w
 W√⁄ÃÏ√/
 ˘ëÃMa}®Mê¢„ûèK3Ë≤
