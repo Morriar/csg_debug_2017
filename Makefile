@@ -70,7 +70,7 @@ install-perl:
 	apt-get install -y perl libswitch-perl
 
 install-bash:
-	apt-get install -y sharutils ncompress
+	apt-get install -y sharutils ncompress exiftools pngcheck
 
 install-ruby:
 	apt-get install -y ruby
