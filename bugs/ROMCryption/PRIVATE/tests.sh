@@ -60,7 +60,6 @@ diff_test()
 	diff_input1=$1
 	diff_input2=$2
 	diff_output=$3
-	cp "$diff_input1" "$diff_input2"
 	diff -u -- "$diff_input1" "$diff_input2" > "$diff_output"
 	return $?
 }
