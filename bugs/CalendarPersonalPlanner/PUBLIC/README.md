@@ -1,6 +1,6 @@
 # Calendar Personal Planner
 
-Thanks to an evolved Artificial Intelligence (that relies on programming and algorithms), this application helps you to plan your week activities in a optimal way: why bother organizing your time when a robot can do it for you and tell you what to do and when doing it.
+Thanks to an evolved Artificial Intelligence (that relies on programming and algorithms), this application helps you to plan your week activities in an optimal way: why bother organizing your time when a robot can do it for you and tell you what to do and when doing it.
 
 Calendar Personal Planner takes 4 numbers between 0 and 100:
 

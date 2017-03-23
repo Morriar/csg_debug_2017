@@ -8,13 +8,13 @@ By default, the application tries to extract meaningful messages from `/dev/uran
 
 If a media file that features a recently deceased person is given (photography, audio, video, animated gif) the software tries to gather remnant aura and transcript them into a meaning full message. Results may vary.
 
-Disclaimer: the user need to be open minded and must truly believe in esoteric powers ; the software is only a tool that channel mystic energy and is not functional is bad energy is present. A nonbeliever is not expected to see any meaningful messages from the afterlife.
+Disclaimer: the user need to be open minded and must truly believe in esoteric powers ; the software is only a tool that channel mystic energy and is not functional if bad energy is present. A nonbeliever is not expected to see any meaningful messages from the afterlife.
 
 For a more efficient use, it is suggested to pipe the application in the command `strings(1)` to filter out spiritic noise.
 
 ## Examples
 
-Without argument, is extract meaningful messages from the afterlife trough `/dev/urandom`.
+Without argument, it extracts meaningful messages from the afterlife trough `/dev/urandom`.
 
     $ bin/ouija | strings
 
@@ -55,13 +55,13 @@ Emily: y r u doing this?!?
 !r^P
 ~~~
 
-It is suggested to start the ouija application automatically. Just put the following line in your `/etc/rc.local` file and regularry check the `/var/log/ouija.log` file.
+It is suggested to start the ouija application automatically. Just put the following line in your `/etc/rc.local` file and regularly check the `/var/log/ouija.log` file.
 
 ~~~
 nice /path/to/ouija | strings -n 8 >> /var/log/ouija.log
 ~~~
 
-With a media file of a recent decease person as argument, remanant aura is extracted (if any)
+With a media file of a recent decease person as argument, mystic aura is extracted (if any)
 
     $ bin/ouija emily_girlfriend.jpeg |  strings
 
