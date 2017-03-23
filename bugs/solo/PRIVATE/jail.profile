@@ -26,4 +26,4 @@ rlimit-nproc 1000
 rlimit-nofile 500
 rlimit-sigpending 200
 
-env PATH=/usr/bin
+# env PATH=/usr/bin

@@ -20,11 +20,8 @@ run_test()
 	run_args=$(cat $1.args)
 	run_output=$2
 	jail_home=$(dirname $run_output)
-	# make_jail $jail_home src $run_input
-	# timeout -k 5 5 firejail --profile=jail.profile --quiet --private=$jail_home ./run.sh $run_args $run_input 2>&1 | grep -v "Reading profile" > "$run_output"
-
-	# TODO: jail this
-	./run.sh $run_args $run_input > "$run_output" 2>&1
+	make_jail $jail_home src $run_input
+	timeout -k 5 5 firejail --profile=jail.profile --quiet --private=$jail_home ./run.sh $run_args `basename $run_input` 2>&1 | grep -v "Reading profile" > "$run_output"
 	return $?
 }
 
@@ -34,6 +31,7 @@ make_jail()
 	jail_bin=$2
 	jail_input=$3
 	mkdir -p $jail_dir
+	cp run.sh $jail_dir
 	cp -r $jail_bin $jail_dir
 	cp $jail_input $jail_dir
 }
