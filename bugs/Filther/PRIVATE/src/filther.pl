@@ -9,12 +9,14 @@ switch($_){
 		# m/.{140}/s;
 		m/.{0,140}/s;
 		print$&;
+		print "\n";
 	}
 	# bug "revers" sans e. test2: n'importe lequel
 	# case('revers'){
 	case('reverse'){
 		while(<>){
-			print scalar reverse;
+			chomp;
+			print scalar reverse,"\n";
 		}
 	}
 	case('hashtag'){
