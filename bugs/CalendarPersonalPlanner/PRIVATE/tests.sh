@@ -27,9 +27,8 @@ run_test()
 	run_output=$2
 	str_input=$(cat $run_input)
 	jail_home=$(dirname $run_output)
-	#make_jail $jail_home bin/ $run_input
-	#timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home bin/cpp $str_input 2>&1 | grep -v "Reading profile" > "$run_output"
-	timeout -k 3 3 bin/cpp $str_input 2>&1 | grep -v "Reading profile" > "$run_output"
+	make_jail $jail_home bin/ $run_input
+	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home bin/cpp $str_input 2>&1 | grep -v "Reading profile" > "$run_output"
 	return $?
 }
 
@@ -39,7 +38,6 @@ make_jail()
 	jail_bin=$2
 	jail_input=$3
 	mkdir -p $jail_dir
-	cp -r profiles $jail_dir
 	cp -r $jail_bin $jail_dir
 	cp -r $jail_input $jail_dir
 }
