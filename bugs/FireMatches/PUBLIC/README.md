@@ -82,7 +82,7 @@ Output:
 
 ## Developers
 
-Usefull commands:
+Useful commands:
 
 	make compile
 	make check
