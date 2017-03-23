@@ -55,6 +55,6 @@ Output:
 
 ## Developers
 
-Usefull commands:
+Useful commands:
 
 	make check

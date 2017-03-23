@@ -52,7 +52,7 @@ for i in `seq 0 ${#pin}`; do
 			#
 			# We uuencode with the input file named 'secret'
 			# bug: mv "$in" secret; uuencode < "$in" > "$out"
-			uuencode "$in" secret > "$out"
+			uuencode secret < "$in" > "$out"
 			;;
 		3)
 			# Diabolically unbreakable cypher
