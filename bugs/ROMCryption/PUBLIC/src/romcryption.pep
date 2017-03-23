@@ -3,6 +3,7 @@
 ;
 ; Copyright (C) 2017
 ; Alexandre Terrasa <@>,
+; Jean Privat <@>,
 ; Philippe Pepos Petitclerc <@>
 ;
 ; Everyone is permitted to copy and distribute verbatim or modified

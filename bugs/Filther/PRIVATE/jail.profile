@@ -1,5 +1,3 @@
-# nit exec profile
-
 include /usr/local/etc/firejail/disable-mgmt.inc
 include /usr/local/etc/firejail/disable-secret.inc
 include /usr/local/etc/firejail/disable-common.inc

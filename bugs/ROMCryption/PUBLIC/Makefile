@@ -3,6 +3,7 @@
 #
 # Copyright (C) 2017
 # Alexandre Terrasa <@>,
+# Jean Privat <@>,
 # Philippe Pepos Petitclerc <@>
 #
 # Everyone is permitted to copy and distribute verbatim or modified
@@ -14,11 +15,7 @@
 #
 #  0. You just do what the fuck you want to as long as you're on strike.
 #
-# aHR0cDovL2NzZ2FtZXMub3JnLzIwMTYvCg==#
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# aHR0cDovL2NzZ2FtZXMub3JnLzIwMTYvCg==
 
 compile:
 	mkdir -p bin/
