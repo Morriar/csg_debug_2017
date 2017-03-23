@@ -161,9 +161,13 @@ tr.team.indanger a {color: #ff0000; }
 #ROMCryption{ margin-left:-130px; margin-top:-150px; background-image: url('/images/lock.png') }
 #PearMap 	{ margin-left:0px; margin-top:-150px; background-image: url('/images/map.png'); }
 #PegMobile	{ margin-left:130px; margin-top:-150px; background-image: url('/images/panel.png') }
+
+#solo 		{ margin-left:-200px; margin-top:-30px; background-image: url('/images/solo.png') }
+#ouija 		{ margin-left:-60px; margin-top:-30px; background-image: url('/images/ouija.png') }
+#CalendarPersonalPlanner { margin-left:70px; margin-top:-30px; background-image: url('/images/planner.png') }
+
 #Wrottit	{ margin-left:-270px; margin-top:90px; background-image: url('/images/pen.png')}
 #FireMatches{ margin-left:-130px; margin-top:90px; background-image: url('/images/fire.png') }
 #Filther 	{ margin-left:0px; margin-top:90px; background-image: url('/images/alveoli.png') }
 #SuperSecretSafeSystemSolution 	{ margin-left:130px; margin-top:90px; background-image: url('/images/shield.png') }
-
 
