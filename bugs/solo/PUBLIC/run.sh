@@ -53,7 +53,10 @@ fi
 ruby src/server.rb $options < "$in_file" &
 server_pid=$!
 
-sleep 1
+while [ ! -e solo.sock ]
+do
+	sleep 1
+done
 
 ruby src/client.rb $options
 

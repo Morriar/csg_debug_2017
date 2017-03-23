@@ -24,7 +24,7 @@ run_test()
 	run_input=$1
 	run_args=$(cat $1.args)
 	run_output=$2
-	./run.sh $run_args $run_input > "$run_output" 2>&1
+	timeout 2 ./run.sh $run_args $run_input > "$run_output" 2>&1
 	return $?
 }
 

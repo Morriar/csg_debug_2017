@@ -52,8 +52,8 @@ end
 # Open a socket and wait for a friend.
 server = UNIXServer.open('./solo.sock')
 
-loop {
-	client = server.accept
-	client.puts data
-	client.close
-}
+client = server.accept
+client.puts data
+client.close
+
+server.close
