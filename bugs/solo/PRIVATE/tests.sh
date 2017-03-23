@@ -21,7 +21,7 @@ run_test()
 	run_output=$2
 	jail_home=$(dirname $run_output)
 	make_jail $jail_home src $run_input
-	timeout -k 5 5 firejail --profile=jail.profile --quiet --private=$jail_home ./run.sh $run_args `basename $run_input` 2>&1 | grep -v "Reading profile" > "$run_output"
+	timeout -k 5 5 firejail --profile=jail.profile --quiet --private=$jail_home ./run.sh $run_args `basename $run_input` 2>&1 | grep -a -v "Reading profile" > "$run_output"
 	return $?
 }
 
@@ -41,7 +41,7 @@ diff_test()
 	diff_input1=$1
 	diff_input2=$2
 	diff_output=$3
-	diff -u -- "$diff_input1" "$diff_input2" > "$diff_output"
+	diff -u -b -- "$diff_input1" "$diff_input2" > "$diff_output"
 	return $?
 }
 
