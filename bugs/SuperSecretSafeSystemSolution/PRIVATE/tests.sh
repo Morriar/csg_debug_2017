@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright 2016 Alexandre Terrasa <alexandre@moz-code.org>.
+# Copyright 2017 Alexandre Terrasa <alexandre@moz-code.org>.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,9 +18,24 @@ run_test()
 {
 	run_input=$1
 	run_output=$2
-	# TODO jail?
-	timeout -k 5 5 bash src/sssss.sh `cat $run_input` "$run_output"
+	str_input=$(cat $run_input)
+	jail_home=$(dirname $run_output)
+	make_jail $jail_home src/ $run_input
+	timeout -k 3 3 firejail --profile=jail.profile --quiet --private=$jail_home bash src/sssss.sh $str_input "`basename $run_output`" 2>&1 | grep -v "Reading profile"
 	return $?
+}
+
+make_jail()
+{
+	jail_dir=$1
+	jail_bin=$2
+	jail_input=$3
+	mkdir -p $jail_dir
+	cp nyan.png $jail_dir
+	cp hello.txt $jail_dir
+	cp cat.txt $jail_dir
+	cp -r $jail_bin $jail_dir
+	cp -r $jail_input $jail_dir
 }
 
 diff_test()
