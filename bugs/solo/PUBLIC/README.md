@@ -1,14 +1,26 @@
-# Bug Hello
+# Forever Solo
 
-Language: Nit
+Language: Ruby
 
 ## Description
 
-The program takes a simple argument `name` and displays `Hello <name>!`.
+Are you a nerd? Do you feel like you're totally incompatible with the rest
+of society? Do you have no friends to video chat with?
+
+This next-generation ascii-static-video chat allows nerds anywhere to talk to all their
+friends over patented pseudo-network technologies.
+
+In other words, Solo is a one-to-none video calling app for forever alone – designed to be simple, reliable and fun so you never miss a moment.
 
 ## Usage
 
-	hello <name>
+	./run.sh [options] <input_file>
+
+### Possible options
+
+	-p|--plain : Sends and receives data as plain-text [DEFAULT]
+	-b|--binary: Sends and receives data as a binary stream
+	-r|--runlength: Sends and receives data as a run-length encoded binary stream
 
 ## Input / Output examples
 
@@ -18,15 +30,15 @@ Input:
 
 Output:
 
-	Hello !
+	<empty>
 
 Input:
 
-	Alex
+	UQAM
 
 Output:
 
-	Hello Alex!
+	UQAM
 
 Input:
 
@@ -34,11 +46,10 @@ Input:
 
 Output:
 
-	Hello !@#$%^&*()_+!
+	!@#$%^&*()_+
 
 ## Developers
 
 Useful commands:
 
-	make compile
 	make check
