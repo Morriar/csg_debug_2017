@@ -24,12 +24,14 @@
 
 /* Min-heap data structure. Basically by the book. */
 
-struct node {
+class node {
+public:
 	double priority;
 	void *data;
 };
 
-struct heap {
+class heap {
+public:
 	struct node *nodes;
 	int len;
 	int size;
@@ -60,7 +62,7 @@ void enqueue(struct heap *heap, double priority, void *data) {
 	//printf("enqueue %p at %d, cost=%f\n", data, i, priority);
 }
 
-struct state *dequeue(struct heap *heap) {
+void *dequeue(struct heap *heap) {
 	if (heap->len==0)
 		return NULL;
 	void *result = heap->nodes[0].data;
@@ -127,7 +129,8 @@ int state_compare(const struct state *s1, const struct state *s2) {
 }
 
 /* Global data */
-struct problem {
+class problem {
+public:
 	/* initial state */
 	struct state *start;
 	/* goals */
@@ -196,7 +199,7 @@ struct state * solve(int money_start, int fun_start, int money_goal, int fun_goa
 
 	enqueue(heap, 0, state);
 	int i = 0;
-	while((state=dequeue(heap))) {
+	while((state=(struct state*)dequeue(heap))) {
 		i++;
 		//if (i%1 == 0) printf("%d out t=%d %s m=%d f=%d\n", i, state->time, state->desc, state->money, state->fun);
 
