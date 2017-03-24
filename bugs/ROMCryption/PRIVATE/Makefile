@@ -15,7 +15,7 @@
 compile:
 	mkdir -p bin/
 	cp src/trap src/pep8os.pepo bin/
-	cd bin/ && asem8 ../src/romcryption.pep
+	cd bin/ && ../../../../pep8term/asem8 ../src/romcryption.pep
 	mv src/romcryption.pepo bin/
 
 check:
