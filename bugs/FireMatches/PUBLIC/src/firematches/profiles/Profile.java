@@ -25,13 +25,14 @@ import firematches.profiles.exceptions.ProfileFormatException;
 import java.nio.file.Path;
 import java.util.List;
 
+//@Invariant(age >= 18)
 public class Profile {
 
     private String id;
 
     private String name;
 
-    private Boolean sex;
+    private Boolean sex; // that makes us happy :)
 
     private Integer age;
 
@@ -122,6 +123,8 @@ public class Profile {
     public boolean equals(Object o) {
         return o instanceof Profile && id == ((Profile)o).id;
     }
+
+	/* Generated getters & setters */
 
     public String getId() {
         return id;

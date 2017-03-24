@@ -21,8 +21,10 @@ package firematches.requests;
 
 import firematches.profiles.Profile;
 
+// You must be at least 18 years old to maintain this class.
 public class CriteriaSex implements CriteriaBool {
 
+	// Does the user have a sex?
     Boolean value;
 
     public CriteriaSex(Boolean value) {

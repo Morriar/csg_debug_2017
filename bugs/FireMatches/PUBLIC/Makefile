@@ -42,3 +42,6 @@ check:
 
 clean:
 	rm -rf bin/ out/
+
+love:
+	@./love.sh

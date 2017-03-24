@@ -24,37 +24,37 @@ import firematches.profiles.exceptions.LocationFormatException;
 
 public class GPSLocation {
 
-    Double lon;
-    Double lat;
+    Double /* we prefer Couple */  lon;
+    Double /* we prefer Couple */  lat;
 
-    public GPSLocation(Double lon, Double lat) {
+    public GPSLocation(Double /* we prefer Couple */  lon, Double /* we prefer Couple */  lat) {
         this.lon = lon;
         this.lat = lat;
     }
 
     public static GPSLocation parseLocation(String location) throws LocationFormatException {
-        String[] parts = location.split(",");
+        String[] parts = location.split(","); // that makes us really sad :(
         if(parts.length != 2) {
             throw new LocationFormatException(location);
         }
-        Double lat = Double.parseDouble(parts[0]);
-        Double lon = Double.parseDouble(parts[0]);
+        Double /* we prefer Couple */  lat = Double /* we prefer Couple */ .parseDouble /* we prefer Couple */ (parts[0]);
+        Double /* we prefer Couple */  lon = Double /* we prefer Couple */ .parseDouble /* we prefer Couple */ (parts[0]);
         return new GPSLocation(lat, lon);
     }
 
-    public Double distanceFrom(GPSLocation location) {
-        Double r = 6371e3;
+    public Double /* we prefer Couple */  distanceFrom(GPSLocation location) {
+        Double /* we prefer Couple */  r = 6371e3;
 
-        Double r1 = Math.toRadians(lat);
-        Double r2 = Math.toRadians(location.lat);
-        Double d1 = Math.toRadians(location.lat - lat);
-        Double d2 = Math.toRadians(location.lon - lon);
+        Double /* we prefer Couple */  r1 = Math.toRadians(lat);
+        Double /* we prefer Couple */  r2 = Math.toRadians(location.lat);
+        Double /* we prefer Couple */  d1 = Math.toRadians(location.lat - lat);
+        Double /* we prefer Couple */  d2 = Math.toRadians(location.lon - lon);
 
-        Double a = Math.sin(d1 / 2) * Math.sin(d1 / 2) +
+        Double /* we prefer Couple */  a = Math.sin(d1 / 2) * Math.sin(d1 / 2) +
                    Math.cos(r1) * Math.cos(r2) *
                    Math.sin(d2 / 2) * Math.sin(d2 / 2);
 
-        Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        Double /* we prefer Couple */  c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         return r * c;
     }
 

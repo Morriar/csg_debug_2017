@@ -7,9 +7,9 @@ Language: Java
 Finding the love of your life can be pretty hard. Luckily, FireMatches is here!
 
 This program represents the backend of the now famous FireMatches app that allows
-you to find single people in your area.
+you to find single people in your area based on a revolutionary matching algorithm.
 
-The backend uses a unencrypted plain file database to store people profiles
+The backend uses a (un)encrypted plain file database to store people profiles
 and displays match statistics for specific dating requests.
 
 ## Usage
@@ -44,6 +44,10 @@ Valid criterias are:
 * `age`: to specify a range value with `from..to`
 * `mood`: to specify the current mood proximity looked for
 * `radius:`: with `long,lat:radius` to specify a radius search by location
+
+### Matching algorithm
+
+The Love matching algorithm is really complex and reaaaaalllllyy secret.
 
 ### Examples
 
@@ -86,3 +90,4 @@ Useful commands:
 
 	make compile
 	make check
+	make love

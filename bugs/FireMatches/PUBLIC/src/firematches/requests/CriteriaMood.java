@@ -35,6 +35,7 @@ public class CriteriaMood implements CriteriaDist {
 
     @Override
     public Double distance(Profile profile) {
+		// This is a really important part of our famous Love algorithm.
         Integer dist = levenshteinDistance(mood, profile.getMood());
         return dist.doubleValue() * 10000;
     }

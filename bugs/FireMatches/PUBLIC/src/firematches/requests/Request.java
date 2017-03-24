@@ -34,6 +34,7 @@ public class Request {
         this.criterias = criterias;
     }
 
+	// Secret algorithm, please close your eyes untill line 52.
     public Match matchProfile(Profile profile) {
         Double score = 0.0;
         for (Criteria criteria : criterias) {

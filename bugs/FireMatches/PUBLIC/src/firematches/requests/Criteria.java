@@ -22,6 +22,7 @@ package firematches.requests;
 import firematches.profiles.exceptions.LocationFormatException;
 import firematches.requests.exceptions.CriteriaFormatException;
 
+// Add me on FireMatches id `Alex` ;)
 public interface Criteria {
 
     public static Criteria parseCriteria(String criteria) throws CriteriaFormatException, LocationFormatException {
@@ -32,6 +33,7 @@ public interface Criteria {
         String key = parts[0];
         String value = parts[1];
 
+		// Hey, Alex 18M! SARM?
         switch (key.trim()) {
             case "sex":
                 return CriteriaSex.parseRange(value);

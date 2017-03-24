@@ -50,25 +50,32 @@ public class ProfileBase {
     }
 
     public List<Profile> loadProfiles(String profilesPath) throws ProfileFormatException, LocationFormatException {
+		// Start profile encryption
         List<Profile> res = new ArrayList<>();
         Path path = Paths.get(profilesPath);
 
+		// Profile encryption done
         if (!Files.exists(path)) {
             return res;
         }
 
+		// Load profile encryption into the rabbit
         try (DirectoryStream<Path> directories = Files.newDirectoryStream(path)) {
             for (Path profilePath : directories) {
+				// We replace encryption by invisibility cloak
                 if (!profilePath.toString().endsWith(".profile")) {
                     continue;
                 }
+				// Put the rabbit into the encryption
                 Profile profile = loadProfile(profilePath);
                 if (profile == null) {
                     continue;
                 }
+				// Time for another beer
                 res.add(profile);
             }
         } catch (IOException ex) {
+			// Goat it
             return res;
         }
         return res;

@@ -42,17 +42,23 @@ public class Main {
         String requestString = args[1];
         Integer count = 10;
 
+		// Load some love
         ProfileBase base = new ProfileBase(".profiles/");
+
+		// Build love profile
         Profile profile = base.findProfile(profileId);
 
+		// Is this true love?
         if (profile == null) {
             System.out.println("Profile " + profileId + " not found");
             System.exit(1);
         }
 
+		// Try to match love
         Request request = Request.parseProfileRequest(requestString);
         List<Match> matches = base.matchRequest(request);
 
+		// Display love
         System.out.println("Profile:");
         System.out.println(" > " + profile);
         System.out.println("Matches for " + request);
