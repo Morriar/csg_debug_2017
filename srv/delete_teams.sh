@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$#" -ne 1 ]; then
-	echo "usage: delete_teams teams.csv"
+	echo "usage: delete_teams teams.lst"
 	exit 1
 fi
 

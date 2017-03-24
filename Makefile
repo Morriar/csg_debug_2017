@@ -83,15 +83,15 @@ check:
 	make --no-print-directory -C tests/ check
 
 init-compe:
-	sudo rm -rf DEPLOY
-	sudo ./srv/delete_teams.sh teams.csv
-	sudo ./srv/create_teams.sh teams.csv
+	rm -rf DEPLOY
+	./srv/delete_teams.sh teams.lst
+	./srv/create_teams.sh teams.lst teams_keys
 	node src/loadRounds.js
 	node src/loadStatus.js
 	node src/loadTeams.js teams.json
 	node src/loadBugs.js bugs/
 	node src/deployTeams.js bugs/ DEPLOY/ PUBLIC
-	sudo ./srv/init_teams.sh teams.csv /home/ubuntu/csg_debug/DEPLOY/
+	./srv/init_teams.sh teams.csv /home/debug/csg_debug/DEPLOY/
 
 start-scoreboard:
 	node src/bin/www
