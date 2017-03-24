@@ -8,22 +8,14 @@ fi
 ip=$1
 teamid=$2
 
-cp id_rsa_debug ~/.ssh/id_rsa_debug
-chmod 600 ~/.ssh/id_rsa_debug
-
-echo "# Debug" >> ~/.ssh/config
-echo "Host debug" >> ~/.ssh/config
-echo "HostName $ip" >> ~/.ssh/config
-echo "User $teamid" >> ~/.ssh/config
-
-git clone ssh://debug/home/$teamid/bug_hello
-git clone ssh://debug/home/$teamid/CalendarPersonalPlanner
-git clone ssh://debug/home/$teamid/Filther
-git clone ssh://debug/home/$teamid/FireMatches
-git clone ssh://debug/home/$teamid/ouija
-git clone ssh://debug/home/$teamid/PearMap
-git clone ssh://debug/home/$teamid/PegMobile
-git clone ssh://debug/home/$teamid/ROMCryption
-git clone ssh://debug/home/$teamid/solo
-git clone ssh://debug/home/$teamid/SuperSecretSafeSystemSolution
-git clone ssh://debug/home/$teamid/Wrottit
+git clone ssh://$teamid@$ip:~/bug_hello
+git clone ssh://$teamid@$ip:~/CalendarPersonalPlanner
+git clone ssh://$teamid@$ip:~/Filther
+git clone ssh://$teamid@$ip:~/FireMatches
+git clone ssh://$teamid@$ip:~/ouija
+git clone ssh://$teamid@$ip:~/PearMap
+git clone ssh://$teamid@$ip:~/PegMobile
+git clone ssh://$teamid@$ip:~/ROMCryption
+git clone ssh://$teamid@$ip:~/solo
+git clone ssh://$teamid@$ip:~/SuperSecretSafeSystemSolution
+git clone ssh://$teamid@$ip:~/Wrottit
