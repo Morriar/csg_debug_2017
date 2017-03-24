@@ -19,7 +19,7 @@
 
 compile:
 	mkdir -p bin/
-	gcc -std=c99 -O2 src/cpp.c -o bin/cpp
+	g++ -std=c++11 -O2 src/cpp.cpp -o bin/cpp
 
 check:
 	./tests.sh

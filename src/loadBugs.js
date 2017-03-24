@@ -26,7 +26,7 @@ function loadTestFiles(dir) {
   var files = fs.readdirSync(dir);
   for(i in files) {
     var file = files[i];
-	if(path.extname(file) == '.res') { continue; }
+	if(path.extname(file) != '.in') { continue; }
 	var name = path.basename(file, '.in')
 	res.push({
 	  name: name,

@@ -91,7 +91,7 @@ init-compe:
 	node src/loadTeams.js teams.json
 	node src/loadBugs.js bugs/
 	node src/deployTeams.js bugs/ DEPLOY/ PUBLIC
-	./srv/init_teams.sh teams.csv /home/debug/csg_debug/DEPLOY/
+	./srv/init_teams.sh teams.lst /home/debug/csg_debug/DEPLOY/
 
 start-scoreboard:
 	node src/bin/www

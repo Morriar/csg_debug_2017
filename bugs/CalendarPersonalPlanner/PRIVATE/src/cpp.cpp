@@ -1,22 +1,7 @@
-/*                 UQAM ON STRIKE PUBLIC LICENSE
- *                    Version 2, December 2004
- *
- * Copyright (C) 2017
- * Alexandre Terrasa <@>,
- * Jean Privat <@>,
- * Philippe Pepos Petitclerc <@>
- *
- * Everyone is permitted to copy and distribute verbatim or modified
- * copies of this license document, and changing it is allowed as long
- * as the name is changed.
- *
- *                 UQAM ON STRIKE PUBLIC LICENSE
- *   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
- *
- *  0. You just do what the fuck you want to as long as you're on strike.
- *
- * aHR0cDovL2NzZ2FtZXMub3JnLzIwMTYvCg==
- */
+/* ** *
+ * Quick and dirty code. Should work as is, except I did not really tested it.
+ * TODO: clean it and remove debug.
+ * ** */
 
 #include <stdlib.h>
 #include <string.h>
@@ -24,12 +9,14 @@
 
 /* Min-heap data structure. Basically by the book. */
 
-struct node {
+class node {
+public:
 	double priority;
 	void *data;
 };
 
-struct heap {
+class heap {
+public: // Bug a public is missing, crappy errors
 	struct node *nodes;
 	int len;
 	int size;
@@ -39,7 +26,7 @@ struct heap {
 void enqueue(struct heap *heap, double priority, void *data) {
 	if (heap->size <= heap->len + 1) {
 		int size = heap->size * 2;
-		if (size < 4) // not enough space :\
+		if (size < 4) // not enough space :\ BUG
 			size = 4;
 		heap->size = size;
 		heap->nodes = (struct node *)realloc(heap->nodes, heap->size * sizeof (struct node));
@@ -60,7 +47,7 @@ void enqueue(struct heap *heap, double priority, void *data) {
 	//printf("enqueue %p at %d, cost=%f\n", data, i, priority);
 }
 
-struct state *dequeue(struct heap *heap) {
+void *dequeue(struct heap *heap) {
 	if (heap->len==0)
 		return NULL;
 	void *result = heap->nodes[0].data;
@@ -84,7 +71,7 @@ struct state *dequeue(struct heap *heap) {
 			break;
 		struct node tmp = heap->nodes[i];
 		heap->nodes[i] = heap->nodes[c];
-		heap->nodes[i] = tmp;
+		heap->nodes[c] = tmp; // BUG chier le swap
 		i = c;
 	}
 
@@ -127,7 +114,8 @@ int state_compare(const struct state *s1, const struct state *s2) {
 }
 
 /* Global data */
-struct problem {
+class problem {
+public:
 	/* initial state */
 	struct state *start;
 	/* goals */
@@ -196,7 +184,7 @@ struct state * solve(int money_start, int fun_start, int money_goal, int fun_goa
 
 	enqueue(heap, 0, state);
 	int i = 0;
-	while((state=dequeue(heap))) {
+	while((state=(struct state*)dequeue(heap))) {
 		i++;
 		//if (i%1 == 0) printf("%d out t=%d %s m=%d f=%d\n", i, state->time, state->desc, state->money, state->fun);
 
