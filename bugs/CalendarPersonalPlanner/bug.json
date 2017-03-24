@@ -2,8 +2,8 @@
 	"id": "CalendarPersonalPlanner",
 	"title": "CalendarPersonalPlanner",
 	"description": "Plan your week activities with AI: why bother organizing your time when a robot can do it for you?",
-	"o2boost": 10,
-	"zboost": 5,
-	"score_bonus": 15,
+	"o2boost": 12,
+	"zboost": 10,
+	"score_bonus": 22,
 	"language": "C++"
 }

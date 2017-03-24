@@ -2,8 +2,8 @@
 	"id": "ROMCryption",
 	"title": "ROMCryption",
 	"description": "ROMCryption(TM)(R)(C) allows you to decrypt ROMs.",
-	"o2boost": 2,
-	"zboost": 2,
-	"score_bonus": 4,
-	"language": "pep/8"
+	"o2boost": 5,
+	"zboost": 5,
+	"score_bonus": 10,
+	"language": "Pep/8"
 }

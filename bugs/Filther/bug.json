@@ -1,9 +1,9 @@
 {
 	"id": "Filther",
 	"title": "Filther",
-	"description": "Hey youngster! Do you like to send text messages to you friends though Facer or Twitbook? In this case, Filther(TM) is made for you! Add filthers to your messages with this simple app!",
-	"o2boost": 10,
-	"zboost": 10,
-	"score_bonus": 20,
+	"description": "Hey youngster! Do you like to send text messages to your friends through Facer or Twitbook? In this case, Filther(TM) is made for you! Add filthers to your messages with this simple app!",
+	"o2boost": 20,
+	"zboost": 18,
+	"score_bonus": 38,
 	"language": "Perl"
 }

@@ -2,8 +2,8 @@
 	"id": "FireMatches",
 	"title": "FireMatches",
 	"description": "Finding the love of your life can be pretty hard. Luckily, FireMatches is here!",
-	"o2boost": 1,
-	"zboost": 8,
-	"score_bonus": 9,
-	"language": "java"
+	"o2boost": 5,
+	"zboost": 7,
+	"score_bonus": 12,
+	"language": "Java"
 }

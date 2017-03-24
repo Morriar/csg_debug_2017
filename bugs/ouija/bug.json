@@ -2,8 +2,8 @@
 	"id": "ouija",
 	"title": "ouija",
 	"description": "Ghosts, spirits, dead people. They are with us. And hidding in your /dev/urandom.",
-	"o2boost": 5,
-	"zboost": 5,
-	"score_bonus": 10,
+	"o2boost": 15,
+	"zboost": 15,
+	"score_bonus": 30,
 	"language": "C"
 }
