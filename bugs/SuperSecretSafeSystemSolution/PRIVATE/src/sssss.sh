@@ -7,6 +7,7 @@
 ## TOP SECRET. IF YOU ARE NOT AUTHORIZED TO READ BELLOW.
 # Or do whatever you want, I'm only a comment.
 
+umask 0022
 # Get the input file
 input="$1"
 # Get the PIN (password in number)
