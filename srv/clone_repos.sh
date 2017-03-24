@@ -8,14 +8,14 @@ fi
 ip=$1
 teamid=$2
 
-git clone ssh://$teamid@$ip:~/bug_hello
-git clone ssh://$teamid@$ip:~/CalendarPersonalPlanner
-git clone ssh://$teamid@$ip:~/Filther
-git clone ssh://$teamid@$ip:~/FireMatches
-git clone ssh://$teamid@$ip:~/ouija
-git clone ssh://$teamid@$ip:~/PearMap
-git clone ssh://$teamid@$ip:~/PegMobile
-git clone ssh://$teamid@$ip:~/ROMCryption
-git clone ssh://$teamid@$ip:~/solo
-git clone ssh://$teamid@$ip:~/SuperSecretSafeSystemSolution
-git clone ssh://$teamid@$ip:~/Wrottit
+git clone ssh://$teamid@$ip:/home/$teamid/bug_hello
+git clone ssh://$teamid@$ip:/home/$teamid/CalendarPersonalPlanner
+git clone ssh://$teamid@$ip:/home/$teamid/Filther
+git clone ssh://$teamid@$ip:/home/$teamid/FireMatches
+git clone ssh://$teamid@$ip:/home/$teamid/ouija
+git clone ssh://$teamid@$ip:/home/$teamid/PearMap
+git clone ssh://$teamid@$ip:/home/$teamid/PegMobile
+git clone ssh://$teamid@$ip:/home/$teamid/ROMCryption
+git clone ssh://$teamid@$ip:/home/$teamid/solo
+git clone ssh://$teamid@$ip:/home/$teamid/SuperSecretSafeSystemSolution
+git clone ssh://$teamid@$ip:/home/$teamid/Wrottit
