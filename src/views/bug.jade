@@ -53,7 +53,7 @@ else
 						strong.text-danger FAILURE
 					end
 				if last.status != "success" && last.output
-					pre= last.output
+					pre.out= last.output
 
 			if rounds
 				h3 Rounds
@@ -76,4 +76,4 @@ else
 						if round.status != "success"
 							tr(class='collapse' id='round' + index)
 								td(colspan=3)
-									pre= round.status.output
+									pre.out= round.status.output

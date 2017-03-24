@@ -12,6 +12,7 @@
 //  See the License for the specific language governing perbugs and
 //  limitations under the License.
 
+var ansi_up = new AnsiUp;
 $('[data-toggle="popover"]').popover();
 
 function refreshProgress(progressbar, value, label) {
@@ -36,6 +37,17 @@ $(function() {
 			$('#bugModal').find('.modal-title').text(title)
 			$('#bugModal').find('.modal-body').html(data)
 			$('#bugModal').modal();
+			$('#bugModal').on('shown.bs.modal', function (e) {
+				$('#bugModal pre.old').remove();
+				$('#bugModal pre.out').each(function(i, pre) {
+					$(pre).hide();
+					$(pre).before(
+						$('<pre>').addClass("old").append(
+							$('<code>').innerHtml = ansi_up.ansi_to_html(pre.innerText)
+						)
+					);
+				});
+			})
 			$('[data-toggle="popover"]').popover();
 		});
 	});
