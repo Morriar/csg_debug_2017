@@ -17,9 +17,8 @@ block content
 
 			p
 				| Your campany owns some apps currently deployed on the cloud.
-				| Each app, when it works, earns you som hype and cash.
-				| generate oxygen so the inhabitants can breath.
-				| The Dome oxygen and energy levels are represented by these gauges:
+				| Each app, whenever it works, earns you some hype and some cash.
+				| The quantities of each ressource is represented by the following gauges:
 
 			p.container-fluid
 				.col-xs-6
@@ -30,7 +29,7 @@ block content
 			br
 			br
 			p
-				| Each round, the Dome consumes&nbsp;
+				| Each round, your startup spends&nbsp;
 				span.text-danger
 					strong 50&nbsp;
 					!= o2_icon
@@ -41,13 +40,11 @@ block content
 				| .
 				| If one of the resources reaches&nbsp;
 				span.text-danger 0
-				| , then everyone under the Dome dies.
+				| , then you go bankrupt.
 
 			p
-				| To generate power and oxygen, the Dome relies on automated life support
-				| systems that control the main generators and regulators of the Dome.
-				| There is 15 systems that need to be running to keep the Dome and its
-				| inhabitants safe.
+				| Apps that work will earn your startup some hype and some cash.
+				| There are 11 apps that will each make you earn one of these resources or both.
 
 			div.panel.panel-custom.panel-dome
 				div.container#canvas-dome
@@ -60,12 +57,14 @@ block content
 					button.slot-icon.btn.btn-success#SuperSecretSafeSystemSolution
 					button.slot-icon.btn.btn-success#Wrottit
 
-			h4 Producing oxygen and energy
+			h4 Generating hype and earning money
 			p
-				| At each round, the Dome cron generates a series of configuration input
-				| parameters that allows each system to function.
-				| If the system processes the configuration input parameters as expected,
-				| the underlying generator is activated and a resource is produced.
+				| Each round, you're apps are tested by a group of highly qualified testers
+				| (typically a CRON  job). Your investors love capitalism and want you to
+				| pay your testers every round. Your profits will need to overcome their
+				| salaries for you to stay on the market. When your apps function correctly,
+				| you will earn your hard-earned cash and hype for each round that the clients
+				| love your app.
 
 			table.table
 				tr
@@ -77,8 +76,9 @@ block content
 					th +10 pts / round
 
 			p
-				| The kind and the amount of resource produced is different for each system.
-				| This makes some systems more critical than others.
+				| The kind and the amount of resource produced is different for each app.
+				| This allows you to express yourselves with clever development (err debugging)
+				| strategies.
 
 			table.table
 				tr
@@ -90,7 +90,8 @@ block content
 					th +20 pts / round
 
 			p
-				| Also, some systems require one kind of resource to produce another kind.
+				| By the way, some apps could actually require en investment in a particular resource
+				| in order to produce another. Be wise.
 
 			table.table
 				tr
@@ -102,29 +103,31 @@ block content
 					th +25 pts / round
 
 			p
-				| Unfortunately, the development of these systems goes for centuries
-				| and their well behavior cannot be guaranteed.
-				| If the system does not respond as expected, no resource is produced.
+				| To be competitive on the market, you need to ship fast. Unfortunately, shipping fast
+				| also means not reinventing the wheel (and sometimes using already functionnal square wheels).
+				| This means that the apps your startup has developped might not work as expected.
+				| And if it doesn't, you don't earn money, nor hype, and therefore no happiness.
+
 			p
-				| In this competition, you are asked to debug the main life support
-				| systems of the Dome and save its inhabitants.
-				| Remember, if one of the resources reaches 0, then everyone under the Dome
-				| dies.
+				| In this competition, your objective is simply to escape from imminent bankruptcy.
+				| Do so by fixing as many of your apps as fast as possible.
+				| Remember that if any of your resources hit 0, you will not be able to pay your 
+				| salaries and your startup will go bankrupt.
 				strong.text-danger &nbsp;This means that you instantaneously lose the
 					| competition and have to leave the room immediately.
 
-			h4 Cloning the Dome environment
+			h4 Cloning the test environment
 			p
-				| To fix the Dome systems you must clone the Dome environment.
-				| Simply type the following commands in a terminal.
-				| Don't forget to replace IP and TEAM by the adequate values...
-				| The password is your team password.
+				| To fix the apps, you must firt obtain the testing environment.
+				| Type the following commands in a terminal.
+				| Don't forget to replace IP and TEAM with the right values
+				| The passwords are those assigned to your teams.
 				pre
 					| $ git clone ssh://TEAM@IP:9291/home/TEAM/debug
 					| $ cd debug
 					| $ ./clone_repos.sh
 
-			p All the systems have been cloned into your computer.
+			p All the apps have been cloned into your computer.
 				pre
 					| $ ls
 					| bug_hello/
@@ -133,16 +136,16 @@ block content
 					| ...
 
 
-			h4 Debugging the life-support systems
+			h4 Debugging the apps
 			p
 				| Each system is explained by its own documentation. See the
 				| README.md file in each directory.
-				| The Empire strongly recommend to start with bug_hello.
+				| Wall Street strongly recommends to start with bug_hello.
 				pre
 					| $ cd bug_hello/
 					| $ cat README.md
 			p
-				| The README is also available in the Dome interface by clicking
+				| The README is also available in the web interface by clicking
 				| on a bug button in your team page.
 
 			p
@@ -150,7 +153,7 @@ block content
 				| understand the expected behavior of the programs.
 				| You can then fix the sources.
 				pre
-					| $ vim src/main.nit # do edits and fix that bug!
+					| $ vim src/main.nit # fix that bug!
 
 			p
 				| You can test your changes locally with a set of test inputs.
@@ -167,10 +170,10 @@ block content
 					| $ diff out/test_02.out tests/test_02.res
 
 
-			h4 Pushing the bug fixes to the Dome
+			h4 Pushing the bug fixes to the tester group
 			p.text-danger
 				| Once you have debugged a system you MUST push it to your team repository
-				| so the fixed version will be available for the cron to test.
+				| so the fixed version will be available for the testers to test.
 
 				pre
 					| git add -A
@@ -180,7 +183,7 @@ block content
 			p
 				| That's it! The new version of the system is deployed and you can
 				| wait for the cron to test it.
-				| Check your Dome view page for more information on the program,
+				| Check your web interface for more information on the program,
 				| the resources it produces and the status of the last check performed
 				| by the cron.
 
