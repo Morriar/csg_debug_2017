@@ -31,7 +31,6 @@ public:
 };
 
 class heap {
-public:
 	struct node *nodes;
 	int len;
 	int size;

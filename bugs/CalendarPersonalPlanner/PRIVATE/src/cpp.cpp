@@ -16,7 +16,7 @@ public:
 };
 
 class heap {
-public:
+public: // Bug a public is missing, crappy errors
 	struct node *nodes;
 	int len;
 	int size;
