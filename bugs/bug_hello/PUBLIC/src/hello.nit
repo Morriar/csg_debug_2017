@@ -17,6 +17,10 @@
 #
 # aHR0cDovL2NzZ2FtZXMub3JnLzIwMTYvCg==
 
+# Found a nice tutorial about control flow in Nit on the official website.
+# It was hidden in the Language Reference section.
+#
+# I also found lots of examples on the github repo! Such Helpful! Much Nit!
 if args.is_empty do
 	print "Error: expected one argument <name>!"
 	exit 1
