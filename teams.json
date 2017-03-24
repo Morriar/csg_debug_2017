@@ -1,162 +1,162 @@
 [
 	{
-		"id": "team1",
-		"name": "Boracle",
+		"id": "broracle",
+		"name": "Broracle",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team2",
+		"id": "brinder",
 		"name": "Brinder",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team3",
+		"id": "macrohard",
 		"name": "Macrohard",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team4",
+		"id": "youber",
 		"name": "Youber",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team5",
+		"id": "pastafy",
 		"name": "Pastafy",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team6",
+		"id": "pastagram",
 		"name": "Pastagram",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team7",
+		"id": "sudo_rm_rf_competition",
 		"name": "sudo rm -rf competition",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team8",
+		"id": "silly_cones_finder",
 		"name": "Silly Cônes Finder",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team9",
+		"id": "silly_cones_voles",
 		"name": "Sille Cônes Volés",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team10",
+		"id": "manitoogle",
 		"name": "Manitoogle",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team11",
+		"id": "seed_round",
 		"name": "Seed Round",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team12",
+		"id": "series_a",
 		"name": "Series A",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team13",
+		"id": "poly_caulking",
 		"name": "Poly-Caulking",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team14",
+		"id": "poly_cones",
 		"name": "Poly-Cônes",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team15",
+		"id": "git_rekt",
 		"name": "Git Rekt",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team16",
+		"id": "american_emigrants",
 		"name": "American Emigrants",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team17",
+		"id": "canadian_immigrants",
 		"name": "Canadian Immigrants",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team18",
+		"id": "team_gordon",
 		"name": "Team Gordon",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team19",
+		"id": "team_ramsay",
 		"name": "Team Ramsay",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team20",
+		"id": "kekstarter",
 		"name": "Kekstarter",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team21",
+		"id": "smartster_the_smart_toaster",
 		"name": "Smarter - The smart toaster",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team22",
+		"id": "toastertech_laboratories",
 		"name": "ToasterTech Laboratories",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team23",
+		"id": "uqo",
 		"name": "UQO",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team24",
-		"name": "Bronze 3 All-Stars"",
+		"id": "bronze_3_all-stars",
+		"name": "Bronze 3 All-Stars",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team25",
+		"id": "dangling_pointers",
 		"name": "Dangling Pointers",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team26",
+		"id": "byte_me",
 		"name": "Byte Me",
 		"score": 0,
 		"oxygen": 1250,
 		"energy": 1250
 	}, {
-		"id": "team27",
+		"id": "cache_me_ouhside",
 		"name": "Cache Me Ouhside",
 		"score": 0,
 		"oxygen": 1250,
