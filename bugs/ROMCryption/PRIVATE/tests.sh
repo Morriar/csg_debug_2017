@@ -39,7 +39,7 @@ q
 EOF
 	jail_home=$(dirname $run_output)
 	make_jail $jail_home bin $run_input
-	timeout -k 5 5 firejail --profile=jail.profile --quiet --private=$jail_home pep8 < $jail_home/canned_command >/dev/null 2>&1
+	timeout -k 5 5 firejail --profile=jail.profile --quiet --private=$jail_home ./pep8 < $jail_home/canned_command >/dev/null 2>&1
 	res=$?
 	echo >> $run_output
 	return $res
@@ -51,6 +51,7 @@ make_jail()
 	jail_bin=$2
 	jail_input=$3
 	mkdir -p $jail_dir
+	cp ../../../pep8term/pep8 $jail_dir
 	cp $jail_bin/* $jail_dir
 	cp $jail_input $jail_dir
 }
