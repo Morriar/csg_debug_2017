@@ -5,7 +5,7 @@ if [ "$#" -ne 1 ]; then
 	exit 1
 fi
 
-teamid=$2
+teamid=$1
 
 git config --global user.email "$teamid"
 git config --global user.name "$teamid"
