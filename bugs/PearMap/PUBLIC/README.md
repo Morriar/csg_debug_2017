@@ -10,7 +10,7 @@ PearMap is the finest geolocalisation and mapping tool.
 First created for the U.S. Navy it is now available to everyone who can spend
 $1.000.000 on an app.
 
-PearMap accept a geomap ASCII encoded as input and draws the path from the start
+PearMap accept a geomap ASCII-encoded as input and draws the path from the start
 point `O` to the exit point `X`.
 
 ## Usage
