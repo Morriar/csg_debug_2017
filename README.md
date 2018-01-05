@@ -16,6 +16,13 @@ oxygen production, aeration, cooling, energy production etc.
 Those systems are buggy and need to be fixed before the dome runs out of its resources
 and everyone dies.
 
+<table>
+	<tr>
+		<td><img src='https://raw.githubusercontent.com/Morriar/csg_debug_2017/master/doc/example1.png'></td>
+		<td><img src='https://raw.githubusercontent.com/Morriar/csg_debug_2017/master/doc/example2.png'></td>
+	</tr>
+</table>
+
 ## Rules
 
 Each team is assigned with 15 bugs to fix.
